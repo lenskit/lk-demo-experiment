@@ -26,6 +26,8 @@ dependencies:
 - configobj
 - pillow
 - ply
+- requests
+- humanize
 - pip:
   - dvc
   - git+https://github.com/lenskit/lkpy
