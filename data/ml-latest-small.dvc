@@ -1,0 +1,14 @@
+cmd: python unpack-data.py data/ml-latest-small.zip data
+deps:
+- md5: 31a303aabbc519bd33d025e44d6c2570
+  path: data/ml-latest-small.zip
+- md5: 68b2ed55497c5cbc813db457ca1fa1bc
+  path: unpack-data.py
+md5: 142f165f2971f812bb9990296e0c8f65
+outs:
+- cache: true
+  md5: c4679a5c26767acd3f6d42cdf57bc0e7.dir
+  metric: false
+  path: data/ml-latest-small
+  persist: false
+wdir: ..

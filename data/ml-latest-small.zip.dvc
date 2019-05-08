@@ -1,0 +1,11 @@
+deps:
+- etag: '"eed1a-576cc7e19499e"'
+  path: http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+md5: aa0e9a3700e446772dcecea812ff9f06
+outs:
+- cache: true
+  md5: 31a303aabbc519bd33d025e44d6c2570
+  metric: false
+  path: ml-latest-small.zip
+  persist: false
+wdir: .

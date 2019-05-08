@@ -28,6 +28,7 @@ dependencies:
 - ply
 - requests
 - humanize
+- docopt
 - pip:
   - dvc
   - git+https://github.com/lenskit/lkpy

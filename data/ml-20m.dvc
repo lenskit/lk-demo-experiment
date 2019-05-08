@@ -1,0 +1,14 @@
+cmd: python unpack-data.py data/ml-20m.zip data
+deps:
+- md5: cd245b17a1ae2cc31bb14903e1204af3
+  path: data/ml-20m.zip
+- md5: 68b2ed55497c5cbc813db457ca1fa1bc
+  path: unpack-data.py
+md5: 48933a23cf1dcf69c8bbf8b0a17beaae
+outs:
+- cache: true
+  md5: c330ca8a1a4009f53451a8aeaa325d91.dir
+  metric: false
+  path: data/ml-20m
+  persist: false
+wdir: ..
