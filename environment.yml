@@ -1,0 +1,31 @@
+name: lk-demo
+channels:
+- lenskit
+- mdekstrand
+- defaults
+dependencies:
+- python=3.7
+- pip
+- pandas
+- scipy
+- numba
+- cffi
+- pyarrow
+- fastparquet
+- joblib
+- tbb
+- notebook
+- seaborn
+- ipython
+- hpfrec
+- implicit
+- contextlib2
+- gitpython
+- configparser
+- pyyaml
+- configobj
+- pillow
+- ply
+- pip:
+  - dvc
+  - git+https://github.com/lenskit/lkpy
