@@ -1,0 +1,12 @@
+cmd: python train-model.py II mlsmall
+deps:
+- md5: c4679a5c26767acd3f6d42cdf57bc0e7.dir
+  path: data/ml-latest-small
+md5: 6cb0003348f987f4b72286e767b8191b
+outs:
+- cache: true
+  md5: 4ad54471280b8a7fc83b05291ae90eb0
+  metric: false
+  path: models/mlsmall-II.pkl.gz
+  persist: false
+wdir: ..

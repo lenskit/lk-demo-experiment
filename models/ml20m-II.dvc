@@ -1,0 +1,12 @@
+cmd: python train-model.py II ml20m
+deps:
+- md5: c330ca8a1a4009f53451a8aeaa325d91.dir
+  path: data/ml-20m
+md5: 713540707895c77da1bff0a582118331
+outs:
+- cache: true
+  md5: 73b9adae666beb2ad2db7dab63652704
+  metric: false
+  path: models/ml20m-II.pkl.gz
+  persist: false
+wdir: ..
