@@ -1,0 +1,12 @@
+cmd: python ../unpack-data.py ml-1m.zip
+deps:
+- md5: c4d9eecfca2ab87c1945afe126590906
+  path: ml-1m.zip
+md5: 203838de128d0917dadea703342b6a2e
+outs:
+- cache: true
+  md5: 82cb2289085c2178418e006f69afc645.dir
+  metric: false
+  path: ml-1m
+  persist: false
+wdir: .
