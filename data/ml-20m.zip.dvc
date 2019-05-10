@@ -1,7 +1,7 @@
 deps:
-- etag: '"bd7f3fe-53f1154210f80"'
+- etag: '"bd7f3fe-58862b641c2df"'
   path: http://files.grouplens.org/datasets/movielens/ml-20m.zip
-md5: 19a5cebbb8d02bbb3e93b0f000b01861
+md5: 19fab883905381c9a0359234fc883ad7
 outs:
 - cache: true
   md5: cd245b17a1ae2cc31bb14903e1204af3
