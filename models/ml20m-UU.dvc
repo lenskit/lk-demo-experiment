@@ -2,14 +2,14 @@ cmd: python train-model.py UU ml20m
 deps:
 - md5: c330ca8a1a4009f53451a8aeaa325d91.dir
   path: data/ml-20m
-- md5: 77e2fbc6ea3da77d7c62329dd44d547c
+- md5: 7df66c8b2b133ed4ed7d9cbc4fa0e267
   path: train-model.py
 - md5: 2a39e818b7e6f5fc6dd6329986ff1062
   path: lkdemo/algorithms.py
-md5: 233c87ef675d0d50a260b4584df83346
+md5: a0778fae8f50a4ab60bfb9733454d8a4
 outs:
 - cache: true
-  md5: eb052a0df7d4e353c8ef7a5abda1a082
+  md5: 6ca5754881bf0d1b47b92da209346049
   metric: false
   path: models/ml20m-UU.pkl.gz
   persist: false

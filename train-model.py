@@ -16,7 +16,13 @@ import pathlib
 import importlib
 import gzip
 import pickle
+try:
+  import resource
+except ImportError:
+  resource = None
 
+from lenskit.util import Stopwatch
+from lenskit.algorithms import Recommender
 from lkdemo import datasets, log
 
 _log = log.script(__file__)
@@ -38,7 +44,14 @@ data = getattr(datasets, dsname)
 _log.info('loading ratings')
 ratings = data.ratings
 _log.info('training model')
+algo = Recommender.adapt(algo)
+timer = Stopwatch()
 algo.fit(ratings)
+timer.stop()
+_log.info('trained model in %s', timer)
+if resource:
+    res = resource.getrusage(resource.RUSAGE_SELF)
+    _log.info('%.2fs user, %.2fs system, %.1fMB max RSS', res.ru_utime, res.ru_stime, res.ru_maxrss / 1024)
 
 if out is None:
     out = f'models/{dsname}-{model}.pkl.gz'

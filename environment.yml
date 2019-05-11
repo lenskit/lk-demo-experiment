@@ -29,6 +29,7 @@ dependencies:
 - requests
 - humanize
 - docopt
+- line_profiler
 - pip:
   - dvc
   - git+https://github.com/lenskit/lkpy
