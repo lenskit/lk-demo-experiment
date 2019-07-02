@@ -5,6 +5,7 @@ channels:
 - defaults
 dependencies:
 - python=3.7
+- lenskit>=0.7
 - pip
 - pandas
 - scipy
@@ -32,4 +33,3 @@ dependencies:
 - line_profiler
 - pip:
   - dvc
-  - git+https://github.com/lenskit/lkpy
