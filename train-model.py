@@ -28,7 +28,7 @@ from lkdemo import datasets, log
 _log = log.script(__file__)
 
 args = docopt(__doc__)
-mod_name = args.get('MODULE', 'lkdemo.algorithms')
+mod_name = args.get('-m', 'lkdemo.algorithms')
 out = args.get('FILE', None)
 model = args.get('ALGO')
 dsname = args.get('DATASET')
