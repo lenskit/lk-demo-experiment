@@ -5,6 +5,7 @@ Usage:
   unpack-data.py <zip-file> [<dest-dir>]
 """
 
+import os, os.path
 import zipfile
 
 from docopt import docopt
@@ -15,6 +16,8 @@ zfname = args['<zip-file>']
 dir = args.get('<dest-dir>', None)
 if dir is None:
   dir = '.'
+if not os.path.exists(dir):
+    os.mkdir(dir)
 
 with zipfile.ZipFile(zfname) as zf:
     for member in zf.namelist():

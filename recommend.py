@@ -16,6 +16,7 @@ import gzip
 import pickle
 
 from lkdemo import datasets, log
+from lenskit.util import Stopwatch
 
 _log = log.script(__file__)
 
@@ -37,9 +38,11 @@ with gzip.open(args['MODEL'], 'rb') as f:
 
 for u in args['USER']:
     u = int(u)
+    timer = Stopwatch()
     _log.info('getting %d recs for user %d', n, u)
     recs = algo.recommend(u, n)
     if items is not None:
         recs = recs.join(items, how='left', on='item')
     print('recommendations for', u)
     print(recs)
+    _log.info('completed recommendations in %s', timer)

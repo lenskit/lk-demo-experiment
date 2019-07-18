@@ -1,0 +1,12 @@
+cmd: python train-model.py II bx
+deps:
+- path: data/bx
+  md5: 98ee04d046acb394d3b4916908bca3d0.dir
+md5: e5fda527d4d076ace5dce798439df4cd
+outs:
+- cache: true
+  metric: false
+  path: models/bx-II.pkl.gz
+  persist: false
+  md5: 87cfdeb65bc7e5c601d8e9c92aabf8e5
+wdir: ..
