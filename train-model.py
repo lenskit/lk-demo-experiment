@@ -2,9 +2,10 @@
 Train a recommendation model.
 
 Usage:
-  train-model.py [-m MODULE] [-o FILE] ALGO DATASET
+  train-model.py [options] ALGO DATASET
 
 Options:
+  --debug       write debug logging info
   -m MODULE     import algorithms from MODULE
   -o FILE       write trained model to FILE
   ALGO          name of algorithm to load
@@ -25,10 +26,13 @@ from lenskit.util import Stopwatch
 from lenskit.algorithms import Recommender
 from lkdemo import datasets, log
 
-_log = log.script(__file__)
 
 args = docopt(__doc__)
-mod_name = args.get('-m', 'lkdemo.algorithms')
+_log = log.script(__file__, args['--debug'])
+
+mod_name = args.get('-m')
+if not mod_name:
+    mod_name = 'lkdemo.algorithms'
 out = args.get('FILE', None)
 model = args.get('ALGO')
 dsname = args.get('DATASET')
