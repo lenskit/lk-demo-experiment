@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Usage:
-    train-model.py [-p partitions] [-d destination] DATASET
+    split-data.py [-p partitions] [-d destination] DATASET
 
 Options:  
-    -p partitions     number of cross-folds [default: 5]
+    -p partitions     read split data from directory [default: 5]
     -d destination    destination directory [default: splitData]
     DATASET           name of data set to load  
 """
@@ -12,6 +12,7 @@ Options:
 from docopt import docopt
 from lkdemo import datasets, log
 from pathlib import Path
+
 import lenskit.crossfold as xf
 
 _log = log.script(__file__)
