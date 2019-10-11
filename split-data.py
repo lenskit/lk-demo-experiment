@@ -4,7 +4,7 @@ Usage:
     split-data.py [-p partitions] [-d destination] DATASET
 
 Options:  
-    -p partitions     read split data from directory [default: 5]
+    -p partitions     number of cross-folds [default: 5]
     -d destination    destination directory [default: splitData]
     DATASET           name of data set to load  
 """
