@@ -13,7 +13,7 @@ Options:
 
 from docopt import docopt
 from pathlib import Path
-from lenskit.algorithms import Recommender
+from lenskit.algorithms import Recommender, Predictor
 from lenskit import batch, util
 from lkdemo import log
 
@@ -27,29 +27,34 @@ args = docopt(__doc__)
 mod_name = args.get('-m')
 splitsDIR = args.get('--splits')
 outDIR = args.get('-o')
-n_recs = args.get('-n')
+n_recs = int(args.get('-n'))
 model = args.get('ALGO')
 
 _log.info(f'importing from module {mod_name}')
 algorithms = importlib.import_module(mod_name)
 algo = getattr(algorithms, model)
 
+Path(outDIR).mkdir(exist_ok=True)
 path = Path(splitsDIR)
-dest = Path(outDIR).parent.mkdir(parents=True, exist_ok=True)
+dest = Path(outDIR)
 
 for file in path.glob("test-*"):
     file_num = (file.stem[-1:])
     test = pd.read_csv(file, sep=',')
     train = pd.read_csv(path / f'train-{file_num}.csv', sep=',')
     users = test.user.unique()
-    #fittable = util.clone(algo)
-    fittable = Recommender.adapt(algo)
+    fittable = util.clone(algo)
+    fittable = Recommender.adapt(fittable)
     fittable.fit(train)
-    _log.info(f'generating recommendations for unique users')
+    _log.info(f'generating recommendations for unique users')  
     recs = batch.recommend(fittable, users, n_recs)
-    _log.info(f'writing recommendations to file')
-    #recs.to_csv(dest / f'recs-{file_num}', index = False)
-    print(type(recs))
+    _log.info(f'writing recommendations to {dest}')
+    recs.to_csv(dest / f'recs-{file_num}', index = False)
+    
+    if isinstance(fittable, Predictor):
+        fittable.fit(train)
+        preds = batch.predict(fittable, train)
+        recs.to_csv(dest / f'pred-{file_num}', index = False)
 
 
 
