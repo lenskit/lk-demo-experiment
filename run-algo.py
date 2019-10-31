@@ -34,27 +34,37 @@ _log.info(f'importing from module {mod_name}')
 algorithms = importlib.import_module(mod_name)
 algo = getattr(algorithms, model)
 
-Path(outDIR).mkdir(exist_ok=True)
 path = Path(splitsDIR)
 dest = Path(outDIR)
-
+dest.mkdir(exist_ok=True)
+#test-*.csv
 for file in path.glob("test-*"):
-    file_num = (file.stem[-1:])
-    test = pd.read_csv(file, sep=',')
-    train = pd.read_csv(path / f'train-{file_num}.csv', sep=',')
-    users = test.user.unique()
-    fittable = util.clone(algo)
-    fittable = Recommender.adapt(fittable)
-    fittable.fit(train)
-    _log.info(f'generating recommendations for unique users')  
-    recs = batch.recommend(fittable, users, n_recs)
-    _log.info(f'writing recommendations to {dest}')
-    recs.to_csv(dest / f'recs-{file_num}', index = False)
     
-    if isinstance(fittable, Predictor):
+    #check .csv (if not csv then an error is thrown out)
+    try:
+        test = pd.read_csv(file, sep=',')
+        suffix = file.name[5:]
+        train = pd.read_csv(path / f'train-{suffix}', sep=',')
+        users = test.user.unique()
+        
+        fittable = util.clone(algo)
+        fittable = Recommender.adapt(fittable)
         fittable.fit(train)
-        preds = batch.predict(fittable, train)
-        recs.to_csv(dest / f'pred-{file_num}', index = False)
-
+        
+        _log.info(f'generating recommendations for unique users')  
+        recs = batch.recommend(fittable, users, n_recs)
+        recs["Algorithm"] = model
+        _log.info(f'writing recommendations to {dest}')
+        suffix = model + suffix
+        recs.to_csv(dest / f'recs-{suffix}', index = False)
+        
+        if isinstance(fittable, Predictor):
+            _log.info(f'generating predictions for user-item') 
+            preds = batch.predict(fittable, test)
+            preds["Algorithm"] = model
+            preds.to_csv(dest / f'pred-{suffix}', index = False)
+    except FileNotFoundError:
+        _log.error(f'{file} is not a csv file')
+    
 
 
