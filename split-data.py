@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Usage:
-    split-data.py [-p partitions] [-d destination] DATASET
+    split-data.py [-p partitions] [-o output] DATASET
 
 Options:  
     -p partitions     number of cross-folds [default: 5]
-    -d destination    destination directory [default: splitData]
+    -o output         destination directory [default: data-split]
     DATASET           name of data set to load  
 """
 
@@ -21,7 +21,7 @@ args = docopt(__doc__)
 
 dsname = args.get('DATASET')
 partitions = int(args.get('-p'))
-dest = args.get('-d')
+output = args.get('-o')
 
 _log.info('locating data set %s', dsname)
 data = getattr(datasets, dsname)
@@ -29,9 +29,8 @@ data = getattr(datasets, dsname)
 _log.info('loading ratings')
 ratings = data.ratings
 
-path = Path(dest)
+path = Path(output)
 path.mkdir(exist_ok=True, parents=True)
-
 
 _log.info('writing to %s', path)
 testRowsPerUsers = 5
