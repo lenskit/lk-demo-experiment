@@ -1,0 +1,21 @@
+### Pipeline
+dvc run -d data\ml-latest-small\ratings.csv -o data-split\mlsmall python split-data.py mlsmall
+dvc run -d data\ml-1m\ratings.dat -o splitData\ml1m python split-data.py ml1m
+dvc run -d data\ml-100k\u.data -o splitData\ml100k python split-data.py ml100k
+dvc run -d data\ml-10m\ratings.dat -o splitData\ML10M python split-data.py ML10M
+dvc run -d data\ml-20m\ratings.csv -o splitData\ML20M python split-data.py ML20M
+
+dvc run -d splitData\mlsmall -o output\mlsmall-II python run-algo.py II mlsmall
+dvc run -d splitData\mlsmall -o output\mlsmall-UU python run-algo.py UU mlsmall
+dvc run -d splitData\mlsmall -o output\mlsmall-ALS python run-algo.py ALS mlsmall
+dvc run -d splitData\mlsmall -o output\mlsmall-IALS python run-algo.py IALS mlsmall
+dvc run -d splitData\ml1m -o output\ml1m-II python run-algo.py II ml1m
+dvc run -d splitData\ml1m -o output\ml1m-UU python run-algo.py UU ml1m
+dvc run -d splitData\ml1m -o output\ml1m-ALS python run-algo.py ALS ml1m
+dvc run -d splitData\ml1m -o output\ml1m-IALS python run-algo.py IALS ml1m
+dvc run -d splitData\ml100k -o output\ml100k-II python run-algo.py II ml100k
+dvc run -d splitData\ml100k -o output\ml100k-UU python run-algo.py UU ml100k
+dvc run -d splitData\ml100k -o output\ml100k-ALS python run-algo.py ALS ml100k
+dvc run -d splitData\ml100k -o output\ml100k-IALS python run-algo.py IALS ml100k
+
+dvc run -d splitData\ml100k -d output\mlsmall-II eval-output.ipynb
