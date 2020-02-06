@@ -3,6 +3,7 @@ channels:
 - lenskit
 - mdekstrand
 - defaults
+- conda-forge
 dependencies:
 - python=3.7
 - lenskit>=0.7
@@ -31,5 +32,4 @@ dependencies:
 - humanize
 - docopt
 - line_profiler
-- pip:
-  - dvc
+- dvc
