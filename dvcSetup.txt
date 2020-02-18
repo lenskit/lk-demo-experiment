@@ -1,1 +1,0 @@
-dvc run -d .\data\ml-latest-small\ratings.csv -o data-split/mlsmall -f data-split/mlsmall.dvc python split-data.py -o data-split/mlsmall mlsmall
