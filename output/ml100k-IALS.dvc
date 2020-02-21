@@ -1,0 +1,12 @@
+md5: 97b011b7e7242afcb28ff23504f1dd4f
+cmd: python run-algo.py --splits data-split\ml100k -o output/ml100k-IALS IALS
+wdir: ..
+deps:
+- md5: cf412a6b9f5d503168e82ee7e8684cd0.dir
+  path: data-split/ml100k
+outs:
+- md5: 60e356adf1f2740a4350e46dcd1db8d3.dir
+  path: output/ml100k-IALS
+  cache: true
+  metric: false
+  persist: false
