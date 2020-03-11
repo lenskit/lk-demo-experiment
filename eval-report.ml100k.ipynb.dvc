@@ -1,0 +1,20 @@
+md5: 534909f8f9a66a95fd2e67d4939e98dc
+cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
+wdir: .
+deps:
+- md5: aaffbf26959774324d80837224272252.dir
+  path: output/ml100k-ALS
+- md5: 3096f5d1af8f0cf0d9638c1db823c83d.dir
+  path: output/ml100k-IALS
+- md5: be34a158cba6c257ab2f9ec168203cab.dir
+  path: output/ml100k-II
+- md5: 2c7fe862338a391b34da6bf1327d9f40.dir
+  path: output/ml100k-UU
+- md5: 98773cd32d9928f6baf12b510ff61495
+  path: eval-report.ipynb
+outs:
+- md5: 82ac6618ef593302d58ac7b81a1ff416
+  path: eval-report.ml100k.ipynb
+  cache: false
+  metric: false
+  persist: false

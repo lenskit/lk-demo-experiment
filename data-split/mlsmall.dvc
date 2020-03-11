@@ -1,0 +1,12 @@
+md5: d2c048c27a54825c540bc97606343c3f
+cmd: python split-data.py -o data-split/mlsmall mlsmall
+wdir: ..
+deps:
+- md5: ac0cf1d26aed3a5b6777a295231976ad
+  path: data/ml-latest-small/ratings.csv
+outs:
+- md5: 0332159fe4d3f716f3c0373ba2ec3645.dir
+  path: data-split/mlsmall
+  cache: true
+  metric: false
+  persist: false

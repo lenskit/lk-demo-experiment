@@ -3,3 +3,5 @@ __pycache__
 *.pyc
 *.prof
 *.lprof
+.ipynb_checkpoints/
+*.html

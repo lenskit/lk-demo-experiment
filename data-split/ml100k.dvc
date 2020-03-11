@@ -1,0 +1,12 @@
+md5: 016d0f4afbe4b0bffdb4529a0be7d592
+cmd: python split-data.py -o data-split/ml100k ml100k
+wdir: ..
+deps:
+- md5: 6e47046882bad158b0efbb84cd5cb987
+  path: data/ml-100k/u.data
+outs:
+- md5: bada8b5fc3b766ba8d9d44f3b7bb0809.dir
+  path: data-split/ml100k
+  cache: true
+  metric: false
+  persist: false

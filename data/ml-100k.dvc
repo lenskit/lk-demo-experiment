@@ -9,4 +9,3 @@ outs:
   metric: false
   path: ml-100k
   persist: false
-wdir: .
