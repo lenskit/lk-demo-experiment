@@ -1,5 +1,5 @@
 md5: 7b6c6a03d2a2c6cdb2aa1b6814cdaae4
-cmd: python run-algo.py --splits data-split\ml100k -o output/ml100k-UU UU
+cmd: python run-algo.py --splits data-split/ml100k -o output/ml100k-UU UU
 wdir: ..
 deps:
 - md5: bada8b5fc3b766ba8d9d44f3b7bb0809.dir
