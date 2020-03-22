@@ -11,6 +11,8 @@ Options:
     ALGO            name of algorithm to load 
 """
 
+import os
+import multiprocessing
 from docopt import docopt
 from pathlib import Path
 from lenskit.algorithms import Recommender, Predictor
@@ -29,6 +31,13 @@ input = args.get('--splits')
 output = args.get('-o')
 n_recs = int(args.get('-n'))
 model = args.get('ALGO')
+
+ncpus = os.environ.get('LK_NUM_PROCS', None)
+if ncpus is None:
+    ncpus = max(multiprocessing.cpu_count() // 2, 1)
+else:
+    ncpus = int(ncpus)
+
 
 _log.info(f'importing from module {mod_name}')
 algorithms = importlib.import_module(mod_name)

@@ -1,0 +1,12 @@
+md5: 8b7c965540de536953fd09819788d9c3
+cmd: python run-algo.py --splits data-split/ml100k -o output/ml100k-Pop Pop
+wdir: ..
+deps:
+- md5: bada8b5fc3b766ba8d9d44f3b7bb0809.dir
+  path: data-split/ml100k
+outs:
+- md5: a31d3ba9d957b44c84a620e4680d700c.dir
+  path: output/ml100k-Pop
+  cache: true
+  metric: false
+  persist: false

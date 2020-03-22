@@ -1,4 +1,4 @@
-md5: 7b6c6a03d2a2c6cdb2aa1b6814cdaae4
+md5: 4015870f2ff35388e6327c5b66647367
 cmd: python run-algo.py --splits data-split/ml100k -o output/ml100k-UU UU
 wdir: ..
 deps:
