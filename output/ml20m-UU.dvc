@@ -1,0 +1,12 @@
+md5: 8283c8a77db80af14a3ef7406016df68
+cmd: python run-algo.py --splits data-split/ml20m -o output/ml20m-UU UU
+wdir: ..
+deps:
+- md5: 2323819a1805e5d807209e1b9eb6f94c.dir
+  path: data-split/ml20m
+outs:
+- md5: acda85746fcf97381a54c6e27d13b67c.dir
+  path: output/ml20m-UU
+  cache: true
+  metric: false
+  persist: false

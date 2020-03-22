@@ -1,0 +1,12 @@
+md5: 0bb3a723f0211074eccb109a0051a9dc
+cmd: python run-algo.py --splits data-split/ml20m -o output/ml20m-Pop Pop
+wdir: ..
+deps:
+- md5: bada8b5fc3b766ba8d9d44f3b7bb0809.dir
+  path: data-split/ml20m
+outs:
+- md5: f57cbf9baad88803d7a67ad4b317b388.dir
+  path: output/ml20m-Pop
+  cache: true
+  metric: false
+  persist: false
