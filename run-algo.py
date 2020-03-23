@@ -17,7 +17,7 @@ from docopt import docopt
 from pathlib import Path
 from lenskit.algorithms import Recommender, Predictor
 from lenskit import batch, util
-from lkdemo import log
+from lkdemo import log, datasets
 
 import importlib
 import pandas as pd
@@ -48,25 +48,37 @@ path = Path(input)
 dest = Path(output)
 dest.mkdir(exist_ok=True , parents=True)
 
+ds_def = getattr(datasets, path.name, None)
+
 for file in path.glob("test-*"):
     test = pd.read_csv(file, sep=',')
     suffix = file.name[5:]
+    train_file = path / f'train-{suffix}'
+    
+    if 'index' in test.columns:
+        _log.info('setting test index')
+        test = test.set_index('index')
+    else:
+        _log.warn('no index column found in %s', file.name)
 
-    try:
+    if train_file.exists():
+        _log.info('loading training data from %s', train_file)
         train = pd.read_csv(path / f'train-{suffix}', sep=',')
-    except FileNotFoundError:
-        _log.error(f'train-{suffix} does not exists')
+    elif ds_def is not None:
+        _log.info('extracting training data from data set %s', path.name)
+        train = datasets.ds_diff(ds_def.ratings, test)
+        train.reset_index(drop=True, inplace=True)
+    else:
+        _log.error('could not find training data for %s', file.name)
         continue
-    
+
     _log.info('Fitting the model')
-    
-    users = test.user.unique()
-    
     fittable = util.clone(algo)
     fittable = Recommender.adapt(fittable)
     fittable.fit(train)
     
     _log.info(f'generating recommendations for unique users')  
+    users = test.user.unique()
     recs = batch.recommend(fittable, users, n_recs)
     _log.info(f'writing recommendations to {dest}')
     suffix = model + suffix
@@ -76,6 +88,3 @@ for file in path.glob("test-*"):
         _log.info(f'generating predictions for user-item') 
         preds = batch.predict(fittable, test)
         preds.to_csv(dest / f'pred-{suffix}', index = False)
-    
-
-
