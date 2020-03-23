@@ -36,6 +36,6 @@ path.mkdir(exist_ok=True, parents=True)
 _log.info('writing to %s', path)
 testRowsPerUsers = 5
 for i, tp in enumerate(xf.partition_users(ratings, partitions, xf.SampleN(testRowsPerUsers)),1):
-    tp.train.to_csv(path / f'train-{i}.csv', index=False)
-    tp.test.to_csv(path / f'test-{i}.csv' , index=False)
+    tp.train.to_csv(path / f'train-{i}.csv.gz', index=False)
+    tp.test.to_csv(path / f'test-{i}.csv.gz' , index=False)
     

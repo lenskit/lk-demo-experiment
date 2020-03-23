@@ -1,11 +1,11 @@
-md5: 15e9dfdcb193b5d41258981ec3338fb7
+md5: 0450192f0af080dc78dcd39cbea1387e
 cmd: python split-data.py -o data-split/ml20m ml20m
 wdir: ..
 deps:
 - md5: f95d275e0f2edad2391e5ef864a46628
   path: data/ml-20m/ratings.csv
 outs:
-- md5: 2323819a1805e5d807209e1b9eb6f94c.dir
+- md5: 056eb5375b3dc79783b7ea576d9c6da8.dir
   path: data-split/ml20m
   cache: true
   metric: false
