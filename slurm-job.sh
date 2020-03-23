@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -n lkpy
-#SRUN -n lkpy
+#SBATCH -J lkpy
+#SRUN -J lkpy
 
 node=$(hostname)
 echo "Running job on node $node" >&2
