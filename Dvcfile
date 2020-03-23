@@ -1,3 +1,6 @@
 deps:
-- path: eval-report-ml100k.ipynb
-- path: eval-report-ml20m.ipynb
+- path: eval-report.ml100k.ipynb
+  md5: 277c98cd6b18017c7d252b388b83af9b
+- path: eval-report.ml20m.ipynb
+  md5: 5abcf170253509652a883d300e267329
+md5: e4cc965dec0057097010c7e6b31bfea9
