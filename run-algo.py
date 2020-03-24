@@ -79,12 +79,12 @@ for file in path.glob("test-*"):
     
     _log.info(f'generating recommendations for unique users')  
     users = test.user.unique()
-    recs = batch.recommend(fittable, users, n_recs)
+    recs = batch.recommend(fittable, users, n_recs, n_jobs=ncpus)
     _log.info(f'writing recommendations to {dest}')
     suffix = model + suffix
     recs.to_csv(dest / f'recs-{suffix}', index = False)
     
     if isinstance(fittable, Predictor):
         _log.info(f'generating predictions for user-item') 
-        preds = batch.predict(fittable, test)
+        preds = batch.predict(fittable, test, n_jobs=ncpus)
         preds.to_csv(dest / f'pred-{suffix}', index = False)
