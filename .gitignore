@@ -1,7 +1,10 @@
 .vscode/
 __pycache__
+*.log
+*.out
 *.pyc
 *.prof
 *.lprof
 .ipynb_checkpoints/
 *.html
+/scratch/

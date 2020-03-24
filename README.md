@@ -9,6 +9,9 @@ This experiment uses [DVC](https://dvc.org) to script the experiment, and is lai
 - `lkdemo` is a Python package containing support code (e.g. log configurations) and algorithm definitions
 - `data` contains data files and controls
 - `models` contains trained LensKit models to run recommendations on individual data sets
+- `data-split` contains cross-validation splits, produced by `split-data.py`.  These splits only contain the
+  test files, to save disk space - the train files can be obtained with `lkdemo.datasets.ds_diff`, as seen
+  in `run-algo.py`.
 - `output` contains the results of running LensKit train/test runs
 - Various Python scripts to run individual pieces of the analysis
 - Jupyter notebooks to analyze results
