@@ -1,3 +1,5 @@
+import pandas as pd
+
 from lenskit import datasets as ds
 
 ml20m = ds.MovieLens('data/ml-20m')
@@ -8,3 +10,10 @@ ml10m = ds.ML10M('data/ml-10M100K')
 
 if hasattr(ds, 'BookCrossing'):
     bx = ds.BookCrossing('data/bx')
+
+
+def ds_diff(full, subset):
+    "Return the difference of two data sets."
+    mask = pd.Series(True, index=full.index)
+    mask[subset.index] = False
+    return full[mask]
