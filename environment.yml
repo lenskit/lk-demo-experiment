@@ -5,7 +5,7 @@ channels:
 - conda-forge
 dependencies:
 - python=3.7
-- lenskit>=0.7
+- lenskit>=0.9
 - pip
 - pandas
 - scipy
