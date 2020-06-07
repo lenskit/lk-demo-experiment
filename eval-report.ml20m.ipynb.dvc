@@ -13,6 +13,8 @@ deps:
   path: runs/ml20m-II
 - md5: c2662e081129987da8e281b22e9df255.dir
   path: runs/ml20m-UU
+- path: runs/ml20m-TFMF
+- path: runs/ml20m-BPR
 - md5: a8a899911433f2ef1f50722ea4707546
   path: eval-report.ipynb
 outs:

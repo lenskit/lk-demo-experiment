@@ -1,4 +1,4 @@
-md5: 241654488647957022f7d8e5c6210ecb
+md5: c43c2897907d378691ed5a6559539faa
 cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-ALS ALS
 wdir: ..
 deps:

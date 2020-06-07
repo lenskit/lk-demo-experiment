@@ -2,9 +2,9 @@ cmd: python unpack-data.py data/ml-20m.zip data
 deps:
 - md5: cd245b17a1ae2cc31bb14903e1204af3
   path: data/ml-20m.zip
-- md5: c9465d425cdc64458ad028d4ae048f11
+- md5: c9f8423d36c0be1c42fed36a1ed101b6
   path: unpack-data.py
-md5: 059d3ea3f17b6d7f07a93c3ae08457d0
+md5: 21fc82da112b2ae22caa6e13ee578417
 outs:
 - cache: true
   md5: c330ca8a1a4009f53451a8aeaa325d91.dir

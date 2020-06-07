@@ -8,7 +8,7 @@ echo "Running job on node $node" >&2
 # Boise State's SLURM cluster has aggresive ulimits, even with larger job requests
 # Reset those limits
 ulimit -v unlimited
-ulimit -u 1024
+ulimit -u 2048
 
 # Configure LensKit threading based on SLURM
 cpus="$SLURM_CPUS_ON_NODE"

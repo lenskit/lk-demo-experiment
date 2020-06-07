@@ -24,5 +24,6 @@ dependencies:
 - docopt
 - line_profiler
 - dvc
+- boto3
 - papermill
-- tensorflow >=2.1
+- tensorflow-gpu >=2.1
