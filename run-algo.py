@@ -11,6 +11,7 @@ Options:
     -n N            number of recommendations for a unique user [default: 100]
     -m MODULE       import algorithms from MODULE [default: lkdemo.algorithms]
     --no-predict    turn off rating prediction
+    --log-file FILE write logs to FILE
     ALGO            name of algorithm to load 
 """
 
@@ -85,6 +86,6 @@ def main(args):
 
 
 if __name__ == '__main__':
-    _log = log.script(__file__)
     args = docopt(__doc__)
+    _log = log.script(__file__, log_file=args['--log-file'])
     main(args)
