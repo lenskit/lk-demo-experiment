@@ -1,0 +1,12 @@
+md5: 3957802a2c0fa5899a0649c7771d1a87
+cmd: python split-data.py -o data-split/ml10m ml10m
+wdir: ..
+deps:
+- md5: 3f317698625386f66177629fa5c6b2dc
+  path: data/ml-10M100K/ratings.dat
+outs:
+- md5: 8fd1377974edc5aadb4994ffff7c7131.dir
+  path: data-split/ml10m
+  cache: true
+  metric: false
+  persist: false
