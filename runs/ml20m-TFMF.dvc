@@ -1,5 +1,6 @@
 md5: a01fb55b9d658b974d6661efd43d3e1c
-cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-TFMF TFMF
+cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-TFMF 
+  --log-file runs/ml20m-TFMF.log TFMF
 wdir: ..
 deps:
 - md5: c3ee128c9719ac7520f29b4f5aa74137.dir
