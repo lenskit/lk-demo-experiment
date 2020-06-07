@@ -7,7 +7,7 @@ import os
 import logging
 import pathlib
 
-_simple_format = logging.Formatter('{levelname} {name} {message}', style='{')
+_simple_format = logging.Formatter('{levelname} {asctime} {name} {message}', style='{')
 
 def setup(debug=False):
     ch = logging.StreamHandler(sys.stderr)
