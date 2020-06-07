@@ -12,3 +12,7 @@
 /ml20m-IALS
 /ml100k-TFMF
 /ml100k-BPR
+/ml10m-ALS
+/ml10m-Bias
+/ml10m-BPR
+/ml20m-BPR

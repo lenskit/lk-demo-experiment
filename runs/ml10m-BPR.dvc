@@ -1,0 +1,13 @@
+md5: e2311250280ac3b8e7b98f13da98c494
+cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-BPR --log-file runs/ml10m-BPR.log
+  --no-predict BPR
+wdir: ..
+deps:
+- md5: 8fd1377974edc5aadb4994ffff7c7131.dir
+  path: data-split/ml10m
+outs:
+- md5: f3fe2864c3a53de4f132ce2073a3a683.dir
+  path: runs/ml10m-BPR
+  cache: true
+  metric: false
+  persist: false
