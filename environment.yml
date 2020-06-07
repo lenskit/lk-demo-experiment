@@ -25,3 +25,4 @@ dependencies:
 - line_profiler
 - dvc
 - papermill
+- tensorflow >=2.1

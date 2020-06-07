@@ -1,12 +1,12 @@
 md5: 562792967e99c58a75f2d8f1d9836702
-cmd: python run-algo.py --splits data-split/ml20m -o output/ml20m-Bias Bias
+cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-Bias Bias
 wdir: ..
 deps:
 - md5: 9c82e3dbd6aa78110a4b914d904b5060.dir
   path: data-split/ml20m
 outs:
 - md5: 4b1954ae4d3e283628bb1cc9dd3d4793.dir
-  path: output/ml20m-Bias
+  path: runs/ml20m-Bias
   cache: true
   metric: false
   persist: false

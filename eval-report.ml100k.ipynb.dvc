@@ -1,18 +1,20 @@
 md5: 6282cfee3785c331fe2270179537b7ee
 cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
 deps:
-- path: output/ml100k-Bias
+- path: runs/ml100k-Bias
   md5: 207481bbf294d0d5c8efa7f02d533941.dir
-- path: output/ml100k-Pop
+- path: runs/ml100k-Pop
   md5: 9097cb72d506821f3838fb8f480074d5.dir
 - md5: a61b739c076ecbdca30fb42d1845a7b9.dir
-  path: output/ml100k-ALS
+  path: runs/ml100k-ALS
 - md5: fbfc5a89096a4642f911fc5f7482b32c.dir
-  path: output/ml100k-IALS
+  path: runs/ml100k-IALS
 - md5: 391fda6fc3d54f2aeb676b4e01360c9c.dir
-  path: output/ml100k-II
+  path: runs/ml100k-II
 - md5: b6f5d09b288620a53a65f136b93fb546.dir
-  path: output/ml100k-UU
+  path: runs/ml100k-UU
+- path: runs/ml100k-TFMF
+- path: runs/ml100k-BPR
 - md5: 6e944cd3287499899d59bfa56532c6b6
   path: eval-report.ipynb
 outs:

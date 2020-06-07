@@ -1,12 +1,12 @@
 md5: d9c3bd80d0d09d03e4a7a0701c1c653b
-cmd: python run-algo.py --splits data-split/ml20m -o output/ml20m-IALS IALS
+cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-IALS IALS
 wdir: ..
 deps:
 - md5: 9c82e3dbd6aa78110a4b914d904b5060.dir
   path: data-split/ml20m
 outs:
 - md5: 652d244cc78643fd86c15b412416665d.dir
-  path: output/ml20m-IALS
+  path: runs/ml20m-IALS
   cache: true
   metric: false
   persist: false

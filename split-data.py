@@ -16,29 +16,31 @@ from pathlib import Path
 
 import lenskit.crossfold as xf
 
-_log = log.script(__file__)
+def main(args):
+    dsname = args.get('DATASET')
+    partitions = int(args.get('-p'))
+    output = args.get('-o')
 
-args = docopt(__doc__)
+    _log.info('locating data set %s', dsname)
+    data = getattr(datasets, dsname)
 
-dsname = args.get('DATASET')
-partitions = int(args.get('-p'))
-output = args.get('-o')
+    _log.info('loading ratings')
+    ratings = data.ratings
 
-_log.info('locating data set %s', dsname)
-data = getattr(datasets, dsname)
+    path = Path(output)
+    path.mkdir(exist_ok=True, parents=True)
 
-_log.info('loading ratings')
-ratings = data.ratings
+    _log.info('writing to %s', path)
+    testRowsPerUsers = 5
+    for i, tp in enumerate(xf.partition_users(ratings, partitions, xf.SampleN(testRowsPerUsers)), 1):
+        # _log.info('writing train set %d', i)
+        # tp.train.to_csv(path / f'train-{i}.csv.gz', index=False)
+        _log.info('writing test set %d', i)
+        tp.test.index.name = 'index'
+        tp.test.to_csv(path / f'test-{i}.csv.gz')
+        
 
-path = Path(output)
-path.mkdir(exist_ok=True, parents=True)
-
-_log.info('writing to %s', path)
-testRowsPerUsers = 5
-for i, tp in enumerate(xf.partition_users(ratings, partitions, xf.SampleN(testRowsPerUsers)), 1):
-    # _log.info('writing train set %d', i)
-    # tp.train.to_csv(path / f'train-{i}.csv.gz', index=False)
-    _log.info('writing test set %d', i)
-    tp.test.index.name = 'index'
-    tp.test.to_csv(path / f'test-{i}.csv.gz')
-    
+if __name__ == '__main__':
+    _log = log.script(__file__)
+    args = docopt(__doc__)
+    main(args)

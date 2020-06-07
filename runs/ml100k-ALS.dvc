@@ -1,12 +1,12 @@
 md5: 6710f60a0bbadefc51e2ecc1d5288c0d
-cmd: python run-algo.py --splits data-split/ml100k -o output/ml100k-ALS ALS
+cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-ALS ALS
 wdir: ..
 deps:
 - md5: c3ee128c9719ac7520f29b4f5aa74137.dir
   path: data-split/ml100k
 outs:
 - md5: a61b739c076ecbdca30fb42d1845a7b9.dir
-  path: output/ml100k-ALS
+  path: runs/ml100k-ALS
   cache: true
   metric: false
   persist: false
