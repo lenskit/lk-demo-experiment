@@ -2,9 +2,9 @@ cmd: python unpack-data.py data/ml-latest-small.zip data
 deps:
 - md5: 31a303aabbc519bd33d025e44d6c2570
   path: data/ml-latest-small.zip
-- md5: c9465d425cdc64458ad028d4ae048f11
+- md5: c9f8423d36c0be1c42fed36a1ed101b6
   path: unpack-data.py
-md5: 2c5dce0b337c1b1961a612418fb8b41a
+md5: be4afad16a2f13ab09b42cb678c68a8b
 outs:
 - cache: true
   md5: c4679a5c26767acd3f6d42cdf57bc0e7.dir
