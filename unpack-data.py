@@ -15,7 +15,7 @@ def main(args):
     zfname = args['<zip-file>']
     dir = args.get('<dest-dir>', None)
     if dir is None:
-    dir = '.'
+        dir = '.'
     if not os.path.exists(dir):
         os.mkdir(dir)
 
