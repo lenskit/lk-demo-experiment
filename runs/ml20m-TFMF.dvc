@@ -1,12 +1,12 @@
-md5: a01fb55b9d658b974d6661efd43d3e1c
-cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-TFMF 
-  --log-file runs/ml20m-TFMF.log TFMF
+md5: 54cbf1a138c5af737f26449175128745
+cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-TFMF --log-file runs/ml20m-TFMF.log
+  TFMF
 wdir: ..
 deps:
-- md5: c3ee128c9719ac7520f29b4f5aa74137.dir
+- md5: 9c82e3dbd6aa78110a4b914d904b5060.dir
   path: data-split/ml20m
 outs:
-- md5: c214f8f22d76c2bc12a2dd4410601476.dir
+- md5: 217fbcb8df8e91273c649e509f8da68b.dir
   path: runs/ml20m-TFMF
   cache: true
   metric: false
