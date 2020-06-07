@@ -38,6 +38,7 @@ def main(args):
     algorithms = importlib.import_module(mod_name)
 
     algo = getattr(algorithms, model)
+    algo = Recommender.adapt(algo)
 
     path = Path(input)
     dest = Path(output)
@@ -69,20 +70,20 @@ def main(args):
             continue
 
         _log.info('[%s] Fitting the model', timer)
-        fittable = util.clone(algo)
-        fittable = Recommender.adapt(fittable)
-        fittable.fit(train)
-        
-        _log.info('[%s] generating recommendations for unique users', timer)
-        users = test.user.unique()
-        recs = batch.recommend(fittable, users, n_recs)
-        _log.info('[%s] writing recommendations to %s', timer, dest)
-        recs.to_csv(dest / f'recs-{suffix}', index=False)
-        
-        if isinstance(fittable, Predictor) and not args['--no-predict']:
-            _log.info('[%s] generating predictions for user-item', timer)
-            preds = batch.predict(fittable, test)
-            preds.to_csv(dest / f'pred-{suffix}', index=False)
+        model = batch.train_isolated(algo, train)
+        try:
+            _log.info('[%s] generating recommendations for unique users', timer)
+            users = test.user.unique()
+            recs = batch.recommend(model, users, n_recs)
+            _log.info('[%s] writing recommendations to %s', timer, dest)
+            recs.to_csv(dest / f'recs-{suffix}', index=False)
+            
+            if isinstance(algo, Predictor) and not args['--no-predict']:
+                _log.info('[%s] generating predictions for user-item', timer)
+                preds = batch.predict(model, test)
+                preds.to_csv(dest / f'pred-{suffix}', index=False)
+        finally:
+            model.close()
 
 
 if __name__ == '__main__':
