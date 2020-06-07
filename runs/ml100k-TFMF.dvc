@@ -1,11 +1,11 @@
-md5: a01fb55b9d658b974d6661efd43d3e1c
+md5: 19bd88f9096fc159ecbd1c48121efe44
 cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-TFMF TFMF
 wdir: ..
 deps:
 - md5: c3ee128c9719ac7520f29b4f5aa74137.dir
   path: data-split/ml100k
 outs:
-- md5: c214f8f22d76c2bc12a2dd4410601476.dir
+- md5: 5e45bdedc2eb9196afffe8cfcc49ae5e.dir
   path: runs/ml100k-TFMF
   cache: true
   metric: false
