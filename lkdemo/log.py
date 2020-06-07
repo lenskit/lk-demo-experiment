@@ -1,3 +1,7 @@
+"""
+Utilities for configuring and using logging.
+"""
+
 import sys
 import os
 import logging

@@ -1,5 +1,6 @@
 """
-Basic algorithm definitions as starting points.
+This module defines the algorithms, and their default configurations, that
+we are going to use.
 """
 
 from lenskit.algorithms import item_knn, user_knn, als, tf

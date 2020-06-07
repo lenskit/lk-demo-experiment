@@ -1,3 +1,6 @@
+"""
+This module defines the data sets that we are going to work with.
+"""
 import pandas as pd
 
 from lenskit import datasets as ds
