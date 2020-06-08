@@ -9,6 +9,7 @@ echo "Running job on node $node" >&2
 # Reset those limits
 ulimit -v unlimited
 ulimit -u 2048
+ulimit -n 4096
 
 # Configure LensKit threading based on SLURM
 cpus="$SLURM_CPUS_ON_NODE"
