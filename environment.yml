@@ -16,6 +16,8 @@ dependencies:
 - notebook
 - seaborn
 - ipython
+- ipywidgets
+- tqdm
 - implicit
 - statsmodels
 - docopt
