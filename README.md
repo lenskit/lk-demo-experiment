@@ -25,7 +25,9 @@ laid out in several subcomponents:
 
 - `runs` contains the results of running LensKit train/test runs.
 
-- Various Python scripts to run individual pieces of the analysis.
+- Various Python scripts to run individual pieces of the analysis.  They use
+  `docopt` for parsing their arguments and thus have comprehensive usage docs
+  in their docstrings.
 
 - Jupyter notebooks to analyze results.  These are parameterized and run with
   [Papermill][] to analyze different data sets with the same notebook.
