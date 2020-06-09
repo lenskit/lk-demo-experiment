@@ -5,7 +5,7 @@ channels:
 - conda-forge
 dependencies:
 - python=3.8
-- lenskit>=0.9
+- lenskit>=0.10
 - pip
 - pandas
 - scipy
@@ -25,4 +25,4 @@ dependencies:
 - dvc
 - boto3
 - papermill
-- tensorflow-gpu >=2.1
+- tensorflow >=2.1
