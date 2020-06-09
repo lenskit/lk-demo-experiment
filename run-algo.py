@@ -70,6 +70,7 @@ def main(args):
             continue
 
         _log.info('[%s] Fitting the model', timer)
+        # We train isolated to manage resource use
         model = batch.train_isolated(algo, train)
         try:
             _log.info('[%s] generating recommendations for unique users', timer)
