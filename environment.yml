@@ -7,6 +7,7 @@ dependencies:
 - python=3.8
 - lenskit>=0.10
 - pip
+- psutil
 - pandas
 - scipy
 - numba
@@ -21,7 +22,6 @@ dependencies:
 - implicit
 - statsmodels
 - docopt
-- line_profiler
 - dvc
 - boto3
 - papermill
