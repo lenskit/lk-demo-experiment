@@ -5,7 +5,7 @@ Usage:
   train-model.py [-m MODULE] [-o FILE] ALGO DATASET
 
 Options:
-  -m MODULE     import algorithms from MODULE
+  -m MODULE     import algorithms from MODULE [default: lkdemo.algorithms]
   -o FILE       write trained model to FILE
   ALGO          name of algorithm to load
   DATASET       name of data set to load
@@ -17,9 +17,9 @@ import importlib
 import gzip
 import pickle
 try:
-  import resource
+    import resource
 except ImportError:
-  resource = None
+    resource = None
 
 from lenskit.util import Stopwatch
 from lenskit.algorithms import Recommender
