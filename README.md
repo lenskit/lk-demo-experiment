@@ -51,11 +51,15 @@ environment with `conda env update -f environment.yml`.
 The `dvc` program controls runs of individual steps, including downloading data.
 For example, to download the ML-20M data set and recommend with ALS, run:
 
-    dvc repro runs/dvc.yaml:ml20m-ALS
+    dvc repro runs/dvc.yaml:ml20m@ALS
 
 To re-run the whole experiment:
 
     dvc repro
+
+To reproduce results on one data set:
+
+    dvc repro eval-report-ml100k
 
 ## Extending
 
