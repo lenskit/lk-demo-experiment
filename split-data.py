@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 """
 Usage:
     split-data.py [-p partitions] [-o output] DATASET
