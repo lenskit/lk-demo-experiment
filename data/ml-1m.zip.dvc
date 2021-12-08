@@ -1,11 +1,9 @@
 deps:
-- etag: '"5a4b6d-52a7f0bb24940"'
-  path: http://files.grouplens.org/datasets/movielens/ml-1m.zip
-md5: 46d3d5eab4e832f2c7b9a16dc997603e
+- path: http://files.grouplens.org/datasets/movielens/ml-1m.zip
+  checksum: '"5a4b6d-598cfd38b04f2"'
+  size: 5917549
+md5: 24a74f500f5cb07f521905a167e653d4
 outs:
-- cache: true
-  md5: c4d9eecfca2ab87c1945afe126590906
-  metric: false
+- md5: c4d9eecfca2ab87c1945afe126590906
   path: ml-1m.zip
-  persist: false
-wdir: .
+  size: 5917549

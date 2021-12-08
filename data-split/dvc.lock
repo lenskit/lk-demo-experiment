@@ -1,0 +1,46 @@
+schema: '2.0'
+stages:
+  split-ml20m:
+    cmd: python split-data.py -o data-split/ml20m ml20m
+    deps:
+    - path: data/ml-20m/ratings.csv
+      md5: f95d275e0f2edad2391e5ef864a46628
+      size: 533444411
+    outs:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+  split-ml10m:
+    cmd: python split-data.py -o data-split/ml10m ml10m
+    deps:
+    - path: data/ml-10M100K/ratings.dat
+      md5: 3f317698625386f66177629fa5c6b2dc
+      size: 265105635
+    outs:
+    - path: data-split/ml10m
+      md5: fd5d8611ea49d90ffb09077de932863a.dir
+      size: 4009123
+      nfiles: 5
+  split-mlsmall:
+    cmd: python split-data.py -o data-split/mlsmall mlsmall
+    deps:
+    - path: data/ml-latest-small/ratings.csv
+      md5: ac0cf1d26aed3a5b6777a295231976ad
+      size: 2483723
+    outs:
+    - path: data-split/mlsmall
+      md5: cdc41720775e200da2e5978bfe489862.dir
+      size: 35822
+      nfiles: 5
+  split-ml100k:
+    cmd: python split-data.py -o data-split/ml100k ml100k
+    deps:
+    - path: data/ml-100k/u.data
+      md5: 6e47046882bad158b0efbb84cd5cb987
+      size: 1979173
+    outs:
+    - path: data-split/ml100k
+      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
+      size: 53363
+      nfiles: 5

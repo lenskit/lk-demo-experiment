@@ -1,10 +1,9 @@
 deps:
-- etag: '"4b227d-598cfd31b571f"'
-  path: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-md5: 3f84293adb8bf5e10a506d8e26b6e152
+- path: http://files.grouplens.org/datasets/movielens/ml-100k.zip
+  checksum: '"4b227d-598cfd31b571f"'
+  size: 4924029
+md5: f9d096895b7032249670baee349b6f7d
 outs:
-- cache: true
-  md5: 0e33842e24a9c977be4e0107933c0723
-  metric: false
+- md5: 0e33842e24a9c977be4e0107933c0723
   path: ml-100k.zip
-  persist: false
+  size: 4924029

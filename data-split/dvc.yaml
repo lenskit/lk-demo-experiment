@@ -1,0 +1,32 @@
+stages:
+  split-ml100k:
+    cmd: python split-data.py -o data-split/ml100k ml100k
+    wdir: ..
+    deps:
+    - data/ml-100k/u.data
+    outs:
+    - data-split/ml100k
+
+  split-mlsmall:
+    cmd: python split-data.py -o data-split/mlsmall mlsmall
+    wdir: ..
+    deps:
+    - data/ml-latest-small/ratings.csv
+    outs:
+    - data-split/mlsmall
+
+  split-ml10m:
+    cmd: python split-data.py -o data-split/ml10m ml10m
+    wdir: ..
+    deps:
+    - data/ml-10M100K/ratings.dat
+    outs:
+    - data-split/ml10m
+
+  split-ml20m:
+    cmd: python split-data.py -o data-split/ml20m ml20m
+    wdir: ..
+    deps:
+    - data/ml-20m/ratings.csv
+    outs:
+    - data-split/ml20m
