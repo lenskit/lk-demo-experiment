@@ -1,0 +1,74 @@
+schema: '2.0'
+stages:
+  ml100k@II:
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-II II
+    deps:
+    - path: data-split/ml100k
+      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
+      size: 53363
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-II
+      md5: b85951a44386f61e3d68366b57411bc5.dir
+      size: 1294543
+      nfiles: 10
+  ml100k@IALS:
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-IALS IALS
+    deps:
+    - path: data-split/ml100k
+      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
+      size: 53363
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-IALS
+      md5: fe0b0a4246f09884294f27ed398e960f.dir
+      size: 1331729
+      nfiles: 10
+  ml100k@UU:
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-UU UU
+    deps:
+    - path: data-split/ml100k
+      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
+      size: 53363
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-UU
+      md5: b4ea6afd7a07af934080d1744947e004.dir
+      size: 1246365
+      nfiles: 10
+  ml100k@Bias:
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-Bias Bias
+    deps:
+    - path: data-split/ml100k
+      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
+      size: 53363
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-Bias
+      md5: 2e954415bdc93ecbfdeb1cb15f1df1c9.dir
+      size: 1248071
+      nfiles: 10
+  ml100k@ALS:
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-ALS ALS
+    deps:
+    - path: data-split/ml100k
+      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
+      size: 53363
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-ALS
+      md5: c9dd5dc959843537962123ba70ca83fa.dir
+      size: 1294203
+      nfiles: 10
+  ml100k@Pop:
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-Pop Pop
+    deps:
+    - path: data-split/ml100k
+      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
+      size: 53363
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-Pop
+      md5: bcac44a2f5b935bd9556140435b39240.dir
+      size: 420255
+      nfiles: 5

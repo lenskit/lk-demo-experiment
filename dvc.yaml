@@ -1,0 +1,71 @@
+# This pipeline defines top-level output stages.
+stages:
+  eval-report-ml100k:
+    cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
+    deps:
+      - eval-report.ipynb
+      - runs/ml100k-Pop
+      - runs/ml100k-Bias
+      - runs/ml100k-II
+      - runs/ml100k-UU
+      - runs/ml100k-ALS
+      - runs/ml100k-IALS
+    outs:
+      - eval-report.ml100k.ipynb:
+          cache: false
+
+  eval-report-ml1m:
+    cmd: papermill -r dataset ml1m eval-report.ipynb eval-report.ml1m.ipynb
+    deps:
+      - eval-report.ipynb
+      - runs/ml1m-Pop
+      - runs/ml1m-Bias
+      - runs/ml1m-II
+      - runs/ml1m-UU
+      - runs/ml1m-ALS
+      - runs/ml1m-IALS
+    outs:
+      - eval-report.ml1m.ipynb:
+          cache: false
+
+  eval-report-mlsmall:
+    cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
+    deps:
+      - eval-report.ipynb
+      - runs/mlsmall-Pop
+      - runs/mlsmall-Bias
+      - runs/mlsmall-II
+      - runs/mlsmall-UU
+      - runs/mlsmall-ALS
+      - runs/mlsmall-IALS
+    outs:
+      - eval-report.ml100k.ipynb:
+          cache: false
+
+  eval-report-ml10m:
+    cmd: papermill -r dataset ml10m eval-report.ipynb eval-report.ml10m.ipynb
+    deps:
+      - eval-report.ipynb
+      - runs/ml10m-Pop
+      - runs/ml10m-Bias
+      - runs/ml10m-II
+      - runs/ml10m-UU
+      - runs/ml10m-ALS
+      - runs/ml10m-IALS
+    outs:
+      - eval-report.ml100k.ipynb:
+          cache: false
+
+  eval-report-ml20m:
+    cmd: papermill -r dataset ml20m eval-report.ipynb eval-report.ml20m.ipynb
+    deps:
+      - eval-report.ipynb
+      - runs/ml20m-Pop
+      - runs/ml20m-Bias
+      - runs/ml20m-II
+      - runs/ml20m-UU
+      - runs/ml20m-ALS
+      - runs/ml20m-IALS
+    outs:
+      - eval-report.ml20m.ipynb:
+          cache: false

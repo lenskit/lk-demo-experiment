@@ -15,7 +15,7 @@ ulimit -n 4096
 cpus="$SLURM_CPUS_ON_NODE"
 
 if [ -z "$LK_NUM_PROCS" -a -n "$cpus" ]; then
-    # get proces from SLURM
+    # set process count from SLURM
     procs=$(expr $cpus / 2)
     if [[ $procs = 0 ]]; then
         $procs=1
@@ -30,6 +30,7 @@ if [ -n "$cpus" ]; then
     export MKL_NUM_THREADS=1
 fi
 
+# this really works best
 export MKL_THREADING_LAYER=tbb
 
 # Finally run the code

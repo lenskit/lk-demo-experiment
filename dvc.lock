@@ -1,0 +1,36 @@
+schema: '2.0'
+stages:
+  eval-report-ml100k:
+    cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
+    deps:
+    - path: eval-report.ipynb
+      md5: 045fd751a48c973f114ff79c7565252d
+      size: 13524
+    - path: runs/ml100k-ALS
+      md5: c9dd5dc959843537962123ba70ca83fa.dir
+      size: 1294203
+      nfiles: 10
+    - path: runs/ml100k-Bias
+      md5: 2e954415bdc93ecbfdeb1cb15f1df1c9.dir
+      size: 1248071
+      nfiles: 10
+    - path: runs/ml100k-IALS
+      md5: fe0b0a4246f09884294f27ed398e960f.dir
+      size: 1331729
+      nfiles: 10
+    - path: runs/ml100k-II
+      md5: b85951a44386f61e3d68366b57411bc5.dir
+      size: 1294543
+      nfiles: 10
+    - path: runs/ml100k-Pop
+      md5: bcac44a2f5b935bd9556140435b39240.dir
+      size: 420255
+      nfiles: 5
+    - path: runs/ml100k-UU
+      md5: b4ea6afd7a07af934080d1744947e004.dir
+      size: 1246365
+      nfiles: 10
+    outs:
+    - path: eval-report.ml100k.ipynb
+      md5: 55b0e1952aa325d7dad76a8c1e32cff2
+      size: 99993

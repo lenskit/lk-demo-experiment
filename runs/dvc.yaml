@@ -1,0 +1,89 @@
+# This pipeline defines stages that control running and evaluating algorithms
+# We define one stage per data set, using 'foreach' to iterate over the algorithms
+# that we want to run on it.
+#
+# We can't really iterate over Cartesian products very easily in the DVC repetition
+# system, so we do need to repeat a stage for each data set.
+#
+# You can make additional non-repeated stages to run one algorithm on one data set.
+stages:
+  ml100k:
+    foreach:
+      - Pop
+      - Bias
+      - II
+      - UU
+      - ALS
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml100k
+      outs:
+        - runs/ml100k-${item}
+
+  ml1m:
+    foreach:
+      - Pop
+      - Bias
+      - II
+      - UU
+      - ALS
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml1m
+      outs:
+        - runs/ml1m-${item}
+
+  mlsmall:
+    foreach:
+      - Pop
+      - Bias
+      - II
+      - UU
+      - ALS
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/mlsmall
+      outs:
+        - runs/mlsmall-${item}
+
+  ml10m:
+    foreach:
+      - Pop
+      - Bias
+      - II
+      - UU
+      - ALS
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml10m
+      outs:
+        - runs/ml10m-${item}
+
+  
+  ml20m:
+    foreach:
+      - Pop
+      - Bias
+      - II
+      - UU
+      - ALS
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml20m
+      outs:
+        - runs/ml20m-${item}
