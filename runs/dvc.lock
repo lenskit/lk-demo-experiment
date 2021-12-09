@@ -72,3 +72,75 @@ stages:
       md5: bcac44a2f5b935bd9556140435b39240.dir
       size: 420255
       nfiles: 5
+  ml20m@Pop:
+    cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-Pop Pop
+    deps:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-Pop
+      md5: 17bd2268b019b24b2210581cea614fdf.dir
+      size: 64448401
+      nfiles: 5
+  ml20m@Bias:
+    cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-Bias Bias
+    deps:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-Bias
+      md5: 19250076ad8215dfbe6ee53b447ad45e.dir
+      size: 187981805
+      nfiles: 10
+  ml20m@II:
+    cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-II II
+    deps:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-II
+      md5: b2f0683010f7fe4454b39721b6d73641.dir
+      size: 197694228
+      nfiles: 10
+  ml20m@UU:
+    cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-UU UU
+    deps:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-UU
+      md5: 8c14ecb2523a7ef1c86a0ce0c5c71d93.dir
+      size: 160710833
+      nfiles: 10
+  ml20m@ALS:
+    cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-ALS ALS
+    deps:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-ALS
+      md5: f47d458f6f99273ecd89e8e2f8bb40c1.dir
+      size: 198928545
+      nfiles: 10
+  ml20m@IALS:
+    cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-IALS IALS
+    deps:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-IALS
+      md5: 511938e23f766cafa90ffda8c7ef2a1d.dir
+      size: 202728105
+      nfiles: 10
