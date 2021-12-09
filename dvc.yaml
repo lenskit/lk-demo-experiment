@@ -39,7 +39,7 @@ stages:
       - runs/mlsmall-ALS
       - runs/mlsmall-IALS
     outs:
-      - eval-report.ml100k.ipynb:
+      - eval-report.mlsmall.ipynb:
           cache: false
 
   eval-report-ml10m:
@@ -53,7 +53,7 @@ stages:
       - runs/ml10m-ALS
       - runs/ml10m-IALS
     outs:
-      - eval-report.ml100k.ipynb:
+      - eval-report.ml10m.ipynb:
           cache: false
 
   eval-report-ml20m:
