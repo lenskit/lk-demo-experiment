@@ -20,6 +20,7 @@ dependencies:
 - implicit
 - statsmodels
 - docopt
-- dvc>=2
+- dvc>=2.8
+- dvc-s3
 - boto3
 - papermill
