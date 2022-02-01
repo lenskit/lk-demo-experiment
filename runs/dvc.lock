@@ -144,3 +144,15 @@ stages:
       md5: 511938e23f766cafa90ffda8c7ef2a1d.dir
       size: 202728105
       nfiles: 10
+  ml20m@III:
+    cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-III III
+    deps:
+    - path: data-split/ml20m
+      md5: e18d0f4f9283999ce3837614d29d44a9.dir
+      size: 8145767
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-III
+      md5: e107e13e9190d6b20067999b4a131e6c.dir
+      size: 198445287
+      nfiles: 10
