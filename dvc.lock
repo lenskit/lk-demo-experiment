@@ -34,3 +34,37 @@ stages:
     - path: eval-report.ml100k.ipynb
       md5: 4fa966ae30ff2f0bfb7c8c8ee11e6d33
       size: 88867
+  eval-report-mlsmall:
+    cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
+    deps:
+    - path: eval-report.ipynb
+      md5: 9c497d3765f5abcebbeb2f81200c5121
+      size: 13043
+    - path: runs/mlsmall-ALS
+      md5: 60f1bdc29c35fc51581948118738f76a.dir
+      size: 862629
+      nfiles: 10
+    - path: runs/mlsmall-Bias
+      md5: a035fbb42a68c10849e533dde512eb22.dir
+      size: 790485
+      nfiles: 10
+    - path: runs/mlsmall-IALS
+      md5: 384862656bf6a93828b0b18fa544f34a.dir
+      size: 890773
+      nfiles: 10
+    - path: runs/mlsmall-II
+      md5: 87f5e3024797e7ba1063ab09d8d5cc4d.dir
+      size: 839173
+      nfiles: 10
+    - path: runs/mlsmall-Pop
+      md5: 0163fcd72742c1e195db6f441abc942c.dir
+      size: 274606
+      nfiles: 5
+    - path: runs/mlsmall-UU
+      md5: ba23fde6c04ced7e4a21f331775425ba.dir
+      size: 575657
+      nfiles: 10
+    outs:
+    - path: eval-report.mlsmall.ipynb
+      md5: 41fdcec4503c56919d700f444fe4583f
+      size: 88266

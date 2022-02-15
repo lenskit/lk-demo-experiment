@@ -156,3 +156,75 @@ stages:
       md5: e107e13e9190d6b20067999b4a131e6c.dir
       size: 198445287
       nfiles: 10
+  mlsmall@Pop:
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-Pop Pop
+    deps:
+    - path: data-split/mlsmall
+      md5: dea9d6d987b27fa1350468028487bf5e.dir
+      size: 35890
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-Pop
+      md5: 0163fcd72742c1e195db6f441abc942c.dir
+      size: 274606
+      nfiles: 5
+  mlsmall@Bias:
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-Bias Bias
+    deps:
+    - path: data-split/mlsmall
+      md5: dea9d6d987b27fa1350468028487bf5e.dir
+      size: 35890
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-Bias
+      md5: a035fbb42a68c10849e533dde512eb22.dir
+      size: 790485
+      nfiles: 10
+  mlsmall@II:
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-II II
+    deps:
+    - path: data-split/mlsmall
+      md5: dea9d6d987b27fa1350468028487bf5e.dir
+      size: 35890
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-II
+      md5: 87f5e3024797e7ba1063ab09d8d5cc4d.dir
+      size: 839173
+      nfiles: 10
+  mlsmall@UU:
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-UU UU
+    deps:
+    - path: data-split/mlsmall
+      md5: dea9d6d987b27fa1350468028487bf5e.dir
+      size: 35890
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-UU
+      md5: ba23fde6c04ced7e4a21f331775425ba.dir
+      size: 575657
+      nfiles: 10
+  mlsmall@ALS:
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-ALS ALS
+    deps:
+    - path: data-split/mlsmall
+      md5: dea9d6d987b27fa1350468028487bf5e.dir
+      size: 35890
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-ALS
+      md5: 60f1bdc29c35fc51581948118738f76a.dir
+      size: 862629
+      nfiles: 10
+  mlsmall@IALS:
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-IALS IALS
+    deps:
+    - path: data-split/mlsmall
+      md5: dea9d6d987b27fa1350468028487bf5e.dir
+      size: 35890
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-IALS
+      md5: 384862656bf6a93828b0b18fa544f34a.dir
+      size: 890773
+      nfiles: 10

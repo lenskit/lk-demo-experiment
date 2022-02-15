@@ -28,10 +28,13 @@ stages:
     - path: data/ml-latest-small/ratings.csv
       md5: ac0cf1d26aed3a5b6777a295231976ad
       size: 2483723
+    params:
+      params.yaml:
+        random.seed: 20220215
     outs:
     - path: data-split/mlsmall
-      md5: cdc41720775e200da2e5978bfe489862.dir
-      size: 35822
+      md5: dea9d6d987b27fa1350468028487bf5e.dir
+      size: 35890
       nfiles: 5
   split-ml100k:
     cmd: python split-data.py -o data-split/ml100k ml100k
