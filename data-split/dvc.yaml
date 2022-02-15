@@ -9,6 +9,16 @@ stages:
     params:
     - random.seed
 
+  split-ml1m:
+    cmd: python split-data.py -o data-split/ml1m ml1m
+    wdir: ..
+    deps:
+    - data/ml-1m/ratings.dat
+    outs:
+    - data-split/ml1m
+    params:
+    - random.seed
+
   split-mlsmall:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
     wdir: ..
