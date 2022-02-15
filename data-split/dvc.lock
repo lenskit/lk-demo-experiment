@@ -39,8 +39,11 @@ stages:
     - path: data/ml-100k/u.data
       md5: 6e47046882bad158b0efbb84cd5cb987
       size: 1979173
+    params:
+      params.yaml:
+        random.seed: 20220215
     outs:
     - path: data-split/ml100k
-      md5: 977a1a32ffa6bfbe33d688d70e74c2f1.dir
-      size: 53363
+      md5: 9febdcbbc95cabbcafe286fc40779644.dir
+      size: 53391
       nfiles: 5
