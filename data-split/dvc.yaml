@@ -6,6 +6,8 @@ stages:
     - data/ml-100k/u.data
     outs:
     - data-split/ml100k
+    params:
+    - random.seed
 
   split-mlsmall:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
@@ -14,6 +16,8 @@ stages:
     - data/ml-latest-small/ratings.csv
     outs:
     - data-split/mlsmall
+    params:
+    - random.seed
 
   split-ml10m:
     cmd: python split-data.py -o data-split/ml10m ml10m
@@ -22,6 +26,8 @@ stages:
     - data/ml-10M100K/ratings.dat
     outs:
     - data-split/ml10m
+    params:
+    - random.seed
 
   split-ml20m:
     cmd: python split-data.py -o data-split/ml20m ml20m
@@ -30,3 +36,5 @@ stages:
     - data/ml-20m/ratings.csv
     outs:
     - data-split/ml20m
+    params:
+    - random.seed

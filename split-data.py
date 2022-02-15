@@ -13,12 +13,16 @@ from docopt import docopt
 from lkdemo import datasets, log
 from pathlib import Path
 
+from seedbank import init_file
 import lenskit.crossfold as xf
 
 def main(args):
     dsname = args.get('DATASET')
     partitions = int(args.get('-p'))
     output = args.get('-o')
+
+    # initialize RNG with the data set name in the seed
+    init_file('params.yaml', 'split-data', dsname)
 
     _log.info('locating data set %s', dsname)
     data = getattr(datasets, dsname)

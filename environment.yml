@@ -4,6 +4,7 @@ channels:
 dependencies:
 - python=3.9
 - lenskit=0.13
+- seedbank>=0.1.3
 - pip
 - psutil
 - pandas

@@ -21,6 +21,8 @@ from docopt import docopt
 from pathlib import Path
 from lenskit.algorithms import Recommender, Predictor
 from lenskit import batch, util
+from seedbank import init_file
+
 from lkdemo import log, datasets
 
 import importlib
@@ -33,6 +35,8 @@ def main(args):
     output = args.get('-o')
     n_recs = int(args.get('-n'))
     model = args.get('ALGO')
+
+    init_file('params.yaml', 'run-algo', model)
 
     _log.info(f'importing from module {mod_name}')
     algorithms = importlib.import_module(mod_name)
