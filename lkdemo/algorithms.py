@@ -9,8 +9,8 @@ from lenskit.algorithms import basic
 
 Bias = basic.Bias(damping=5)
 Pop = basic.Popular()
-II = item_knn.ItemItem(20, save_nbrs=2500)
-UU = user_knn.UserUser(30)
+IIE = item_knn.ItemItem(20, save_nbrs=2500)
+UUE = user_knn.UserUser(30)
 ALS = als.BiasedMF(50)
 IALS = als.ImplicitMF(50, use_ratings=False)
 III = item_knn.ItemItem(20, save_nbrs=2500, aggregate='sum', center=False, use_ratings=False)
