@@ -76,73 +76,73 @@ stages:
     cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-Pop Pop
     deps:
     - path: data-split/ml20m
-      md5: e18d0f4f9283999ce3837614d29d44a9.dir
-      size: 8145767
+      md5: be23d86df5267ea974602fa95cc8eba4.dir
+      size: 8145758
       nfiles: 5
     outs:
     - path: runs/ml20m-Pop
-      md5: 17bd2268b019b24b2210581cea614fdf.dir
-      size: 64448401
+      md5: f46a1273c2ce8e15b70d6466b4ae1976.dir
+      size: 64470311
       nfiles: 5
   ml20m@Bias:
     cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-Bias Bias
     deps:
     - path: data-split/ml20m
-      md5: e18d0f4f9283999ce3837614d29d44a9.dir
-      size: 8145767
+      md5: be23d86df5267ea974602fa95cc8eba4.dir
+      size: 8145758
       nfiles: 5
     outs:
     - path: runs/ml20m-Bias
-      md5: 19250076ad8215dfbe6ee53b447ad45e.dir
-      size: 187981805
+      md5: 830b5b470ff54a8e313b755f9006f43d.dir
+      size: 188028321
       nfiles: 10
   ml20m@II:
     cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-II II
     deps:
     - path: data-split/ml20m
-      md5: e18d0f4f9283999ce3837614d29d44a9.dir
-      size: 8145767
+      md5: be23d86df5267ea974602fa95cc8eba4.dir
+      size: 8145758
       nfiles: 5
     outs:
     - path: runs/ml20m-II
-      md5: b2f0683010f7fe4454b39721b6d73641.dir
-      size: 197694228
+      md5: 5bd7946896cf0dafd9c3184ff4db42b1.dir
+      size: 197751892
       nfiles: 10
   ml20m@UU:
     cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-UU UU
     deps:
     - path: data-split/ml20m
-      md5: e18d0f4f9283999ce3837614d29d44a9.dir
-      size: 8145767
+      md5: be23d86df5267ea974602fa95cc8eba4.dir
+      size: 8145758
       nfiles: 5
     outs:
     - path: runs/ml20m-UU
-      md5: 8c14ecb2523a7ef1c86a0ce0c5c71d93.dir
-      size: 160710833
+      md5: 364714c24b9384ebe6dfa84411638e2c.dir
+      size: 160417610
       nfiles: 10
   ml20m@ALS:
     cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-ALS ALS
     deps:
     - path: data-split/ml20m
-      md5: e18d0f4f9283999ce3837614d29d44a9.dir
-      size: 8145767
+      md5: be23d86df5267ea974602fa95cc8eba4.dir
+      size: 8145758
       nfiles: 5
     outs:
     - path: runs/ml20m-ALS
-      md5: f47d458f6f99273ecd89e8e2f8bb40c1.dir
-      size: 198928545
+      md5: 57589ab5253fac7b7888846164f8c443.dir
+      size: 198880522
       nfiles: 10
   ml20m@IALS:
     cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-IALS IALS
     deps:
     - path: data-split/ml20m
-      md5: e18d0f4f9283999ce3837614d29d44a9.dir
-      size: 8145767
+      md5: be23d86df5267ea974602fa95cc8eba4.dir
+      size: 8145758
       nfiles: 5
     outs:
     - path: runs/ml20m-IALS
-      md5: 511938e23f766cafa90ffda8c7ef2a1d.dir
-      size: 202728105
+      md5: cd30d57e26096523da2f3a254738207c.dir
+      size: 203625356
       nfiles: 10
   ml20m@III:
     cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-III III
@@ -299,4 +299,76 @@ stages:
     - path: runs/ml1m-IALS
       md5: 974038c01d35319e6f680ede34dcb96f.dir
       size: 8756630
+      nfiles: 10
+  ml10m@Pop:
+    cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-Pop Pop
+    deps:
+    - path: data-split/ml10m
+      md5: 1b880ea0e6cd33460e516f34c15da528.dir
+      size: 4008858
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-Pop
+      md5: a0561623a67796bd93648e9c2a5ca138.dir
+      size: 32510867
+      nfiles: 5
+  ml10m@Bias:
+    cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-Bias Bias
+    deps:
+    - path: data-split/ml10m
+      md5: 1b880ea0e6cd33460e516f34c15da528.dir
+      size: 4008858
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-Bias
+      md5: f3a8d7076768c2f348796b1bf9afa29f.dir
+      size: 94231984
+      nfiles: 10
+  ml10m@II:
+    cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-II II
+    deps:
+    - path: data-split/ml10m
+      md5: 1b880ea0e6cd33460e516f34c15da528.dir
+      size: 4008858
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-II
+      md5: b6ba5cb6848778bb6303b424c0c6b067.dir
+      size: 100690007
+      nfiles: 10
+  ml10m@UU:
+    cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-UU UU
+    deps:
+    - path: data-split/ml10m
+      md5: 1b880ea0e6cd33460e516f34c15da528.dir
+      size: 4008858
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-UU
+      md5: ca738f09aa380c955ca0c5449deaba40.dir
+      size: 96180921
+      nfiles: 10
+  ml10m@ALS:
+    cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-ALS ALS
+    deps:
+    - path: data-split/ml10m
+      md5: 1b880ea0e6cd33460e516f34c15da528.dir
+      size: 4008858
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-ALS
+      md5: 761809babad6b6d3984105100f8b806e.dir
+      size: 98280203
+      nfiles: 10
+  ml10m@IALS:
+    cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-IALS IALS
+    deps:
+    - path: data-split/ml10m
+      md5: 1b880ea0e6cd33460e516f34c15da528.dir
+      size: 4008858
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-IALS
+      md5: d564741d16aae54e840d173e9b674ca8.dir
+      size: 102035362
       nfiles: 10

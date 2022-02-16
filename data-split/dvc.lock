@@ -6,10 +6,13 @@ stages:
     - path: data/ml-20m/ratings.csv
       md5: f95d275e0f2edad2391e5ef864a46628
       size: 533444411
+    params:
+      params.yaml:
+        random.seed: 20220215
     outs:
     - path: data-split/ml20m
-      md5: e18d0f4f9283999ce3837614d29d44a9.dir
-      size: 8145767
+      md5: be23d86df5267ea974602fa95cc8eba4.dir
+      size: 8145758
       nfiles: 5
   split-ml10m:
     cmd: python split-data.py -o data-split/ml10m ml10m
@@ -17,10 +20,13 @@ stages:
     - path: data/ml-10M100K/ratings.dat
       md5: 3f317698625386f66177629fa5c6b2dc
       size: 265105635
+    params:
+      params.yaml:
+        random.seed: 20220215
     outs:
     - path: data-split/ml10m
-      md5: fd5d8611ea49d90ffb09077de932863a.dir
-      size: 4009123
+      md5: 1b880ea0e6cd33460e516f34c15da528.dir
+      size: 4008858
       nfiles: 5
   split-mlsmall:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
