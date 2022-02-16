@@ -68,3 +68,37 @@ stages:
     - path: eval-report.mlsmall.ipynb
       md5: 41fdcec4503c56919d700f444fe4583f
       size: 88266
+  eval-report-ml1m:
+    cmd: papermill -r dataset ml1m eval-report.ipynb eval-report.ml1m.ipynb
+    deps:
+    - path: eval-report.ipynb
+      md5: 9c497d3765f5abcebbeb2f81200c5121
+      size: 13043
+    - path: runs/ml1m-ALS
+      md5: 4b04c65e7b8724bb4384108f91ee1397.dir
+      size: 8352544
+      nfiles: 10
+    - path: runs/ml1m-Bias
+      md5: 4030ac217ad5dc8df1f5eeaa8ed230fa.dir
+      size: 8136635
+      nfiles: 10
+    - path: runs/ml1m-IALS
+      md5: 974038c01d35319e6f680ede34dcb96f.dir
+      size: 8756630
+      nfiles: 10
+    - path: runs/ml1m-II
+      md5: e7d7765a2cb7a57275c4b4557c890bba.dir
+      size: 8410890
+      nfiles: 10
+    - path: runs/ml1m-Pop
+      md5: 2aa2a127aff1fac673cc22c83bf91065.dir
+      size: 2828129
+      nfiles: 5
+    - path: runs/ml1m-UU
+      md5: 857850cfb0e4a5f9b59bc272fb21e254.dir
+      size: 8329587
+      nfiles: 10
+    outs:
+    - path: eval-report.ml1m.ipynb
+      md5: d77261b86d92305dad5ceedeffbe6234
+      size: 90097

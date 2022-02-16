@@ -228,3 +228,75 @@ stages:
       md5: 384862656bf6a93828b0b18fa544f34a.dir
       size: 890773
       nfiles: 10
+  ml1m@Pop:
+    cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-Pop Pop
+    deps:
+    - path: data-split/ml1m
+      md5: 477537a8782db4433044ea02693ec59e.dir
+      size: 332990
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-Pop
+      md5: 2aa2a127aff1fac673cc22c83bf91065.dir
+      size: 2828129
+      nfiles: 5
+  ml1m@Bias:
+    cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-Bias Bias
+    deps:
+    - path: data-split/ml1m
+      md5: 477537a8782db4433044ea02693ec59e.dir
+      size: 332990
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-Bias
+      md5: 4030ac217ad5dc8df1f5eeaa8ed230fa.dir
+      size: 8136635
+      nfiles: 10
+  ml1m@II:
+    cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-II II
+    deps:
+    - path: data-split/ml1m
+      md5: 477537a8782db4433044ea02693ec59e.dir
+      size: 332990
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-II
+      md5: e7d7765a2cb7a57275c4b4557c890bba.dir
+      size: 8410890
+      nfiles: 10
+  ml1m@UU:
+    cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-UU UU
+    deps:
+    - path: data-split/ml1m
+      md5: 477537a8782db4433044ea02693ec59e.dir
+      size: 332990
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-UU
+      md5: 857850cfb0e4a5f9b59bc272fb21e254.dir
+      size: 8329587
+      nfiles: 10
+  ml1m@ALS:
+    cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-ALS ALS
+    deps:
+    - path: data-split/ml1m
+      md5: 477537a8782db4433044ea02693ec59e.dir
+      size: 332990
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-ALS
+      md5: 4b04c65e7b8724bb4384108f91ee1397.dir
+      size: 8352544
+      nfiles: 10
+  ml1m@IALS:
+    cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-IALS IALS
+    deps:
+    - path: data-split/ml1m
+      md5: 477537a8782db4433044ea02693ec59e.dir
+      size: 332990
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-IALS
+      md5: 974038c01d35319e6f680ede34dcb96f.dir
+      size: 8756630
+      nfiles: 10

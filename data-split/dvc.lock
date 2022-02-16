@@ -50,3 +50,17 @@ stages:
       md5: 9febdcbbc95cabbcafe286fc40779644.dir
       size: 53391
       nfiles: 5
+  split-ml1m:
+    cmd: python split-data.py -o data-split/ml1m ml1m
+    deps:
+    - path: data/ml-1m/ratings.dat
+      md5: a89aa3591bc97d6d4e0c89459ff39362
+      size: 24594131
+    params:
+      params.yaml:
+        random.seed: 20220215
+    outs:
+    - path: data-split/ml1m
+      md5: 477537a8782db4433044ea02693ec59e.dir
+      size: 332990
+      nfiles: 5
