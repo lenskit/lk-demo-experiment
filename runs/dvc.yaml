@@ -34,13 +34,24 @@ stages:
       outs:
         - runs/ml100k-${item}
 
-  ml1m:
+  ml1m-explicit:
+    foreach:
+      - Bias
+      - IIE
+      - UUE
+      - ALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml1m
+      outs:
+        - runs/ml1m-${item}
+    
+  ml1m-implicit:
     foreach:
       - Pop
-      - Bias
-      - II
-      - UU
-      - ALS
+      - III
       - IALS
     do:
       cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-${item} ${item}
@@ -50,13 +61,23 @@ stages:
       outs:
         - runs/ml1m-${item}
 
-  mlsmall:
+  mlsmall-explicit:
+    foreach:
+      - Bias
+      - IIE
+      - UUE
+      - ALS
+    do:
+      cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/mlsmall
+      outs:
+        - runs/mlsmall-${item}
+  
+  mlsmall-implicit:
     foreach:
       - Pop
-      - Bias
-      - II
-      - UU
-      - ALS
       - IALS
     do:
       cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-${item} ${item}
@@ -66,14 +87,12 @@ stages:
       outs:
         - runs/mlsmall-${item}
 
-  ml10m:
+  ml10m-explicit:
     foreach:
-      - Pop
       - Bias
-      - II
-      - UU
+      - IIE
+      - UUE
       - ALS
-      - IALS
     do:
       cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-${item} ${item}
       wdir: ..
@@ -82,16 +101,38 @@ stages:
       outs:
         - runs/ml10m-${item}
 
-  
-  ml20m:
+  ml10m-implicit:
     foreach:
       - Pop
-      - Bias
-      - II
-      - UU
-      - ALS
-      - IALS
       - III
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml10m -o runs/ml10m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml10m
+      outs:
+        - runs/ml10m-${item}
+  
+  ml20m-explicit:
+    foreach:
+      - Bias
+      - IIE
+      - UUE
+      - ALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml20m
+      outs:
+        - runs/ml20m-${item}
+  
+  ml20m-implicit:
+    foreach:
+      - Pop
+      - III
+      - IALS
     do:
       cmd: python run-algo.py --splits data-split/ml20m -o runs/ml20m-${item} ${item}
       wdir: ..

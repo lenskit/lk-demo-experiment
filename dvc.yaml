@@ -21,9 +21,10 @@ stages:
       - eval-report.ipynb
       - runs/ml1m-Pop
       - runs/ml1m-Bias
-      - runs/ml1m-II
-      - runs/ml1m-UU
+      - runs/ml1m-IIE
+      - runs/ml1m-UUE
       - runs/ml1m-ALS
+      - runs/ml1m-III
       - runs/ml1m-IALS
     outs:
       - eval-report.ml1m.ipynb:
@@ -35,9 +36,10 @@ stages:
       - eval-report.ipynb
       - runs/mlsmall-Pop
       - runs/mlsmall-Bias
-      - runs/mlsmall-II
-      - runs/mlsmall-UU
+      - runs/mlsmall-IIE
+      - runs/mlsmall-UUE
       - runs/mlsmall-ALS
+      - runs/mlsmall-III
       - runs/mlsmall-IALS
     outs:
       - eval-report.mlsmall.ipynb:
@@ -49,9 +51,10 @@ stages:
       - eval-report.ipynb
       - runs/ml10m-Pop
       - runs/ml10m-Bias
-      - runs/ml10m-II
-      - runs/ml10m-UU
+      - runs/ml10m-IIE
+      - runs/ml10m-UUE
       - runs/ml10m-ALS
+      - runs/ml10m-III
       - runs/ml10m-IALS
     outs:
       - eval-report.ml10m.ipynb:
@@ -63,9 +66,10 @@ stages:
       - eval-report.ipynb
       - runs/ml20m-Pop
       - runs/ml20m-Bias
-      - runs/ml20m-II
-      - runs/ml20m-UU
+      - runs/ml20m-IIE
+      - runs/ml20m-UUE
       - runs/ml20m-ALS
+      - runs/ml20m-III
       - runs/ml20m-IALS
     outs:
       - eval-report.ml20m.ipynb:
