@@ -7,16 +7,27 @@
 #
 # You can make additional non-repeated stages to run one algorithm on one data set.
 stages:
-  ml100k:
+  ml100k-explicit:
     foreach:
-      - Pop
       - Bias
-      - II
-      - UU
+      - IIE
+      - UUE
       - ALS
-      - IALS
     do:
       cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml100k
+      outs:
+        - runs/ml100k-${item}
+    
+  ml100k-implicit:
+    foreach:
+      - Pop
+      - III
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-${item} --no-predict ${item}
       wdir: ..
       deps:
         - data-split/ml100k

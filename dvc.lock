@@ -4,8 +4,8 @@ stages:
     cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: 9c497d3765f5abcebbeb2f81200c5121
-      size: 13043
+      md5: cc3fe6cac16cf204d97c2f0791b0e188
+      size: 13296
     - path: runs/ml100k-ALS
       md5: 6b2fef08276ca63aa70cb252ab39d712.dir
       size: 1294378
@@ -15,25 +15,29 @@ stages:
       size: 1248927
       nfiles: 10
     - path: runs/ml100k-IALS
-      md5: bd5e33d07c56b2e25dcdde45bb760296.dir
-      size: 1340517
-      nfiles: 10
-    - path: runs/ml100k-II
-      md5: 863329ca2ac54f53d9f92a3563159420.dir
+      md5: b76d374d3363158dd7f6c2832780eaf8.dir
+      size: 1255640
+      nfiles: 5
+    - path: runs/ml100k-IIE
+      md5: 6546e3e21317f63cbdbb124b6b3514dc.dir
       size: 1294937
       nfiles: 10
+    - path: runs/ml100k-III
+      md5: 8db906e7faa0ffa8a180007db6e92342.dir
+      size: 1230320
+      nfiles: 5
     - path: runs/ml100k-Pop
-      md5: 958af5a21f3afc64a4fad91cce91b1ed.dir
+      md5: d101ffefdd8795c7bfa2cdbc36135ff1.dir
       size: 421665
       nfiles: 5
-    - path: runs/ml100k-UU
-      md5: f6546dc1b8df0722ef4c8d7df869bd62.dir
+    - path: runs/ml100k-UUE
+      md5: cb7f41a1ca1dbc9a09063cb489a6ccd0.dir
       size: 1246228
       nfiles: 10
     outs:
     - path: eval-report.ml100k.ipynb
-      md5: 4fa966ae30ff2f0bfb7c8c8ee11e6d33
-      size: 88867
+      md5: 359e1e397bd657d904dfd4ad05568809
+      size: 94713
   eval-report-mlsmall:
     cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
     deps:

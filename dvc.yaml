@@ -4,11 +4,12 @@ stages:
     cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
     deps:
       - eval-report.ipynb
-      - runs/ml100k-Pop
       - runs/ml100k-Bias
-      - runs/ml100k-II
-      - runs/ml100k-UU
+      - runs/ml100k-IIE
+      - runs/ml100k-UUE
       - runs/ml100k-ALS
+      - runs/ml100k-Pop
+      - runs/ml100k-III
       - runs/ml100k-IALS
     outs:
       - eval-report.ml100k.ipynb:
