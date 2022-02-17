@@ -78,6 +78,7 @@ stages:
   mlsmall-implicit:
     foreach:
       - Pop
+      - III
       - IALS
     do:
       cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-${item} ${item}

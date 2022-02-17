@@ -42,135 +42,151 @@ stages:
     cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: 9c497d3765f5abcebbeb2f81200c5121
-      size: 13043
+      md5: cc3fe6cac16cf204d97c2f0791b0e188
+      size: 13296
     - path: runs/mlsmall-ALS
-      md5: 60f1bdc29c35fc51581948118738f76a.dir
-      size: 862629
+      md5: f2f1655d5868e3ae9b3ea6c797573f54.dir
+      size: 855162
       nfiles: 10
     - path: runs/mlsmall-Bias
-      md5: a035fbb42a68c10849e533dde512eb22.dir
-      size: 790485
+      md5: 2e81e75b435524dbcc1f238cbc9997e7.dir
+      size: 784716
       nfiles: 10
     - path: runs/mlsmall-IALS
-      md5: 384862656bf6a93828b0b18fa544f34a.dir
-      size: 890773
+      md5: 7f0251d1ea2e5b9413165bf93eab128c.dir
+      size: 882978
       nfiles: 10
-    - path: runs/mlsmall-II
-      md5: 87f5e3024797e7ba1063ab09d8d5cc4d.dir
-      size: 839173
+    - path: runs/mlsmall-IIE
+      md5: 610d2fb0f27e03b3d87264529b682a97.dir
+      size: 831508
+      nfiles: 10
+    - path: runs/mlsmall-III
+      md5: f4ecbe6d3d0b6c3e761f30ee1f694062.dir
+      size: 837544
       nfiles: 10
     - path: runs/mlsmall-Pop
-      md5: 0163fcd72742c1e195db6f441abc942c.dir
-      size: 274606
+      md5: 40afe1eb5bc0cb3c00a6643eec498860.dir
+      size: 270443
       nfiles: 5
-    - path: runs/mlsmall-UU
-      md5: ba23fde6c04ced7e4a21f331775425ba.dir
-      size: 575657
+    - path: runs/mlsmall-UUE
+      md5: 40cb87dbab4324167b2cc48f7a7fdff6.dir
+      size: 567281
       nfiles: 10
     outs:
     - path: eval-report.mlsmall.ipynb
-      md5: 41fdcec4503c56919d700f444fe4583f
-      size: 88266
+      md5: 0755e27d4cc3e4ad5b23d59b6b752361
+      size: 96422
   eval-report-ml1m:
     cmd: papermill -r dataset ml1m eval-report.ipynb eval-report.ml1m.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: 9c497d3765f5abcebbeb2f81200c5121
-      size: 13043
+      md5: cc3fe6cac16cf204d97c2f0791b0e188
+      size: 13296
     - path: runs/ml1m-ALS
-      md5: 4b04c65e7b8724bb4384108f91ee1397.dir
-      size: 8352544
+      md5: 9e1389b93853b37e42635409906f71b1.dir
+      size: 8258721
       nfiles: 10
     - path: runs/ml1m-Bias
-      md5: 4030ac217ad5dc8df1f5eeaa8ed230fa.dir
-      size: 8136635
+      md5: 783c9c938b92b07c613daecc9a718f3a.dir
+      size: 8050097
       nfiles: 10
     - path: runs/ml1m-IALS
-      md5: 974038c01d35319e6f680ede34dcb96f.dir
-      size: 8756630
+      md5: fff2ffe79f9b00e9f920e882ca5f6ac2.dir
+      size: 8653593
       nfiles: 10
-    - path: runs/ml1m-II
-      md5: e7d7765a2cb7a57275c4b4557c890bba.dir
-      size: 8410890
+    - path: runs/ml1m-IIE
+      md5: b367b8a8a32e04646f9cfaf3c7c3a42e.dir
+      size: 8318600
+      nfiles: 10
+    - path: runs/ml1m-III
+      md5: 43cc1af19886ca6eb3586a46eae37e32.dir
+      size: 8411913
       nfiles: 10
     - path: runs/ml1m-Pop
-      md5: 2aa2a127aff1fac673cc22c83bf91065.dir
-      size: 2828129
+      md5: a666f1ea9ba28ebcdeb9994c17486191.dir
+      size: 2759981
       nfiles: 5
-    - path: runs/ml1m-UU
-      md5: 857850cfb0e4a5f9b59bc272fb21e254.dir
-      size: 8329587
+    - path: runs/ml1m-UUE
+      md5: 4c61988db49c98aabc934c876b01df89.dir
+      size: 8241530
       nfiles: 10
     outs:
     - path: eval-report.ml1m.ipynb
-      md5: d77261b86d92305dad5ceedeffbe6234
-      size: 90097
+      md5: e2c15cc6133048332c1146a5dba7bdf9
+      size: 99342
   eval-report-ml10m:
     cmd: papermill -r dataset ml10m eval-report.ipynb eval-report.ml10m.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: 9c497d3765f5abcebbeb2f81200c5121
-      size: 13043
+      md5: cc3fe6cac16cf204d97c2f0791b0e188
+      size: 13296
     - path: runs/ml10m-ALS
-      md5: 761809babad6b6d3984105100f8b806e.dir
-      size: 98280203
+      md5: e77645166737d13782cd31ed6371e02c.dir
+      size: 97299436
       nfiles: 10
     - path: runs/ml10m-Bias
-      md5: f3a8d7076768c2f348796b1bf9afa29f.dir
-      size: 94231984
+      md5: 5bd29718539ce09f6954713a73baeccd.dir
+      size: 93037150
       nfiles: 10
     - path: runs/ml10m-IALS
-      md5: d564741d16aae54e840d173e9b674ca8.dir
-      size: 102035362
+      md5: b56a8e20db6763ccf5f95026228d2876.dir
+      size: 101225639
       nfiles: 10
-    - path: runs/ml10m-II
-      md5: b6ba5cb6848778bb6303b424c0c6b067.dir
-      size: 100690007
+    - path: runs/ml10m-IIE
+      md5: 69ad12861282f7cae86158a37710b245.dir
+      size: 99800658
+      nfiles: 10
+    - path: runs/ml10m-III
+      md5: cd995b8c32ff66e1e47faa20937ca1c9.dir
+      size: 98620898
       nfiles: 10
     - path: runs/ml10m-Pop
-      md5: a0561623a67796bd93648e9c2a5ca138.dir
-      size: 32510867
+      md5: 79f0ae9d7e027dcd9607c87fe641b746.dir
+      size: 32011416
       nfiles: 5
-    - path: runs/ml10m-UU
-      md5: ca738f09aa380c955ca0c5449deaba40.dir
-      size: 96180921
+    - path: runs/ml10m-UUE
+      md5: 373ba97825fd8d2585c4333244215dac.dir
+      size: 95332322
       nfiles: 10
     outs:
     - path: eval-report.ml10m.ipynb
-      md5: 673ed66f7706f6b3f4a91e0ce3e08842
-      size: 89398
+      md5: b1ac9de1e3fe169e3d82770df74555f4
+      size: 99708
   eval-report-ml20m:
     cmd: papermill -r dataset ml20m eval-report.ipynb eval-report.ml20m.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: 9c497d3765f5abcebbeb2f81200c5121
-      size: 13043
+      md5: cc3fe6cac16cf204d97c2f0791b0e188
+      size: 13296
     - path: runs/ml20m-ALS
-      md5: 57589ab5253fac7b7888846164f8c443.dir
-      size: 198880522
+      md5: 0e7978aaf507dc465de91f192306e8d4.dir
+      size: 197539849
       nfiles: 10
     - path: runs/ml20m-Bias
-      md5: 830b5b470ff54a8e313b755f9006f43d.dir
-      size: 188028321
+      md5: 68c3914a88cf2732dd6b21c7606d6deb.dir
+      size: 186159023
       nfiles: 10
     - path: runs/ml20m-IALS
-      md5: cd30d57e26096523da2f3a254738207c.dir
-      size: 203625356
+      md5: 3be730814609f09ec178049e7fd07db9.dir
+      size: 202257650
       nfiles: 10
-    - path: runs/ml20m-II
-      md5: 5bd7946896cf0dafd9c3184ff4db42b1.dir
-      size: 197751892
+    - path: runs/ml20m-IIE
+      md5: 1549013a4e7c924cbf1f2b9f7a9b82e6.dir
+      size: 196469005
+      nfiles: 10
+    - path: runs/ml20m-III
+      md5: 3691df7eae981c6868ef9e4ce0579b9c.dir
+      size: 196737003
       nfiles: 10
     - path: runs/ml20m-Pop
-      md5: f46a1273c2ce8e15b70d6466b4ae1976.dir
-      size: 64470311
+      md5: fd74579c1fcf66c5b5d0c7e800f1e347.dir
+      size: 63463349
       nfiles: 5
-    - path: runs/ml20m-UU
-      md5: 364714c24b9384ebe6dfa84411638e2c.dir
-      size: 160417610
+    - path: runs/ml20m-UUE
+      md5: 823bfdf4a783423765a9b50d2b9f7cca.dir
+      size: 159565629
       nfiles: 10
     outs:
     - path: eval-report.ml20m.ipynb
-      md5: bfce7aa5246942b2e81d11e86c823cb5
-      size: 95592
+      md5: 79142d468c345e8b390ae8fb339ef14f
+      size: 97972
