@@ -3,7 +3,7 @@ channels:
 - conda-forge
 dependencies:
 - python=3.9
-- lenskit=0.13
+- lenskit=0.14
 - seedbank>=0.1.2
 - pip
 - psutil
