@@ -48,3 +48,13 @@ stages:
     - data-split/ml20m
     params:
     - random.seed
+
+  split-ml25m:
+    cmd: python split-data.py -o data-split/ml25m ml25m
+    wdir: ..
+    deps:
+    - data/ml-25m/ratings.csv
+    outs:
+    - data-split/ml25m
+    params:
+    - random.seed
