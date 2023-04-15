@@ -11,6 +11,7 @@ Options:
   DATASET       name of data set to load
 """
 
+import sys
 from docopt import docopt
 import pathlib
 import importlib
@@ -61,5 +62,6 @@ def main(args):
 
 if __name__ == '__main__':
     _log = log.script(__file__)
+    _log.info('arguments received were: %s', sys.argv)
     args = docopt(__doc__)
     main(args)
