@@ -11,8 +11,8 @@ stages:
         random.seed: 20220215
     outs:
     - path: data-split/ml20m
-      md5: be23d86df5267ea974602fa95cc8eba4.dir
-      size: 8145758
+      md5: a9e90fc6f4bc21fb1c2944eab3d04c64.dir
+      size: 11954192
       nfiles: 5
   split-ml10m:
     cmd: python split-data.py -o data-split/ml10m ml10m
@@ -25,8 +25,8 @@ stages:
         random.seed: 20220215
     outs:
     - path: data-split/ml10m
-      md5: 1b880ea0e6cd33460e516f34c15da528.dir
-      size: 4008858
+      md5: 22f7fb1f0c5de52d18ddfa5305d8e3d2.dir
+      size: 5881979
       nfiles: 5
   split-mlsmall:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
@@ -39,8 +39,8 @@ stages:
         random.seed: 20220215
     outs:
     - path: data-split/mlsmall
-      md5: dea9d6d987b27fa1350468028487bf5e.dir
-      size: 35890
+      md5: dcae6b4c64189bdbc5ba53fe8403ae60.dir
+      size: 71726
       nfiles: 5
   split-ml100k:
     cmd: python split-data.py -o data-split/ml100k ml100k
@@ -53,8 +53,8 @@ stages:
         random.seed: 20220215
     outs:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      md5: e58e5c8cebc5aaf3c4099cd0010c9d14.dir
+      size: 94641
       nfiles: 5
   split-ml1m:
     cmd: python split-data.py -o data-split/ml1m ml1m
@@ -67,6 +67,6 @@ stages:
         random.seed: 20220215
     outs:
     - path: data-split/ml1m
-      md5: 477537a8782db4433044ea02693ec59e.dir
-      size: 332990
+      md5: 18cd36ccc44148fade83b020636498e9.dir
+      size: 503218
       nfiles: 5
