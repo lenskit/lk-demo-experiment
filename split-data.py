@@ -40,7 +40,7 @@ def main(args):
         # tp.train.to_csv(path / f'train-{i}.csv.gz', index=False)
         _log.info('writing test set %d', i)
         tp.test.index.name = 'index'
-        tp.test.to_csv(path / f'test-{i}.csv.gz')
+        tp.test.to_parquet(path / f'test-{i}.parquet')
         
 
 if __name__ == '__main__':

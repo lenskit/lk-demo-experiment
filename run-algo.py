@@ -50,8 +50,8 @@ def main(args):
 
     ds_def = getattr(datasets, path.name, None)
 
-    for file in path.glob("test-*"):
-        test = pd.read_csv(file, sep=',')
+    for file in path.glob("test-*.parquet"):
+        test = pd.read_parquet(file)
         suffix = file.name[5:]
         train_file = path / f'train-{suffix}'
         timer = util.Stopwatch()
