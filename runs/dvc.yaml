@@ -141,3 +141,30 @@ stages:
         - data-split/ml20m
       outs:
         - runs/ml20m-${item}
+
+  ml25m-explicit:
+    foreach:
+      - Bias
+      - IIE
+      - UUE
+      - ALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml25m -o runs/ml25m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml25m
+      outs:
+        - runs/ml25m-${item}
+  
+  ml25m-implicit:
+    foreach:
+      - Pop
+      - III
+      - IALS
+    do:
+      cmd: python run-algo.py --splits data-split/ml25m -o runs/ml25m-${item} ${item}
+      wdir: ..
+      deps:
+        - data-split/ml25m
+      outs:
+        - runs/ml25m-${item}

@@ -74,3 +74,18 @@ stages:
     outs:
       - eval-report.ml20m.ipynb:
           cache: false
+
+  eval-report-ml25m:
+    cmd: papermill -r dataset ml25m eval-report.ipynb eval-report.ml25m.ipynb
+    deps:
+      - eval-report.ipynb
+      - runs/ml25m-Pop
+      - runs/ml25m-Bias
+      - runs/ml25m-IIE
+      - runs/ml25m-UUE
+      - runs/ml25m-ALS
+      - runs/ml25m-III
+      - runs/ml25m-IALS
+    outs:
+      - eval-report.ml25m.ipynb:
+          cache: false
