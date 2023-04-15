@@ -2,15 +2,13 @@ name: lk-demo
 channels:
 - conda-forge
 dependencies:
-- python=3.9
+- python=3.10
 - lenskit=0.14
 - seedbank>=0.1.2
 - pip
 - psutil
 - pandas
 - scipy
-- numba
-- cffi
 - pyarrow
 - tbb
 - notebook
@@ -18,10 +16,8 @@ dependencies:
 - ipython
 - ipywidgets
 - tqdm
-# - implicit
 - statsmodels
 - docopt
-- dvc>=2.8
+- dvc>=2.54
 - dvc-s3
-- boto3
 - papermill
