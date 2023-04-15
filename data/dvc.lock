@@ -66,3 +66,14 @@ stages:
       md5: 98ee04d046acb394d3b4916908bca3d0.dir
       size: 120753872
       nfiles: 3
+  ml-25m:
+    cmd: python -m zipfile -e ml-25m.zip .
+    deps:
+    - path: ml-25m.zip
+      md5: 6b51fb2759a8657d3bfcbfc42b592ada
+      size: 261978986
+    outs:
+    - path: ml-25m/
+      md5: 5b3efd91c9cc6cd155a70787b9c2f4cf.dir
+      size: 1156670716
+      nfiles: 7

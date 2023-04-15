@@ -70,3 +70,17 @@ stages:
       md5: 18cd36ccc44148fade83b020636498e9.dir
       size: 503218
       nfiles: 5
+  split-ml25m:
+    cmd: python split-data.py -o data-split/ml25m ml25m
+    deps:
+    - path: data/ml-25m/ratings.csv
+      md5: d463ba41e49011f510bbc0ea5224a169
+      size: 678260987
+    params:
+      params.yaml:
+        random.seed: 20220215
+    outs:
+    - path: data-split/ml25m
+      md5: f71ddd054185a90140cd9cf34068fcc0.dir
+      size: 13903131
+      nfiles: 5
