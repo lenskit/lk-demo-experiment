@@ -190,3 +190,15 @@ stages:
     - path: eval-report.ml20m.ipynb
       md5: 79142d468c345e8b390ae8fb339ef14f
       size: 97972
+  eval-report-template:
+    cmd: jupytext --to ipynb eval-report.md
+    deps:
+    - path: eval-report.md
+      hash: md5
+      md5: ef7f480e23c84c93d65e9c16b5cea2fb
+      size: 7609
+    outs:
+    - path: eval-report.ipynb
+      hash: md5
+      md5: ffd20deb1947e836e86f8217fafcae31
+      size: 14199
