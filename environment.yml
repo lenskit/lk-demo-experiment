@@ -20,4 +20,4 @@ dependencies:
 - tqdm
 - statsmodels
 - docopt
-- dvc=3
+- dvc =3,<3.27.1
