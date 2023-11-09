@@ -1,12 +1,5 @@
 # This pipeline defines the data extraction stages.
 stages:
-  bx:
-    cmd: python -m zipfile -e BX-CSV-Dump.zip bx
-    deps:
-      - BX-CSV-Dump.zip
-    outs:
-      - bx/
-
   ml-100k:
     cmd: python -m zipfile -e ml-100k.zip .
     deps:
