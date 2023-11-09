@@ -3,7 +3,6 @@ This module defines the algorithms, and their default configurations, that
 we are going to use.
 """
 
-import warnings
 from lenskit.algorithms import item_knn, user_knn, als
 from lenskit.algorithms import basic
 
