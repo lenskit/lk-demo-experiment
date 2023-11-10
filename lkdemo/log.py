@@ -16,7 +16,7 @@ def setup(debug=False, log_file=None):
 
     root = logging.getLogger()
     root.addHandler(ch)
-    root.setLevel(logging.INFO)
+    root.setLevel(logging.DEBUG if debug else logging.INFO)
 
     if log_file is not None:
         fh = logging.FileHandler(log_file, encoding='utf-8')
@@ -25,8 +25,8 @@ def setup(debug=False, log_file=None):
         root.addHandler(fh)
 
     logging.getLogger('dvc').setLevel(logging.ERROR)
+    logging.getLogger('numba').setLevel(logging.INFO)
     logging.getLogger('lenskit').setLevel(logging.DEBUG)
-    logging.getLogger('bookgender').setLevel(logging.DEBUG)
     root.debug('log system configured')
 
 

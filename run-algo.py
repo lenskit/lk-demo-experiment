@@ -3,16 +3,18 @@
 Run an algorithm to produce predictions and recommendations.
 
 Usage:
-    run-algo.py [options] ALGO 
+    run-algo.py [options] ALGO
 
-Options:  
+Options:
+    -v, --verbose   verbose logging output
     --splits input  directory for split train-test pairs [default: data-split]
     -o output       destination directory [default: output]
     -n N            number of recommendations for a unique user [default: 100]
     -m MODULE       import algorithms from MODULE [default: lkdemo.algorithms]
+    -P N, --part=N  only run on partition N
     --no-predict    turn off rating prediction
     --log-file FILE write logs to FILE
-    ALGO            name of algorithm to load 
+    ALGO            name of algorithm to load
 """
 
 import os
@@ -35,6 +37,7 @@ def main(args):
     output = args.get('-o')
     n_recs = int(args.get('-n'))
     model = args.get('ALGO')
+    part = args.get('--part', None)
 
     init_file('params.yaml', 'run-algo', model)
 
@@ -53,9 +56,14 @@ def main(args):
     for file in path.glob("test-*.parquet"):
         test = pd.read_parquet(file)
         suffix = file.name[5:]
+        _log.debug('checking file %s against %s', file.stem[5:], part)
+        if part is not None and file.stem[5:] != part:
+            _log.info('part %s not wanted, skipping', suffix)
+            continue
+
         train_file = path / f'train-{suffix}'
         timer = util.Stopwatch()
-        
+
         if 'index' in test.columns:
             _log.info('setting test index')
             test = test.set_index('index')
@@ -82,7 +90,7 @@ def main(args):
             recs = batch.recommend(model, users, n_recs)
             _log.info('[%s] writing recommendations to %s', timer, dest)
             recs.to_csv(dest / f'recs-{suffix}', index=False)
-            
+
             if isinstance(algo, Predictor) and not args['--no-predict']:
                 _log.info('[%s] generating predictions for user-item', timer)
                 preds = batch.predict(model, test)
@@ -93,5 +101,5 @@ def main(args):
 
 if __name__ == '__main__':
     args = docopt(__doc__)
-    _log = log.script(__file__, log_file=args['--log-file'])
+    _log = log.script(__file__, debug=args['--verbose'], log_file=args['--log-file'])
     main(args)
