@@ -68,7 +68,7 @@ def main(args):
             _log.info('setting test index')
             test = test.set_index('index')
         else:
-            _log.warn('no index column found in %s', file.name)
+            _log.warning('no index column found in %s', file.name)
 
         if train_file.exists():
             _log.info('[%s] loading training data from %s', timer, train_file)
@@ -82,8 +82,8 @@ def main(args):
             continue
 
         _log.info('[%s] Fitting the model', timer)
-        # We train isolated to manage resource use
         model = batch.train_isolated(algo, train)
+
         try:
             _log.info('[%s] generating recommendations for unique users', timer)
             users = test.user.unique()
@@ -97,7 +97,6 @@ def main(args):
                 preds.to_csv(dest / f'pred-{suffix}', index=False)
         finally:
             model.close()
-
 
 if __name__ == '__main__':
     args = docopt(__doc__)

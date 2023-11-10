@@ -26,7 +26,6 @@ def setup(debug=False, log_file=None):
 
     logging.getLogger('dvc').setLevel(logging.ERROR)
     logging.getLogger('numba').setLevel(logging.INFO)
-    logging.getLogger('lenskit').setLevel(logging.DEBUG)
     root.debug('log system configured')
 
 
