@@ -81,6 +81,7 @@ stages:
         random.seed: 20220215
     outs:
     - path: data-split/ml25m
-      md5: f71ddd054185a90140cd9cf34068fcc0.dir
-      size: 13903131
+      hash: md5
+      md5: 7d492d44c9ae62762f3264e47f7cd64b.dir
+      size: 13911889
       nfiles: 5

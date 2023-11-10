@@ -15,7 +15,7 @@ import sys
 from docopt import docopt
 import pathlib
 import importlib
-import gzip
+from zstandard import ZstdCompressor
 import pickle
 try:
     import resource
@@ -53,12 +53,13 @@ def main(args):
         _log.info('%.2fs user, %.2fs system, %.1fMB max RSS', res.ru_utime, res.ru_stime, res.ru_maxrss / 1024)
 
     if out is None:
-        out = f'models/{dsname}-{model}.pkl.gz'
+        out = f'models/{dsname}-{model}.bpk'
 
     _log.info('writing to %s', out)
     pathlib.Path(out).parent.mkdir(parents=True, exist_ok=True)
-    with gzip.open(out, 'wb') as f:
-        pickle.dump(algo, f, 4)
+    zstd = ZstdCompressor(9)
+    with open(out, 'wb') as f, zstd.stream_writer(f) as zf:
+        pickle.dump(algo, zf, 5)
 
 if __name__ == '__main__':
     _log = log.script(__file__)

@@ -2,7 +2,8 @@ deps:
 - path: http://files.grouplens.org/datasets/movielens/ml-25m.zip
   checksum: '"f9d7b6a-598cfd314523f"'
   size: 261978986
-md5: 56f2d47c2219414102e63cb695e170cf
+  hash: md5
+md5: 5f93c96ae43c400d6f2df08243fe800d
 outs:
 - md5: 6b51fb2759a8657d3bfcbfc42b592ada
   path: ml-25m.zip
