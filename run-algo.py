@@ -17,8 +17,6 @@ Options:
     ALGO            name of algorithm to load
 """
 
-import os
-import multiprocessing
 from docopt import docopt
 from pathlib import Path
 from lenskit.algorithms import Recommender, Predictor
