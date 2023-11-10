@@ -15,8 +15,8 @@ import sys
 from docopt import docopt
 import pathlib
 import importlib
-from zstandard import ZstdCompressor
-import pickle
+from numcodecs import Blosc
+import binpickle
 try:
     import resource
 except ImportError:
@@ -53,13 +53,11 @@ def main(args):
         _log.info('%.2fs user, %.2fs system, %.1fMB max RSS', res.ru_utime, res.ru_stime, res.ru_maxrss / 1024)
 
     if out is None:
-        out = f'models/{dsname}-{model}.pkl.zst'
+        out = f'models/{dsname}-{model}.bpk'
 
     _log.info('writing to %s', out)
     pathlib.Path(out).parent.mkdir(parents=True, exist_ok=True)
-    zstd = ZstdCompressor(9)
-    with open(out, 'wb') as f, zstd.stream_writer(f) as zf:
-        pickle.dump(algo, zf, 5)
+    binpickle.dump(algo, out, codec=Blosc('zstd'))
 
 if __name__ == '__main__':
     _log = log.script(__file__)
