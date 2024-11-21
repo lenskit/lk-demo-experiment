@@ -22,5 +22,5 @@ dependencies:
 - tqdm
 - statsmodels
 - docopt
-- dvc =3,<3.27.1
+- dvc ~=3.50
 - ruff
