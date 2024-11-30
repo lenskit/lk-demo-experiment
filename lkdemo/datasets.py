@@ -26,4 +26,4 @@ def ml1m() -> Dataset:
 
 
 def ml10m() -> Dataset:
-    return load_movielens("data/ml-10M100K.zip")
+    return load_movielens("data/ml-10m.zip")

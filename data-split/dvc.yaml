@@ -3,6 +3,7 @@ stages:
     cmd: python split-data.py -o data-split/ml100k ml100k
     wdir: ..
     deps:
+      - split-data.py
       - data/ml-100k.zip
     outs:
       - data-split/ml100k
@@ -13,6 +14,7 @@ stages:
     cmd: python split-data.py -o data-split/ml1m ml1m
     wdir: ..
     deps:
+      - split-data.py
       - data/ml-1m.zip
     outs:
       - data-split/ml1m
@@ -23,6 +25,7 @@ stages:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
     wdir: ..
     deps:
+      - split-data.py
       - data/ml-latest-small.zip
     outs:
       - data-split/mlsmall
@@ -33,6 +36,7 @@ stages:
     cmd: python split-data.py -o data-split/ml10m ml10m
     wdir: ..
     deps:
+      - split-data.py
       - data/ml-10m.zip
     outs:
       - data-split/ml10m
@@ -43,6 +47,7 @@ stages:
     cmd: python split-data.py -o data-split/ml20m ml20m
     wdir: ..
     deps:
+      - split-data.py
       - data/ml-20m.zip
     outs:
       - data-split/ml20m
@@ -53,6 +58,7 @@ stages:
     cmd: python split-data.py -o data-split/ml25m ml25m
     wdir: ..
     deps:
+      - split-data.py
       - data/ml-25m.zip
     outs:
       - data-split/ml25m
