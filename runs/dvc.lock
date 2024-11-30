@@ -811,3 +811,17 @@ stages:
       md5: 093577148d30d63439c96298a5cb5c9e.dir
       size: 394127
       nfiles: 10
+  run-explicit-model@ml1m-ALS:
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-ALS ALS
+    deps:
+    - path: data-split/ml1m
+      hash: md5
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-ALS
+      hash: md5
+      md5: 4ce0b05ac74c0c03df86e97f6ef1e44f.dir
+      size: 7013605
+      nfiles: 10

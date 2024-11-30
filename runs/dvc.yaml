@@ -38,10 +38,9 @@ stages:
         - ml20m
         - ml25m
       model:
-        - Bias
-        - IIE
-        - UUE
-        - ALS
+        - Pop
+        - III
+        - IALS
     cmd: python run-model.py --splits data-split/${item.data} -o runs/${item.data}-${item.model} --no-predict ${item.model}
     wdir: ..
     deps:
