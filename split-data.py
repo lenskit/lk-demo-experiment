@@ -1,20 +1,25 @@
 # -*- coding: utf-8 -*-
 """
 Usage:
-    split-data.py [-p partitions] [-o output] DATASET
+    split-data.py [-v] [-p partitions] [-o output] DATASET
 
 Options:
-    -p partitions     number of cross-folds [default: 5]
-    -o output         destination directory [default: data-split]
-    DATASET           name of data set to load
+    -v, --verbose   enable verbose logging
+    -p PARTS        number of cross-folds [default: 5]
+    -o OUT          destination directory [default: data-split]
+    DATASET         name of data set to load
 """
 
+import logging
 from pathlib import Path
 
 from docopt import docopt
+from lenskit.logging import LoggingConfig
 from lenskit.splitting import SampleN, crossfold_users
 
-from lkdemo import datasets, log
+from lkdemo import datasets
+
+_log = logging.getLogger("split-data")
 
 
 def main(args):
@@ -41,6 +46,8 @@ def main(args):
 
 
 if __name__ == "__main__":
-    _log = log.script(__file__)
     args = docopt(__doc__)
+    lcfg = LoggingConfig()
+    lcfg.set_verbose(args["--verbose"])
+    lcfg.apply()
     main(args)
