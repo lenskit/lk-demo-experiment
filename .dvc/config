@@ -1,0 +1,2 @@
+['remote "inertial"']
+    url = webdavs://inertial.cci.drexel.edu/vault/dvc/lenskit-demo
