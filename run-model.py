@@ -27,7 +27,6 @@ from lenskit import util
 from lenskit.batch import BatchPipelineRunner
 from lenskit.data import ItemListCollection, UserIDKey, from_interactions_df
 from lenskit.logging.config import LoggingConfig
-from lenskit.logging.progress import set_progress_impl
 from lenskit.pipeline import topn_pipeline
 from lenskit.splitting import TTSplit
 
@@ -114,6 +113,7 @@ if __name__ == "__main__":
     args = docopt(__doc__)
     lcfg = LoggingConfig()
     lcfg.set_verbose(args["--verbose"])
+    if args["--log-file"]:
+        lcfg.log_file(args["--log-file"], logging.DEBUG)
     lcfg.apply()
-    set_progress_impl("rich")
     main(args)
