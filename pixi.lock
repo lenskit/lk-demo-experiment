@@ -439,7 +439,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py312hef9b889_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
-      - pypi: git+https://github.com/mdekstrand/lkpy.git@0567867ba864c0632f60597b919cac94fe8aa84b#subdirectory=lenskit
+      - pypi: git+https://github.com/mdekstrand/lkpy.git@76bfde1d7d41617c20195581dc2c1227bb51ad54#subdirectory=lenskit
       - pypi: git+https://github.com/mdekstrand/manylog.git@0592011daa8acdbdbf9632466cb39cc50ab4756c
       - pypi: https://files.pythonhosted.org/packages/f1/54/65af8de681fa8255402c80eda2a501ba467921d5a7a028c9c22a2c2eedb5/msgpack-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/36/ed/0544f3fa46c257f0076688a6b522457dafcac1a70d3446ccd192a15b4b56/progress_api-0.1.0-py3-none-any.whl
@@ -865,7 +865,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zlib-1.3.1-h2466b09_2.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstandard-0.23.0-py312h7606c53_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.6-h0ea2cb4_0.conda
-      - pypi: git+https://github.com/mdekstrand/lkpy.git@0567867ba864c0632f60597b919cac94fe8aa84b#subdirectory=lenskit
+      - pypi: git+https://github.com/mdekstrand/lkpy.git@76bfde1d7d41617c20195581dc2c1227bb51ad54#subdirectory=lenskit
       - pypi: git+https://github.com/mdekstrand/manylog.git@0592011daa8acdbdbf9632466cb39cc50ab4756c
       - pypi: https://files.pythonhosted.org/packages/73/80/2708a4641f7d553a63bc934a3eb7214806b5b39d200133ca7f7afb0a53e8/msgpack-1.1.0-cp312-cp312-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/36/ed/0544f3fa46c257f0076688a6b522457dafcac1a70d3446ccd192a15b4b56/progress_api-0.1.0-py3-none-any.whl
@@ -1310,7 +1310,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py312hef9b889_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
-      - pypi: git+https://github.com/mdekstrand/lkpy.git@0567867ba864c0632f60597b919cac94fe8aa84b#subdirectory=lenskit
+      - pypi: git+https://github.com/mdekstrand/lkpy.git@76bfde1d7d41617c20195581dc2c1227bb51ad54#subdirectory=lenskit
       - pypi: git+https://github.com/mdekstrand/manylog.git@0592011daa8acdbdbf9632466cb39cc50ab4756c
       - pypi: https://files.pythonhosted.org/packages/f1/54/65af8de681fa8255402c80eda2a501ba467921d5a7a028c9c22a2c2eedb5/msgpack-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/36/ed/0544f3fa46c257f0076688a6b522457dafcac1a70d3446ccd192a15b4b56/progress_api-0.1.0-py3-none-any.whl
@@ -1709,7 +1709,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zlib-1.3.1-h8359307_2.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstandard-0.23.0-py312h15fbf35_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.6-hb46c0d2_0.conda
-      - pypi: git+https://github.com/mdekstrand/lkpy.git@0567867ba864c0632f60597b919cac94fe8aa84b#subdirectory=lenskit
+      - pypi: git+https://github.com/mdekstrand/lkpy.git@76bfde1d7d41617c20195581dc2c1227bb51ad54#subdirectory=lenskit
       - pypi: git+https://github.com/mdekstrand/manylog.git@0592011daa8acdbdbf9632466cb39cc50ab4756c
       - pypi: https://files.pythonhosted.org/packages/28/51/da7f3ae4462e8bb98af0d5bdf2707f1b8c65a0d4f496e46b6afb06cbc286/msgpack-1.1.0-cp312-cp312-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/36/ed/0544f3fa46c257f0076688a6b522457dafcac1a70d3446ccd192a15b4b56/progress_api-0.1.0-py3-none-any.whl
@@ -2135,7 +2135,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zlib-1.3.1-h2466b09_2.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstandard-0.23.0-py312h7606c53_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.6-h0ea2cb4_0.conda
-      - pypi: git+https://github.com/mdekstrand/lkpy.git@0567867ba864c0632f60597b919cac94fe8aa84b#subdirectory=lenskit
+      - pypi: git+https://github.com/mdekstrand/lkpy.git@76bfde1d7d41617c20195581dc2c1227bb51ad54#subdirectory=lenskit
       - pypi: git+https://github.com/mdekstrand/manylog.git@0592011daa8acdbdbf9632466cb39cc50ab4756c
       - pypi: https://files.pythonhosted.org/packages/73/80/2708a4641f7d553a63bc934a3eb7214806b5b39d200133ca7f7afb0a53e8/msgpack-1.1.0-cp312-cp312-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/36/ed/0544f3fa46c257f0076688a6b522457dafcac1a70d3446ccd192a15b4b56/progress_api-0.1.0-py3-none-any.whl
@@ -8382,16 +8382,16 @@ packages:
   timestamp: 1729655358674
 - kind: pypi
   name: lenskit
-  version: 0.8.0.dev2973+g0567867b
-  url: git+https://github.com/mdekstrand/lkpy.git@0567867ba864c0632f60597b919cac94fe8aa84b#subdirectory=lenskit
+  version: 0.8.0.dev3003+g76bfde1d
+  url: git+https://github.com/mdekstrand/lkpy.git@76bfde1d7d41617c20195581dc2c1227bb51ad54#subdirectory=lenskit
   requires_dist:
   - manylog @ git+https://github.com/mdekstrand/manylog.git
   - numpy>=1.24
   - pandas~=2.0
-  - progress-api>=0.1.0a9
   - pydantic>=2.8,<3
+  - rich~=13.9
   - scipy>=1.10.0
-  - structlog>=20
+  - structlog>=22.2
   - threadpoolctl>=3.0
   - torch~=2.1
   - scikit-learn>=1.1 ; extra == 'sklearn'
