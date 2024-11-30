@@ -23,7 +23,7 @@ from pathlib import Path
 
 import pandas as pd
 from docopt import docopt
-from lenskit import batch, util
+from lenskit import util
 from lenskit.batch import BatchPipelineRunner
 from lenskit.data import ItemListCollection, UserIDKey, from_interactions_df
 from lenskit.logging.config import LoggingConfig
@@ -92,7 +92,7 @@ def main(args):
             len(split.test),
         )
         runner = BatchPipelineRunner()
-        runner.recommend()
+        runner.recommend(n=n_recs)
         if not args["--no-predict"]:
             runner.predict()
 
