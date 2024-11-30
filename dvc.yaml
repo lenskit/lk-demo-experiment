@@ -3,10 +3,10 @@ stages:
   eval-report-template:
     cmd: jupytext --to ipynb eval-report.md
     deps:
-    - eval-report.md
+      - eval-report.md
     outs:
-    - eval-report.ipynb:
-        cache: false
+      - eval-report.ipynb:
+          cache: false
 
   eval-report-ml100k:
     cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
