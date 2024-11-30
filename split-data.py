@@ -42,7 +42,7 @@ def main(args):
         crossfold_users(ratings, partitions, SampleN(testRowsPerUsers)), 1
     ):
         _log.info("writing test set %d", i)
-        tp.test.to_parquet(path / f"test-{i}.parquet")
+        tp.test.to_df().to_parquet(path / f"test-{i}.parquet")
 
 
 if __name__ == "__main__":
