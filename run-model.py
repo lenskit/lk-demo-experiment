@@ -24,11 +24,12 @@ from pathlib import Path
 import pandas as pd
 from docopt import docopt
 from lenskit import batch, util
-from lenskit.data import ItemListCollection, from_interactions_df
+from lenskit.data import ItemListCollection, UserIDKey, from_interactions_df
+from lenskit.logging.config import LoggingConfig
 from lenskit.pipeline import topn_pipeline
 from lenskit.splitting import TTSplit
 
-from lkdemo import datasets, log
+from lkdemo import datasets
 
 _log = logging.getLogger("run-model")
 
@@ -64,7 +65,7 @@ def main(args):
         train_file = path / f"train-{suffix}"
         timer = util.Stopwatch()
 
-        test = ItemListCollection.from_df(test)
+        test = ItemListCollection.from_df(test, UserIDKey)
 
         if train_file.exists():
             _log.info("[%s] loading training data from %s", timer, train_file)
@@ -82,27 +83,32 @@ def main(args):
 
         _log.info("[%s] Fitting the model", timer)
         copy = pipe.clone()
-        copy.train()
+        copy.train(split.train)
 
-        try:
-            _log.info("[%s] generating recommendations for unique users", timer)
-            recs = batch.recommend(pipe, split.test.keys(), n_recs)
-            _log.info("[%s] writing recommendations to %s", timer, dest)
-            recs.to_df().to_parquet(
-                dest / f"recs-{suffix}", index=False, compression="zstd"
+        _log.info(
+            "[%s] generating recommendations for %d unique users",
+            timer,
+            len(split.test),
+        )
+        recs = batch.recommend(copy, split.test.keys(), n_recs)
+        _log.info("[%s] writing recommendations to %s", timer, dest)
+        recs.to_df().to_parquet(
+            dest / f"recs-{suffix}", index=False, compression="zstd"
+        )
+
+        if not args["--no-predict"]:
+            _log.info("[%s] generating predictions for user-item", timer)
+            preds = batch.predict(copy, split.test)
+            preds.to_df().to_parquet(
+                dest / f"pred-{suffix}", index=False, compression="zstd"
             )
 
-            if not args["--no-predict"]:
-                _log.info("[%s] generating predictions for user-item", timer)
-                preds = batch.predict(pipe, split.test)
-                preds.to_parquet(
-                    dest / f"pred-{suffix}", index=False, compression="zstd"
-                )
-        finally:
-            model.close()
+        del copy
 
 
 if __name__ == "__main__":
     args = docopt(__doc__)
-    _log = log.script(__file__, debug=args["--verbose"], log_file=args["--log-file"])
+    lcfg = LoggingConfig()
+    lcfg.set_verbose(args["--verbose"])
+    lcfg.apply()
     main(args)
