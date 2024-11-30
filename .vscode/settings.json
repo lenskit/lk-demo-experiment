@@ -1,0 +1,39 @@
+{
+    "files.exclude": {
+        "**/__pycache__": true,
+        ".hypothesis/": true,
+        ".*_cache/": true,
+        ".pixi/": true,
+        ".venv/": true,
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.formatOnSave": true,
+    },
+    "[jsonc]": {
+        "editor.formatOnSave": true,
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.formatOnSave": true,
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml",
+        "editor.formatOnSave": true,
+    },
+    "[jsonnet]": {
+        "editor.formatOnSave": true,
+    },
+    "python.testing.pytestArgs": [
+        "lenskit/tests",
+        "lenskit-funksvd/tests",
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+}
