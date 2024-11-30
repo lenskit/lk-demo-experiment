@@ -640,16 +640,18 @@ stages:
       size: 270443
       nfiles: 5
   mlsmall-explicit@Bias:
-    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-Bias Bias
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Bias Bias
     deps:
     - path: data-split/mlsmall
-      md5: dea9d6d987b27fa1350468028487bf5e.dir
-      size: 35890
+      hash: md5
+      md5: 8ebb03094c373088c160b936e1c9eae8.dir
+      size: 54394
       nfiles: 5
     outs:
     - path: runs/mlsmall-Bias
-      md5: 2e81e75b435524dbcc1f238cbc9997e7.dir
-      size: 784716
+      hash: md5
+      md5: a330ff149b30e68a9e1ca40873da9886.dir
+      size: 19876017
       nfiles: 10
   mlsmall-explicit@IIE:
     cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-IIE IIE

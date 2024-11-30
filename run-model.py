@@ -24,6 +24,7 @@ from pathlib import Path
 import pandas as pd
 from docopt import docopt
 from lenskit import batch, util
+from lenskit.batch import BatchPipelineRunner
 from lenskit.data import ItemListCollection, UserIDKey, from_interactions_df
 from lenskit.logging.config import LoggingConfig
 from lenskit.pipeline import topn_pipeline
@@ -90,18 +91,20 @@ def main(args):
             timer,
             len(split.test),
         )
-        recs = batch.recommend(copy, split.test.keys(), n_recs)
-        _log.info("[%s] writing recommendations to %s", timer, dest)
-        recs.to_df().to_parquet(
-            dest / f"recs-{suffix}", index=False, compression="zstd"
-        )
+        runner = BatchPipelineRunner()
+        runner.recommend()
+        if not args["--no-predict"]:
+            runner.predict()
+
+        result = runner.run(copy, split.test)
+        recs = result.output("recommendations").to_df()
+        _log.info("[%s] writing %d recommendations to %s", timer, len(recs), dest)
+        recs.to_parquet(dest / f"recs-{suffix}", index=False, compression="zstd")
 
         if not args["--no-predict"]:
-            _log.info("[%s] generating predictions for user-item", timer)
-            preds = batch.predict(copy, split.test)
-            preds.to_df().to_parquet(
-                dest / f"pred-{suffix}", index=False, compression="zstd"
-            )
+            preds = result.output("predictions").to_df()
+            _log.info("[%s] writing %d predictions to %s", timer, len(preds), dest)
+            preds.to_parquet(dest / f"pred-{suffix}", index=False, compression="zstd")
 
         del copy
 
