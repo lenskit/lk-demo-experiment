@@ -10,23 +10,27 @@ Options:
     --splits input  directory for split train-test pairs [default: data-split]
     -o output       destination directory [default: output]
     -n N            number of recommendations for a unique user [default: 100]
-    -m MODULE       import algorithms from MODULE [default: lkdemo.algorithms]
+    -m MODULE       import models from MODULE [default: lkdemo.models]
     -P N, --part=N  only run on partition N
     --no-predict    turn off rating prediction
     --log-file FILE write logs to FILE
-    MODEL            name of algorithm to load
+    MODEL            name of model to load
 """
 
 import importlib
+import logging
 from pathlib import Path
 
 import pandas as pd
 from docopt import docopt
 from lenskit import batch, util
-from lenskit.algorithms import Predictor, Recommender
-from seedbank import init_file
+from lenskit.data import ItemListCollection, from_interactions_df
+from lenskit.pipeline import topn_pipeline
+from lenskit.splitting import TTSplit
 
 from lkdemo import datasets, log
+
+_log = logging.getLogger("run-model")
 
 
 def main(args):
@@ -37,13 +41,11 @@ def main(args):
     model = args.get("MODEL")
     part = args.get("--part", None)
 
-    init_file("params.yaml", "run-algo", model)
-
     _log.info(f"importing from module {mod_name}")
     algorithms = importlib.import_module(mod_name)
 
-    algo = getattr(algorithms, model)
-    algo = Recommender.adapt(algo)
+    model = getattr(algorithms, model)
+    pipe = topn_pipeline(model, predicts_ratings=not args["--no-predict"])
 
     path = Path(input)
     dest = Path(output)
@@ -62,39 +64,40 @@ def main(args):
         train_file = path / f"train-{suffix}"
         timer = util.Stopwatch()
 
-        if "index" in test.columns:
-            _log.info("setting test index")
-            test = test.set_index("index")
-        else:
-            _log.warning("no index column found in %s", file.name)
+        test = ItemListCollection.from_df(test)
 
         if train_file.exists():
             _log.info("[%s] loading training data from %s", timer, train_file)
-            train = pd.read_csv(path / f"train-{suffix}", sep=",")
+            train = pd.read_parquet(path / f"train-{suffix}")
+            train = from_interactions_df(train)
+            split = TTSplit(train, test)
         elif ds_def is not None:
             _log.info(
                 "[%s] extracting training data from data set %s", timer, path.name
             )
-            train = datasets.ds_diff(ds_def.ratings, test)
-            train.reset_index(drop=True, inplace=True)
+            split = TTSplit.from_src_and_test(ds_def(), test)
         else:
             _log.error("could not find training data for %s", file.name)
             continue
 
         _log.info("[%s] Fitting the model", timer)
-        model = batch.train_isolated(algo, train)
+        copy = pipe.clone()
+        copy.train()
 
         try:
             _log.info("[%s] generating recommendations for unique users", timer)
-            users = test.user.unique()
-            recs = batch.recommend(model, users, n_recs)
+            recs = batch.recommend(pipe, split.test.keys(), n_recs)
             _log.info("[%s] writing recommendations to %s", timer, dest)
-            recs.to_csv(dest / f"recs-{suffix}", index=False)
+            recs.to_df().to_parquet(
+                dest / f"recs-{suffix}", index=False, compression="zstd"
+            )
 
-            if isinstance(algo, Predictor) and not args["--no-predict"]:
+            if not args["--no-predict"]:
                 _log.info("[%s] generating predictions for user-item", timer)
-                preds = batch.predict(model, test)
-                preds.to_csv(dest / f"pred-{suffix}", index=False)
+                preds = batch.predict(pipe, split.test)
+                preds.to_parquet(
+                    dest / f"pred-{suffix}", index=False, compression="zstd"
+                )
         finally:
             model.close()
 
