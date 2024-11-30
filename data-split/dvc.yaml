@@ -3,58 +3,58 @@ stages:
     cmd: python split-data.py -o data-split/ml100k ml100k
     wdir: ..
     deps:
-    - data/ml-100k/u.data
+      - data/ml-100k.zip
     outs:
-    - data-split/ml100k
+      - data-split/ml100k
     params:
-    - random.seed
+      - random.seed
 
   split-ml1m:
     cmd: python split-data.py -o data-split/ml1m ml1m
     wdir: ..
     deps:
-    - data/ml-1m/ratings.dat
+      - data/ml-1m.zip
     outs:
-    - data-split/ml1m
+      - data-split/ml1m
     params:
-    - random.seed
+      - random.seed
 
   split-mlsmall:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
     wdir: ..
     deps:
-    - data/ml-latest-small/ratings.csv
+      - data/ml-latest-small.zip
     outs:
-    - data-split/mlsmall
+      - data-split/mlsmall
     params:
-    - random.seed
+      - random.seed
 
   split-ml10m:
     cmd: python split-data.py -o data-split/ml10m ml10m
     wdir: ..
     deps:
-    - data/ml-10M100K/ratings.dat
+      - data/ml-10m.zip
     outs:
-    - data-split/ml10m
+      - data-split/ml10m
     params:
-    - random.seed
+      - random.seed
 
   split-ml20m:
     cmd: python split-data.py -o data-split/ml20m ml20m
     wdir: ..
     deps:
-    - data/ml-20m/ratings.csv
+      - data/ml-20m.zip
     outs:
-    - data-split/ml20m
+      - data-split/ml20m
     params:
-    - random.seed
+      - random.seed
 
   split-ml25m:
     cmd: python split-data.py -o data-split/ml25m ml25m
     wdir: ..
     deps:
-    - data/ml-25m/ratings.csv
+      - data/ml-25m.zip
     outs:
-    - data-split/ml25m
+      - data-split/ml25m
     params:
-    - random.seed
+      - random.seed
