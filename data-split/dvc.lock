@@ -18,17 +18,22 @@ stages:
   split-ml10m:
     cmd: python split-data.py -o data-split/ml10m ml10m
     deps:
-    - path: data/ml-10M100K/ratings.dat
-      md5: 3f317698625386f66177629fa5c6b2dc
-      size: 265105635
+    - path: data/ml-10m.zip
+      hash: md5
+      md5: ce571fd55effeba0271552578f2648bd
+      size: 65566137
+    - path: split-data.py
+      hash: md5
+      md5: 1c03c153a214b9058513527d5c5a6d88
+      size: 1308
     params:
       params.yaml:
         random.seed: 20220215
     outs:
     - path: data-split/ml10m
       hash: md5
-      md5: 62a9728e7acc0528100f3b245750a155.dir
-      size: 5906099
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
       nfiles: 5
   split-mlsmall:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
@@ -64,17 +69,22 @@ stages:
   split-ml1m:
     cmd: python split-data.py -o data-split/ml1m ml1m
     deps:
-    - path: data/ml-1m/ratings.dat
-      md5: a89aa3591bc97d6d4e0c89459ff39362
-      size: 24594131
+    - path: data/ml-1m.zip
+      hash: md5
+      md5: c4d9eecfca2ab87c1945afe126590906
+      size: 5917549
+    - path: split-data.py
+      hash: md5
+      md5: 1c03c153a214b9058513527d5c5a6d88
+      size: 1308
     params:
       params.yaml:
         random.seed: 20220215
     outs:
     - path: data-split/ml1m
       hash: md5
-      md5: 79ce6e4a4a9af8f72371fdf38b157169.dir
-      size: 503229
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
       nfiles: 5
   split-ml25m:
     cmd: python split-data.py -o data-split/ml25m ml25m
