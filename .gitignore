@@ -10,3 +10,7 @@ __pycache__
 /scratch/
 /models/
 /output/
+
+# pixi environments
+.pixi
+*.egg-info
