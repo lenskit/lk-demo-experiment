@@ -36,7 +36,7 @@ scipy = "~=1.10"
 psutil = "*"
 
 [pypi-dependencies]
-lenskit = { git = "https://github.com/mdekstrand/lkpy.git", branch = "feature/reporting", subdirectory = "lenskit" }
+lenskit = { git = "https://github.com/mdekstrand/lkpy.git", branch = "feature/log-runs", subdirectory = "lenskit" }
 
 [feature.cuda]
 platforms = ["linux-64", "win-64"]
