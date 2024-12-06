@@ -25,7 +25,10 @@ jupytext = "~=1.16"
 seaborn = "~=0.13.0"
 humanize = "~=4.0"
 statsmodels = "~=0.14.0"
+# lenskit deps
 pytorch = { version = "~=2.2", channel = "pytorch" }
+structlog = ">=24"
+pyzmq = ">=24"
 
 ruff = "*"
 
