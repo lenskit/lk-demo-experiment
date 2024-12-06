@@ -825,3 +825,18 @@ stages:
       md5: 4ce0b05ac74c0c03df86e97f6ef1e44f.dir
       size: 7013605
       nfiles: 10
+  run-implicit-model@ml10m-IALS:
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-IALS --no-predict
+      IALS
+    deps:
+    - path: data-split/ml10m
+      hash: md5
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-IALS
+      hash: md5
+      md5: 99476a8d6fbb872e000b6de99c27d076.dir
+      size: 65936675
+      nfiles: 5
