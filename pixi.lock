@@ -440,7 +440,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py312hef9b889_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@c29c1714ae7fbf0b46384407885c98abb3cb9df0#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@bf64152aa1c1830fd1e5dddc629b7e5478a2cb73#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
       win-64:
       - conda: https://conda.anaconda.org/conda-forge/noarch/adal-1.2.7-pyhd8ed1ab_0.tar.bz2
@@ -863,7 +863,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zlib-1.3.1-h2466b09_2.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstandard-0.23.0-py312h7606c53_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.6-h0ea2cb4_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@c29c1714ae7fbf0b46384407885c98abb3cb9df0#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@bf64152aa1c1830fd1e5dddc629b7e5478a2cb73#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
   default:
     channels:
@@ -1305,7 +1305,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py312hef9b889_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@c29c1714ae7fbf0b46384407885c98abb3cb9df0#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@bf64152aa1c1830fd1e5dddc629b7e5478a2cb73#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
       osx-arm64:
       - conda: https://conda.anaconda.org/conda-forge/noarch/adal-1.2.7-pyhd8ed1ab_0.tar.bz2
@@ -1701,7 +1701,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zlib-1.3.1-h8359307_2.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstandard-0.23.0-py312h15fbf35_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.6-hb46c0d2_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@c29c1714ae7fbf0b46384407885c98abb3cb9df0#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@bf64152aa1c1830fd1e5dddc629b7e5478a2cb73#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
       win-64:
       - conda: https://conda.anaconda.org/conda-forge/noarch/adal-1.2.7-pyhd8ed1ab_0.tar.bz2
@@ -2124,7 +2124,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zlib-1.3.1-h2466b09_2.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstandard-0.23.0-py312h7606c53_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.6-h0ea2cb4_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@c29c1714ae7fbf0b46384407885c98abb3cb9df0#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@bf64152aa1c1830fd1e5dddc629b7e5478a2cb73#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
 packages:
 - kind: conda
@@ -8367,8 +8367,8 @@ packages:
   timestamp: 1729655358674
 - kind: pypi
   name: lenskit
-  version: 2025.0.0a1.dev26+gc29c1714
-  url: git+https://github.com/lenskit/lkpy.git@c29c1714ae7fbf0b46384407885c98abb3cb9df0#subdirectory=lenskit
+  version: 2025.0.0a1.dev28+gbf64152a
+  url: git+https://github.com/lenskit/lkpy.git@bf64152aa1c1830fd1e5dddc629b7e5478a2cb73#subdirectory=lenskit
   requires_dist:
   - numpy>=1.24
   - pandas~=2.0
