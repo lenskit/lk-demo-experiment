@@ -54,17 +54,22 @@ stages:
   split-ml100k:
     cmd: python split-data.py -o data-split/ml100k ml100k
     deps:
-    - path: data/ml-100k/u.data
-      md5: 6e47046882bad158b0efbb84cd5cb987
-      size: 1979173
+    - path: data/ml-100k.zip
+      hash: md5
+      md5: 0e33842e24a9c977be4e0107933c0723
+      size: 4924029
+    - path: split-data.py
+      hash: md5
+      md5: 1c03c153a214b9058513527d5c5a6d88
+      size: 1308
     params:
       params.yaml:
         random.seed: 20220215
     outs:
     - path: data-split/ml100k
       hash: md5
-      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
-      size: 94640
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
       nfiles: 5
   split-ml1m:
     cmd: python split-data.py -o data-split/ml1m ml1m

@@ -840,3 +840,104 @@ stages:
       md5: 99476a8d6fbb872e000b6de99c27d076.dir
       size: 65936675
       nfiles: 5
+  run-explicit-model@ml100k-Bias:
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-Bias Bias
+    deps:
+    - path: data-split/ml100k
+      hash: md5
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-Bias
+      hash: md5
+      md5: 6140e62c43cd985151d5fc31742f87f3.dir
+      size: 620117
+      nfiles: 10
+  run-explicit-model@ml100k-IIE:
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-IIE IIE
+    deps:
+    - path: data-split/ml100k
+      hash: md5
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-IIE
+      hash: md5
+      md5: d5c29d0edace2790ee5c3abf940e1b15.dir
+      size: 701004
+      nfiles: 10
+  run-explicit-model@ml100k-UUE:
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-UUE UUE
+    deps:
+    - path: data-split/ml100k
+      hash: md5
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-UUE
+      hash: md5
+      md5: 6b74d73421199c932085bdb2a6e20aa9.dir
+      size: 681121
+      nfiles: 10
+  run-explicit-model@ml100k-ALS:
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-ALS ALS
+    deps:
+    - path: data-split/ml100k
+      hash: md5
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-ALS
+      hash: md5
+      md5: ba7a79aa77d783aa6ec7c4480717f1b2.dir
+      size: 1103432
+      nfiles: 10
+  run-implicit-model@ml100k-Pop:
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-Pop --no-predict
+      Pop
+    deps:
+    - path: data-split/ml100k
+      hash: md5
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-Pop
+      hash: md5
+      md5: c43d752cb17cd51cb5345675001ae27c.dir
+      size: 163803
+      nfiles: 5
+  run-implicit-model@ml100k-III:
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-III --no-predict
+      III
+    deps:
+    - path: data-split/ml100k
+      hash: md5
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-III
+      hash: md5
+      md5: 33fb9d411d35ed2541dec86dd5e96631.dir
+      size: 627245
+      nfiles: 5
+  run-implicit-model@ml100k-IALS:
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-IALS --no-predict
+      IALS
+    deps:
+    - path: data-split/ml100k
+      hash: md5
+      md5: 1d1842fde41279609252cd3746f14a31.dir
+      size: 68225
+      nfiles: 5
+    outs:
+    - path: runs/ml100k-IALS
+      hash: md5
+      md5: f887db63ff04a57259787fe540059045.dir
+      size: 1037281
+      nfiles: 5
