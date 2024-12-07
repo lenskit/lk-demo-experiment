@@ -138,12 +138,12 @@ pa = RunAnalysis()
 
 pa.add_metric(RMSE(missing_scores='ignore', missing_truth='ignore'))
 
-pred_scores = pa.compute(preds, test)
-pred_scores.list_summary('model')
+pred_results = pa.compute(preds, test)
+pred_results.list_summary('model')
 ```
 
 ```python
-sns.catplot(results.list_metrics().reset_index(), x='model', y='RMSE', kind='bar')
+sns.catplot(pred_results.list_metrics().reset_index(), x='model', y='RMSE', kind='bar')
 plt.show()
 ```
 
@@ -153,8 +153,4 @@ We'll now save the metrics to a file.
 
 ```python
 rec_results.list_summary('model')['mean'].unstack().to_csv(f'eval-metrics.{dataset}.csv')
-```
-
-```python
-
 ```

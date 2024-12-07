@@ -204,10 +204,61 @@ stages:
     deps:
     - path: eval-report.md
       hash: md5
-      md5: 0fda7703dd3151479e20e4eff0da7c58
-      size: 4016
+      md5: aaffe43b06ccb41903a8bd63b5474b6a
+      size: 4178
     outs:
     - path: eval-report.ipynb
       hash: md5
-      md5: 5f6e67c57bb139ed1f3282601a615b0c
-      size: 7650
+      md5: acdb23b36410d6ad50ef90ce7f83a0b0
+      size: 7943
+  eval-report@ml100k:
+    cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
+    deps:
+    - path: eval-report.ipynb
+      hash: md5
+      md5: acdb23b36410d6ad50ef90ce7f83a0b0
+      size: 7943
+    - path: runs/ml100k-ALS
+      hash: md5
+      md5: 7edd55065271df3ff83605423e1129c2.dir
+      size: 1103432
+      nfiles: 10
+    - path: runs/ml100k-Bias
+      hash: md5
+      md5: 6140e62c43cd985151d5fc31742f87f3.dir
+      size: 620117
+      nfiles: 10
+    - path: runs/ml100k-IALS
+      hash: md5
+      md5: f887db63ff04a57259787fe540059045.dir
+      size: 1037281
+      nfiles: 5
+    - path: runs/ml100k-IIE
+      hash: md5
+      md5: d5c29d0edace2790ee5c3abf940e1b15.dir
+      size: 701004
+      nfiles: 10
+    - path: runs/ml100k-III
+      hash: md5
+      md5: 33fb9d411d35ed2541dec86dd5e96631.dir
+      size: 627245
+      nfiles: 5
+    - path: runs/ml100k-Pop
+      hash: md5
+      md5: c43d752cb17cd51cb5345675001ae27c.dir
+      size: 163803
+      nfiles: 5
+    - path: runs/ml100k-UUE
+      hash: md5
+      md5: 6b74d73421199c932085bdb2a6e20aa9.dir
+      size: 681121
+      nfiles: 10
+    outs:
+    - path: eval-metrics.ml100k.csv
+      hash: md5
+      md5: 0a2ab784a507de417fd54e32160b2f1a
+      size: 480
+    - path: eval-report.ml100k.ipynb
+      hash: md5
+      md5: b63c5bca2710ab1175bce15aa208ccd5
+      size: 70005

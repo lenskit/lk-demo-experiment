@@ -13,3 +13,4 @@ __pycache__
 # pixi environments
 .pixi
 *.egg-info
+/eval-metrics.ml100k.csv
