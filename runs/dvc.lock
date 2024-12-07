@@ -377,13 +377,15 @@ stages:
       Pop
     deps:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      hash: md5
+      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
+      size: 94640
       nfiles: 5
     outs:
     - path: runs/ml100k-Pop
-      md5: d101ffefdd8795c7bfa2cdbc36135ff1.dir
-      size: 421665
+      hash: md5
+      md5: 8376dff1b927cbd17275580a8bebecf5.dir
+      size: 1563361
       nfiles: 5
   ml100k-explicit@Bias:
     cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-Bias Bias
@@ -446,26 +448,30 @@ stages:
       IALS
     deps:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      hash: md5
+      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
+      size: 94640
       nfiles: 5
     outs:
     - path: runs/ml100k-IALS
-      md5: b76d374d3363158dd7f6c2832780eaf8.dir
-      size: 1255640
+      hash: md5
+      md5: 04b83bf64648d89d8a013c59f52dacff.dir
+      size: 2796240
       nfiles: 5
   ml100k-implicit@III:
     cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-III --no-predict
       III
     deps:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      hash: md5
+      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
+      size: 94640
       nfiles: 5
     outs:
     - path: runs/ml100k-III
-      md5: 8db906e7faa0ffa8a180007db6e92342.dir
-      size: 1230320
+      hash: md5
+      md5: a3643b571cf0a63551fd1f10278c2b30.dir
+      size: 2713942
       nfiles: 5
   ml1m-implicit@Pop:
     cmd: python run-algo.py --splits data-split/ml1m -o runs/ml1m-Pop Pop
