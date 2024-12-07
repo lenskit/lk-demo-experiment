@@ -68,12 +68,12 @@ dirs = [fld for fld in output_root.glob(f'{dataset}-*')]
 ```
 
 ```python
-recs = ItemListCollection(['algorithm', 'user_id'], index=False)
+recs = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("recs-*"):
         rec = pd.read_parquet(file)
         rec = ItemListCollection.from_df(rec, UserIDKey)
-        recs.add_from(rec, algorithm=fld.name.split("-")[1])
+        recs.add_from(rec, model=fld.name.split("-")[1])
 ```
 
 ```python
@@ -82,12 +82,12 @@ rec_algos
 ```
 
 ```python
-preds = ItemListCollection(['algorithm', 'user_id'], index=False)
+preds = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("pred-*"):
         pred = pd.read_parquet(file)
         pred = ItemListCollection.from_df(pred, UserIDKey)
-        preds.add_from(pred, algorithm=fld.name.split("-")[1])
+        preds.add_from(pred, model=fld.name.split("-")[1])
 ```
 
 We need to load the test data so that we have the ground truths for computing accuracy
@@ -116,16 +116,16 @@ ra.add_metric(NDCG())
 ra.add_metric(RecipRank())
 ra.add_metric(RBP())
 
-results = ra.compute(recs, test)
-results.list_summary()
+rec_results = ra.compute(recs, test)
+rec_results.list_summary('model')
 ```
 
 We can reshape the list metrics and plot them:
 
 ```python
-metrics = results.list_metrics()
+metrics = rec_results.list_metrics()
 metrics = metrics.melt(var_name='metric', ignore_index=False).reset_index()
-sns.catplot(metrics, x='algorithm', y='value', col='metric', kind='bar')
+sns.catplot(metrics, x='model', y='value', col='metric', kind='bar')
 plt.show()
 ```
 
@@ -134,17 +134,25 @@ plt.show()
 We will also look at the prediction RMSE.
 
 ```python
-ra = RunAnalysis()
+pa = RunAnalysis()
 
-ra.add_metric(RMSE(missing_scores='ignore', missing_truth='ignore'))
+pa.add_metric(RMSE(missing_scores='ignore', missing_truth='ignore'))
 
-results = ra.compute(preds, test)
-results.list_summary()
+pred_scores = pa.compute(preds, test)
+pred_scores.list_summary('model')
 ```
 
 ```python
-sns.catplot(results.list_metrics().reset_index(), x='algorithm', y='RMSE', kind='bar')
+sns.catplot(results.list_metrics().reset_index(), x='model', y='RMSE', kind='bar')
 plt.show()
+```
+
+## Save Metrics
+
+We'll now save the metrics to a file.
+
+```python
+rec_results.list_summary('model')['mean'].unstack().to_csv(f'eval-metrics.{dataset}.csv')
 ```
 
 ```python
