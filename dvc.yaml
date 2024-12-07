@@ -15,8 +15,8 @@ stages:
       - ml1m
       - ml10m
       - ml20m
-      - ml32m
       - ml25m
+      - ml32m
     do:
       cmd: papermill -r dataset ${item} eval-report.ipynb eval-report.${item}.ipynb
       deps:
