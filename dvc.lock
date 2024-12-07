@@ -4,40 +4,49 @@ stages:
     cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: cc3fe6cac16cf204d97c2f0791b0e188
-      size: 13296
+      hash: md5
+      md5: 5f6e67c57bb139ed1f3282601a615b0c
+      size: 7650
     - path: runs/ml100k-ALS
-      md5: 6b2fef08276ca63aa70cb252ab39d712.dir
-      size: 1294378
+      hash: md5
+      md5: ba7a79aa77d783aa6ec7c4480717f1b2.dir
+      size: 1103432
       nfiles: 10
     - path: runs/ml100k-Bias
-      md5: 932659d5e5e6b172e2bf088c2aa0468c.dir
-      size: 1248927
+      hash: md5
+      md5: 6140e62c43cd985151d5fc31742f87f3.dir
+      size: 620117
       nfiles: 10
     - path: runs/ml100k-IALS
-      md5: b76d374d3363158dd7f6c2832780eaf8.dir
-      size: 1255640
+      hash: md5
+      md5: f887db63ff04a57259787fe540059045.dir
+      size: 1037281
       nfiles: 5
     - path: runs/ml100k-IIE
-      md5: 6546e3e21317f63cbdbb124b6b3514dc.dir
-      size: 1294937
+      hash: md5
+      md5: d5c29d0edace2790ee5c3abf940e1b15.dir
+      size: 701004
       nfiles: 10
     - path: runs/ml100k-III
-      md5: 8db906e7faa0ffa8a180007db6e92342.dir
-      size: 1230320
+      hash: md5
+      md5: 33fb9d411d35ed2541dec86dd5e96631.dir
+      size: 627245
       nfiles: 5
     - path: runs/ml100k-Pop
-      md5: d101ffefdd8795c7bfa2cdbc36135ff1.dir
-      size: 421665
+      hash: md5
+      md5: c43d752cb17cd51cb5345675001ae27c.dir
+      size: 163803
       nfiles: 5
     - path: runs/ml100k-UUE
-      md5: cb7f41a1ca1dbc9a09063cb489a6ccd0.dir
-      size: 1246228
+      hash: md5
+      md5: 6b74d73421199c932085bdb2a6e20aa9.dir
+      size: 681121
       nfiles: 10
     outs:
     - path: eval-report.ml100k.ipynb
-      md5: 359e1e397bd657d904dfd4ad05568809
-      size: 94713
+      hash: md5
+      md5: d1ee4c13858f196e3f033b1edbd6cee2
+      size: 65508
   eval-report-mlsmall:
     cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
     deps:
@@ -195,10 +204,10 @@ stages:
     deps:
     - path: eval-report.md
       hash: md5
-      md5: 6653c85cb55cd30849bcc29d6780a309
-      size: 6975
+      md5: 0fda7703dd3151479e20e4eff0da7c58
+      size: 4016
     outs:
     - path: eval-report.ipynb
       hash: md5
-      md5: 96952cc5eb33b5bf2c6f6396e84e33d7
-      size: 12965
+      md5: 5f6e67c57bb139ed1f3282601a615b0c
+      size: 7650
