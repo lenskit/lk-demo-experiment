@@ -16,6 +16,7 @@ stages:
         - ml10m
         - ml20m
         - ml25m
+        - ml32m
       model:
         - Bias
         - IIE
@@ -37,6 +38,7 @@ stages:
         - ml10m
         - ml20m
         - ml25m
+        - ml32m
       model:
         - Pop
         - III

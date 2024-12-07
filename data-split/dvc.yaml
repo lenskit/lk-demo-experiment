@@ -64,3 +64,14 @@ stages:
       - data-split/ml25m
     params:
       - random.seed
+
+  split-ml32m:
+    cmd: python split-data.py -o data-split/ml32m ml32m
+    wdir: ..
+    deps:
+      - split-data.py
+      - data/ml-32m.zip
+    outs:
+      - data-split/ml32m
+    params:
+      - random.seed
