@@ -8,107 +8,28 @@ stages:
       - eval-report.ipynb:
           cache: false
 
-  eval-report-ml100k:
-    cmd: papermill -r dataset ml100k eval-report.ipynb eval-report.ml100k.ipynb
-    deps:
-      - eval-report.ipynb
-      - runs/ml100k-Bias
-      - runs/ml100k-IIE
-      - runs/ml100k-UUE
-      - runs/ml100k-ALS
-      - runs/ml100k-Pop
-      - runs/ml100k-III
-      - runs/ml100k-IALS
-    outs:
-      - eval-report.ml100k.ipynb:
-          cache: false
-
-  eval-report-ml1m:
-    cmd: papermill -r dataset ml1m eval-report.ipynb eval-report.ml1m.ipynb
-    deps:
-      - eval-report.ipynb
-      - runs/ml1m-Pop
-      - runs/ml1m-Bias
-      - runs/ml1m-IIE
-      - runs/ml1m-UUE
-      - runs/ml1m-ALS
-      - runs/ml1m-III
-      - runs/ml1m-IALS
-    outs:
-      - eval-report.ml1m.ipynb:
-          cache: false
-
-  eval-report-mlsmall:
-    cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
-    deps:
-      - eval-report.ipynb
-      - runs/mlsmall-Pop
-      - runs/mlsmall-Bias
-      - runs/mlsmall-IIE
-      - runs/mlsmall-UUE
-      - runs/mlsmall-ALS
-      - runs/mlsmall-III
-      - runs/mlsmall-IALS
-    outs:
-      - eval-report.mlsmall.ipynb:
-          cache: false
-
-  eval-report-ml10m:
-    cmd: papermill -r dataset ml10m eval-report.ipynb eval-report.ml10m.ipynb
-    deps:
-      - eval-report.ipynb
-      - runs/ml10m-Pop
-      - runs/ml10m-Bias
-      - runs/ml10m-IIE
-      - runs/ml10m-UUE
-      - runs/ml10m-ALS
-      - runs/ml10m-III
-      - runs/ml10m-IALS
-    outs:
-      - eval-report.ml10m.ipynb:
-          cache: false
-
-  eval-report-ml20m:
-    cmd: papermill -r dataset ml20m eval-report.ipynb eval-report.ml20m.ipynb
-    deps:
-      - eval-report.ipynb
-      - runs/ml20m-Pop
-      - runs/ml20m-Bias
-      - runs/ml20m-IIE
-      - runs/ml20m-UUE
-      - runs/ml20m-ALS
-      - runs/ml20m-III
-      - runs/ml20m-IALS
-    outs:
-      - eval-report.ml20m.ipynb:
-          cache: false
-
-  eval-report-ml25m:
-    cmd: papermill -r dataset ml25m eval-report.ipynb eval-report.ml25m.ipynb
-    deps:
-      - eval-report.ipynb
-      - runs/ml25m-Pop
-      - runs/ml25m-Bias
-      - runs/ml25m-IIE
-      - runs/ml25m-UUE
-      - runs/ml25m-ALS
-      - runs/ml25m-III
-      - runs/ml25m-IALS
-    outs:
-      - eval-report.ml25m.ipynb:
-          cache: false
-
-  eval-report-ml32m:
-    cmd: papermill -r dataset ml32m eval-report.ipynb eval-report.ml32m.ipynb
-    deps:
-      - eval-report.ipynb
-      - runs/ml32m-Pop
-      - runs/ml32m-Bias
-      - runs/ml32m-IIE
-      - runs/ml32m-UUE
-      - runs/ml32m-ALS
-      - runs/ml32m-III
-      - runs/ml32m-IALS
-    outs:
-      - eval-report.ml32m.ipynb:
-          cache: false
+  eval-report:
+    foreach:
+      - ml100k
+      - mlsmall
+      - ml1m
+      - ml10m
+      - ml20m
+      - ml32m
+      - ml25m
+    do:
+      cmd: papermill -r dataset ${item} eval-report.ipynb eval-report.${item}.ipynb
+      deps:
+        - eval-report.ipynb
+        - runs/${item}-Bias
+        - runs/${item}-IIE
+        - runs/${item}-UUE
+        - runs/${item}-ALS
+        - runs/${item}-Pop
+        - runs/${item}-III
+        - runs/${item}-IALS
+      outs:
+        - eval-report.${item}.ipynb:
+            cache: false
+      metrics:
+        - eval-report.${item}.csv
