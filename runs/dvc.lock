@@ -389,49 +389,57 @@ stages:
     cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-Bias Bias
     deps:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      hash: md5
+      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
+      size: 94640
       nfiles: 5
     outs:
     - path: runs/ml100k-Bias
-      md5: 932659d5e5e6b172e2bf088c2aa0468c.dir
-      size: 1248927
+      hash: md5
+      md5: 40a3611244a1fff068de2495b7a0fb7b.dir
+      size: 2919767
       nfiles: 10
   ml100k-explicit@IIE:
     cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-IIE IIE
     deps:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      hash: md5
+      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
+      size: 94640
       nfiles: 5
     outs:
     - path: runs/ml100k-IIE
-      md5: 6546e3e21317f63cbdbb124b6b3514dc.dir
-      size: 1294937
+      hash: md5
+      md5: 06c0a42e5ae46209d537c41fdd44312f.dir
+      size: 2926790
       nfiles: 10
   ml100k-explicit@UUE:
     cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-UUE UUE
     deps:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      hash: md5
+      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
+      size: 94640
       nfiles: 5
     outs:
     - path: runs/ml100k-UUE
-      md5: cb7f41a1ca1dbc9a09063cb489a6ccd0.dir
-      size: 1246228
+      hash: md5
+      md5: 44e0cc238f841711378700021463fade.dir
+      size: 2954929
       nfiles: 10
   ml100k-explicit@ALS:
     cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-ALS ALS
     deps:
     - path: data-split/ml100k
-      md5: 9febdcbbc95cabbcafe286fc40779644.dir
-      size: 53391
+      hash: md5
+      md5: 3ba7a439384bc12405f4eaf79157ea93.dir
+      size: 94640
       nfiles: 5
     outs:
     - path: runs/ml100k-ALS
-      md5: 6b2fef08276ca63aa70cb252ab39d712.dir
-      size: 1294378
+      hash: md5
+      md5: b67846b7ad08f03641a6a4c76e30ace0.dir
+      size: 2920992
       nfiles: 10
   ml100k-implicit@IALS:
     cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-IALS --no-predict
