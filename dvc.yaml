@@ -22,6 +22,8 @@ stages:
     outs:
       - eval-report.ml100k.ipynb:
           cache: false
+    metrics:
+      - eval-metrics.ml100k.json
 
   eval-report-ml1m:
     cmd: papermill -r dataset ml1m eval-report.ipynb eval-report.ml1m.ipynb
@@ -37,6 +39,8 @@ stages:
     outs:
       - eval-report.ml1m.ipynb:
           cache: false
+    metrics:
+      - eval-metrics.ml1m.json
 
   eval-report-mlsmall:
     cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
@@ -52,6 +56,8 @@ stages:
     outs:
       - eval-report.mlsmall.ipynb:
           cache: false
+    metrics:
+      - eval-metrics.mlsmall.json
 
   eval-report-ml10m:
     cmd: papermill -r dataset ml10m eval-report.ipynb eval-report.ml10m.ipynb
@@ -67,6 +73,8 @@ stages:
     outs:
       - eval-report.ml10m.ipynb:
           cache: false
+    metrics:
+      - eval-metrics.ml10m.json
 
   eval-report-ml20m:
     cmd: papermill -r dataset ml20m eval-report.ipynb eval-report.ml20m.ipynb
@@ -82,6 +90,8 @@ stages:
     outs:
       - eval-report.ml20m.ipynb:
           cache: false
+    metrics:
+      - eval-metrics.ml20m.json
 
   eval-report-ml25m:
     cmd: papermill -r dataset ml25m eval-report.ipynb eval-report.ml25m.ipynb
@@ -97,3 +107,5 @@ stages:
     outs:
       - eval-report.ml25m.ipynb:
           cache: false
+    metrics:
+      - eval-metrics.ml25m.json

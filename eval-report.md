@@ -83,7 +83,7 @@ dirs = [fld for fld in output_root.glob(f'{dataset}-*')]
 recs = []
 for fld in dirs:
     for file in fld.glob("recs-*"):
-        rec = pd.read_parquet(file)
+        rec = pd.read_csv(file)
         rec["algorithm"] = fld.name.split("-")[1]
         recs.append(rec)
 
@@ -101,7 +101,7 @@ rec_algos
 preds = []
 for fld in dirs:
     for file in fld.glob("pred-*"):
-        pred = pd.read_parquet(file)
+        pred = pd.read_csv(file)
         pred["algorithm"] = fld.name.split("-")[1]
         preds.append(pred)
 
@@ -171,4 +171,18 @@ user_rmse = user_rmse.reset_index(name='RMSE')
 
 ```python
 sns.catplot(x='algorithm', y='RMSE', data=user_rmse, kind='bar')
+```
+
+## Save Metrics
+
+We'll now save the top-N recommendation metrics.
+
+```python
+saved = results[['recip_rank', 'ndcg']].rename(columns={'ndcg': 'NDCG', 'recip_rank': 'RecipRank'})
+saved = saved.groupby('algorithm').agg('mean')
+saved
+```
+
+```python
+saved.to_json(f'eval-metrics.{dataset}.json', orient='index')
 ```
