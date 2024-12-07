@@ -55,78 +55,104 @@ stages:
     cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: cc3fe6cac16cf204d97c2f0791b0e188
-      size: 13296
+      hash: md5
+      md5: b680099406e49ee9ae35b18a5f2ce728
+      size: 10463
     - path: runs/mlsmall-ALS
-      md5: f2f1655d5868e3ae9b3ea6c797573f54.dir
-      size: 855162
+      hash: md5
+      md5: 050f4812d57ad7ece2e6986eec3b7c12.dir
+      size: 1954087
       nfiles: 10
     - path: runs/mlsmall-Bias
-      md5: 2e81e75b435524dbcc1f238cbc9997e7.dir
-      size: 784716
+      hash: md5
+      md5: dccbeafae8c3aeb1e901555799dccb7f.dir
+      size: 1946699
       nfiles: 10
     - path: runs/mlsmall-IALS
-      md5: 7f0251d1ea2e5b9413165bf93eab128c.dir
-      size: 882978
+      hash: md5
+      md5: 4c2f978a62674e03ff626ae9e660ecd3.dir
+      size: 1981589
       nfiles: 10
     - path: runs/mlsmall-IIE
-      md5: 610d2fb0f27e03b3d87264529b682a97.dir
-      size: 831508
+      hash: md5
+      md5: 0900652ae8b5cd7897595aa9f10eaaf5.dir
+      size: 1973501
       nfiles: 10
     - path: runs/mlsmall-III
-      md5: f4ecbe6d3d0b6c3e761f30ee1f694062.dir
-      size: 837544
+      hash: md5
+      md5: 2fcc79585c5dfc9a495e552eedff348c.dir
+      size: 1940440
       nfiles: 10
     - path: runs/mlsmall-Pop
-      md5: 40afe1eb5bc0cb3c00a6643eec498860.dir
-      size: 270443
+      hash: md5
+      md5: 52b4852df963b07b975bd87fdb99e767.dir
+      size: 1049665
       nfiles: 5
     - path: runs/mlsmall-UUE
-      md5: 40cb87dbab4324167b2cc48f7a7fdff6.dir
-      size: 567281
+      hash: md5
+      md5: 1fa236fc837d96b262ff2aab8b5914e8.dir
+      size: 1982949
       nfiles: 10
     outs:
+    - path: eval-metrics.mlsmall.json
+      hash: md5
+      md5: 97d669992ee53e6bef2249345a043edc
+      size: 374
     - path: eval-report.mlsmall.ipynb
-      md5: 0755e27d4cc3e4ad5b23d59b6b752361
-      size: 96422
+      hash: md5
+      md5: b70a27b9094cf39a5de7d4141ab24fec
+      size: 80845
   eval-report-ml1m:
     cmd: papermill -r dataset ml1m eval-report.ipynb eval-report.ml1m.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: cc3fe6cac16cf204d97c2f0791b0e188
-      size: 13296
+      hash: md5
+      md5: b680099406e49ee9ae35b18a5f2ce728
+      size: 10463
     - path: runs/ml1m-ALS
-      md5: 9e1389b93853b37e42635409906f71b1.dir
-      size: 8258721
+      hash: md5
+      md5: 4574e8321aca7cc3e68ec9bebdcbf953.dir
+      size: 19678180
       nfiles: 10
     - path: runs/ml1m-Bias
-      md5: 783c9c938b92b07c613daecc9a718f3a.dir
-      size: 8050097
+      hash: md5
+      md5: 8366c9057423a75a73f455d33a1e799a.dir
+      size: 19679634
       nfiles: 10
     - path: runs/ml1m-IALS
-      md5: fff2ffe79f9b00e9f920e882ca5f6ac2.dir
-      size: 8653593
+      hash: md5
+      md5: 5978b53ae55d49d30041590b74ac09a6.dir
+      size: 20196565
       nfiles: 10
     - path: runs/ml1m-IIE
-      md5: b367b8a8a32e04646f9cfaf3c7c3a42e.dir
-      size: 8318600
+      hash: md5
+      md5: caf86ce1bbe68f9339c404f3bf210575.dir
+      size: 19668543
       nfiles: 10
     - path: runs/ml1m-III
-      md5: 43cc1af19886ca6eb3586a46eae37e32.dir
-      size: 8411913
+      hash: md5
+      md5: 12cb8bf25412d29da9d3282df06f9a76.dir
+      size: 19668694
       nfiles: 10
     - path: runs/ml1m-Pop
-      md5: a666f1ea9ba28ebcdeb9994c17486191.dir
-      size: 2759981
+      hash: md5
+      md5: d9f28cdffd332d75c1825e3c1aa797fe.dir
+      size: 11701173
       nfiles: 5
     - path: runs/ml1m-UUE
-      md5: 4c61988db49c98aabc934c876b01df89.dir
-      size: 8241530
+      hash: md5
+      md5: 42e125f4d63087f93636ea1de50172f2.dir
+      size: 19650042
       nfiles: 10
     outs:
+    - path: eval-metrics.ml1m.json
+      hash: md5
+      md5: 4643cf44c5ad82a33a54f3aebe4d1309
+      size: 372
     - path: eval-report.ml1m.ipynb
-      md5: e2c15cc6133048332c1146a5dba7bdf9
-      size: 99342
+      hash: md5
+      md5: de5b0bf4885f6e8efd373789ee6c9cdc
+      size: 85118
   eval-report-ml10m:
     cmd: papermill -r dataset ml10m eval-report.ipynb eval-report.ml10m.ipynb
     deps:
