@@ -923,8 +923,8 @@ stages:
     outs:
     - path: runs/ml100k-III
       hash: md5
-      md5: 33fb9d411d35ed2541dec86dd5e96631.dir
-      size: 627245
+      md5: c1118ed12a130d7cc8469aef3adc3973.dir
+      size: 638223
       nfiles: 5
   run-implicit-model@ml100k-IALS:
     cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-IALS --no-predict
