@@ -81,7 +81,7 @@ dirs = [fld for fld in output_root.glob(f'{dataset}-*')]
 
 ```python
 recs = []
-for fld in dirs: 
+for fld in dirs:
     for file in fld.glob("recs-*"):
         rec = pd.read_parquet(file)
         rec["algorithm"] = fld.name.split("-")[1]
@@ -110,7 +110,7 @@ preds = preds.astype({'algorithm': 'category'})
 preds.info()
 ```
 
-We need to load the test data so that we have the ground truths for computing accuracy 
+We need to load the test data so that we have the ground truths for computing accuracy
 
 ```python
 split_root = Path("data-split")
@@ -132,7 +132,7 @@ test.head()
 # Top-N Metrics
 
 
-The topn.RecListAnalysis class computes top-N metrics for recommendation list and takes care of making sure that the recommendations and ground truths are properly matched. Refer to the documentation for detailed explanation of the purpose for the RecListAnalysis class and how the analysis is done - https://lkpy.lenskit.org/en/stable/evaluation/topn-metrics.html 
+The topn.RecListAnalysis class computes top-N metrics for recommendation list and takes care of making sure that the recommendations and ground truths are properly matched. Refer to the documentation for detailed explanation of the purpose for the RecListAnalysis class and how the analysis is done - https://lkpy.lenskit.org/en/stable/evaluation/topn-metrics.html
 
 ```python
 rla = topn.RecListAnalysis()
@@ -171,8 +171,4 @@ user_rmse = user_rmse.reset_index(name='RMSE')
 
 ```python
 sns.catplot(x='algorithm', y='RMSE', data=user_rmse, kind='bar')
-```
-
-```python
-
 ```
