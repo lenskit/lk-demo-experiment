@@ -14,3 +14,4 @@ __pycache__
 .pixi
 *.egg-info
 /eval-metrics.ml100k.csv
+/eval-metrics.ml100k.json

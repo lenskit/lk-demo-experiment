@@ -29,6 +29,7 @@ We need the pathlib package for working with files and folders
 
 ```python
 from pathlib import Path
+import json
 ```
 
 We would use the pandas for analyzing and manipulating our data while seaborn and matplotlib are used for data visualization. statsmodels.graphics.gofplots and scipy.stats.shapiro are used for normality check. Scipy.stats.friedmanchisquare is a non-parametric test used to determine the statistical significance in metric results and the wilcoxon test is used for pairwise comparison of sample data.
@@ -152,5 +153,10 @@ plt.show()
 We'll now save the metrics to a file.
 
 ```python
-rec_results.list_summary('model')['mean'].unstack().to_csv(f'eval-metrics.{dataset}.csv')
+rlsum = rec_results.list_summary('model')['mean'].unstack()
+rlsum
+```
+
+```python
+rlsum.to_json(f'eval-metrics.{dataset}.json', orient='index')
 ```
