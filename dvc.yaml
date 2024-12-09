@@ -32,4 +32,5 @@ stages:
         - eval-report.${item}.ipynb:
             cache: false
       metrics:
-        - eval-metrics.${item}.json
+        - eval-metrics.${item}.json:
+            cache: false
