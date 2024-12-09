@@ -466,3 +466,49 @@ stages:
       hash: md5
       md5: 80d0edc0ec2cdf1adaeebb93a29986a1
       size: 76375
+  eval-report@ml25m:
+    cmd: papermill -r dataset ml25m eval-report.ipynb eval-report.ml25m.ipynb
+    deps:
+    - path: eval-report.ipynb
+      hash: md5
+      md5: d0cb3ed11261c337f98778dbb80ced30
+      size: 8156
+    - path: runs/ml25m-ALS
+      hash: md5
+      md5: 91aaf489cdf736c69bb8ee82e2458396.dir
+      size: 160992969
+      nfiles: 10
+    - path: runs/ml25m-Bias
+      hash: md5
+      md5: 1c9c136a35183ec2a82ed0a041764caf.dir
+      size: 79041090
+      nfiles: 10
+    - path: runs/ml25m-IALS
+      hash: md5
+      md5: ec8e32ea3756b0dad904bbcaeb8d9608.dir
+      size: 152407885
+      nfiles: 5
+    - path: runs/ml25m-IIE
+      hash: md5
+      md5: 014886e1cc3c85c45e66e5b8ffc7f6d6.dir
+      size: 94222297
+      nfiles: 10
+    - path: runs/ml25m-III
+      hash: md5
+      md5: 8a40a2fab2b9fbe492aaed5111a8a115.dir
+      size: 88649990
+      nfiles: 5
+    - path: runs/ml25m-Pop
+      hash: md5
+      md5: cf5f07354438c5e03b96198ab23557dd.dir
+      size: 14796114
+      nfiles: 5
+    outs:
+    - path: eval-metrics.ml25m.json
+      hash: md5
+      md5: 7ae19143b0bc219466a9d32d434e6dfd
+      size: 435
+    - path: eval-report.ml25m.ipynb
+      hash: md5
+      md5: ea2774c14f4e95c50d5ece3f71baadc1
+      size: 73420

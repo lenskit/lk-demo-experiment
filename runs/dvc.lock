@@ -1330,3 +1330,62 @@ stages:
       md5: 014886e1cc3c85c45e66e5b8ffc7f6d6.dir
       size: 94222297
       nfiles: 10
+  run-explicit-model@ml25m-ALS:
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-ALS ALS
+    deps:
+    - path: data-split/ml25m
+      hash: md5
+      md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
+      size: 9737467
+      nfiles: 5
+    outs:
+    - path: runs/ml25m-ALS
+      hash: md5
+      md5: 91aaf489cdf736c69bb8ee82e2458396.dir
+      size: 160992969
+      nfiles: 10
+  run-implicit-model@ml25m-Pop:
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-Pop --no-predict
+      Pop
+    deps:
+    - path: data-split/ml25m
+      hash: md5
+      md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
+      size: 9737467
+      nfiles: 5
+    outs:
+    - path: runs/ml25m-Pop
+      hash: md5
+      md5: cf5f07354438c5e03b96198ab23557dd.dir
+      size: 14796114
+      nfiles: 5
+  run-implicit-model@ml25m-III:
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-III --no-predict
+      III
+    deps:
+    - path: data-split/ml25m
+      hash: md5
+      md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
+      size: 9737467
+      nfiles: 5
+    outs:
+    - path: runs/ml25m-III
+      hash: md5
+      md5: 8a40a2fab2b9fbe492aaed5111a8a115.dir
+      size: 88649990
+      nfiles: 5
+  run-implicit-model@ml25m-IALS:
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-IALS --no-predict
+      IALS
+    deps:
+    - path: data-split/ml25m
+      hash: md5
+      md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
+      size: 9737467
+      nfiles: 5
+    outs:
+    - path: runs/ml25m-IALS
+      hash: md5
+      md5: ec8e32ea3756b0dad904bbcaeb8d9608.dir
+      size: 152407885
+      nfiles: 5
