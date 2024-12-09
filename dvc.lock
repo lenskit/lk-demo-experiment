@@ -157,40 +157,53 @@ stages:
     cmd: papermill -r dataset ml10m eval-report.ipynb eval-report.ml10m.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: cc3fe6cac16cf204d97c2f0791b0e188
-      size: 13296
+      hash: md5
+      md5: b680099406e49ee9ae35b18a5f2ce728
+      size: 10463
     - path: runs/ml10m-ALS
-      md5: e77645166737d13782cd31ed6371e02c.dir
-      size: 97299436
+      hash: md5
+      md5: 6950e946404d8d027021cd76cbb1794d.dir
+      size: 237188267
       nfiles: 10
     - path: runs/ml10m-Bias
-      md5: 5bd29718539ce09f6954713a73baeccd.dir
-      size: 93037150
+      hash: md5
+      md5: 14669a3f8b042d2691224978c2fff364.dir
+      size: 236454857
       nfiles: 10
     - path: runs/ml10m-IALS
-      md5: b56a8e20db6763ccf5f95026228d2876.dir
-      size: 101225639
+      hash: md5
+      md5: 3c10b1e5c7d557f7399b47ad2181ac4a.dir
+      size: 239725761
       nfiles: 10
     - path: runs/ml10m-IIE
-      md5: 69ad12861282f7cae86158a37710b245.dir
-      size: 99800658
+      hash: md5
+      md5: 7970537f21228cfed60ece87ce92bd5b.dir
+      size: 238961097
       nfiles: 10
     - path: runs/ml10m-III
-      md5: cd995b8c32ff66e1e47faa20937ca1c9.dir
-      size: 98620898
+      hash: md5
+      md5: c1a9be56e257ae6427654715b095cf13.dir
+      size: 234046067
       nfiles: 10
     - path: runs/ml10m-Pop
-      md5: 79f0ae9d7e027dcd9607c87fe641b746.dir
-      size: 32011416
+      hash: md5
+      md5: 7989ba5ddc161df70971464314c833ee.dir
+      size: 147049876
       nfiles: 5
     - path: runs/ml10m-UUE
-      md5: 373ba97825fd8d2585c4333244215dac.dir
-      size: 95332322
+      hash: md5
+      md5: 75f5cc653401d11546a14e3d28d0922d.dir
+      size: 240482592
       nfiles: 10
     outs:
+    - path: eval-metrics.ml10m.json
+      hash: md5
+      md5: 07e16b3cfde63a0ca59f253429c2f7c7
+      size: 372
     - path: eval-report.ml10m.ipynb
-      md5: b1ac9de1e3fe169e3d82770df74555f4
-      size: 99708
+      hash: md5
+      md5: dec8402d87518658ab56a253eb52bbf4
+      size: 85580
   eval-report-ml20m:
     cmd: papermill -r dataset ml20m eval-report.ipynb eval-report.ml20m.ipynb
     deps:
