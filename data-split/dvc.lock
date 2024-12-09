@@ -3,17 +3,22 @@ stages:
   split-ml20m:
     cmd: python split-data.py -o data-split/ml20m ml20m
     deps:
-    - path: data/ml-20m/ratings.csv
-      md5: f95d275e0f2edad2391e5ef864a46628
-      size: 533444411
+    - path: data/ml-20m.zip
+      hash: md5
+      md5: cd245b17a1ae2cc31bb14903e1204af3
+      size: 198702078
+    - path: split-data.py
+      hash: md5
+      md5: 1c03c153a214b9058513527d5c5a6d88
+      size: 1308
     params:
       params.yaml:
         random.seed: 20220215
     outs:
     - path: data-split/ml20m
       hash: md5
-      md5: 90a598cea18861d56e5d97c9a3719517.dir
-      size: 11958770
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
       nfiles: 5
   split-ml10m:
     cmd: python split-data.py -o data-split/ml10m ml10m
@@ -42,14 +47,18 @@ stages:
       hash: md5
       md5: 31a303aabbc519bd33d025e44d6c2570
       size: 978202
+    - path: split-data.py
+      hash: md5
+      md5: 1c03c153a214b9058513527d5c5a6d88
+      size: 1308
     params:
       params.yaml:
         random.seed: 20220215
     outs:
     - path: data-split/mlsmall
       hash: md5
-      md5: 8ebb03094c373088c160b936e1c9eae8.dir
-      size: 54394
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
       nfiles: 5
   split-ml100k:
     cmd: python split-data.py -o data-split/ml100k ml100k
@@ -94,15 +103,20 @@ stages:
   split-ml25m:
     cmd: python split-data.py -o data-split/ml25m ml25m
     deps:
-    - path: data/ml-25m/ratings.csv
-      md5: d463ba41e49011f510bbc0ea5224a169
-      size: 678260987
+    - path: data/ml-25m.zip
+      hash: md5
+      md5: 6b51fb2759a8657d3bfcbfc42b592ada
+      size: 261978986
+    - path: split-data.py
+      hash: md5
+      md5: 1c03c153a214b9058513527d5c5a6d88
+      size: 1308
     params:
       params.yaml:
         random.seed: 20220215
     outs:
     - path: data-split/ml25m
       hash: md5
-      md5: 7d492d44c9ae62762f3264e47f7cd64b.dir
-      size: 13911889
+      md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
+      size: 9737467
       nfiles: 5

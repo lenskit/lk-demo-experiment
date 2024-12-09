@@ -802,14 +802,14 @@ stages:
     deps:
     - path: data-split/mlsmall
       hash: md5
-      md5: 8ebb03094c373088c160b936e1c9eae8.dir
-      size: 54394
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
       nfiles: 5
     outs:
     - path: runs/mlsmall-Bias
       hash: md5
-      md5: 093577148d30d63439c96298a5cb5c9e.dir
-      size: 394127
+      md5: 40c932b9151f264f89ee1b662525c7ae.dir
+      size: 394322
       nfiles: 10
   run-explicit-model@ml1m-ALS:
     cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-ALS ALS
@@ -941,3 +941,392 @@ stages:
       md5: f887db63ff04a57259787fe540059045.dir
       size: 1037281
       nfiles: 5
+  run-explicit-model@mlsmall-IIE:
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-IIE IIE
+    deps:
+    - path: data-split/mlsmall
+      hash: md5
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-IIE
+      hash: md5
+      md5: db4e4f9c6b6cef0a35eabb3c9e60ebd9.dir
+      size: 465418
+      nfiles: 10
+  run-explicit-model@mlsmall-UUE:
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-UUE UUE
+    deps:
+    - path: data-split/mlsmall
+      hash: md5
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-UUE
+      hash: md5
+      md5: 94a92cb81c1c4b83f8540352732b49fa.dir
+      size: 317390
+      nfiles: 10
+  run-explicit-model@mlsmall-ALS:
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-ALS ALS
+    deps:
+    - path: data-split/mlsmall
+      hash: md5
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-ALS
+      hash: md5
+      md5: 905e5fc0cb907439521c6464535fce62.dir
+      size: 736179
+      nfiles: 10
+  run-implicit-model@mlsmall-Pop:
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Pop --no-predict
+      Pop
+    deps:
+    - path: data-split/mlsmall
+      hash: md5
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-Pop
+      hash: md5
+      md5: 08c1ee646694071603daa172cfeb2f04.dir
+      size: 112017
+      nfiles: 5
+  run-implicit-model@mlsmall-III:
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-III --no-predict
+      III
+    deps:
+    - path: data-split/mlsmall
+      hash: md5
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-III
+      hash: md5
+      md5: 3c1afb7c16aa8875752777acea14dc53.dir
+      size: 416068
+      nfiles: 5
+  run-implicit-model@mlsmall-IALS:
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-IALS --no-predict
+      IALS
+    deps:
+    - path: data-split/mlsmall
+      hash: md5
+      md5: dc7e31c9c73508c8b62f20c53a377c99.dir
+      size: 54517
+      nfiles: 5
+    outs:
+    - path: runs/mlsmall-IALS
+      hash: md5
+      md5: 7895d0905027b9dab51b0c9d8d2558bb.dir
+      size: 684658
+      nfiles: 5
+  run-explicit-model@ml1m-Bias:
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-Bias Bias
+    deps:
+    - path: data-split/ml1m
+      hash: md5
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-Bias
+      hash: md5
+      md5: d46b97a1646fe4a9d2e21e53da9faefd.dir
+      size: 3862982
+      nfiles: 10
+  run-explicit-model@ml1m-IIE:
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-IIE IIE
+    deps:
+    - path: data-split/ml1m
+      hash: md5
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-IIE
+      hash: md5
+      md5: 059085fa6c1a8ff2452cf7b849e311e7.dir
+      size: 4459133
+      nfiles: 10
+  run-explicit-model@ml1m-UUE:
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-UUE UUE
+    deps:
+    - path: data-split/ml1m
+      hash: md5
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-UUE
+      hash: md5
+      md5: b6af12ef43211690037bf95a06e56db7.dir
+      size: 4450414
+      nfiles: 10
+  run-implicit-model@ml1m-Pop:
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-Pop --no-predict
+      Pop
+    deps:
+    - path: data-split/ml1m
+      hash: md5
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-Pop
+      hash: md5
+      md5: b13cddabebe0fe12b5c956c46cac45e1.dir
+      size: 691287
+      nfiles: 5
+  run-implicit-model@ml1m-III:
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-III --no-predict
+      III
+    deps:
+    - path: data-split/ml1m
+      hash: md5
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-III
+      hash: md5
+      md5: 5a5927d3ee0dc1a290922507801b9f7a.dir
+      size: 4083759
+      nfiles: 5
+  run-implicit-model@ml1m-IALS:
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-IALS --no-predict
+      IALS
+    deps:
+    - path: data-split/ml1m
+      hash: md5
+      md5: 1ccae7113239fa9f489b1ebe59890f86.dir
+      size: 350800
+      nfiles: 5
+    outs:
+    - path: runs/ml1m-IALS
+      hash: md5
+      md5: 04beae93b5bf94f01f6b46a331b71902.dir
+      size: 6680988
+      nfiles: 5
+  run-explicit-model@ml10m-Bias:
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-Bias Bias
+    deps:
+    - path: data-split/ml10m
+      hash: md5
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-Bias
+      hash: md5
+      md5: 6117d8f669d1becc0ff295244d922535.dir
+      size: 35799596
+      nfiles: 10
+  run-explicit-model@ml10m-IIE:
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-IIE IIE
+    deps:
+    - path: data-split/ml10m
+      hash: md5
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-IIE
+      hash: md5
+      md5: aff831c79104c536afc7345a58965815.dir
+      size: 45195599
+      nfiles: 10
+  run-explicit-model@ml10m-UUE:
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-UUE UUE
+    deps:
+    - path: data-split/ml10m
+      hash: md5
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-UUE
+      hash: md5
+      md5: 926d5576ce7fb1aa22573b092673000e.dir
+      size: 43809702
+      nfiles: 10
+  run-explicit-model@ml10m-ALS:
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-ALS ALS
+    deps:
+    - path: data-split/ml10m
+      hash: md5
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-ALS
+      hash: md5
+      md5: 1a0985933875d097e621630c9ecc8abb.dir
+      size: 69879119
+      nfiles: 10
+  run-implicit-model@ml10m-Pop:
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-Pop --no-predict
+      Pop
+    deps:
+    - path: data-split/ml10m
+      hash: md5
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-Pop
+      hash: md5
+      md5: 1af388c8656194b757e2c72a24a91936.dir
+      size: 6597743
+      nfiles: 5
+  run-implicit-model@ml10m-III:
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-III --no-predict
+      III
+    deps:
+    - path: data-split/ml10m
+      hash: md5
+      md5: 7f481aaa8a3151ff1fe19bf163b7aa79.dir
+      size: 4058897
+      nfiles: 5
+    outs:
+    - path: runs/ml10m-III
+      hash: md5
+      md5: 4e00ea42c5c70c0075482e577c16fa9b.dir
+      size: 39642414
+      nfiles: 5
+  run-explicit-model@ml20m-Bias:
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-Bias Bias
+    deps:
+    - path: data-split/ml20m
+      hash: md5
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-Bias
+      hash: md5
+      md5: 26ed24b40bbf6b4beb51904f13cfe51a.dir
+      size: 68289204
+      nfiles: 10
+  run-explicit-model@ml20m-IIE:
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-IIE IIE
+    deps:
+    - path: data-split/ml20m
+      hash: md5
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-IIE
+      hash: md5
+      md5: cc41f77e04e2b7107568b6cce5e4508c.dir
+      size: 84621541
+      nfiles: 10
+  run-explicit-model@ml20m-UUE:
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-UUE UUE
+    deps:
+    - path: data-split/ml20m
+      hash: md5
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-UUE
+      hash: md5
+      md5: 0c5859eda5fa7ee0492785a0d120e7b0.dir
+      size: 71744320
+      nfiles: 10
+  run-explicit-model@ml20m-ALS:
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-ALS ALS
+    deps:
+    - path: data-split/ml20m
+      hash: md5
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-ALS
+      hash: md5
+      md5: 898d4c4059b345f0598156904989234e.dir
+      size: 135398169
+      nfiles: 10
+  run-implicit-model@ml20m-Pop:
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-Pop --no-predict
+      Pop
+    deps:
+    - path: data-split/ml20m
+      hash: md5
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-Pop
+      hash: md5
+      md5: 8c3edbde619a68c07dc25d1db09990eb.dir
+      size: 12597298
+      nfiles: 5
+  run-implicit-model@ml20m-III:
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-III --no-predict
+      III
+    deps:
+    - path: data-split/ml20m
+      hash: md5
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-III
+      hash: md5
+      md5: 74d42df9219073bbb850e957dd1098a3.dir
+      size: 75692582
+      nfiles: 5
+  run-implicit-model@ml20m-IALS:
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-IALS --no-predict
+      IALS
+    deps:
+    - path: data-split/ml20m
+      hash: md5
+      md5: 6348cf173bb1b1bccf3b303505ed1295.dir
+      size: 8416141
+      nfiles: 5
+    outs:
+    - path: runs/ml20m-IALS
+      hash: md5
+      md5: dff4920a396b7017a0a6fa8b152c5472.dir
+      size: 129458121
+      nfiles: 5
+  run-explicit-model@ml25m-Bias:
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-Bias Bias
+    deps:
+    - path: data-split/ml25m
+      hash: md5
+      md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
+      size: 9737467
+      nfiles: 5
+    outs:
+    - path: runs/ml25m-Bias
+      hash: md5
+      md5: 1c9c136a35183ec2a82ed0a041764caf.dir
+      size: 79041090
+      nfiles: 10
+  run-explicit-model@ml25m-IIE:
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-IIE IIE
+    deps:
+    - path: data-split/ml25m
+      hash: md5
+      md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
+      size: 9737467
+      nfiles: 5
+    outs:
+    - path: runs/ml25m-IIE
+      hash: md5
+      md5: 014886e1cc3c85c45e66e5b8ffc7f6d6.dir
+      size: 94222297
+      nfiles: 10
