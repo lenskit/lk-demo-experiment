@@ -13,6 +13,10 @@ def ml25m() -> Dataset:
     return load_movielens("data/ml-25m.zip")
 
 
+def ml32m() -> Dataset:
+    return load_movielens("data/ml-32m.zip")
+
+
 def mlsmall() -> Dataset:
     return load_movielens("data/ml-latest-small.zip")
 
