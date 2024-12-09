@@ -23,7 +23,6 @@ stages:
         - eval-report.ipynb
         - runs/${item}-Bias
         - runs/${item}-IIE
-        - runs/${item}-UUE
         - runs/${item}-ALS
         - runs/${item}-Pop
         - runs/${item}-III
