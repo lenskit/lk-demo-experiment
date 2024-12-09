@@ -9,6 +9,10 @@ __pycache__
 /scratch/
 /models/
 /output/
+*.parquet
+*.csv
+*.csv.gz
+*.duckdb
 
 # pixi environments
 .pixi
