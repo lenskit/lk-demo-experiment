@@ -38,14 +38,5 @@ psutil = "*"
 [pypi-dependencies]
 lenskit = { git = "https://github.com/lenskit/lkpy.git", subdirectory = "lenskit" }
 
-[feature.cuda]
-platforms = ["linux-64", "win-64"]
-
-[feature.cuda.system-requirements]
-cuda = "12"
-
-[feature.cuda.dependencies]
-pytorch-mutex = { build = "cuda" }
-
-[environments]
-cuda = { features = ["cuda"] }
+[target.linux.dependencies]
+pytorch-cuda = "*"
