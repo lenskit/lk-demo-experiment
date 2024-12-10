@@ -1389,3 +1389,90 @@ stages:
       md5: ec8e32ea3756b0dad904bbcaeb8d9608.dir
       size: 152407885
       nfiles: 5
+  run-explicit-model@ml32m-Bias:
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-Bias Bias
+    deps:
+    - path: data-split/ml32m
+      hash: md5
+      md5: ff0216fd7d7ffe29d9eb6c99df8cef71.dir
+      size: 10766336
+      nfiles: 5
+    outs:
+    - path: runs/ml32m-Bias
+      hash: md5
+      md5: a6e4b140915b00783526a5a7a0b31bd2.dir
+      size: 95503856
+      nfiles: 10
+  run-explicit-model@ml32m-IIE:
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-IIE IIE
+    deps:
+    - path: data-split/ml32m
+      hash: md5
+      md5: ff0216fd7d7ffe29d9eb6c99df8cef71.dir
+      size: 10766336
+      nfiles: 5
+    outs:
+    - path: runs/ml32m-IIE
+      hash: md5
+      md5: d8babe07324f07beae2669548bfd03b4.dir
+      size: 116861136
+      nfiles: 10
+  run-explicit-model@ml32m-ALS:
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-ALS ALS
+    deps:
+    - path: data-split/ml32m
+      hash: md5
+      md5: ff0216fd7d7ffe29d9eb6c99df8cef71.dir
+      size: 10766336
+      nfiles: 5
+    outs:
+    - path: runs/ml32m-ALS
+      hash: md5
+      md5: 2d46417034eee1e962d2e3c7219a0eb6.dir
+      size: 193111099
+      nfiles: 10
+  run-implicit-model@ml32m-Pop:
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-Pop --no-predict
+      Pop
+    deps:
+    - path: data-split/ml32m
+      hash: md5
+      md5: ff0216fd7d7ffe29d9eb6c99df8cef71.dir
+      size: 10766336
+      nfiles: 5
+    outs:
+    - path: runs/ml32m-Pop
+      hash: md5
+      md5: 18bf2fa85f75a81f76a0141fb1a66100.dir
+      size: 18285662
+      nfiles: 5
+  run-implicit-model@ml32m-III:
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-III --no-predict
+      III
+    deps:
+    - path: data-split/ml32m
+      hash: md5
+      md5: ff0216fd7d7ffe29d9eb6c99df8cef71.dir
+      size: 10766336
+      nfiles: 5
+    outs:
+    - path: runs/ml32m-III
+      hash: md5
+      md5: 63df1da78f8bf2fd9a3d7f5c8308062a.dir
+      size: 109206548
+      nfiles: 5
+  run-implicit-model@ml32m-IALS:
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-IALS --no-predict
+      IALS
+    deps:
+    - path: data-split/ml32m
+      hash: md5
+      md5: ff0216fd7d7ffe29d9eb6c99df8cef71.dir
+      size: 10766336
+      nfiles: 5
+    outs:
+    - path: runs/ml32m-IALS
+      hash: md5
+      md5: ee4b6c33ad0a6316e43d755a6a8f15f4.dir
+      size: 187433112
+      nfiles: 5

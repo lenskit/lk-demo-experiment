@@ -512,3 +512,49 @@ stages:
       hash: md5
       md5: ea2774c14f4e95c50d5ece3f71baadc1
       size: 73420
+  eval-report@ml32m:
+    cmd: papermill -r dataset ml32m eval-report.ipynb eval-report.ml32m.ipynb
+    deps:
+    - path: eval-report.ipynb
+      hash: md5
+      md5: d0cb3ed11261c337f98778dbb80ced30
+      size: 8156
+    - path: runs/ml32m-ALS
+      hash: md5
+      md5: 2d46417034eee1e962d2e3c7219a0eb6.dir
+      size: 193111099
+      nfiles: 10
+    - path: runs/ml32m-Bias
+      hash: md5
+      md5: a6e4b140915b00783526a5a7a0b31bd2.dir
+      size: 95503856
+      nfiles: 10
+    - path: runs/ml32m-IALS
+      hash: md5
+      md5: ee4b6c33ad0a6316e43d755a6a8f15f4.dir
+      size: 187433112
+      nfiles: 5
+    - path: runs/ml32m-IIE
+      hash: md5
+      md5: d8babe07324f07beae2669548bfd03b4.dir
+      size: 116861136
+      nfiles: 10
+    - path: runs/ml32m-III
+      hash: md5
+      md5: 63df1da78f8bf2fd9a3d7f5c8308062a.dir
+      size: 109206548
+      nfiles: 5
+    - path: runs/ml32m-Pop
+      hash: md5
+      md5: 18bf2fa85f75a81f76a0141fb1a66100.dir
+      size: 18285662
+      nfiles: 5
+    outs:
+    - path: eval-metrics.ml32m.json
+      hash: md5
+      md5: 12b2b012593ad48ce815aee1e7327741
+      size: 433
+    - path: eval-report.ml32m.ipynb
+      hash: md5
+      md5: 3ec1d50216f53a465464aee8676f29c5
+      size: 73508

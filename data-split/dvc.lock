@@ -120,3 +120,23 @@ stages:
       md5: e3ca8918ea00c8a8d25702ff7e7fd0e2.dir
       size: 9737467
       nfiles: 5
+  split-ml32m:
+    cmd: python split-data.py -o data-split/ml32m ml32m
+    deps:
+    - path: data/ml-32m.zip
+      hash: md5
+      md5: d472be332d4daa821edc399621853b57
+      size: 238950008
+    - path: split-data.py
+      hash: md5
+      md5: 1c03c153a214b9058513527d5c5a6d88
+      size: 1308
+    params:
+      params.yaml:
+        random.seed: 20220215
+    outs:
+    - path: data-split/ml32m
+      hash: md5
+      md5: ff0216fd7d7ffe29d9eb6c99df8cef71.dir
+      size: 10766336
+      nfiles: 5
