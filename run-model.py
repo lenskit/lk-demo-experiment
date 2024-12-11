@@ -74,10 +74,11 @@ def main(args):
             train = from_interactions_df(train)
             split = TTSplit(train, test)
         elif ds_def is not None:
+            ds = ds_def()
             _log.info(
                 "[%s] extracting training data from data set %s", timer, path.name
             )
-            split = TTSplit.from_src_and_test(ds_def(), test)
+            split = TTSplit.from_src_and_test(ds, test)
         else:
             _log.error("could not find training data for %s", file.name)
             continue
