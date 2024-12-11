@@ -1,0 +1,17 @@
+stages:
+  convert-movielens:
+    foreach:
+      - 100k
+      - latest-small
+      - 1m
+      - 10m
+      - 20m
+      - 25m
+      - 32m
+    do:
+      wdir: ..
+      cmd: python convert-dataset.py -o data/ml-${item}.parquet --movielens data/ml-${item}.zip
+      deps:
+        - data/ml-${item}.zip
+      outs:
+        - data/ml-${item}.parquet

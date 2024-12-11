@@ -1,0 +1,86 @@
+schema: '2.0'
+stages:
+  convert-movielens@100k:
+    cmd: python convert-dataset.py -o data/ml-100k.parquet --movielens data/ml-100k.zip
+    deps:
+    - path: data/ml-100k.zip
+      hash: md5
+      md5: 0e33842e24a9c977be4e0107933c0723
+      size: 4924029
+    outs:
+    - path: data/ml-100k.parquet
+      hash: md5
+      md5: 25229696de256178f092bfa4084e1664
+      size: 488557
+  convert-movielens@32m:
+    cmd: python convert-dataset.py -o data/ml-32m.parquet --movielens data/ml-32m.zip
+    deps:
+    - path: data/ml-32m.zip
+      hash: md5
+      md5: d472be332d4daa821edc399621853b57
+      size: 238950008
+    outs:
+    - path: data/ml-32m.parquet
+      hash: md5
+      md5: a0352adeb0f301d54ad795fc4bcda4d4
+      size: 165317437
+  convert-movielens@25m:
+    cmd: python convert-dataset.py -o data/ml-25m.parquet --movielens data/ml-25m.zip
+    deps:
+    - path: data/ml-25m.zip
+      hash: md5
+      md5: 6b51fb2759a8657d3bfcbfc42b592ada
+      size: 261978986
+    outs:
+    - path: data/ml-25m.parquet
+      hash: md5
+      md5: c8af1f05a289e9a8ba7fcba968c18188
+      size: 128330145
+  convert-movielens@10m:
+    cmd: python convert-dataset.py -o data/ml-10m.parquet --movielens data/ml-10m.zip
+    deps:
+    - path: data/ml-10m.zip
+      hash: md5
+      md5: ce571fd55effeba0271552578f2648bd
+      size: 65566137
+    outs:
+    - path: data/ml-10m.parquet
+      hash: md5
+      md5: fc8ddac54ce44339f9ee1f94c86f76b4
+      size: 48960774
+  convert-movielens@20m:
+    cmd: python convert-dataset.py -o data/ml-20m.parquet --movielens data/ml-20m.zip
+    deps:
+    - path: data/ml-20m.zip
+      hash: md5
+      md5: cd245b17a1ae2cc31bb14903e1204af3
+      size: 198702078
+    outs:
+    - path: data/ml-20m.parquet
+      hash: md5
+      md5: 17fa2b281e1536ee65eebbb9e2aa229c
+      size: 100031508
+  convert-movielens@1m:
+    cmd: python convert-dataset.py -o data/ml-1m.parquet --movielens data/ml-1m.zip
+    deps:
+    - path: data/ml-1m.zip
+      hash: md5
+      md5: c4d9eecfca2ab87c1945afe126590906
+      size: 5917549
+    outs:
+    - path: data/ml-1m.parquet
+      hash: md5
+      md5: 21746028bfde74ac87ad25a89153b303
+      size: 4455175
+  convert-movielens@latest-small:
+    cmd: python convert-dataset.py -o data/ml-latest-small.parquet --movielens data/ml-latest-small.zip
+    deps:
+    - path: data/ml-latest-small.zip
+      hash: md5
+      md5: 31a303aabbc519bd33d025e44d6c2570
+      size: 978202
+    outs:
+    - path: data/ml-latest-small.parquet
+      hash: md5
+      md5: ec1b18699ad42b5268942519682eae7b
+      size: 683301
