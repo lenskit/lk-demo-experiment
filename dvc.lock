@@ -208,40 +208,53 @@ stages:
     cmd: papermill -r dataset ml20m eval-report.ipynb eval-report.ml20m.ipynb
     deps:
     - path: eval-report.ipynb
-      md5: cc3fe6cac16cf204d97c2f0791b0e188
-      size: 13296
+      hash: md5
+      md5: b680099406e49ee9ae35b18a5f2ce728
+      size: 10463
     - path: runs/ml20m-ALS
-      md5: 0e7978aaf507dc465de91f192306e8d4.dir
-      size: 197539849
+      hash: md5
+      md5: 54b6a01dfb7815839ab81f305b9c3ec9.dir
+      size: 485578131
       nfiles: 10
     - path: runs/ml20m-Bias
-      md5: 68c3914a88cf2732dd6b21c7606d6deb.dir
-      size: 186159023
+      hash: md5
+      md5: 35ca6e3e7051e207fa11324db1efce5a.dir
+      size: 475577046
       nfiles: 10
     - path: runs/ml20m-IALS
-      md5: 3be730814609f09ec178049e7fd07db9.dir
-      size: 202257650
+      hash: md5
+      md5: 951a734e1581ae95b7c78103b21e2a0b.dir
+      size: 481993150
       nfiles: 10
     - path: runs/ml20m-IIE
-      md5: 1549013a4e7c924cbf1f2b9f7a9b82e6.dir
-      size: 196469005
+      hash: md5
+      md5: 7b02ded99450b4ad10a27a52c7aee060.dir
+      size: 489601861
       nfiles: 10
     - path: runs/ml20m-III
-      md5: 3691df7eae981c6868ef9e4ce0579b9c.dir
-      size: 196737003
+      hash: md5
+      md5: 608e59f6210decf4c2e69e28c174b8ad.dir
+      size: 470238782
       nfiles: 10
     - path: runs/ml20m-Pop
-      md5: fd74579c1fcf66c5b5d0c7e800f1e347.dir
-      size: 63463349
+      hash: md5
+      md5: 19d939bf1f13bd57cc6d4ae50bedc1f1.dir
+      size: 298091401
       nfiles: 5
     - path: runs/ml20m-UUE
-      md5: 823bfdf4a783423765a9b50d2b9f7cca.dir
-      size: 159565629
+      hash: md5
+      md5: ec2056b192f92c78fdf8adfe0136211b.dir
+      size: 496978234
       nfiles: 10
     outs:
+    - path: eval-metrics.ml20m.json
+      hash: md5
+      md5: b37116d664a05ff99b4424ba52a702d1
+      size: 371
     - path: eval-report.ml20m.ipynb
-      md5: 79142d468c345e8b390ae8fb339ef14f
-      size: 97972
+      hash: md5
+      md5: 89ab5b9865b5a02675138051db3d1a1b
+      size: 84581
   eval-report-template:
     cmd: jupytext --to ipynb eval-report.md
     deps:
