@@ -13,14 +13,14 @@ stages:
       - ml-1m.zip
     outs:
       - ml-1m/
-  
+
   ml-10m:
     cmd: python -m zipfile -e ml-10m.zip .
     deps:
       - ml-10m.zip
     outs:
       - ml-10M100K/
-  
+
   ml-20m:
     cmd: python -m zipfile -e ml-20m.zip .
     deps:
@@ -28,17 +28,10 @@ stages:
     outs:
       - ml-20m/
 
-  ml-25m:
-    cmd: python -m zipfile -e ml-25m.zip .
-    deps:
-      - ml-25m.zip
-    outs:
-      - ml-25m/
-  
   ml-latest-small:
     cmd: python -m zipfile -e ml-latest-small.zip .
     deps:
       - ml-latest-small.zip
     outs:
       - ml-latest-small/
-  
+

@@ -20,7 +20,7 @@ stages:
         - data-split/ml100k
       outs:
         - runs/ml100k-${item}
-    
+
   ml100k-implicit:
     foreach:
       - Pop
@@ -47,7 +47,7 @@ stages:
         - data-split/ml1m
       outs:
         - runs/ml1m-${item}
-    
+
   ml1m-implicit:
     foreach:
       - Pop
@@ -74,7 +74,7 @@ stages:
         - data-split/mlsmall
       outs:
         - runs/mlsmall-${item}
-  
+
   mlsmall-implicit:
     foreach:
       - Pop
@@ -114,7 +114,7 @@ stages:
         - data-split/ml10m
       outs:
         - runs/ml10m-${item}
-  
+
   ml20m-explicit:
     foreach:
       - Bias
@@ -128,7 +128,7 @@ stages:
         - data-split/ml20m
       outs:
         - runs/ml20m-${item}
-  
+
   ml20m-implicit:
     foreach:
       - Pop
@@ -141,30 +141,3 @@ stages:
         - data-split/ml20m
       outs:
         - runs/ml20m-${item}
-
-  ml25m-explicit:
-    foreach:
-      - Bias
-      - IIE
-      - UUE
-      - ALS
-    do:
-      cmd: python run-algo.py --splits data-split/ml25m -o runs/ml25m-${item} ${item}
-      wdir: ..
-      deps:
-        - data-split/ml25m
-      outs:
-        - runs/ml25m-${item}
-  
-  ml25m-implicit:
-    foreach:
-      - Pop
-      - III
-      - IALS
-    do:
-      cmd: python run-algo.py --splits data-split/ml25m -o runs/ml25m-${item} ${item}
-      wdir: ..
-      deps:
-        - data-split/ml25m
-      outs:
-        - runs/ml25m-${item}
