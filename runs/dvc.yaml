@@ -24,6 +24,7 @@ stages:
     cmd: python run-model.py --splits data-split/${item.data} -o runs/${item.data}-${item.model} ${item.model}
     wdir: ..
     deps:
+      - run-model.py
       - data-split/${item.data}
     outs:
       - runs/${item.data}-${item.model}
@@ -45,6 +46,7 @@ stages:
     cmd: python run-model.py --splits data-split/${item.data} -o runs/${item.data}-${item.model} --no-predict ${item.model}
     wdir: ..
     deps:
+      - run-model.py
       - data-split/${item.data}
     outs:
       - runs/${item.data}-${item.model}

@@ -72,8 +72,7 @@ dirs = [fld for fld in output_root.glob(f'{dataset}-*')]
 recs = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("recs-*"):
-        rec = pd.read_parquet(file)
-        rec = ItemListCollection.from_df(rec, UserIDKey)
+        rec = ItemListCollection.load_parquet(file)
         recs.add_from(rec, model=fld.name.split("-")[1])
 ```
 
@@ -86,8 +85,7 @@ rec_algos
 preds = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("pred-*"):
-        pred = pd.read_parquet(file)
-        pred = ItemListCollection.from_df(pred, UserIDKey)
+        pred = ItemListCollection.load_parquet(file)
         preds.add_from(pred, model=fld.name.split("-")[1])
 ```
 
@@ -102,7 +100,8 @@ split_dir = split_root / dataset
 test = ItemListCollection(UserIDKey)
 for file in split_dir.glob("test-*.parquet"):
     df = pd.read_parquet(file)
-    test.add_from(ItemListCollection.from_df(df, UserIDKey))
+    part = ItemListCollection.from_df(df, UserIDKey)
+    test.add_from(part)
 ```
 
 ## Top-N Metrics

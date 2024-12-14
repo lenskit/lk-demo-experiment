@@ -98,14 +98,14 @@ def main(args):
             runner.predict()
 
         result = runner.run(copy, split.test)
-        recs = result.output("recommendations").to_df()
-        _log.info("[%s] writing %d recommendations to %s", timer, len(recs), dest)
-        recs.to_parquet(dest / f"recs-{suffix}", index=False, compression="zstd")
+        recs = result.output("recommendations")
+        _log.info("[%s] writing recommendations to %s", timer, dest)
+        recs.save_parquet(dest / f"recs-{suffix}", compression="zstd")
 
         if not args["--no-predict"]:
-            preds = result.output("predictions").to_df()
-            _log.info("[%s] writing %d predictions to %s", timer, len(preds), dest)
-            preds.to_parquet(dest / f"pred-{suffix}", index=False, compression="zstd")
+            preds = result.output("predictions")
+            _log.info("[%s] writing predictions to %s", timer, dest)
+            preds.save_parquet(dest / f"pred-{suffix}", compression="zstd")
 
         del copy
 
