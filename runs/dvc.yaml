@@ -20,6 +20,7 @@ stages:
       model:
         - Bias
         - IIE
+        - UUE
         - ALS
     cmd: python run-model.py --splits data-split/${item.data} -o runs/${item.data}-${item.model} ${item.model}
     wdir: ..
