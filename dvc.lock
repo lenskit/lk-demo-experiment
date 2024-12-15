@@ -262,294 +262,274 @@ stages:
     deps:
     - path: eval-report.ipynb
       hash: md5
-      md5: d0cb3ed11261c337f98778dbb80ced30
-      size: 8156
+      md5: cb90b00c2e8bf8b8c27077baa9ab8cf1
+      size: 8079
     - path: runs/mlsmall-ALS
       hash: md5
-      md5: 905e5fc0cb907439521c6464535fce62.dir
-      size: 736179
+      md5: 8c749a1182138da50686f30b60d28981.dir
+      size: 461142
       nfiles: 10
     - path: runs/mlsmall-Bias
       hash: md5
-      md5: 40c932b9151f264f89ee1b662525c7ae.dir
-      size: 394322
+      md5: e1a25fd14ff332b59a41f6427be99155.dir
+      size: 374888
       nfiles: 10
     - path: runs/mlsmall-IALS
       hash: md5
-      md5: 7895d0905027b9dab51b0c9d8d2558bb.dir
-      size: 684658
+      md5: bee7b2bee11f7ee8739dd8c68f9aec2f.dir
+      size: 430166
       nfiles: 5
     - path: runs/mlsmall-IIE
       hash: md5
-      md5: db4e4f9c6b6cef0a35eabb3c9e60ebd9.dir
-      size: 465418
+      md5: 7ca97bb2e8efa0f195f19014486842f4.dir
+      size: 445849
       nfiles: 10
     - path: runs/mlsmall-III
       hash: md5
-      md5: 3c1afb7c16aa8875752777acea14dc53.dir
-      size: 416068
+      md5: d1022b5dbdc8aabff65316bb5f981057.dir
+      size: 405553
       nfiles: 5
     - path: runs/mlsmall-Pop
       hash: md5
-      md5: 08c1ee646694071603daa172cfeb2f04.dir
-      size: 112017
+      md5: 2422a0adb106b321094a1dd74a0e5df1.dir
+      size: 93623
       nfiles: 5
-    - path: runs/mlsmall-UUE
-      hash: md5
-      md5: 94a92cb81c1c4b83f8540352732b49fa.dir
-      size: 317390
-      nfiles: 10
     outs:
     - path: eval-metrics.mlsmall.json
       hash: md5
-      md5: 28e89b6185059abcbd5374f753edc040
-      size: 505
+      md5: 4dd1eaec04747d3954484adf6a5ada49
+      size: 433
     - path: eval-report.mlsmall.ipynb
       hash: md5
-      md5: d37fab9b86d952746bfa1c3347e9153a
-      size: 73668
+      md5: 113b882d94109326df9922104fd0d6b4
+      size: 71407
   eval-report@ml1m:
     cmd: papermill -r dataset ml1m eval-report.ipynb eval-report.ml1m.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
-      md5: d0cb3ed11261c337f98778dbb80ced30
-      size: 8156
+      md5: cb90b00c2e8bf8b8c27077baa9ab8cf1
+      size: 8079
     - path: runs/ml1m-ALS
       hash: md5
-      md5: 4ce0b05ac74c0c03df86e97f6ef1e44f.dir
-      size: 7013605
+      md5: 63b3dfb2e0f94792a7f95b45d660cb36.dir
+      size: 4395708
       nfiles: 10
     - path: runs/ml1m-Bias
       hash: md5
-      md5: d46b97a1646fe4a9d2e21e53da9faefd.dir
-      size: 3862982
+      md5: c89d87decac03acf4df03e8170c9f916.dir
+      size: 3823856
       nfiles: 10
     - path: runs/ml1m-IALS
       hash: md5
-      md5: 04beae93b5bf94f01f6b46a331b71902.dir
-      size: 6680988
+      md5: 0aba5e6725e358a3abe7b55a67d8930b.dir
+      size: 4218975
       nfiles: 5
     - path: runs/ml1m-IIE
       hash: md5
-      md5: 059085fa6c1a8ff2452cf7b849e311e7.dir
-      size: 4459133
+      md5: 9886195fba6088c30f58124cda523499.dir
+      size: 4419823
       nfiles: 10
     - path: runs/ml1m-III
       hash: md5
-      md5: 5a5927d3ee0dc1a290922507801b9f7a.dir
-      size: 4083759
+      md5: 8e7ee299a90c88787348341685465d61.dir
+      size: 4068796
       nfiles: 5
     - path: runs/ml1m-Pop
       hash: md5
-      md5: b13cddabebe0fe12b5c956c46cac45e1.dir
-      size: 691287
+      md5: 310b075c780e36ea59b71f7fbd702835.dir
+      size: 665141
       nfiles: 5
-    - path: runs/ml1m-UUE
-      hash: md5
-      md5: b6af12ef43211690037bf95a06e56db7.dir
-      size: 4450414
-      nfiles: 10
     outs:
     - path: eval-metrics.ml1m.json
       hash: md5
-      md5: be54ebd0db2a339310bddf170cdbbc07
-      size: 505
+      md5: 9592cbf6133b853f7175861fe2198b24
+      size: 434
     - path: eval-report.ml1m.ipynb
       hash: md5
-      md5: 63ec09d57f1b2b35b4e568e87c7d2194
-      size: 72912
+      md5: a1c2bebcc514417ba2800453e6eb73e9
+      size: 70425
   eval-report@ml10m:
     cmd: papermill -r dataset ml10m eval-report.ipynb eval-report.ml10m.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
-      md5: d0cb3ed11261c337f98778dbb80ced30
-      size: 8156
+      md5: cb90b00c2e8bf8b8c27077baa9ab8cf1
+      size: 8079
     - path: runs/ml10m-ALS
       hash: md5
-      md5: 1a0985933875d097e621630c9ecc8abb.dir
-      size: 69879119
+      md5: 059e6d5250ff8f2566ee191611b75341.dir
+      size: 45874410
       nfiles: 10
     - path: runs/ml10m-Bias
       hash: md5
-      md5: 6117d8f669d1becc0ff295244d922535.dir
-      size: 35799596
+      md5: dcab246fdec2675430d7203d469ce20d.dir
+      size: 38326959
       nfiles: 10
     - path: runs/ml10m-IALS
       hash: md5
-      md5: 99476a8d6fbb872e000b6de99c27d076.dir
-      size: 65936675
+      md5: 420c70a9b5d06ca4954443799ae766f5.dir
+      size: 44191148
       nfiles: 5
     - path: runs/ml10m-IIE
       hash: md5
-      md5: aff831c79104c536afc7345a58965815.dir
-      size: 45195599
+      md5: 5edd010f9c8441880a97fceb6aa1d2ef.dir
+      size: 47302244
       nfiles: 10
     - path: runs/ml10m-III
       hash: md5
-      md5: 4e00ea42c5c70c0075482e577c16fa9b.dir
-      size: 39642414
+      md5: b5ff0cbccfaffd5414c8bc575f53818d.dir
+      size: 42661266
       nfiles: 5
     - path: runs/ml10m-Pop
       hash: md5
-      md5: 1af388c8656194b757e2c72a24a91936.dir
-      size: 6597743
+      md5: 5658a55fbcfa13ae9870074c1aa56f7c.dir
+      size: 6524157
       nfiles: 5
-    - path: runs/ml10m-UUE
-      hash: md5
-      md5: 926d5576ce7fb1aa22573b092673000e.dir
-      size: 43809702
-      nfiles: 10
     outs:
     - path: eval-metrics.ml10m.json
       hash: md5
-      md5: 355fc25c1925667692007297cdbc2aa9
-      size: 505
+      md5: 0316a48c372dd9c81e1974551b7a3028
+      size: 433
     - path: eval-report.ml10m.ipynb
       hash: md5
-      md5: 9ef03527e4614f07ec217b3d6ad6fd43
-      size: 76439
+      md5: e986dbdf3fe5e4ddf1ce4763ffecf0af
+      size: 74093
   eval-report@ml20m:
     cmd: papermill -r dataset ml20m eval-report.ipynb eval-report.ml20m.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
-      md5: d0cb3ed11261c337f98778dbb80ced30
-      size: 8156
+      md5: cb90b00c2e8bf8b8c27077baa9ab8cf1
+      size: 8079
     - path: runs/ml20m-ALS
       hash: md5
-      md5: 898d4c4059b345f0598156904989234e.dir
-      size: 135398169
+      md5: 9fc406411a70d90ab27d95cd34c1bac3.dir
+      size: 91631118
       nfiles: 10
     - path: runs/ml20m-Bias
       hash: md5
-      md5: 26ed24b40bbf6b4beb51904f13cfe51a.dir
-      size: 68289204
+      md5: 30937af4c21b982ddb8ca57110989860.dir
+      size: 76135041
       nfiles: 10
     - path: runs/ml20m-IALS
       hash: md5
-      md5: dff4920a396b7017a0a6fa8b152c5472.dir
-      size: 129458121
+      md5: 753f69a9dd8b4c5f61b03119e7f8361c.dir
+      size: 87828855
       nfiles: 5
     - path: runs/ml20m-IIE
       hash: md5
-      md5: cc41f77e04e2b7107568b6cce5e4508c.dir
-      size: 84621541
+      md5: 1dd06904563fa1507bc66dec23b3a81b.dir
+      size: 90794692
       nfiles: 10
     - path: runs/ml20m-III
       hash: md5
-      md5: 74d42df9219073bbb850e957dd1098a3.dir
-      size: 75692582
+      md5: d30c5f43b1255ff34e2e603554d6b2ca.dir
+      size: 84814991
       nfiles: 5
     - path: runs/ml20m-Pop
       hash: md5
-      md5: 8c3edbde619a68c07dc25d1db09990eb.dir
-      size: 12597298
+      md5: a9e3fd69e1e99ce33329619ae4b6d7c0.dir
+      size: 12526792
       nfiles: 5
-    - path: runs/ml20m-UUE
-      hash: md5
-      md5: 0c5859eda5fa7ee0492785a0d120e7b0.dir
-      size: 71744320
-      nfiles: 10
     outs:
     - path: eval-metrics.ml20m.json
       hash: md5
-      md5: 726d6e9b4484c4d6a00aba66afbb1b15
-      size: 505
+      md5: 93383feffc15c5023938c1e51471ff89
+      size: 432
     - path: eval-report.ml20m.ipynb
       hash: md5
-      md5: 80d0edc0ec2cdf1adaeebb93a29986a1
-      size: 76375
+      md5: 1f902170a691817aa4e073aeb00f0776
+      size: 73634
   eval-report@ml25m:
     cmd: papermill -r dataset ml25m eval-report.ipynb eval-report.ml25m.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
-      md5: d0cb3ed11261c337f98778dbb80ced30
-      size: 8156
+      md5: cb90b00c2e8bf8b8c27077baa9ab8cf1
+      size: 8079
     - path: runs/ml25m-ALS
       hash: md5
-      md5: 91aaf489cdf736c69bb8ee82e2458396.dir
-      size: 160992969
+      md5: ef7733b9037de607b1b46d37b3a7dfa3.dir
+      size: 109954749
       nfiles: 10
     - path: runs/ml25m-Bias
       hash: md5
-      md5: 1c9c136a35183ec2a82ed0a041764caf.dir
-      size: 79041090
+      md5: a9a93b0e9bed330f6479b11c0bcb8ec6.dir
+      size: 88554833
       nfiles: 10
     - path: runs/ml25m-IALS
       hash: md5
-      md5: ec8e32ea3756b0dad904bbcaeb8d9608.dir
-      size: 152407885
+      md5: b19a7a1f1eafce2dfabbfb0ec5d0b307.dir
+      size: 102614234
       nfiles: 5
     - path: runs/ml25m-IIE
       hash: md5
-      md5: 014886e1cc3c85c45e66e5b8ffc7f6d6.dir
-      size: 94222297
+      md5: 60c8decf298e2dfb5abc1cca661929e0.dir
+      size: 103246983
       nfiles: 10
     - path: runs/ml25m-III
       hash: md5
-      md5: 8a40a2fab2b9fbe492aaed5111a8a115.dir
-      size: 88649990
+      md5: 57715cb9771966f1647d336e130251be.dir
+      size: 99084149
       nfiles: 5
     - path: runs/ml25m-Pop
       hash: md5
-      md5: cf5f07354438c5e03b96198ab23557dd.dir
-      size: 14796114
+      md5: 12da015dee09767883e7e5c518e6315c.dir
+      size: 14601695
       nfiles: 5
     outs:
     - path: eval-metrics.ml25m.json
       hash: md5
-      md5: 7ae19143b0bc219466a9d32d434e6dfd
-      size: 435
+      md5: 1cca488ca383436219c8ecde4e72f13b
+      size: 434
     - path: eval-report.ml25m.ipynb
       hash: md5
-      md5: ea2774c14f4e95c50d5ece3f71baadc1
-      size: 73420
+      md5: 4f1bd30bdf6f7e57381a1473e463ced9
+      size: 73466
   eval-report@ml32m:
     cmd: papermill -r dataset ml32m eval-report.ipynb eval-report.ml32m.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
-      md5: d0cb3ed11261c337f98778dbb80ced30
-      size: 8156
+      md5: cb90b00c2e8bf8b8c27077baa9ab8cf1
+      size: 8079
     - path: runs/ml32m-ALS
       hash: md5
-      md5: 2d46417034eee1e962d2e3c7219a0eb6.dir
-      size: 193111099
+      md5: 6539bc4ceb62a92c8d8c9103dd5882d8.dir
+      size: 134322359
       nfiles: 10
     - path: runs/ml32m-Bias
       hash: md5
-      md5: a6e4b140915b00783526a5a7a0b31bd2.dir
-      size: 95503856
+      md5: 017ce615e53f827d73d34576127f5da6.dir
+      size: 107975472
       nfiles: 10
     - path: runs/ml32m-IALS
       hash: md5
-      md5: ee4b6c33ad0a6316e43d755a6a8f15f4.dir
-      size: 187433112
+      md5: 3e07e4d40a4f542f0979f45b1e76aee3.dir
+      size: 125477969
       nfiles: 5
     - path: runs/ml32m-IIE
       hash: md5
-      md5: d8babe07324f07beae2669548bfd03b4.dir
-      size: 116861136
+      md5: 49da815defbf57b376e9c00cc139452e.dir
+      size: 130105771
       nfiles: 10
     - path: runs/ml32m-III
       hash: md5
-      md5: 63df1da78f8bf2fd9a3d7f5c8308062a.dir
-      size: 109206548
+      md5: 64cf665cd5b6e58ae88ba303b8c180bf.dir
+      size: 121233385
       nfiles: 5
     - path: runs/ml32m-Pop
       hash: md5
-      md5: 18bf2fa85f75a81f76a0141fb1a66100.dir
-      size: 18285662
+      md5: f544927694b331ef1a18eddd0fe26dd8.dir
+      size: 18079546
       nfiles: 5
     outs:
     - path: eval-metrics.ml32m.json
       hash: md5
-      md5: 12b2b012593ad48ce815aee1e7327741
-      size: 433
+      md5: c0631ecc5888a0fa8eca02c65553bc0a
+      size: 430
     - path: eval-report.ml32m.ipynb
       hash: md5
-      md5: 3ec1d50216f53a465464aee8676f29c5
-      size: 73508
+      md5: 9bd6b0d55a9316611265a5c0c93cea04
+      size: 73404
