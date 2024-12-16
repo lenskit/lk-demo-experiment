@@ -896,11 +896,15 @@ stages:
       md5: 1d1842fde41279609252cd3746f14a31.dir
       size: 68225
       nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: a8c5b6e082a9ba69e516c6461cb22580
+      size: 3854
     outs:
     - path: runs/ml100k-UUE
       hash: md5
-      md5: 6b74d73421199c932085bdb2a6e20aa9.dir
-      size: 681121
+      md5: 6095d34f8e4289dd57726715137c1439.dir
+      size: 661751
       nfiles: 10
   run-explicit-model@ml100k-ALS:
     cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-ALS ALS
