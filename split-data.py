@@ -48,6 +48,7 @@ def main(args):
 if __name__ == "__main__":
     args = docopt(__doc__)
     lcfg = LoggingConfig()
-    lcfg.set_verbose(args["--verbose"])
+    if args["--verbose"]:
+        lcfg.set_verbose()
     lcfg.apply()
     main(args)
