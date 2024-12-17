@@ -37,14 +37,18 @@ laid out in several subcomponents:
 
 ## Setup
 
-This experiment comes with an Anaconda environment file that defines the
-necessary dependencies.  To set up and activate:
+This experiment comes with dependencies specified in `pyproject.toml`, and locked with `uv.lock` for use with [uv][].
+To set up, run:
 
-    conda env create -f environment.yml
-    conda activate lk-demo
+```console
+$ uv sync
+```
 
-After creating the environment, you just need to `activate`; you can update the
-environment with `conda env update -f environment.yml`.
+This will create a virtual environment in `.venv/`, whic you can activate with:
+
+```console
+$ . ./.venv/bin/activate
+```
 
 ## Running
 
