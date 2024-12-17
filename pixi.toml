@@ -34,6 +34,7 @@ ruff = "*"
 
 scipy = "~=1.10"
 psutil = "*"
+parquet-tools = "*"
 
 [pypi-dependencies]
 lenskit = { git = "https://github.com/lenskit/lkpy.git", subdirectory = "lenskit" }
