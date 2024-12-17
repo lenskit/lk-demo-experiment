@@ -435,7 +435,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.21.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py312hef9b889_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@694b31245a4b5560c9f82003c4a685d0aa37223b#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@9ebd9c9ce93c0b37c0384a80b6dddf75dfffe530#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
       linux-aarch64:
@@ -855,7 +855,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.21.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/zstandard-0.23.0-py312hb698573_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/zstd-1.5.6-h02f22dd_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@694b31245a4b5560c9f82003c4a685d0aa37223b#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@9ebd9c9ce93c0b37c0384a80b6dddf75dfffe530#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
   default:
@@ -1270,7 +1270,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.21.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py312hef9b889_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@694b31245a4b5560c9f82003c4a685d0aa37223b#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@9ebd9c9ce93c0b37c0384a80b6dddf75dfffe530#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
       linux-aarch64:
@@ -1665,7 +1665,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.21.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/zstandard-0.23.0-py312hb698573_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/zstd-1.5.6-h02f22dd_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@694b31245a4b5560c9f82003c4a685d0aa37223b#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@9ebd9c9ce93c0b37c0384a80b6dddf75dfffe530#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
       osx-arm64:
@@ -2065,7 +2065,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.21.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstandard-0.23.0-py312h15fbf35_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.6-hb46c0d2_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@694b31245a4b5560c9f82003c4a685d0aa37223b#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@9ebd9c9ce93c0b37c0384a80b6dddf75dfffe530#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
       win-64:
@@ -2488,7 +2488,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.21.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstandard-0.23.0-py312h7606c53_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.6-h0ea2cb4_0.conda
-      - pypi: git+https://github.com/lenskit/lkpy.git@694b31245a4b5560c9f82003c4a685d0aa37223b#subdirectory=lenskit
+      - pypi: git+https://github.com/lenskit/lkpy.git@9ebd9c9ce93c0b37c0384a80b6dddf75dfffe530#subdirectory=lenskit
       - pypi: https://files.pythonhosted.org/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl
 packages:
@@ -9974,8 +9974,8 @@ packages:
   timestamp: 1729655345825
 - kind: pypi
   name: lenskit
-  version: 2025.0.0a1.dev90+g694b3124
-  url: git+https://github.com/lenskit/lkpy.git@694b31245a4b5560c9f82003c4a685d0aa37223b#subdirectory=lenskit
+  version: 2025.0.0a1.dev126+g9ebd9c9c
+  url: git+https://github.com/lenskit/lkpy.git@9ebd9c9ce93c0b37c0384a80b6dddf75dfffe530#subdirectory=lenskit
   requires_dist:
   - more-itertools>=9.0
   - numpy>=1.25
