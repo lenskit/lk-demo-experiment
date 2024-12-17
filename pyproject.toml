@@ -1,0 +1,33 @@
+[project]
+name = "lk-demo-experiment"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas ~=2.0",
+    "torch ~=2.2",
+    "docopt-ng >=0.9",
+    "dvc[s3,webdav,azure] ~=3.50",
+    "notebook ~=7.2",
+    "papermill ~=2.6",
+    "jupytext ~=1.16",
+    "seaborn ~=0.13.0",
+    "humanize ~=4.0",
+    "statsmodels ~=0.14.0",
+    "lenskit @ git+https://github.com/lenskit/lkpy.git#subdirectory=lenskit",
+]
+
+[dependency-groups]
+dev = [
+    "ruff >=0.8",
+    "parquet-tools >=0.2",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
