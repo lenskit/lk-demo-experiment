@@ -1,5 +1,9 @@
 version = 1
 requires-python = ">=3.12"
+resolution-markers = [
+    "platform_system != 'Darwin'",
+    "platform_system == 'Darwin'",
+]
 
 [[package]]
 name = "adlfs"
@@ -963,7 +967,7 @@ dependencies = [
     { name = "celery" },
     { name = "funcy" },
     { name = "kombu" },
-    { name = "pywin32", marker = "sys_platform == 'win32'" },
+    { name = "pywin32", marker = "platform_system != 'Darwin' and sys_platform == 'win32'" },
     { name = "shortuuid" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/19/ef/da712c4d9c7d6cacac27d7b2779e6a97c3381ef2c963c33719d39113b6a3/dvc_task-0.40.2.tar.gz", hash = "sha256:909af541bf5fde83439da56c4c0ebac592af178a59b702708fadaacfd6e7b704", size = 36147 }
@@ -1311,7 +1315,7 @@ name = "ipython"
 version = "8.30.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32'" },
+    { name = "colorama", marker = "platform_system != 'Darwin' and sys_platform == 'win32'" },
     { name = "decorator" },
     { name = "jedi" },
     { name = "matplotlib-inline" },
@@ -1474,7 +1478,7 @@ version = "5.7.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "platformdirs" },
-    { name = "pywin32", marker = "platform_python_implementation != 'PyPy' and sys_platform == 'win32'" },
+    { name = "pywin32", marker = "platform_python_implementation != 'PyPy' and platform_system != 'Darwin' and sys_platform == 'win32'" },
     { name = "traitlets" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/00/11/b56381fa6c3f4cc5d2cf54a7dbf98ad9aa0b339ef7a601d6053538b079a7/jupyter_core-5.7.2.tar.gz", hash = "sha256:aa5f8d32bbf6b431ac830496da7392035d6f61b4f54872f15c4bd2a9c3f536d9", size = 87629 }
@@ -1529,7 +1533,7 @@ dependencies = [
     { name = "overrides" },
     { name = "packaging" },
     { name = "prometheus-client" },
-    { name = "pywinpty", marker = "os_name == 'nt'" },
+    { name = "pywinpty", marker = "os_name == 'nt' and platform_system != 'Darwin'" },
     { name = "pyzmq" },
     { name = "send2trash" },
     { name = "terminado" },
@@ -1547,7 +1551,7 @@ name = "jupyter-server-terminals"
 version = "0.5.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pywinpty", marker = "os_name == 'nt'" },
+    { name = "pywinpty", marker = "os_name == 'nt' and platform_system != 'Darwin'" },
     { name = "terminado" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/fc/d5/562469734f476159e99a55426d697cbf8e7eb5efe89fb0e0b4f83a3d3459/jupyter_server_terminals-0.5.3.tar.gz", hash = "sha256:5ae0295167220e9ace0edcfdb212afd2b01ee8d179fe6f23c899590e9b8a5269", size = 31430 }
@@ -1708,7 +1712,8 @@ dependencies = [
     { name = "scipy" },
     { name = "structlog" },
     { name = "threadpoolctl" },
-    { name = "torch" },
+    { name = "torch", version = "2.5.1", source = { registry = "https://pypi.org/simple" }, marker = "platform_system == 'Darwin'" },
+    { name = "torch", version = "2.5.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "platform_system != 'Darwin'" },
 ]
 
 [[package]]
@@ -1726,7 +1731,8 @@ dependencies = [
     { name = "papermill" },
     { name = "seaborn" },
     { name = "statsmodels" },
-    { name = "torch" },
+    { name = "torch", version = "2.5.1", source = { registry = "https://pypi.org/simple" }, marker = "platform_system == 'Darwin'" },
+    { name = "torch", version = "2.5.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "platform_system != 'Darwin'" },
 ]
 
 [package.dev-dependencies]
@@ -1747,7 +1753,8 @@ requires-dist = [
     { name = "papermill", specifier = "~=2.6" },
     { name = "seaborn", specifier = "~=0.13.0" },
     { name = "statsmodels", specifier = "~=0.14.0" },
-    { name = "torch", specifier = "~=2.2", index = "https://download.pytorch.org/whl/cpu" },
+    { name = "torch", marker = "platform_system != 'Darwin'", specifier = "~=2.2", index = "https://download.pytorch.org/whl/cpu" },
+    { name = "torch", marker = "platform_system == 'Darwin'", specifier = "~=2.2" },
 ]
 
 [package.metadata.requires-dev]
@@ -3219,7 +3226,7 @@ version = "0.18.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ptyprocess", marker = "os_name != 'nt'" },
-    { name = "pywinpty", marker = "os_name == 'nt'" },
+    { name = "pywinpty", marker = "os_name == 'nt' and platform_system != 'Darwin'" },
     { name = "tornado" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/8a/11/965c6fd8e5cc254f1fe142d547387da17a8ebfd75a3455f637c663fb38a0/terminado-0.18.1.tar.gz", hash = "sha256:de09f2c4b85de4765f7714688fff57d3e75bad1f909b589fde880460c753fd2e", size = 32701 }
@@ -3268,16 +3275,39 @@ wheels = [
 
 [[package]]
 name = "torch"
+version = "2.5.1"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "platform_system == 'Darwin'",
+]
+dependencies = [
+    { name = "filelock", marker = "platform_system == 'Darwin'" },
+    { name = "fsspec", marker = "platform_system == 'Darwin'" },
+    { name = "jinja2", marker = "platform_system == 'Darwin'" },
+    { name = "networkx", marker = "platform_system == 'Darwin'" },
+    { name = "setuptools", marker = "platform_system == 'Darwin'" },
+    { name = "sympy", marker = "platform_system == 'Darwin'" },
+    { name = "typing-extensions", marker = "platform_system == 'Darwin'" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/57/6c/bf52ff061da33deb9f94f4121fde7ff3058812cb7d2036c97bc167793bd1/torch-2.5.1-cp312-none-macosx_11_0_arm64.whl", hash = "sha256:8c712df61101964eb11910a846514011f0b6f5920c55dbf567bff8a34163d5b1", size = 63858109 },
+]
+
+[[package]]
+name = "torch"
 version = "2.5.1+cpu"
 source = { registry = "https://download.pytorch.org/whl/cpu" }
+resolution-markers = [
+    "platform_system != 'Darwin'",
+]
 dependencies = [
-    { name = "filelock" },
-    { name = "fsspec" },
-    { name = "jinja2" },
-    { name = "networkx" },
-    { name = "setuptools" },
-    { name = "sympy" },
-    { name = "typing-extensions" },
+    { name = "filelock", marker = "platform_system != 'Darwin'" },
+    { name = "fsspec", marker = "platform_system != 'Darwin'" },
+    { name = "jinja2", marker = "platform_system != 'Darwin'" },
+    { name = "networkx", marker = "platform_system != 'Darwin'" },
+    { name = "setuptools", marker = "platform_system != 'Darwin'" },
+    { name = "sympy", marker = "platform_system != 'Darwin'" },
+    { name = "typing-extensions", marker = "platform_system != 'Darwin'" },
 ]
 wheels = [
     { url = "https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp312-cp312-linux_x86_64.whl", hash = "sha256:4856f9d6925121d13c2df07aa7580b767f449dfe71ae5acde9c27535d5da4840" },

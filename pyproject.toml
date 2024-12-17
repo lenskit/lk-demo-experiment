@@ -25,7 +25,7 @@ dev = [
 ]
 
 [tool.uv.sources]
-torch = { index = "pytorch" }
+torch = { index = "pytorch", marker = "platform_system != 'Darwin'" }
 
 [[tool.uv.index]]
 name = "pytorch"
