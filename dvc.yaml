@@ -34,3 +34,19 @@ stages:
       metrics:
         - eval-metrics.${item}.json:
             cache: false
+
+  render-report:
+    foreach:
+      - ml100k
+      - mlsmall
+      - ml1m
+      - ml10m
+      - ml20m
+      - ml25m
+      - ml32m
+    do:
+      cmd: jupyter nbconvert --to html eval-report.${item}.ipynb
+      deps:
+        - eval-report.${item}.ipynb
+      outs:
+        - eval-report.${item}.html

@@ -568,3 +568,15 @@ stages:
       hash: md5
       md5: fc28a56b34e8ad1554c11dc36ba657ca
       size: 76143
+  render-report@ml1m:
+    cmd: jupyter nbconvert --to html eval-report.ml1m.ipynb
+    deps:
+    - path: eval-report.ml1m.ipynb
+      hash: md5
+      md5: b71e0044c7a8e697b20185fe47b721a6
+      size: 72624
+    outs:
+    - path: eval-report.ml1m.html
+      hash: md5
+      md5: 1a5c65d487c4219de4bd99bb3c2c2db4
+      size: 345230
