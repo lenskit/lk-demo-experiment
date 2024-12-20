@@ -17,8 +17,8 @@ stages:
     outs:
     - path: data-split/ml20m
       hash: md5
-      md5: e496e74f9ab660f07393bb26a5c38a39.dir
-      size: 8430579
+      md5: fd7dd9b0ef99784deab02913eb4ab011.dir
+      size: 8429357
       nfiles: 5
   split-ml10m:
     cmd: python split-data.py -o data-split/ml10m ml10m
@@ -37,8 +37,8 @@ stages:
     outs:
     - path: data-split/ml10m
       hash: md5
-      md5: 336f46ac4b07e2e13008f89e05c19a1c.dir
-      size: 4040959
+      md5: 521751f493dddabffe17ba0e4d6e6456.dir
+      size: 4040573
       nfiles: 5
   split-mlsmall:
     cmd: python split-data.py -o data-split/mlsmall mlsmall
@@ -77,8 +77,8 @@ stages:
     outs:
     - path: data-split/ml100k
       hash: md5
-      md5: 9d8028ff2c116320ccfb3217da402601.dir
-      size: 68225
+      md5: ac857353ed7e5a70e36841b72e58319f.dir
+      size: 68161
       nfiles: 5
   split-ml1m:
     cmd: python split-data.py -o data-split/ml1m ml1m
@@ -97,8 +97,8 @@ stages:
     outs:
     - path: data-split/ml1m
       hash: md5
-      md5: e79afd26c0326591508711111115a30a.dir
-      size: 350715
+      md5: af67c6e95a9fe5c0db8e591c7d6ab8d1.dir
+      size: 350348
       nfiles: 5
   split-ml25m:
     cmd: python split-data.py -o data-split/ml25m ml25m
