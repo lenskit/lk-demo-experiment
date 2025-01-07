@@ -129,8 +129,8 @@ stages:
       size: 238950008
     - path: split-data.py
       hash: md5
-      md5: 1c03c153a214b9058513527d5c5a6d88
-      size: 1308
+      md5: dd212126b66eb0360b0ddfd924571ce9
+      size: 1321
     params:
       params.yaml:
         random.seed: 20220215
