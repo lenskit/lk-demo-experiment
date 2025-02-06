@@ -10,44 +10,44 @@ stages:
   run-explicit-model:
     matrix:
       data:
-        - ml100k
-        - mlsmall
-        - ml1m
-        - ml10m
-        - ml20m
-        - ml25m
-        - ml32m
+        - ml-100k
+        - ml-latest-small
+        - ml-1m
+        - ml-10m
+        - ml-20m
+        - ml-25m
+        - ml-32m
       model:
         - Bias
         - IIE
         - UUE
         - ALS
-    cmd: python run-model.py --splits data-split/${item.data} -o runs/${item.data}-${item.model} ${item.model}
+    cmd: python run-model.py -d data/${item.data} -o runs/${item.data}-${item.model} ${item.model}
     wdir: ..
     deps:
       - run-model.py
-      - data-split/${item.data}
+      - data/${item.data}
     outs:
       - runs/${item.data}-${item.model}
 
   run-implicit-model:
     matrix:
       data:
-        - ml100k
-        - mlsmall
-        - ml1m
-        - ml10m
-        - ml20m
-        - ml25m
-        - ml32m
+        - ml-100k
+        - ml-latest-small
+        - ml-1m
+        - ml-10m
+        - ml-20m
+        - ml-25m
+        - ml-32m
       model:
         - Pop
         - III
         - IALS
-    cmd: python run-model.py --splits data-split/${item.data} -o runs/${item.data}-${item.model} --no-predict ${item.model}
+    cmd: python run-model.py -d data/${item.data} -o runs/${item.data}-${item.model} --no-predict ${item.model}
     wdir: ..
     deps:
       - run-model.py
-      - data-split/${item.data}
+      - data/${item.data}
     outs:
       - runs/${item.data}-${item.model}

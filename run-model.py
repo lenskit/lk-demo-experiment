@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Use a model to produce recommendations (and predictions).
+Use a model to produce recommendations (and predictions).  It uses a global
+temporal split determined by fraction of the test data.
 
 Usage:
     run-model.py [options] MODEL
 
 Options:
     -v, --verbose   verbose logging output
-    --splits input  directory for split train-test pairs [default: data-split]
+    -d DIR, --data=DIR
+            directory of the dataset (in LensKit native format)
+    --test-size     the test set size (as a fraction) [default: 0.2]
     -o output       destination directory [default: output]
     -n N            number of recommendations for a unique user [default: 100]
     -m MODULE       import models from MODULE [default: lkdemo.models]
-    -P N, --part=N  only run on partition N
     --no-predict    turn off rating prediction
     --log-file FILE write logs to FILE
     MODEL            name of model to load
@@ -21,27 +23,28 @@ import importlib
 import logging
 from pathlib import Path
 
-import pandas as pd
 from docopt import docopt
-from lenskit import util
 from lenskit.batch import BatchPipelineRunner
-from lenskit.data import ItemListCollection, UserIDKey, from_interactions_df
+from lenskit.data import Dataset
 from lenskit.logging.config import LoggingConfig
 from lenskit.pipeline import topn_pipeline
-from lenskit.splitting import TTSplit
 
-from lkdemo import datasets
+from lkdemo.datasets import split_fraction
 
 _log = logging.getLogger("run-model")
 
 
 def main(args):
     mod_name = args.get("-m")
-    input = args.get("--splits")
     output = args.get("-o")
     n_recs = int(args.get("-n"))
     model = args.get("MODEL")
-    part = args.get("--part", None)
+
+    data_path = args.get("--data")
+    data = Dataset.load(data_path)
+    quant = float(args["--test-size"])
+
+    split = split_fraction(data, quant)
 
     _log.info(f"importing from module {mod_name}")
     algorithms = importlib.import_module(mod_name)
@@ -49,65 +52,30 @@ def main(args):
     model = getattr(algorithms, model)
     pipe = topn_pipeline(model, predicts_ratings=not args["--no-predict"])
 
-    path = Path(input)
     dest = Path(output)
     dest.mkdir(exist_ok=True, parents=True)
 
-    ds_def = getattr(datasets, path.name, None)
+    _log.info("training the pipeline")
+    pipe.train(split.train)
 
-    for file in path.glob("test-*.parquet"):
-        test = pd.read_parquet(file)
-        suffix = file.name[5:]
-        _log.debug("checking file %s against %s", file.stem[5:], part)
-        if part is not None and file.stem[5:] != part:
-            _log.info("part %s not wanted, skipping", suffix)
-            continue
+    _log.info(
+        "generating recommendations for %d unique users",
+        len(split.test),
+    )
+    runner = BatchPipelineRunner()
+    runner.recommend(n=n_recs)
+    if not args["--no-predict"]:
+        runner.predict()
 
-        train_file = path / f"train-{suffix}"
-        timer = util.Stopwatch()
+    result = runner.run(pipe, split.test)
+    recs = result.output("recommendations")
+    _log.info("writing recommendations to %s", dest)
+    recs.save_parquet(dest / "recs-eval.parquet", compression="zstd")
 
-        test = ItemListCollection.from_df(test, UserIDKey)
-
-        if train_file.exists():
-            _log.info("[%s] loading training data from %s", timer, train_file)
-            train = pd.read_parquet(path / f"train-{suffix}")
-            train = from_interactions_df(train)
-            split = TTSplit(train, test)
-        elif ds_def is not None:
-            ds = ds_def()
-            _log.info(
-                "[%s] extracting training data from data set %s", timer, path.name
-            )
-            split = TTSplit.from_src_and_test(ds, test)
-        else:
-            _log.error("could not find training data for %s", file.name)
-            continue
-
-        _log.info("[%s] Fitting the model", timer)
-        copy = pipe.clone()
-        copy.train(split.train)
-
-        _log.info(
-            "[%s] generating recommendations for %d unique users",
-            timer,
-            len(split.test),
-        )
-        runner = BatchPipelineRunner()
-        runner.recommend(n=n_recs)
-        if not args["--no-predict"]:
-            runner.predict()
-
-        result = runner.run(copy, split.test)
-        recs = result.output("recommendations")
-        _log.info("[%s] writing recommendations to %s", timer, dest)
-        recs.save_parquet(dest / f"recs-{suffix}", compression="zstd")
-
-        if not args["--no-predict"]:
-            preds = result.output("predictions")
-            _log.info("[%s] writing predictions to %s", timer, dest)
-            preds.save_parquet(dest / f"pred-{suffix}", compression="zstd")
-
-        del copy
+    if not args["--no-predict"]:
+        preds = result.output("predictions")
+        _log.info("writing predictions to %s", dest)
+        preds.save_parquet(dest / "pred-eval.parquet", compression="zstd")
 
 
 if __name__ == "__main__":
