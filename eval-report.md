@@ -48,8 +48,12 @@ from itertools import combinations
 Import the LensKit metrics for analysis:
 
 ```python
-from lenskit.data import ItemListCollection, UserIDKey
+from lenskit.data import Dataset, ItemListCollection, UserIDKey
 from lenskit.metrics import RunAnalysis, RMSE, NDCG, RecipRank, RBP
+```
+
+```python
+from lkdemo.datasets import split_fraction
 ```
 
 ## Load Data
@@ -92,16 +96,9 @@ for fld in dirs:
 We need to load the test data so that we have the ground truths for computing accuracy
 
 ```python
-split_root = Path("data-split")
-split_dir = split_root / dataset
-```
-
-```python
-test = ItemListCollection(UserIDKey)
-for file in split_dir.glob("test-*.parquet"):
-    df = pd.read_parquet(file)
-    part = ItemListCollection.from_df(df, UserIDKey)
-    test.add_from(part)
+data = Dataset.load(f"data/{dataset}")
+split = split_fraction(data, 0.2)
+test = split.test
 ```
 
 ## Top-N Metrics
