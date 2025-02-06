@@ -15,7 +15,7 @@ dependencies = [
     "seaborn ~=0.13.0",
     "humanize ~=4.0",
     "statsmodels ~=0.14.0",
-    "lenskit >=2025.0.0a1",
+    "lenskit >=2025.1.1b6",
 ]
 
 [dependency-groups]
