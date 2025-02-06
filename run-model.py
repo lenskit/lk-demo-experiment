@@ -10,7 +10,7 @@ Options:
     -v, --verbose   verbose logging output
     -d DIR, --data=DIR
             directory of the dataset (in LensKit native format)
-    --test-size     the test set size (as a fraction) [default: 0.2]
+    --test-size=F   the test set size (as a fraction) [default: 0.2]
     -o output       destination directory [default: output]
     -n N            number of recommendations for a unique user [default: 100]
     -m MODULE       import models from MODULE [default: lkdemo.models]
