@@ -57,7 +57,7 @@ from lenskit.metrics import RunAnalysis, RMSE, NDCG, RecipRank, RBP
 The recommendations are in `runs`, and we will need to reassemble the test data from `test`.
 
 ```python tags=["parameters"]
-dataset = "ml100k"
+dataset = "ml-100k"
 ```
 
 ```python
@@ -73,7 +73,7 @@ recs = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("recs-*"):
         rec = ItemListCollection.load_parquet(file)
-        recs.add_from(rec, model=fld.name.split("-")[1])
+        recs.add_from(rec, model=fld.name.split("-")[-1])
 ```
 
 ```python
@@ -86,7 +86,7 @@ preds = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("pred-*"):
         pred = ItemListCollection.load_parquet(file)
-        preds.add_from(pred, model=fld.name.split("-")[1])
+        preds.add_from(pred, model=fld.name.split("-")[-1])
 ```
 
 We need to load the test data so that we have the ground truths for computing accuracy
