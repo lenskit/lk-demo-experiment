@@ -9,9 +9,8 @@ stages:
       - 25m
       - 32m
     do:
-      wdir: ..
-      cmd: python convert-dataset.py -o data/ml-${item}.parquet --movielens data/ml-${item}.zip
+      cmd: lenskit data convert --movielens ml-${item}.zip ml-${item}
       deps:
-        - data/ml-${item}.zip
+        - ml-${item}.zip
       outs:
-        - data/ml-${item}.parquet
+        - ml-${item}
