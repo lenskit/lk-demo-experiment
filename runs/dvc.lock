@@ -1826,3 +1826,133 @@ stages:
       md5: fa58584c67ff346cdb179cfd6edaccd5.dir
       size: 2612
       nfiles: 1
+  run-explicit-model@ml-latest-small-UUE:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-UUE UUE
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: b76ccb04c9111caccf256fe2db8eb171.dir
+      size: 1287045
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: fa6db4c0ed09fe6ae1bd6bfef159dc65
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-UUE
+      hash: md5
+      md5: 9ef886d5fc2e9d0a2fc3146f7fc950e1.dir
+      size: 4338
+      nfiles: 2
+  run-implicit-model@ml-latest-small-IALS:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-IALS
+      --no-predict IALS
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: b76ccb04c9111caccf256fe2db8eb171.dir
+      size: 1287045
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: fa6db4c0ed09fe6ae1bd6bfef159dc65
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-IALS
+      hash: md5
+      md5: 3ff752671fc5f3f9df572f42ad40f018.dir
+      size: 2655
+      nfiles: 1
+  run-explicit-model@ml-latest-small-Bias:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-Bias
+      Bias
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: b76ccb04c9111caccf256fe2db8eb171.dir
+      size: 1287045
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: fa6db4c0ed09fe6ae1bd6bfef159dc65
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-Bias
+      hash: md5
+      md5: edc6df0181f81c527c48e2b9c2426c3c.dir
+      size: 4450
+      nfiles: 2
+  run-implicit-model@ml-latest-small-Pop:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-Pop --no-predict
+      Pop
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: b76ccb04c9111caccf256fe2db8eb171.dir
+      size: 1287045
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: fa6db4c0ed09fe6ae1bd6bfef159dc65
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-Pop
+      hash: md5
+      md5: 35359049eba69b7e06cc794a5ec19ee5.dir
+      size: 2640
+      nfiles: 1
+  run-implicit-model@ml-latest-small-III:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-III --no-predict
+      III
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: b76ccb04c9111caccf256fe2db8eb171.dir
+      size: 1287045
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: fa6db4c0ed09fe6ae1bd6bfef159dc65
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-III
+      hash: md5
+      md5: c1240aff949baa5479ba65b8b00f6e4f.dir
+      size: 2639
+      nfiles: 1
+  run-explicit-model@ml-latest-small-IIE:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-IIE IIE
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: b76ccb04c9111caccf256fe2db8eb171.dir
+      size: 1287045
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: fa6db4c0ed09fe6ae1bd6bfef159dc65
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-IIE
+      hash: md5
+      md5: 8f1e36269e7bb922924741bfc561defa.dir
+      size: 4510
+      nfiles: 2
+  run-explicit-model@ml-latest-small-ALS:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-ALS ALS
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: b76ccb04c9111caccf256fe2db8eb171.dir
+      size: 1287045
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: fa6db4c0ed09fe6ae1bd6bfef159dc65
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-ALS
+      hash: md5
+      md5: fd231b10f57ae40234cdbbb359f036be.dir
+      size: 4465
+      nfiles: 2
