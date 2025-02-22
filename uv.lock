@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.12"
 resolution-markers = [
     "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')",
@@ -1700,7 +1701,7 @@ wheels = [
 
 [[package]]
 name = "lenskit"
-version = "2025.1.1b6"
+version = "2025.1.1b12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -1721,9 +1722,9 @@ dependencies = [
     { name = "torch", version = "2.5.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f3/70/56d9e3f3729b37a51375138f12d7f03aa5571c45fb4b79c125fb07196454/lenskit-2025.1.1b6.tar.gz", hash = "sha256:565a5b452ea62763c4999679d11a9ef119baaed91e7f10293d591edda4373de4", size = 133341 }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/d8/19b6d1022cd2d71ee1fe8547109cfe551278888da8e4d9c03ede52cc2956/lenskit-2025.1.1b12.tar.gz", hash = "sha256:cf4f212a8009362c85c0a8c4e44f6b0b0f2cfe318a417798aed1068aebc3bbb8", size = 147727 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1b/ff/9ae5363938ef599b1e21e128be44a05a7fb170234e96ebffc6c25355e8f9/lenskit-2025.1.1b6-py3-none-any.whl", hash = "sha256:464afd2e2e0da3c4848bfd0a8d33b039be75879daf8644ede9ec00c1893e36a1", size = 193812 },
+    { url = "https://files.pythonhosted.org/packages/2b/f3/fe0a89a466847fac40459eca0cb7e21ebcd8e2f8ced9787a45a2662c5553/lenskit-2025.1.1b12-py3-none-any.whl", hash = "sha256:f9dc1f991ae870eb9a8c1488959c73a02c954acaa8fab6b06ca21aa52e75cc3e", size = 211413 },
 ]
 
 [[package]]
@@ -1782,7 +1783,7 @@ requires-dist = [
     { name = "dvc", extras = ["s3", "webdav", "azure"], specifier = "~=3.50" },
     { name = "humanize", specifier = "~=4.0" },
     { name = "jupytext", specifier = "~=1.16" },
-    { name = "lenskit", specifier = ">=2025.1.1b6" },
+    { name = "lenskit", specifier = ">=2025.1.1b12" },
     { name = "notebook", specifier = "~=7.2" },
     { name = "pandas", specifier = "~=2.0" },
     { name = "papermill", specifier = "~=2.6" },
