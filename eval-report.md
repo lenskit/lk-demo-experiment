@@ -35,6 +35,7 @@ import json
 Load libraries for analysis and visualization:
 
 ```python
+import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 ```
@@ -119,13 +120,26 @@ rec_results = ra.compute(recs, test)
 rec_results.list_summary('model')
 ```
 
-We can reshape the list metrics and plot them:
+We can reshape the list metrics and plot them, after filtering to only users with at least 1 training rating:
 
 ```python
 metrics = rec_results.list_metrics()
 metrics = metrics.melt(var_name='metric', ignore_index=False).reset_index()
 metrics = metrics[metrics['user_id'].isin(train_users.index)]
 sns.catplot(metrics, x='model', y='value', col='metric', kind='bar')
+plt.show()
+```
+
+Let's look at the influence of training ratings on performance, clamping 15+ into a single category:
+
+```python
+tcounts = split.train.user_stats()['rating_count'].copy()
+tcounts[tcounts > 15] = 15
+metrics = rec_results.list_metrics().reset_index().join(tcounts, on='user_id')
+sns.lineplot(metrics, x='rating_count', y='NDCG', hue='model', errorbar='ci')
+plt.xlabel('# of Training Ratings')
+rc_ticks = np.arange(0, 16, 3)
+plt.xticks(rc_ticks, rc_ticks[:-1].tolist() + ['15+'])
 plt.show()
 ```
 
