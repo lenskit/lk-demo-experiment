@@ -7,9 +7,9 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.16.4
+      jupytext_version: 1.16.6
   kernelspec:
-    display_name: Python 3 (ipykernel)
+    display_name: .venv
     language: python
     name: python3
   split_at_heading: true
@@ -32,23 +32,18 @@ from pathlib import Path
 import json
 ```
 
-We would use the pandas for analyzing and manipulating our data while seaborn and matplotlib are used for data visualization. statsmodels.graphics.gofplots and scipy.stats.shapiro are used for normality check. Scipy.stats.friedmanchisquare is a non-parametric test used to determine the statistical significance in metric results and the wilcoxon test is used for pairwise comparison of sample data.
+Load libraries for analysis and visualization:
 
 ```python
-import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from statsmodels.graphics.gofplots import qqplot
-from scipy.stats import shapiro
-from scipy.stats import friedmanchisquare, wilcoxon
-from itertools import combinations
 ```
 
 
 Import the LensKit metrics for analysis:
 
 ```python
-from lenskit.data import Dataset, ItemListCollection, UserIDKey
+from lenskit.data import Dataset, ItemListCollection
 from lenskit.metrics import RunAnalysis, RMSE, NDCG, RecipRank, RBP
 ```
 
@@ -93,12 +88,19 @@ for fld in dirs:
         preds.add_from(pred, model=fld.name.split("-")[-1])
 ```
 
-We need to load the test data so that we have the ground truths for computing accuracy
+We need to load the test data so that we have the ground truths for computing accuracy.
 
 ```python
 data = Dataset.load(f"data/{dataset}")
 split = split_fraction(data, 0.2)
 test = split.test
+```
+
+And identify users in the training set, so we only report metrics over them.
+
+```python
+train_users = split.train.user_stats()
+train_users = train_users[train_users['rating_count'] > 0]
 ```
 
 ## Top-N Metrics
@@ -122,6 +124,7 @@ We can reshape the list metrics and plot them:
 ```python
 metrics = rec_results.list_metrics()
 metrics = metrics.melt(var_name='metric', ignore_index=False).reset_index()
+metrics = metrics[metrics['user_id'].isin(train_users.index)]
 sns.catplot(metrics, x='model', y='value', col='metric', kind='bar')
 plt.show()
 ```
@@ -140,7 +143,9 @@ pred_results.list_summary('model')
 ```
 
 ```python
-sns.catplot(pred_results.list_metrics().reset_index(), x='model', y='RMSE', kind='bar')
+pred_metrics = pred_results.list_metrics().reset_index()
+pred_metrics = pred_metrics[pred_metrics['user_id'].isin(train_users.index)]
+sns.catplot(pred_metrics, x='model', y='RMSE', kind='bar')
 plt.show()
 ```
 
