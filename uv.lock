@@ -1783,7 +1783,7 @@ requires-dist = [
     { name = "dvc", extras = ["s3", "webdav", "azure"], specifier = "~=3.50" },
     { name = "humanize", specifier = "~=4.0" },
     { name = "jupytext", specifier = "~=1.16" },
-    { name = "lenskit", specifier = ">=2025.1.1b12" },
+    { name = "lenskit", specifier = "~=2025.1" },
     { name = "notebook", specifier = "~=7.2" },
     { name = "pandas", specifier = "~=2.0" },
     { name = "papermill", specifier = "~=2.6" },
