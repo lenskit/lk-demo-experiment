@@ -25,9 +25,12 @@ stages:
         - runs/${item}-IIE
         - runs/${item}-UUE
         - runs/${item}-ALS
+        - runs/${item}-FlexMF
         - runs/${item}-Pop
         - runs/${item}-III
         - runs/${item}-IALS
+        - runs/${item}-FlexLMF
+        - runs/${item}-FlexBPR
       outs:
         - eval-report.${item}.ipynb:
             cache: false
