@@ -2586,3 +2586,59 @@ stages:
       md5: d3b6b071bd3e4d5e1322e4addcc3c82e.dir
       size: 5798280
       nfiles: 1
+  run-explicit-model@ml-100k-FlexMF:
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexMF FlexMF
+    deps:
+    - path: data/ml-100k
+      hash: md5
+      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
+      size: 887992
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-100k-FlexMF
+      hash: md5
+      md5: 5eb84561a57a339aa711fb089a145c9f.dir
+      size: 233955
+      nfiles: 2
+  run-implicit-model@ml-100k-FlexLMF:
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexLMF --no-predict
+      FlexLMF
+    deps:
+    - path: data/ml-100k
+      hash: md5
+      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
+      size: 887992
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-100k-FlexLMF
+      hash: md5
+      md5: 7baa3845634d734605c0208c295d1c7e.dir
+      size: 79689
+      nfiles: 1
+  run-implicit-model@ml-100k-FlexBPR:
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexBPR --no-predict
+      FlexBPR
+    deps:
+    - path: data/ml-100k
+      hash: md5
+      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
+      size: 887992
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-100k-FlexBPR
+      hash: md5
+      md5: ee84c2aec2192809cdede95766bb2efa.dir
+      size: 79533
+      nfiles: 1

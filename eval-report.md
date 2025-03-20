@@ -126,11 +126,13 @@ We can reshape the list metrics and plot them, after filtering to only users wit
 metrics = rec_results.list_metrics()
 metrics = metrics.melt(var_name='metric', ignore_index=False).reset_index()
 metrics = metrics[metrics['user_id'].isin(train_users.index)]
-sns.catplot(metrics, x='model', y='value', col='metric', kind='bar')
+sns.catplot(metrics, y='model', x='value', col='metric', kind='bar')
 plt.show()
 ```
 
-Let's look at the influence of training ratings on performance, clamping 15+ into a single category:
+Let's look at the influence of training ratings on performance, clamping 15+
+into a single category — this helps understand perhaps surprising performance
+relative to cross-fold evaluations:
 
 ```python
 tcounts = split.train.user_stats()['rating_count'].copy()

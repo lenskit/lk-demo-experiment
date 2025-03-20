@@ -112,3 +112,6 @@
 /ml-32m-Pop
 /ml-32m-III
 /ml-32m-IALS
+/ml-100k-FlexMF
+/ml-100k-FlexLMF
+/ml-100k-FlexBPR
