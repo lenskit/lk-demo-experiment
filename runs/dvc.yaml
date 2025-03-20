@@ -22,6 +22,7 @@ stages:
         - IIE
         - UUE
         - ALS
+        - FlexMF
     cmd: python run-model.py -d data/${item.data} -o runs/${item.data}-${item.model} ${item.model}
     wdir: ..
     deps:
@@ -44,6 +45,8 @@ stages:
         - Pop
         - III
         - IALS
+        - FlexLMF
+        - FlexBPR
     cmd: python run-model.py -d data/${item.data} -o runs/${item.data}-${item.model} --no-predict ${item.model}
     wdir: ..
     deps:
