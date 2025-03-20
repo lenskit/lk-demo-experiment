@@ -25,10 +25,10 @@ dev = [
     "line-profiler>=4.2.0",
 ]
 
-[tool.uv.sources]
-torch = { index = "pytorch", marker = "platform_system != 'Darwin'" }
+# [tool.uv.sources]
+# torch = { index = "pytorch", marker = "platform_system != 'Darwin'" }
 
-[[tool.uv.index]]
-name = "pytorch"
-url = "https://download.pytorch.org/whl/cpu"
-explicit = true
+# [[tool.uv.index]]
+# name = "pytorch"
+# url = "https://download.pytorch.org/whl/cpu"
+# explicit = true
