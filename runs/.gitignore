@@ -115,3 +115,6 @@
 /ml-100k-FlexMF
 /ml-100k-FlexLMF
 /ml-100k-FlexBPR
+/ml-1m-FlexMF
+/ml-1m-FlexBPR
+/ml-1m-FlexLMF
