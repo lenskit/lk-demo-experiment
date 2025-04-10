@@ -2750,3 +2750,22 @@ stages:
       md5: d11033e833c879eea9e927e60066b8dc.dir
       size: 2307470
       nfiles: 1
+  run-implicit-model@ml-100k-FlexWARP:
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexWARP --no-predict
+      FlexWARP
+    deps:
+    - path: data/ml-100k
+      hash: md5
+      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
+      size: 887992
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-100k-FlexWARP
+      hash: md5
+      md5: 122de2b3c26da9d32ce61f7cddbe8397.dir
+      size: 79307
+      nfiles: 1

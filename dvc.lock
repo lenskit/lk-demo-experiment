@@ -624,6 +624,11 @@ stages:
       md5: 5eb84561a57a339aa711fb089a145c9f.dir
       size: 233955
       nfiles: 2
+    - path: runs/ml-100k-FlexWARP
+      hash: md5
+      md5: 122de2b3c26da9d32ce61f7cddbe8397.dir
+      size: 79307
+      nfiles: 1
     - path: runs/ml-100k-IALS
       hash: md5
       md5: 517c0480a5439b73ca8cafac713fa14b.dir
@@ -652,12 +657,12 @@ stages:
     outs:
     - path: eval-metrics.ml-100k.json
       hash: md5
-      md5: 0f9b297da7ec49fafa7217f7ad878ec4
-      size: 729
+      md5: 8e1d579212d642c25c4e9aaabd920927
+      size: 806
     - path: eval-report.ml-100k.ipynb
       hash: md5
-      md5: 86e89de32824bf370ee93af180f57dcc
-      size: 179488
+      md5: c366bbea0b0773916014b608452199c8
+      size: 191063
   eval-report@ml-latest-small:
     cmd: papermill -r dataset ml-latest-small eval-report.ipynb eval-report.ml-latest-small.ipynb
     deps:
