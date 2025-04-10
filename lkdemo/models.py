@@ -18,5 +18,8 @@ III = ItemKNNScorer(max_nbrs=20, save_nbrs=2500, feedback="implicit")
 FlexBPR = FlexMFImplicitScorer(
     embedding_size=50, epochs=20, loss="pairwise", item_bias=False
 )
+FlexWARP = FlexMFImplicitScorer(
+    embedding_size=50, epochs=20, loss="warp", item_bias=False
+)
 FlexLMF = FlexMFImplicitScorer(embedding_size=50, epochs=20, loss="logistic")
 FlexMF = FlexMFExplicitScorer(embedding_size=50, epochs=20)
