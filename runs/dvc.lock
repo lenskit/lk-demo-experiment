@@ -2769,3 +2769,21 @@ stages:
       md5: 122de2b3c26da9d32ce61f7cddbe8397.dir
       size: 79307
       nfiles: 1
+  run-implicit-model@ml-1m-FlexWARP:
+    cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexWARP --no-predict FlexWARP
+    deps:
+    - path: data/ml-1m
+      hash: md5
+      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
+      size: 6161837
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-1m-FlexWARP
+      hash: md5
+      md5: 559bde531c7b4ea78bd7d174c23dd9b6.dir
+      size: 812931
+      nfiles: 1
