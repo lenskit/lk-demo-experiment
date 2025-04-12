@@ -804,8 +804,8 @@ stages:
       nfiles: 2
     - path: runs/ml-10m-FlexBPR
       hash: md5
-      md5: 62fe34a74d980a067cbdd0f5acf7550f.dir
-      size: 2309646
+      md5: e96fce4f83b7b875595f6c23b0bbaf07.dir
+      size: 2358620
       nfiles: 1
     - path: runs/ml-10m-FlexLMF
       hash: md5
@@ -819,8 +819,8 @@ stages:
       nfiles: 2
     - path: runs/ml-10m-FlexWARP
       hash: md5
-      md5: 1893d94c29aa670a44375867d9df3c54.dir
-      size: 2383840
+      md5: f602ce09a0b2c77b16e20221abad70e9.dir
+      size: 2358809
       nfiles: 1
     - path: runs/ml-10m-IALS
       hash: md5
@@ -850,12 +850,12 @@ stages:
     outs:
     - path: eval-metrics.ml-10m.json
       hash: md5
-      md5: b1f2bbe70b377741fc73d7b39663b948
-      size: 807
+      md5: 458d017e9cf88721a4e2269a6ab6068e
+      size: 809
     - path: eval-report.ml-10m.ipynb
       hash: md5
-      md5: 600ad6bba5318db6644f1ef7a4dc9b79
-      size: 292846
+      md5: 07b1c35577a7f3993918136cd9c892a0
+      size: 285559
   eval-report@ml-20m:
     cmd: papermill -r dataset ml-20m eval-report.ipynb eval-report.ml-20m.ipynb
     deps:
