@@ -2115,8 +2115,8 @@ stages:
     outs:
     - path: runs/ml-10m-IIE
       hash: md5
-      md5: 19448ffd62a221faffa63456541b821e.dir
-      size: 25365620
+      md5: d779638b55258add358c6946b774e17e.dir
+      size: 25365501
       nfiles: 2
   run-explicit-model@ml-10m-UUE:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-UUE UUE
