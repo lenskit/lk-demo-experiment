@@ -1705,8 +1705,8 @@ stages:
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1715,7 +1715,7 @@ stages:
     outs:
     - path: runs/ml-100k-Bias
       hash: md5
-      md5: 656e3d9161f3b9f172799fe09924d849.dir
+      md5: fc0e7be2d5594680fb59d4ef085fa64c.dir
       size: 251787
       nfiles: 2
   run-explicit-model@ml-100k-IIE:
@@ -1723,8 +1723,8 @@ stages:
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1733,16 +1733,16 @@ stages:
     outs:
     - path: runs/ml-100k-IIE
       hash: md5
-      md5: cdc8214d78cebaa199b0989f1ee4f349.dir
-      size: 256640
+      md5: 301a14b4eb25c0660897d1947e1ae671.dir
+      size: 256636
       nfiles: 2
   run-explicit-model@ml-100k-UUE:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-UUE UUE
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1751,7 +1751,7 @@ stages:
     outs:
     - path: runs/ml-100k-UUE
       hash: md5
-      md5: 18191998386f63be01792adb92d50ed7.dir
+      md5: 59d5baf950c168b96a2f586bd31a9ee8.dir
       size: 254969
       nfiles: 2
   run-explicit-model@ml-100k-ALS:
@@ -1759,8 +1759,8 @@ stages:
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1769,16 +1769,16 @@ stages:
     outs:
     - path: runs/ml-100k-ALS
       hash: md5
-      md5: dc236d5fe63d3302942e5d746b4aadfd.dir
-      size: 258900
+      md5: 71313188aeb9a11d4593214f90a27c80.dir
+      size: 259031
       nfiles: 2
   run-implicit-model@ml-100k-Pop:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-Pop --no-predict Pop
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1787,7 +1787,7 @@ stages:
     outs:
     - path: runs/ml-100k-Pop
       hash: md5
-      md5: 462ab5368462a265372f370040dafaa3.dir
+      md5: 1f4de531ab3afbd23afd371c7d1e2336.dir
       size: 26197
       nfiles: 1
   run-implicit-model@ml-100k-III:
@@ -1795,8 +1795,8 @@ stages:
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1805,16 +1805,16 @@ stages:
     outs:
     - path: runs/ml-100k-III
       hash: md5
-      md5: 041158d3c482f62b48633ff7ee0acae0.dir
-      size: 73477
+      md5: 2106cc5a91eb0345e2bcdac0fc5b43c4.dir
+      size: 73485
       nfiles: 1
   run-implicit-model@ml-100k-IALS:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-IALS --no-predict IALS
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1823,16 +1823,16 @@ stages:
     outs:
     - path: runs/ml-100k-IALS
       hash: md5
-      md5: 517c0480a5439b73ca8cafac713fa14b.dir
-      size: 77875
+      md5: b3d46778f8438c297ca84d765becc980.dir
+      size: 77595
       nfiles: 1
   run-explicit-model@ml-latest-small-UUE:
     cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-UUE UUE
     deps:
     - path: data/ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1841,7 +1841,7 @@ stages:
     outs:
     - path: runs/ml-latest-small-UUE
       hash: md5
-      md5: 87c0ee5bfcb7ca082d87464c59049a78.dir
+      md5: fd74838460ce7b6f1d7cbeedf75ef187.dir
       size: 279176
       nfiles: 2
   run-implicit-model@ml-latest-small-IALS:
@@ -1850,8 +1850,8 @@ stages:
     deps:
     - path: data/ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1860,8 +1860,8 @@ stages:
     outs:
     - path: runs/ml-latest-small-IALS
       hash: md5
-      md5: 58c145ff5b4b9e30599728ac4fa139bf.dir
-      size: 23844
+      md5: f205acf4d1f15c6b5bc8e437a92da246.dir
+      size: 23790
       nfiles: 1
   run-explicit-model@ml-latest-small-Bias:
     cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-Bias
@@ -1869,8 +1869,8 @@ stages:
     deps:
     - path: data/ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1879,7 +1879,7 @@ stages:
     outs:
     - path: runs/ml-latest-small-Bias
       hash: md5
-      md5: d29e34cda54c8c2ff887c4066cc78727.dir
+      md5: 314dd10cc2ecb82c5bf98b4db7296874.dir
       size: 283699
       nfiles: 2
   run-implicit-model@ml-latest-small-Pop:
@@ -1888,8 +1888,8 @@ stages:
     deps:
     - path: data/ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1898,7 +1898,7 @@ stages:
     outs:
     - path: runs/ml-latest-small-Pop
       hash: md5
-      md5: ef38b0a9384e64f3d524d0b215d99b9c.dir
+      md5: 846bd4ed93790bd2e0bc626cccb7e8af.dir
       size: 10565
       nfiles: 1
   run-implicit-model@ml-latest-small-III:
@@ -1907,8 +1907,8 @@ stages:
     deps:
     - path: data/ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1917,16 +1917,16 @@ stages:
     outs:
     - path: runs/ml-latest-small-III
       hash: md5
-      md5: b95823a7bfc3fac61eb20341b4942444.dir
-      size: 19296
+      md5: bf90a5855949dbf76fbddab81f990b95.dir
+      size: 19361
       nfiles: 1
   run-explicit-model@ml-latest-small-IIE:
     cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-IIE IIE
     deps:
     - path: data/ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1935,16 +1935,16 @@ stages:
     outs:
     - path: runs/ml-latest-small-IIE
       hash: md5
-      md5: 64cbc18e51b9b5af3686504a5fc5a824.dir
-      size: 283077
+      md5: 58c422e077741de097955cbf36abd541.dir
+      size: 283074
       nfiles: 2
   run-explicit-model@ml-latest-small-ALS:
     cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-ALS ALS
     deps:
     - path: data/ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1953,16 +1953,16 @@ stages:
     outs:
     - path: runs/ml-latest-small-ALS
       hash: md5
-      md5: 674e47f67d355cd1d35eedcf5c02c9b0.dir
-      size: 288131
+      md5: 3c0de6b0e33962940f0de22f897ebe5b.dir
+      size: 288155
       nfiles: 2
   run-implicit-model@ml-1m-IALS:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-IALS --no-predict IALS
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1971,16 +1971,16 @@ stages:
     outs:
     - path: runs/ml-1m-IALS
       hash: md5
-      md5: b7e2e22d03f887753670e1bc56942067.dir
-      size: 806089
+      md5: 4445dcce948fa774649b788319018351.dir
+      size: 805729
       nfiles: 1
   run-explicit-model@ml-1m-Bias:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-Bias Bias
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -1989,7 +1989,7 @@ stages:
     outs:
     - path: runs/ml-1m-Bias
       hash: md5
-      md5: 1e5ad9b86c7e5ef5ae3ec6e0de920542.dir
+      md5: 1941767fe21f8058e3fc902eee37d1ae.dir
       size: 3002571
       nfiles: 2
   run-explicit-model@ml-1m-IIE:
@@ -1997,8 +1997,8 @@ stages:
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2007,16 +2007,16 @@ stages:
     outs:
     - path: runs/ml-1m-IIE
       hash: md5
-      md5: a9df04a886edbbab21bc81a1d001cf81.dir
-      size: 3107130
+      md5: 17b05a8ae9c440347b17049be6fab7ae.dir
+      size: 3107076
       nfiles: 2
   run-explicit-model@ml-1m-UUE:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-UUE UUE
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2025,7 +2025,7 @@ stages:
     outs:
     - path: runs/ml-1m-UUE
       hash: md5
-      md5: 196f1c276fb3e6f95a5e0411282ec76f.dir
+      md5: e834ac58883a3e52829e6f2c61c4300f.dir
       size: 3104814
       nfiles: 2
   run-explicit-model@ml-1m-ALS:
@@ -2033,8 +2033,8 @@ stages:
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2043,16 +2043,16 @@ stages:
     outs:
     - path: runs/ml-1m-ALS
       hash: md5
-      md5: b27f2bf7983e2d4da765d9a31a9b3c16.dir
-      size: 3105662
+      md5: 7709e345b62c3e7d37713d98f0c08816.dir
+      size: 3104908
       nfiles: 2
   run-implicit-model@ml-1m-Pop:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-Pop --no-predict Pop
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2061,7 +2061,7 @@ stages:
     outs:
     - path: runs/ml-1m-Pop
       hash: md5
-      md5: 2de87c08b019bd4b194c5d37c0295a7b.dir
+      md5: 8583cad6ab4e810722f4fae2405ebd27.dir
       size: 151359
       nfiles: 1
   run-implicit-model@ml-1m-III:
@@ -2069,8 +2069,8 @@ stages:
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2079,16 +2079,16 @@ stages:
     outs:
     - path: runs/ml-1m-III
       hash: md5
-      md5: 786c04a565cf5ffd8a51581859fd8ef7.dir
-      size: 773567
+      md5: 297256ece6629963a76afd3b913b9b3e.dir
+      size: 773686
       nfiles: 1
   run-explicit-model@ml-10m-Bias:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-Bias Bias
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2097,7 +2097,7 @@ stages:
     outs:
     - path: runs/ml-10m-Bias
       hash: md5
-      md5: 956fc975b9eff3ac8120c47d736dd7db.dir
+      md5: 0a11387efdc73aabc7817efeb0afba93.dir
       size: 25059849
       nfiles: 2
   run-explicit-model@ml-10m-IIE:
@@ -2105,8 +2105,8 @@ stages:
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2123,8 +2123,8 @@ stages:
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2133,7 +2133,7 @@ stages:
     outs:
     - path: runs/ml-10m-UUE
       hash: md5
-      md5: f7b64f20f666d3b6953625f7ff994758.dir
+      md5: 53ea9c1df3942c5f9897a58e76e0f888.dir
       size: 25329568
       nfiles: 2
   run-explicit-model@ml-10m-ALS:
@@ -2141,8 +2141,8 @@ stages:
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2151,16 +2151,16 @@ stages:
     outs:
     - path: runs/ml-10m-ALS
       hash: md5
-      md5: 3279cbcac4d495bc53a3c16c3992d661.dir
-      size: 25345432
+      md5: beef1c898940ee743e2b06a24451c255.dir
+      size: 25344057
       nfiles: 2
   run-implicit-model@ml-10m-Pop:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-Pop --no-predict Pop
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2169,7 +2169,7 @@ stages:
     outs:
     - path: runs/ml-10m-Pop
       hash: md5
-      md5: e860f6f8ebcbd8b1fd54f9e38b369491.dir
+      md5: 2414b35065c632f311741d71c3b3ef95.dir
       size: 623778
       nfiles: 1
   run-implicit-model@ml-10m-III:
@@ -2177,8 +2177,8 @@ stages:
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2195,8 +2195,8 @@ stages:
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2205,16 +2205,16 @@ stages:
     outs:
     - path: runs/ml-10m-IALS
       hash: md5
-      md5: 1aee7754b14fd44210693e369b146353.dir
-      size: 2379552
+      md5: 7840e4da9957079d8a8c0af730d3f31b.dir
+      size: 2366657
       nfiles: 1
   run-explicit-model@ml-20m-Bias:
     cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-Bias Bias
     deps:
     - path: data/ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2223,7 +2223,7 @@ stages:
     outs:
     - path: runs/ml-20m-Bias
       hash: md5
-      md5: dfe53a978ab83f02bee63e23c0779627.dir
+      md5: 23ecfab0fbabb181a213bd559b4b049e.dir
       size: 51240023
       nfiles: 2
   run-explicit-model@ml-20m-IIE:
@@ -2231,8 +2231,8 @@ stages:
     deps:
     - path: data/ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2241,16 +2241,16 @@ stages:
     outs:
     - path: runs/ml-20m-IIE
       hash: md5
-      md5: 44ae293bbdfaffba6b0c2c77e4a231e1.dir
-      size: 51824946
+      md5: 73fd72d8298de507f5c229487fd0a522.dir
+      size: 51825072
       nfiles: 2
   run-explicit-model@ml-20m-UUE:
     cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-UUE UUE
     deps:
     - path: data/ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2259,7 +2259,7 @@ stages:
     outs:
     - path: runs/ml-20m-UUE
       hash: md5
-      md5: 161fd66a82eda86fbf6c6567bb577065.dir
+      md5: 86b3795be82079766e685562428f8bcd.dir
       size: 51620087
       nfiles: 2
   run-explicit-model@ml-20m-ALS:
@@ -2267,8 +2267,8 @@ stages:
     deps:
     - path: data/ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2277,16 +2277,16 @@ stages:
     outs:
     - path: runs/ml-20m-ALS
       hash: md5
-      md5: 7562a9859e0e54f886c980b20076dc14.dir
-      size: 51737003
+      md5: e0e0925065ab02a57a446327cea93120.dir
+      size: 51733831
       nfiles: 2
   run-implicit-model@ml-20m-Pop:
     cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-Pop --no-predict Pop
     deps:
     - path: data/ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2295,7 +2295,7 @@ stages:
     outs:
     - path: runs/ml-20m-Pop
       hash: md5
-      md5: fd418a04527a43617d296218a969f736.dir
+      md5: 60ffd3a735265fb0f4cc23f7b38ff378.dir
       size: 1102859
       nfiles: 1
   run-implicit-model@ml-20m-III:
@@ -2303,8 +2303,8 @@ stages:
     deps:
     - path: data/ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2313,16 +2313,16 @@ stages:
     outs:
     - path: runs/ml-20m-III
       hash: md5
-      md5: d8bd2eb5e08c03ae06ad65fc7496281b.dir
-      size: 3918510
+      md5: 6555422118422ba8bd8ef5acb826556a.dir
+      size: 3924693
       nfiles: 1
   run-implicit-model@ml-20m-IALS:
     cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-IALS --no-predict IALS
     deps:
     - path: data/ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2331,16 +2331,16 @@ stages:
     outs:
     - path: runs/ml-20m-IALS
       hash: md5
-      md5: 64eca2d52632cdc485f9e42ad9772936.dir
-      size: 4173827
+      md5: 3e7ec2d6795855e5d7247c523ba3bdda.dir
+      size: 4173979
       nfiles: 1
   run-explicit-model@ml-25m-Bias:
     cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-Bias Bias
     deps:
     - path: data/ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2349,7 +2349,7 @@ stages:
     outs:
     - path: runs/ml-25m-Bias
       hash: md5
-      md5: b4a0839b94603fd405ee28fea2054ddf.dir
+      md5: 7b4b9051c940c645c30c71ff0028f18f.dir
       size: 60882438
       nfiles: 2
   run-explicit-model@ml-25m-IIE:
@@ -2357,8 +2357,8 @@ stages:
     deps:
     - path: data/ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2367,16 +2367,16 @@ stages:
     outs:
     - path: runs/ml-25m-IIE
       hash: md5
-      md5: f2fba590eb8ba0658d752bcb7f70290d.dir
-      size: 61081361
+      md5: 4e9a98e149b24b1bf85390b1b2a603a1.dir
+      size: 61079919
       nfiles: 2
   run-explicit-model@ml-25m-UUE:
     cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-UUE UUE
     deps:
     - path: data/ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2385,7 +2385,7 @@ stages:
     outs:
     - path: runs/ml-25m-UUE
       hash: md5
-      md5: 7da310e89e8a4402355076de0e881fb2.dir
+      md5: 216fafb0ba646153cc126979938e7e3f.dir
       size: 60165203
       nfiles: 2
   run-explicit-model@ml-25m-ALS:
@@ -2393,8 +2393,8 @@ stages:
     deps:
     - path: data/ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2403,16 +2403,16 @@ stages:
     outs:
     - path: runs/ml-25m-ALS
       hash: md5
-      md5: f0a04af5e909fa92dfa58d251a1ea1e3.dir
-      size: 61649116
+      md5: d7353b1eedaca07343cc7d4070684749.dir
+      size: 61657998
       nfiles: 2
   run-implicit-model@ml-25m-Pop:
     cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-Pop --no-predict Pop
     deps:
     - path: data/ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2421,7 +2421,7 @@ stages:
     outs:
     - path: runs/ml-25m-Pop
       hash: md5
-      md5: 2b185e495482b5f8bf7657bb698f158d.dir
+      md5: 0eedc69926367866a4a696589a4e06e0.dir
       size: 1085836
       nfiles: 1
   run-implicit-model@ml-25m-III:
@@ -2429,8 +2429,8 @@ stages:
     deps:
     - path: data/ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2439,16 +2439,16 @@ stages:
     outs:
     - path: runs/ml-25m-III
       hash: md5
-      md5: b66fc7c92bbdf427f859af863b525d33.dir
-      size: 4457746
+      md5: d399f4ddca1792400e1aeff19ba410fd.dir
+      size: 4461638
       nfiles: 1
   run-implicit-model@ml-25m-IALS:
     cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-IALS --no-predict IALS
     deps:
     - path: data/ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2457,16 +2457,16 @@ stages:
     outs:
     - path: runs/ml-25m-IALS
       hash: md5
-      md5: 444984ed59acd004ee7dc713140d92a3.dir
-      size: 4741147
+      md5: 21757e218a28aced67f88f47d2c50232.dir
+      size: 4742526
       nfiles: 1
   run-explicit-model@ml-32m-Bias:
     cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-Bias Bias
     deps:
     - path: data/ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2475,7 +2475,7 @@ stages:
     outs:
     - path: runs/ml-32m-Bias
       hash: md5
-      md5: 58e9efee10bc037a2bc84dfd7bd5ef12.dir
+      md5: bd3f688080a5cf1d356831e572051734.dir
       size: 77016256
       nfiles: 2
   run-explicit-model@ml-32m-IIE:
@@ -2483,8 +2483,8 @@ stages:
     deps:
     - path: data/ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2493,16 +2493,16 @@ stages:
     outs:
     - path: runs/ml-32m-IIE
       hash: md5
-      md5: 21e94afc9430691d9fe753b2f324b7ba.dir
-      size: 77401142
+      md5: 327fd30ffbf198ef6bfe534dc0e83e01.dir
+      size: 77398346
       nfiles: 2
   run-explicit-model@ml-32m-UUE:
     cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-UUE UUE
     deps:
     - path: data/ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2511,7 +2511,7 @@ stages:
     outs:
     - path: runs/ml-32m-UUE
       hash: md5
-      md5: 6b81e4a0909c5683a865606933d88f99.dir
+      md5: 2c4a605d417ff71b29a7a3417667befd.dir
       size: 75658126
       nfiles: 2
   run-explicit-model@ml-32m-ALS:
@@ -2519,8 +2519,8 @@ stages:
     deps:
     - path: data/ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2529,16 +2529,16 @@ stages:
     outs:
     - path: runs/ml-32m-ALS
       hash: md5
-      md5: 7c3a124f9a25f9ea3fc6b15151333faf.dir
-      size: 77862975
+      md5: 1167d41bb656bd1f384f14dc80b37752.dir
+      size: 77866635
       nfiles: 2
   run-implicit-model@ml-32m-Pop:
     cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-Pop --no-predict Pop
     deps:
     - path: data/ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2547,7 +2547,7 @@ stages:
     outs:
     - path: runs/ml-32m-Pop
       hash: md5
-      md5: e9a7ee8340512c4230249f295e3e2a06.dir
+      md5: 3461e6a7640aed78e5294b33f9d6f5f0.dir
       size: 1373774
       nfiles: 1
   run-implicit-model@ml-32m-III:
@@ -2555,8 +2555,8 @@ stages:
     deps:
     - path: data/ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2565,16 +2565,16 @@ stages:
     outs:
     - path: runs/ml-32m-III
       hash: md5
-      md5: 9807d938394832e6cf92f1514563e6ae.dir
-      size: 5421984
+      md5: dbfffd5234c13799214e0a145645aed4.dir
+      size: 5427520
       nfiles: 1
   run-implicit-model@ml-32m-IALS:
     cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-IALS --no-predict IALS
     deps:
     - path: data/ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2583,16 +2583,16 @@ stages:
     outs:
     - path: runs/ml-32m-IALS
       hash: md5
-      md5: d3b6b071bd3e4d5e1322e4addcc3c82e.dir
-      size: 5798280
+      md5: 10f1324e58aaa8dcc88a8f45fd1070b5.dir
+      size: 5799495
       nfiles: 1
   run-explicit-model@ml-100k-FlexMF:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexMF FlexMF
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2601,8 +2601,8 @@ stages:
     outs:
     - path: runs/ml-100k-FlexMF
       hash: md5
-      md5: 5eb84561a57a339aa711fb089a145c9f.dir
-      size: 233955
+      md5: eaeaf1aca35a7a90f8993d71772c0a76.dir
+      size: 235274
       nfiles: 2
   run-implicit-model@ml-100k-FlexLMF:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexLMF --no-predict
@@ -2610,8 +2610,8 @@ stages:
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2620,8 +2620,8 @@ stages:
     outs:
     - path: runs/ml-100k-FlexLMF
       hash: md5
-      md5: 7baa3845634d734605c0208c295d1c7e.dir
-      size: 79689
+      md5: f443543be87ddd311bdc0d0099d984e2.dir
+      size: 79271
       nfiles: 1
   run-implicit-model@ml-100k-FlexBPR:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexBPR --no-predict
@@ -2629,8 +2629,8 @@ stages:
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2639,16 +2639,16 @@ stages:
     outs:
     - path: runs/ml-100k-FlexBPR
       hash: md5
-      md5: ee84c2aec2192809cdede95766bb2efa.dir
-      size: 79533
+      md5: 122a3210190bdad61a44772555bb414b.dir
+      size: 78885
       nfiles: 1
   run-explicit-model@ml-1m-FlexMF:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexMF FlexMF
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2657,16 +2657,16 @@ stages:
     outs:
     - path: runs/ml-1m-FlexMF
       hash: md5
-      md5: e19381013e4ac5d92aa074407930b6ab.dir
-      size: 2953362
+      md5: 98b670796f65842a4461c4cbff9a316d.dir
+      size: 2956721
       nfiles: 2
   run-implicit-model@ml-1m-FlexBPR:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexBPR --no-predict FlexBPR
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2675,16 +2675,16 @@ stages:
     outs:
     - path: runs/ml-1m-FlexBPR
       hash: md5
-      md5: 13e05e5f7b7621f3929935d21d469a7b.dir
-      size: 818481
+      md5: 8974f488eb89d1a421daaf8540beb01d.dir
+      size: 804166
       nfiles: 1
   run-implicit-model@ml-1m-FlexLMF:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexLMF --no-predict FlexLMF
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2693,16 +2693,16 @@ stages:
     outs:
     - path: runs/ml-1m-FlexLMF
       hash: md5
-      md5: a23f7f8d4478cf88f76b83149f8447ae.dir
-      size: 801114
+      md5: dd47ede496d92d63f493c82ddd06e37d.dir
+      size: 774465
       nfiles: 1
   run-explicit-model@ml-10m-FlexMF:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexMF FlexMF
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2711,16 +2711,16 @@ stages:
     outs:
     - path: runs/ml-10m-FlexMF
       hash: md5
-      md5: 2b8d25326ceafe60ab7928fa4995b61c.dir
-      size: 22665723
+      md5: b0daad11e79d4efe6558dc61628406b5.dir
+      size: 22676783
       nfiles: 2
   run-implicit-model@ml-10m-FlexLMF:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexLMF --no-predict FlexLMF
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2729,16 +2729,16 @@ stages:
     outs:
     - path: runs/ml-10m-FlexLMF
       hash: md5
-      md5: 542c199255324f8a7e5652ec1ded52a8.dir
-      size: 2289098
+      md5: e03aa534164fac43202064001fa38c02.dir
+      size: 2274055
       nfiles: 1
   run-implicit-model@ml-10m-FlexBPR:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexBPR --no-predict FlexBPR
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2747,8 +2747,8 @@ stages:
     outs:
     - path: runs/ml-10m-FlexBPR
       hash: md5
-      md5: e96fce4f83b7b875595f6c23b0bbaf07.dir
-      size: 2358620
+      md5: 1ffd35a87240d40531d8cfaf5a0640e1.dir
+      size: 2309648
       nfiles: 1
   run-implicit-model@ml-100k-FlexWARP:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexWARP --no-predict
@@ -2756,8 +2756,8 @@ stages:
     deps:
     - path: data/ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2766,16 +2766,16 @@ stages:
     outs:
     - path: runs/ml-100k-FlexWARP
       hash: md5
-      md5: 122de2b3c26da9d32ce61f7cddbe8397.dir
-      size: 79307
+      md5: 6418287c5aa340b43bfe1f6f05e3834d.dir
+      size: 79301
       nfiles: 1
   run-implicit-model@ml-1m-FlexWARP:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexWARP --no-predict FlexWARP
     deps:
     - path: data/ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2784,16 +2784,16 @@ stages:
     outs:
     - path: runs/ml-1m-FlexWARP
       hash: md5
-      md5: 559bde531c7b4ea78bd7d174c23dd9b6.dir
-      size: 812931
+      md5: eecc09a5ca4b4f33171f8bf5166d37a4.dir
+      size: 812716
       nfiles: 1
   run-implicit-model@ml-10m-FlexWARP:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexWARP --no-predict FlexWARP
     deps:
     - path: data/ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
     - path: run-model.py
       hash: md5
@@ -2802,6 +2802,298 @@ stages:
     outs:
     - path: runs/ml-10m-FlexWARP
       hash: md5
-      md5: f602ce09a0b2c77b16e20221abad70e9.dir
-      size: 2358809
+      md5: d8f97463c725fd5312587bb6d604a542.dir
+      size: 2385464
+      nfiles: 1
+  run-explicit-model@ml-latest-small-FlexMF:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexMF
+      FlexMF
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-FlexMF
+      hash: md5
+      md5: 9c01c10d2852e5ca5c36cd9788743bf8.dir
+      size: 260158
+      nfiles: 2
+  run-implicit-model@ml-latest-small-FlexLMF:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexLMF
+      --no-predict FlexLMF
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-FlexLMF
+      hash: md5
+      md5: 764b224a55be710385ea90f9f89bb607.dir
+      size: 26037
+      nfiles: 1
+  run-implicit-model@ml-latest-small-FlexBPR:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexBPR
+      --no-predict FlexBPR
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-FlexBPR
+      hash: md5
+      md5: 48104b0996290f6915d271708fca1ca9.dir
+      size: 26311
+      nfiles: 1
+  run-implicit-model@ml-latest-small-FlexWARP:
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexWARP
+      --no-predict FlexWARP
+    deps:
+    - path: data/ml-latest-small
+      hash: md5
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-latest-small-FlexWARP
+      hash: md5
+      md5: 38985583c6098b04b01b3a954a989b86.dir
+      size: 26278
+      nfiles: 1
+  run-explicit-model@ml-20m-FlexMF:
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexMF FlexMF
+    deps:
+    - path: data/ml-20m
+      hash: md5
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-20m-FlexMF
+      hash: md5
+      md5: c3009c3e6632cd23061d01887a701d2c.dir
+      size: 46548306
+      nfiles: 2
+  run-implicit-model@ml-20m-FlexLMF:
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexLMF --no-predict FlexLMF
+    deps:
+    - path: data/ml-20m
+      hash: md5
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-20m-FlexLMF
+      hash: md5
+      md5: 042299703906a615432219984b1ede62.dir
+      size: 3926608
+      nfiles: 1
+  run-implicit-model@ml-20m-FlexBPR:
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexBPR --no-predict FlexBPR
+    deps:
+    - path: data/ml-20m
+      hash: md5
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-20m-FlexBPR
+      hash: md5
+      md5: 597db0353ed1281412df7b734f196eda.dir
+      size: 3898591
+      nfiles: 1
+  run-implicit-model@ml-20m-FlexWARP:
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexWARP --no-predict FlexWARP
+    deps:
+    - path: data/ml-20m
+      hash: md5
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-20m-FlexWARP
+      hash: md5
+      md5: 51bf58448c6fcf9d779d6ddcf34be96d.dir
+      size: 4154076
+      nfiles: 1
+  run-explicit-model@ml-25m-FlexMF:
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexMF FlexMF
+    deps:
+    - path: data/ml-25m
+      hash: md5
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-25m-FlexMF
+      hash: md5
+      md5: 06a101ba42925d0dc822d6d20df336af.dir
+      size: 54281070
+      nfiles: 2
+  run-implicit-model@ml-25m-FlexLMF:
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexLMF --no-predict FlexLMF
+    deps:
+    - path: data/ml-25m
+      hash: md5
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-25m-FlexLMF
+      hash: md5
+      md5: 487c9df8f3e0ff7ef36239525ff796fe.dir
+      size: 4311473
+      nfiles: 1
+  run-implicit-model@ml-25m-FlexBPR:
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexBPR --no-predict FlexBPR
+    deps:
+    - path: data/ml-25m
+      hash: md5
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-25m-FlexBPR
+      hash: md5
+      md5: 97d2143dff4fe57dd622938ee2d4b9ce.dir
+      size: 4310541
+      nfiles: 1
+  run-implicit-model@ml-25m-FlexWARP:
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexWARP --no-predict FlexWARP
+    deps:
+    - path: data/ml-25m
+      hash: md5
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-25m-FlexWARP
+      hash: md5
+      md5: 8c4b7756079646c841ddc30ac69a2574.dir
+      size: 4817521
+      nfiles: 1
+  run-explicit-model@ml-32m-FlexMF:
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexMF FlexMF
+    deps:
+    - path: data/ml-32m
+      hash: md5
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-32m-FlexMF
+      hash: md5
+      md5: c6efbbd855ef7c73ecd3498422a30e55.dir
+      size: 68505179
+      nfiles: 2
+  run-implicit-model@ml-32m-FlexLMF:
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexLMF --no-predict FlexLMF
+    deps:
+    - path: data/ml-32m
+      hash: md5
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-32m-FlexLMF
+      hash: md5
+      md5: 392dbc5d7c171bac47cdf518ea499c8f.dir
+      size: 5335444
+      nfiles: 1
+  run-implicit-model@ml-32m-FlexBPR:
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexBPR --no-predict FlexBPR
+    deps:
+    - path: data/ml-32m
+      hash: md5
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-32m-FlexBPR
+      hash: md5
+      md5: 3682e969e5f6c615a7047f52aa0e609f.dir
+      size: 5273627
+      nfiles: 1
+  run-implicit-model@ml-32m-FlexWARP:
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexWARP --no-predict FlexWARP
+    deps:
+    - path: data/ml-32m
+      hash: md5
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
+      nfiles: 5
+    - path: run-model.py
+      hash: md5
+      md5: 93529b6e5dc0a9dec10f3f44da8c6468
+      size: 2635
+    outs:
+    - path: runs/ml-32m-FlexWARP
+      hash: md5
+      md5: a1c87b8e16ec4d605494c30f63d4abef.dir
+      size: 5893565
       nfiles: 1

@@ -10,8 +10,8 @@ stages:
     outs:
     - path: ml-100k
       hash: md5
-      md5: 4bb6a3c9ae4c32af843e65ec0b185bd0.dir
-      size: 887992
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
       nfiles: 5
   convert-movielens@32m:
     cmd: lenskit data convert --movielens ml-32m.zip ml-32m
@@ -23,8 +23,8 @@ stages:
     outs:
     - path: ml-32m
       hash: md5
-      md5: fe5e4869f6bee01697f11f86c62549c5.dir
-      size: 285530099
+      md5: f9f8462afe4c817d63a71225564f22ce.dir
+      size: 285530101
       nfiles: 5
   convert-movielens@25m:
     cmd: lenskit data convert --movielens ml-25m.zip ml-25m
@@ -36,8 +36,8 @@ stages:
     outs:
     - path: ml-25m
       hash: md5
-      md5: c2601a8101b3e18d866f82d5d268acfe.dir
-      size: 242676391
+      md5: 3be5a424b4e5ca47e0292f6fad9e66ea.dir
+      size: 242676393
       nfiles: 5
   convert-movielens@10m:
     cmd: lenskit data convert --movielens ml-10m.zip ml-10m
@@ -49,8 +49,8 @@ stages:
     outs:
     - path: ml-10m
       hash: md5
-      md5: 95bb14bd929d0347308cb11b2ebde388.dir
-      size: 78748475
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
       nfiles: 5
   convert-movielens@20m:
     cmd: lenskit data convert --movielens ml-20m.zip ml-20m
@@ -62,8 +62,8 @@ stages:
     outs:
     - path: ml-20m
       hash: md5
-      md5: de0af1b1f4e596d041f9ec9e17f0b363.dir
-      size: 184637813
+      md5: 4fe0fa61bf01ad93130a99cb56436d97.dir
+      size: 184637815
       nfiles: 5
   convert-movielens@1m:
     cmd: lenskit data convert --movielens ml-1m.zip ml-1m
@@ -75,8 +75,8 @@ stages:
     outs:
     - path: ml-1m
       hash: md5
-      md5: 8aa2ea8415122365e7d7d2da5a3870b4.dir
-      size: 6161837
+      md5: 784907545cc2717e177be76d1529ca6c.dir
+      size: 6104866
       nfiles: 5
   convert-movielens@latest-small:
     cmd: lenskit data convert --movielens ml-latest-small.zip ml-latest-small
@@ -88,6 +88,6 @@ stages:
     outs:
     - path: ml-latest-small
       hash: md5
-      md5: b76ccb04c9111caccf256fe2db8eb171.dir
-      size: 1287045
+      md5: 04f7d686a64746a82c2830f549f891a2.dir
+      size: 1287047
       nfiles: 5
