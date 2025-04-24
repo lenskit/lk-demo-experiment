@@ -1769,8 +1769,8 @@ stages:
     outs:
     - path: runs/ml-100k-ALS
       hash: md5
-      md5: 71313188aeb9a11d4593214f90a27c80.dir
-      size: 259031
+      md5: 2f9e7f2df19bc1ecbbca31289fc89afe.dir
+      size: 441870
       nfiles: 2
   run-implicit-model@ml-100k-Pop:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-Pop --no-predict Pop
@@ -1823,8 +1823,8 @@ stages:
     outs:
     - path: runs/ml-100k-IALS
       hash: md5
-      md5: b3d46778f8438c297ca84d765becc980.dir
-      size: 77595
+      md5: 2e1f83974a81cd19b2d4dc75199398bf.dir
+      size: 211653
       nfiles: 1
   run-explicit-model@ml-latest-small-UUE:
     cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-UUE UUE
@@ -1860,8 +1860,8 @@ stages:
     outs:
     - path: runs/ml-latest-small-IALS
       hash: md5
-      md5: f205acf4d1f15c6b5bc8e437a92da246.dir
-      size: 23790
+      md5: 04d786d12989cdf6e1b1ea6c0dfbfd00.dir
+      size: 86628
       nfiles: 1
   run-explicit-model@ml-latest-small-Bias:
     cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-Bias
@@ -1953,8 +1953,8 @@ stages:
     outs:
     - path: runs/ml-latest-small-ALS
       hash: md5
-      md5: 3c0de6b0e33962940f0de22f897ebe5b.dir
-      size: 288155
+      md5: 02d873ff5bb759144283e6b758789ed8.dir
+      size: 409965
       nfiles: 2
   run-implicit-model@ml-1m-IALS:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-IALS --no-predict IALS
@@ -1971,8 +1971,8 @@ stages:
     outs:
     - path: runs/ml-1m-IALS
       hash: md5
-      md5: 4445dcce948fa774649b788319018351.dir
-      size: 805729
+      md5: d4e493581e9fc085e085bbe880187703.dir
+      size: 1283726
       nfiles: 1
   run-explicit-model@ml-1m-Bias:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-Bias Bias
@@ -2043,8 +2043,8 @@ stages:
     outs:
     - path: runs/ml-1m-ALS
       hash: md5
-      md5: 7709e345b62c3e7d37713d98f0c08816.dir
-      size: 3104908
+      md5: 93d5985bb012566d03db12c50d9d20d6.dir
+      size: 3872563
       nfiles: 2
   run-implicit-model@ml-1m-Pop:
     cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-Pop --no-predict Pop
@@ -2151,8 +2151,8 @@ stages:
     outs:
     - path: runs/ml-10m-ALS
       hash: md5
-      md5: beef1c898940ee743e2b06a24451c255.dir
-      size: 25344057
+      md5: 4fb342fb7f4144629e946401b28cbcc3.dir
+      size: 35284650
       nfiles: 2
   run-implicit-model@ml-10m-Pop:
     cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-Pop --no-predict Pop
@@ -2205,8 +2205,8 @@ stages:
     outs:
     - path: runs/ml-10m-IALS
       hash: md5
-      md5: 7840e4da9957079d8a8c0af730d3f31b.dir
-      size: 2366657
+      md5: 104913300f30e8078d5d754b7156033a.dir
+      size: 8971647
       nfiles: 1
   run-explicit-model@ml-20m-Bias:
     cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-Bias Bias
@@ -2277,8 +2277,8 @@ stages:
     outs:
     - path: runs/ml-20m-ALS
       hash: md5
-      md5: e0e0925065ab02a57a446327cea93120.dir
-      size: 51733831
+      md5: 514f3b9251dded8e2b8d6b005c8d3aa5.dir
+      size: 75060680
       nfiles: 2
   run-implicit-model@ml-20m-Pop:
     cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-Pop --no-predict Pop
@@ -2331,8 +2331,8 @@ stages:
     outs:
     - path: runs/ml-20m-IALS
       hash: md5
-      md5: 3e7ec2d6795855e5d7247c523ba3bdda.dir
-      size: 4173979
+      md5: 14a6d8e9a75dd4189d4a8d4db1bc4078.dir
+      size: 20602020
       nfiles: 1
   run-explicit-model@ml-25m-Bias:
     cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-Bias Bias
@@ -2403,8 +2403,8 @@ stages:
     outs:
     - path: runs/ml-25m-ALS
       hash: md5
-      md5: d7353b1eedaca07343cc7d4070684749.dir
-      size: 61657998
+      md5: ec47419b70acaaca5eacd357670a422d.dir
+      size: 84627198
       nfiles: 2
   run-implicit-model@ml-25m-Pop:
     cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-Pop --no-predict Pop
@@ -2457,8 +2457,8 @@ stages:
     outs:
     - path: runs/ml-25m-IALS
       hash: md5
-      md5: 21757e218a28aced67f88f47d2c50232.dir
-      size: 4742526
+      md5: 1c105aab287be2a2a6e31076169133ab.dir
+      size: 20217729
       nfiles: 1
   run-explicit-model@ml-32m-Bias:
     cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-Bias Bias
@@ -2529,8 +2529,8 @@ stages:
     outs:
     - path: runs/ml-32m-ALS
       hash: md5
-      md5: 1167d41bb656bd1f384f14dc80b37752.dir
-      size: 77866635
+      md5: b4019fc628a22a7490434204dff8319a.dir
+      size: 107086023
       nfiles: 2
   run-implicit-model@ml-32m-Pop:
     cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-Pop --no-predict Pop
@@ -2583,8 +2583,8 @@ stages:
     outs:
     - path: runs/ml-32m-IALS
       hash: md5
-      md5: 10f1324e58aaa8dcc88a8f45fd1070b5.dir
-      size: 5799495
+      md5: 87b040f02a9efb800ee4d1d0fc294084.dir
+      size: 25010270
       nfiles: 1
   run-explicit-model@ml-100k-FlexMF:
     cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexMF FlexMF
