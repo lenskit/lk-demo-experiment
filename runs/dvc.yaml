@@ -27,6 +27,7 @@ stages:
     wdir: ..
     deps:
       - run-pipeline.py
+      - pipelines/${item.pipeline}.toml
       - data/${item.data}/
     outs:
       - runs/${item.data}/${item.pipeline}/
@@ -53,6 +54,7 @@ stages:
     wdir: ..
     deps:
       - run-pipeline.py
+      - pipelines/${item.pipeline}.toml
       - data/${item.data}/
     outs:
       - runs/${item.data}/${item.pipeline}/
