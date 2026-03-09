@@ -26,8 +26,7 @@ from lenskit.batch import BatchPipelineRunner
 from lenskit.config import configure
 from lenskit.data import Dataset
 from lenskit.logging.config import LoggingConfig
-
-from lkdemo.datasets import split_fraction
+from lenskit.splitting import split_temporal_fraction
 
 _log = logging.getLogger("run-model")
 
@@ -47,7 +46,7 @@ def main(args):
 
     predicts_ratings = pipeline.node("rating-predictor", missing=None) is not None
 
-    split = split_fraction(data, quant)
+    split = split_temporal_fraction(data, quant, filter_test_users=True)
 
     dest = Path(output)
     dest.mkdir(exist_ok=True, parents=True)
