@@ -48,7 +48,8 @@ stages:
       md5: d1ee4c13858f196e3f033b1edbd6cee2
       size: 65508
   eval-report-mlsmall:
-    cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
+    cmd: papermill -r dataset mlsmall eval-report.ipynb 
+      eval-report.mlsmall.ipynb
     deps:
     - path: eval-report.ipynb
       md5: cc3fe6cac16cf204d97c2f0791b0e188
@@ -263,7 +264,8 @@ stages:
       md5: 9bdc2cc737595a8155d40173473fa1a3
       size: 74879
   eval-report@mlsmall:
-    cmd: papermill -r dataset mlsmall eval-report.ipynb eval-report.mlsmall.ipynb
+    cmd: papermill -r dataset mlsmall eval-report.ipynb 
+      eval-report.mlsmall.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
@@ -593,78 +595,30 @@ stages:
       md5: ffc1e498f0211714e894f67f34af28a3
       size: 347483
   eval-report@ml-100k:
-    cmd: papermill -r dataset ml-100k eval-report.ipynb eval-report.ml-100k.ipynb
+    cmd: papermill -r dataset ml-100k eval-report.ipynb 
+      eval-report.ml-100k.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
       md5: dbd9b53542875762fbe184aa3dd02dea
       size: 8943
-    - path: runs/ml-100k-ALS
+    - path: runs/ml-100k/
       hash: md5
-      md5: 71313188aeb9a11d4593214f90a27c80.dir
-      size: 259031
-      nfiles: 2
-    - path: runs/ml-100k-Bias
-      hash: md5
-      md5: fc0e7be2d5594680fb59d4ef085fa64c.dir
-      size: 251787
-      nfiles: 2
-    - path: runs/ml-100k-FlexBPR
-      hash: md5
-      md5: 122a3210190bdad61a44772555bb414b.dir
-      size: 78885
-      nfiles: 1
-    - path: runs/ml-100k-FlexLMF
-      hash: md5
-      md5: f443543be87ddd311bdc0d0099d984e2.dir
-      size: 79271
-      nfiles: 1
-    - path: runs/ml-100k-FlexMF
-      hash: md5
-      md5: eaeaf1aca35a7a90f8993d71772c0a76.dir
-      size: 235274
-      nfiles: 2
-    - path: runs/ml-100k-FlexWARP
-      hash: md5
-      md5: 6418287c5aa340b43bfe1f6f05e3834d.dir
-      size: 79301
-      nfiles: 1
-    - path: runs/ml-100k-IALS
-      hash: md5
-      md5: b3d46778f8438c297ca84d765becc980.dir
-      size: 77595
-      nfiles: 1
-    - path: runs/ml-100k-IIE
-      hash: md5
-      md5: 301a14b4eb25c0660897d1947e1ae671.dir
-      size: 256636
-      nfiles: 2
-    - path: runs/ml-100k-III
-      hash: md5
-      md5: 2106cc5a91eb0345e2bcdac0fc5b43c4.dir
-      size: 73485
-      nfiles: 1
-    - path: runs/ml-100k-Pop
-      hash: md5
-      md5: 1f4de531ab3afbd23afd371c7d1e2336.dir
-      size: 26197
-      nfiles: 1
-    - path: runs/ml-100k-UUE
-      hash: md5
-      md5: 59d5baf950c168b96a2f586bd31a9ee8.dir
-      size: 254969
-      nfiles: 2
+      md5: 7440376e50fb826f7fef86c44dab01c1.dir
+      size: 1755017
+      nfiles: 18
     outs:
     - path: eval-metrics.ml-100k.json
       hash: md5
-      md5: ddf4fc64bdf3fd766aa191536d0c6a7a
-      size: 809
+      md5: 05896889baf94c755fc5ebf402415071
+      size: 884
     - path: eval-report.ml-100k.ipynb
       hash: md5
-      md5: e67b0cdf05b7e0b9f732aeb1c374c916
-      size: 185199
+      md5: 9ace7ee3fb56434e4b161be5a3473e58
+      size: 219094
   eval-report@ml-latest-small:
-    cmd: papermill -r dataset ml-latest-small eval-report.ipynb eval-report.ml-latest-small.ipynb
+    cmd: papermill -r dataset ml-latest-small eval-report.ipynb 
+      eval-report.ml-latest-small.ipynb
     deps:
     - path: eval-report.ipynb
       hash: md5
@@ -1173,3 +1127,279 @@ stages:
       hash: md5
       md5: 19c12c8bcb597b26f856e858e5677c8e
       size: 556074
+  generate-recs@ml-100k-flex-warp:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/flex-warp 
+      pipelines/flex-warp.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/flex-warp.toml
+      hash: md5
+      md5: 168a6e18618c4b38de351ea012fd24f2
+      size: 214
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/flex-warp/
+      hash: md5
+      md5: 9b9a14f0d617d576a1a5aec26d0ba93e.dir
+      size: 79586
+      nfiles: 1
+  generate-recs@ml-100k-iknn-implicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/iknn-implicit 
+      pipelines/iknn-implicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/iknn-implicit.toml
+      hash: md5
+      md5: c4c3a2bf99f16305eb4c96e02632bba8
+      size: 210
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/iknn-implicit/
+      hash: md5
+      md5: fe70f6f64b16a320e4fda6c58e13310f.dir
+      size: 73473
+      nfiles: 1
+  generate-recs@ml-100k-als-implicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/als-implicit 
+      pipelines/als-implicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/als-implicit.toml
+      hash: md5
+      md5: d745876aa50f1dace3f71257ab4425a2
+      size: 166
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/als-implicit/
+      hash: md5
+      md5: 450c955d7c53ac40c6f3a00f02fc3a21.dir
+      size: 78081
+      nfiles: 1
+  generate-recs@ml-100k-bias:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/bias 
+      pipelines/bias.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/bias.toml
+      hash: md5
+      md5: 6bdb955271198f3bdc26f27fa3ba1869
+      size: 154
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/bias/
+      hash: md5
+      md5: 10e9842373384ac128c8298c52bfa114.dir
+      size: 251963
+      nfiles: 2
+  generate-recs@ml-100k-popular:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/popular 
+      pipelines/popular.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/popular.toml
+      hash: md5
+      md5: ed104618e25c8749e84674e64a05a706
+      size: 108
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/popular/
+      hash: md5
+      md5: bae55368dad776fc258f3b56aa2701ce.dir
+      size: 26274
+      nfiles: 1
+  generate-recs@ml-100k-iknn-explicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/iknn-explicit 
+      pipelines/iknn-explicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/iknn-explicit.toml
+      hash: md5
+      md5: e213003d60a9bcb6d10ae37c2d8f1565
+      size: 218
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/iknn-explicit/
+      hash: md5
+      md5: 1f43151eb08039430f3e25e9fbd0cee7.dir
+      size: 259587
+      nfiles: 2
+  generate-recs@ml-100k-uknn-explicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/uknn-explicit 
+      pipelines/uknn-explicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/uknn-explicit.toml
+      hash: md5
+      md5: 31896a613b62c761240175b6a1a0ba7e
+      size: 201
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/uknn-explicit/
+      hash: md5
+      md5: 9434dc2dbd553779b974e0f8c2068c61.dir
+      size: 256323
+      nfiles: 2
+  generate-recs@ml-100k-uknn-implicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/uknn-implicit 
+      pipelines/uknn-implicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/uknn-implicit.toml
+      hash: md5
+      md5: 194860c7359585e6141bf686b3c8d3f6
+      size: 193
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/uknn-implicit/
+      hash: md5
+      md5: 75171582ddc0d91bf74043fd9bfb4e1d.dir
+      size: 76289
+      nfiles: 1
+  generate-recs@ml-100k-als-explicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/als-explicit 
+      pipelines/als-explicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/als-explicit.toml
+      hash: md5
+      md5: 99265954ae6680a6d0761a9b0a2862d4
+      size: 172
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/als-explicit/
+      hash: md5
+      md5: e59666699632f55d9c67394c1360f187.dir
+      size: 259066
+      nfiles: 2
+  generate-recs@ml-100k-flex-explicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/flex-explicit 
+      pipelines/flex-explicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/flex-explicit.toml
+      hash: md5
+      md5: 3d5ec38b202a299ca44c39eaa4ffdc94
+      size: 194
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/flex-explicit/
+      hash: md5
+      md5: 9668972d20822aaf31c1199f747f73f2.dir
+      size: 235512
+      nfiles: 2
+  generate-recs@ml-100k-flex-logistic:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/flex-logistic 
+      pipelines/flex-logistic.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/flex-logistic.toml
+      hash: md5
+      md5: e406e5aa8ab2fd7645cf3b6416d8549c
+      size: 204
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/flex-logistic/
+      hash: md5
+      md5: 9d31daaba77ea210aa51a594ee4f8587.dir
+      size: 79241
+      nfiles: 1
+  generate-recs@ml-100k-flex-bpr:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/flex-bpr 
+      pipelines/flex-bpr.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: pipelines/flex-bpr.toml
+      hash: md5
+      md5: d5e115219972f27d4f682dd5a136fd55
+      size: 217
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-100k/flex-bpr/
+      hash: md5
+      md5: 6b2446449c3b79075583a3f51265bff2.dir
+      size: 79479
+      nfiles: 1

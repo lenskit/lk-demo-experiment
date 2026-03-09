@@ -1,1 +1,11 @@
 /flex-bpr
+/iknn-implicit
+/als-implicit
+/bias
+/popular
+/iknn-explicit
+/uknn-explicit
+/uknn-implicit
+/als-explicit
+/flex-explicit
+/flex-logistic
