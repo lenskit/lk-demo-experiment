@@ -62,10 +62,11 @@ dataset = "ml-100k"
 
 ```python
 output_root = Path("runs")
+run_dir = output_root / dataset
 ```
 
 ```python
-dirs = [fld for fld in output_root.glob(f'{dataset}-*')]
+dirs = [rd for rd in run_dir.iterdir() if rd.is_dir()]
 ```
 
 ```python
@@ -73,7 +74,7 @@ recs = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("recs-*"):
         rec = ItemListCollection.load_parquet(file)
-        recs.add_from(rec, model=fld.name.split("-")[-1])
+        recs.add_from(rec, model=fld.name)
 ```
 
 ```python
@@ -86,7 +87,7 @@ preds = ItemListCollection(['model', 'user_id'], index=False)
 for fld in dirs:
     for file in fld.glob("pred-*"):
         pred = ItemListCollection.load_parquet(file)
-        preds.add_from(pred, model=fld.name.split("-")[-1])
+        preds.add_from(pred, model=fld.name)
 ```
 
 We need to load the test data so that we have the ground truths for computing accuracy.
