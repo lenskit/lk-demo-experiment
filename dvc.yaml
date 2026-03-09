@@ -1,29 +1,34 @@
+vars:
+  - datasets:
+      - ml-100k
+      - ml-latest-small
+      - ml-1m
+      - ml-10m
+      - ml-20m
+      - ml-25m
+      - ml-32m
+
+    pipelines:
+      - bias
+      - popular
+      - iknn-explicit
+      - iknn-implicit
+      - uknn-explicit
+      - uknn-implicit
+      - als-explicit
+      - als-implicit
+      - flex-explicit
+      - flex-logistic
+      - flex-bpr
+      - flex-warp
+
 # This pipeline defines top-level output stages.
 stages:
   # generate recommendations for test data
   generate-recs:
     matrix:
-      data:
-        - ml-100k
-        - ml-latest-small
-        - ml-1m
-        - ml-10m
-        - ml-20m
-        - ml-25m
-        - ml-32m
-      pipeline:
-        - bias
-        - popular
-        - iknn-explicit
-        - iknn-implicit
-        - uknn-explicit
-        - uknn-implicit
-        - als-explicit
-        - als-implicit
-        - flex-explicit
-        - flex-logistic
-        - flex-bpr
-        - flex-warp
+      data: ${datasets}
+      pipeline: ${pipelines}
     cmd: python run-pipeline.py -d data/${item.data} -o runs/${item.data}/${item.pipeline} pipelines/${item.pipeline}.toml
     deps:
       - run-pipeline.py
@@ -41,14 +46,7 @@ stages:
           cache: false
 
   eval-report:
-    foreach:
-      - ml-100k
-      - ml-latest-small
-      - ml-1m
-      - ml-10m
-      - ml-20m
-      - ml-25m
-      - ml-32m
+    foreach: ${datasets}
     do:
       cmd: papermill -r dataset ${item} eval-report.ipynb eval-report.${item}.ipynb
       deps:
@@ -61,15 +59,8 @@ stages:
         - eval-metrics.${item}.json:
             cache: false
 
-  render-report:
-    foreach:
-      - ml-100k
-      - ml-latest-small
-      - ml-1m
-      - ml-10m
-      - ml-20m
-      - ml-25m
-      - ml-32m
+  report-html:
+    foreach: ${datasets}
     do:
       cmd: jupyter nbconvert --to html eval-report.${item}.ipynb
       deps:
