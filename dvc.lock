@@ -1769,3 +1769,18 @@ stages:
       md5: ea2ccbe3c4bc5d3c282ef7b32ff5bd39.dir
       size: 201864157
       nfiles: 6
+  split-data@ml-32m:
+    cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d 
+      data-split/ml-32m data/ml-32m
+    deps:
+    - path: data/ml-32m/
+      hash: md5
+      md5: acb2e9bc81d7043926bbc23da5dd858d.dir
+      size: 284587195
+      nfiles: 5
+    outs:
+    - path: data-split/ml-32m/
+      hash: md5
+      md5: e1e0ed4ffec3352ed2a67190d076beee.dir
+      size: 234856322
+      nfiles: 6

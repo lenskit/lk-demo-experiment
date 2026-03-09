@@ -6,7 +6,7 @@ vars:
       - ml-10m
       - ml-20m
       - ml-25m
-      # - ml-32m
+      - ml-32m
 
     pipelines:
       - bias
@@ -38,11 +38,11 @@ stages:
     matrix:
       data: ${datasets}
       pipeline: ${pipelines}
-    cmd: python run-pipeline.py -d data/${item.data} -o runs/${item.data}/${item.pipeline} pipelines/${item.pipeline}.toml
+    cmd: python run-pipeline.py -d data-split/${item.data} -o runs/${item.data}/${item.pipeline} pipelines/${item.pipeline}.toml
     deps:
       - run-pipeline.py
       - pipelines/${item.pipeline}.toml
-      - data/${item.data}/
+      - data-split/${item.data}/
     outs:
       - runs/${item.data}/${item.pipeline}/
 
@@ -60,6 +60,7 @@ stages:
       cmd: papermill -r dataset ${item} eval-report.ipynb eval-report.${item}.ipynb
       deps:
         - eval-report.ipynb
+        - data-split/${item}/
         - runs/${item}/
       outs:
         - eval-report.${item}.ipynb:

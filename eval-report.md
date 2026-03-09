@@ -48,10 +48,6 @@ from lenskit.data import Dataset, ItemListCollection
 from lenskit.metrics import RunAnalysis, RMSE, NDCG, RecipRank, RBP
 ```
 
-```python
-from lenskit.splitting import split_temporal_fraction
-```
-
 ## Load Data
 
 The recommendations are in `runs`, and we will need to reassemble the test data from `test`.
@@ -93,9 +89,7 @@ for fld in dirs:
 We need to load the test data so that we have the ground truths for computing accuracy.
 
 ```python
-data = Dataset.load(f"data/{dataset}")
-split = split_temporal_fraction(data, 0.2, filter_test_users=True)
-test = split.test
+test = ItemListCollection.load(f"data-split/{dataset}/test.parquet")
 ```
 
 And identify users in the training set, so we only report metrics over them.

@@ -10,7 +10,6 @@ Options:
     -v, --verbose   verbose logging output
     -d DIR, --data=DIR
             directory of the dataset (in LensKit native format)
-    --test-size=F   the test set size (as a fraction) [default: 0.2]
     -o output       destination directory [default: output]
     -n N            number of recommendations for a unique user [default: 100]
     --log-file FILE write logs to FILE
@@ -24,9 +23,8 @@ from docopt import docopt
 from lenskit import Pipeline
 from lenskit.batch import BatchPipelineRunner
 from lenskit.config import configure
-from lenskit.data import Dataset
+from lenskit.data import Dataset, ItemListCollection
 from lenskit.logging.config import LoggingConfig
-from lenskit.splitting import split_temporal_fraction
 
 _log = logging.getLogger("run-model")
 
@@ -36,9 +34,7 @@ def main(args):
     output = args.get("-o")
     n_recs = int(args.get("-n"))
 
-    data_path = args.get("--data")
-    data = Dataset.load(data_path)
-    quant = float(args["--test-size"])
+    data_path = Path(args.get("--data"))
 
     pipe_file = args["PIPE"]
     _log.info("loading pipeline from %s", pipe_file)
@@ -46,17 +42,19 @@ def main(args):
 
     predicts_ratings = pipeline.node("rating-predictor", missing=None) is not None
 
-    split = split_temporal_fraction(data, quant, filter_test_users=True)
+    _log.info("loading data from %s", data_path)
+    train = Dataset.load(data_path / "train")
+    test = ItemListCollection.load_parquet(data_path / "test.parquet")
 
     dest = Path(output)
     dest.mkdir(exist_ok=True, parents=True)
 
     _log.info("training the pipeline")
-    pipeline.train(split.train)
+    pipeline.train(train)
 
     _log.info(
         "generating recommendations for %d unique users",
-        len(split.test),
+        len(test),
     )
     runner = BatchPipelineRunner()
     runner.recommend(n=n_recs)
@@ -64,7 +62,7 @@ def main(args):
         _log.info("pipeline %s can predict ratings")
         runner.predict()
 
-    result = runner.run(pipeline, split.test)
+    result = runner.run(pipeline, test)
     recs = result.output("recommendations")
     _log.info("writing recommendations to %s", dest)
     recs.save_parquet(dest / "recs-eval.parquet", compression="zstd")
