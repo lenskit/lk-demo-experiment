@@ -2,7 +2,7 @@
 name = "flex-explicit"
 
 [options]
-base = "std:topn"
+base = "std:topn-predict"
 
 [components.scorer]
 class = "lenskit.flexmf.FlexMFExplicitScorer"
