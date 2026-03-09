@@ -6,7 +6,7 @@ vars:
       - ml-10m
       - ml-20m
       - ml-25m
-      - ml-32m
+      # - ml-32m
 
     pipelines:
       - bias
@@ -24,6 +24,15 @@ vars:
 
 # This pipeline defines top-level output stages.
 stages:
+  split-data:
+    foreach: ${datasets}
+    do:
+      cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d data-split/${item} data/${item}
+      deps:
+        - data/${item}/
+      outs:
+        - data-split/${item}/
+
   # generate recommendations for test data
   generate-recs:
     matrix:

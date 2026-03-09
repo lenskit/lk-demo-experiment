@@ -1403,3 +1403,369 @@ stages:
       md5: 6b2446449c3b79075583a3f51265bff2.dir
       size: 79479
       nfiles: 1
+  generate-recs@ml-10m-uknn-implicit:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/uknn-implicit 
+      pipelines/uknn-implicit.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/uknn-implicit.toml
+      hash: md5
+      md5: 194860c7359585e6141bf686b3c8d3f6
+      size: 193
+    - path: run-pipeline.py
+      hash: md5
+      md5: d5d8924ba2f60591fba98be14959464c
+      size: 2538
+    outs:
+    - path: runs/ml-10m/uknn-implicit/
+      hash: md5
+      md5: 0079fb4e9aa1e1335c8823cf3758a69c.dir
+      size: 2372370
+      nfiles: 1
+  generate-recs@ml-10m-uknn-explicit:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/uknn-explicit 
+      pipelines/uknn-explicit.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/uknn-explicit.toml
+      hash: md5
+      md5: 31896a613b62c761240175b6a1a0ba7e
+      size: 201
+    - path: run-pipeline.py
+      hash: md5
+      md5: 53cce434179841515054bfbc6f6aac4d
+      size: 2625
+    outs:
+    - path: runs/ml-10m/uknn-explicit/
+      hash: md5
+      md5: 052e5c8134a7b3ed4b0bd2807d4fb743.dir
+      size: 25306267
+      nfiles: 2
+  generate-recs@ml-10m-iknn-explicit:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/iknn-explicit 
+      pipelines/iknn-explicit.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/iknn-explicit.toml
+      hash: md5
+      md5: e213003d60a9bcb6d10ae37c2d8f1565
+      size: 218
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/iknn-explicit/
+      hash: md5
+      md5: 55f14727c77e7bd565a51d769ec6b4d0.dir
+      size: 7126203
+      nfiles: 2
+  generate-recs@ml-10m-flex-logistic:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/flex-logistic 
+      pipelines/flex-logistic.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/flex-logistic.toml
+      hash: md5
+      md5: e406e5aa8ab2fd7645cf3b6416d8549c
+      size: 204
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/flex-logistic/
+      hash: md5
+      md5: 44aade21f0110f77baa79f6580bec93e.dir
+      size: 2258447
+      nfiles: 1
+  generate-recs@ml-10m-als-implicit:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/als-implicit 
+      pipelines/als-implicit.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/als-implicit.toml
+      hash: md5
+      md5: d745876aa50f1dace3f71257ab4425a2
+      size: 166
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/als-implicit/
+      hash: md5
+      md5: e23dc13810d49121ebf6b5dc9d34fc37.dir
+      size: 2234820
+      nfiles: 1
+  generate-recs@ml-10m-flex-explicit:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/flex-explicit 
+      pipelines/flex-explicit.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/flex-explicit.toml
+      hash: md5
+      md5: 3d5ec38b202a299ca44c39eaa4ffdc94
+      size: 194
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/flex-explicit/
+      hash: md5
+      md5: 855c5369ca8b2683f876c960e0e9dc32.dir
+      size: 7101854
+      nfiles: 2
+  generate-recs@ml-10m-als-explicit:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/als-explicit 
+      pipelines/als-explicit.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/als-explicit.toml
+      hash: md5
+      md5: 99265954ae6680a6d0761a9b0a2862d4
+      size: 172
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/als-explicit/
+      hash: md5
+      md5: 14d9bb7b2763b8e1515e4df8ebab5263.dir
+      size: 7009668
+      nfiles: 2
+  generate-recs@ml-10m-flex-warp:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/flex-warp 
+      pipelines/flex-warp.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/flex-warp.toml
+      hash: md5
+      md5: 168a6e18618c4b38de351ea012fd24f2
+      size: 214
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/flex-warp/
+      hash: md5
+      md5: bfe566aec600381f984dc37808ab8433.dir
+      size: 2289614
+      nfiles: 1
+  generate-recs@ml-10m-flex-bpr:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/flex-bpr 
+      pipelines/flex-bpr.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/flex-bpr.toml
+      hash: md5
+      md5: d5e115219972f27d4f682dd5a136fd55
+      size: 217
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/flex-bpr/
+      hash: md5
+      md5: d26d4ad60e7cbefe10178d13af599f8c.dir
+      size: 2292749
+      nfiles: 1
+  generate-recs@ml-10m-iknn-implicit:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/iknn-implicit 
+      pipelines/iknn-implicit.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/iknn-implicit.toml
+      hash: md5
+      md5: c4c3a2bf99f16305eb4c96e02632bba8
+      size: 210
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/iknn-implicit/
+      hash: md5
+      md5: 5b2cba9346e93efdf3dcdc7d68e1b65f.dir
+      size: 2120706
+      nfiles: 1
+  generate-recs@ml-10m-bias:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/bias 
+      pipelines/bias.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/bias.toml
+      hash: md5
+      md5: 6bdb955271198f3bdc26f27fa3ba1869
+      size: 154
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/bias/
+      hash: md5
+      md5: 77e89488c1edbd5a0e901464a1a04206.dir
+      size: 6711598
+      nfiles: 2
+  generate-recs@ml-10m-popular:
+    cmd: python run-pipeline.py -d data/ml-10m -o runs/ml-10m/popular 
+      pipelines/popular.toml
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 095f5e7176a5019f849ed265348cd3f7.dir
+      size: 78748477
+      nfiles: 5
+    - path: pipelines/popular.toml
+      hash: md5
+      md5: ed104618e25c8749e84674e64a05a706
+      size: 108
+    - path: run-pipeline.py
+      hash: md5
+      md5: 2bca6468c33e61a2967c76b2010d4a9a
+      size: 2581
+    outs:
+    - path: runs/ml-10m/popular/
+      hash: md5
+      md5: ff7888a3f80ec5f737a88b779aedd690.dir
+      size: 521764
+      nfiles: 1
+  split-data@ml-100k:
+    cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d 
+      data-split/ml-100k data/ml-100k
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: de14113b10f15d7058eee60d7b0b739b.dir
+      size: 745096
+      nfiles: 5
+    outs:
+    - path: data-split/ml-100k/
+      hash: md5
+      md5: c2c7a7f3cb3485f170b62bc6d8d8ae63.dir
+      size: 630260
+      nfiles: 6
+  split-data@ml-1m:
+    cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d 
+      data-split/ml-1m data/ml-1m
+    deps:
+    - path: data/ml-1m/
+      hash: md5
+      md5: f4dc570d3cd4e6e2d7af3e657a64ca10.dir
+      size: 6100414
+      nfiles: 5
+    outs:
+    - path: data-split/ml-1m/
+      hash: md5
+      md5: 5c017bfa97785a2f1d9632d8b43f66e0.dir
+      size: 5716034
+      nfiles: 6
+  split-data@ml-latest-small:
+    cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d 
+      data-split/ml-latest-small data/ml-latest-small
+    deps:
+    - path: data/ml-latest-small/
+      hash: md5
+      md5: 2a947c6d21143f791191c7227f8ede66.dir
+      size: 1270407
+      nfiles: 5
+    outs:
+    - path: data-split/ml-latest-small/
+      hash: md5
+      md5: ccc7fad412d02653202f48a82db8e274.dir
+      size: 1060642
+      nfiles: 6
+  split-data@ml-20m:
+    cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d 
+      data-split/ml-20m data/ml-20m
+    deps:
+    - path: data/ml-20m/
+      hash: md5
+      md5: d5afeba88291bc14466ab9106a3bee84.dir
+      size: 184781314
+      nfiles: 5
+    outs:
+    - path: data-split/ml-20m/
+      hash: md5
+      md5: a629420f3708402eebafece534c52fa3.dir
+      size: 152485897
+      nfiles: 6
+  split-data@ml-10m:
+    cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d 
+      data-split/ml-10m data/ml-10m
+    deps:
+    - path: data/ml-10m/
+      hash: md5
+      md5: 1edcc448b436421c67171399c48a2861.dir
+      size: 78909943
+      nfiles: 5
+    outs:
+    - path: data-split/ml-10m/
+      hash: md5
+      md5: faeca257b9a946a83aaa06cec43383bc.dir
+      size: 62642873
+      nfiles: 6
+  split-data@ml-25m:
+    cmd: lenskit data split --fraction=0.2 --min-train-interactions=1 -d 
+      data-split/ml-25m data/ml-25m
+    deps:
+    - path: data/ml-25m/
+      hash: md5
+      md5: 83f1e71df12d9c6e39daad797c973550.dir
+      size: 241615646
+      nfiles: 5
+    outs:
+    - path: data-split/ml-25m/
+      hash: md5
+      md5: ea2ccbe3c4bc5d3c282ef7b32ff5bd39.dir
+      size: 201864157
+      nfiles: 6
