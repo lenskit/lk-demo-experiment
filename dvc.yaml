@@ -1,5 +1,37 @@
 # This pipeline defines top-level output stages.
 stages:
+  # generate recommendations for test data
+  generate-recs:
+    matrix:
+      data:
+        - ml-100k
+        - ml-latest-small
+        - ml-1m
+        - ml-10m
+        - ml-20m
+        - ml-25m
+        - ml-32m
+      pipeline:
+        - bias
+        - popular
+        - iknn-explicit
+        - iknn-implicit
+        - uknn-explicit
+        - uknn-implicit
+        - als-explicit
+        - als-implicit
+        - flex-explicit
+        - flex-logistic
+        - flex-bpr
+        - flex-warp
+    cmd: python run-pipeline.py -d data/${item.data} -o runs/${item.data}/${item.pipeline} pipelines/${item.pipeline}.toml
+    deps:
+      - run-pipeline.py
+      - pipelines/${item.pipeline}.toml
+      - data/${item.data}/
+    outs:
+      - runs/${item.data}/${item.pipeline}/
+
   eval-report-template:
     cmd: jupytext --to ipynb eval-report.md
     deps:

@@ -13,7 +13,6 @@ Options:
     --test-size=F   the test set size (as a fraction) [default: 0.2]
     -o output       destination directory [default: output]
     -n N            number of recommendations for a unique user [default: 100]
-    --no-predict    turn off rating prediction
     --log-file FILE write logs to FILE
     PIPE            pipeline configuration file to load
 """
@@ -46,6 +45,8 @@ def main(args):
     _log.info("loading pipeline from %s", pipe_file)
     pipeline = Pipeline.load_config(pipe_file)
 
+    predicts_ratings = pipeline.node("rating-predictor", missing=None) is not None
+
     split = split_fraction(data, quant)
 
     dest = Path(output)
@@ -60,7 +61,8 @@ def main(args):
     )
     runner = BatchPipelineRunner()
     runner.recommend(n=n_recs)
-    if not args["--no-predict"]:
+    if predicts_ratings:
+        _log.info("pipeline %s can predict ratings")
         runner.predict()
 
     result = runner.run(pipeline, split.test)
@@ -68,7 +70,7 @@ def main(args):
     _log.info("writing recommendations to %s", dest)
     recs.save_parquet(dest / "recs-eval.parquet", compression="zstd")
 
-    if not args["--no-predict"]:
+    if predicts_ratings:
         preds = result.output("predictions")
         _log.info("writing predictions to %s", dest)
         preds.save_parquet(dest / "pred-eval.parquet", compression="zstd")
