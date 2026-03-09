@@ -7,7 +7,7 @@
 #
 # You can make additional non-repeated stages to run one algorithm on one data set.
 stages:
-  run-explicit-model:
+  explicit-recs:
     matrix:
       data:
         - ml-100k
@@ -17,21 +17,21 @@ stages:
         - ml-20m
         - ml-25m
         - ml-32m
-      model:
-        - Bias
-        - IIE
-        - UUE
-        - ALS
-        - FlexMF
-    cmd: python run-model.py -d data/${item.data} -o runs/${item.data}-${item.model} ${item.model}
+      pipeline:
+        - bias
+        - iknn-explicit
+        - uknn-explicit
+        - als-explicit
+        - flex-explicit
+    cmd: python run-pipeline.py -d data/${item.data} -o runs/${item.data}/${item.pipeline} pipelines/${item.pipeline}.toml
     wdir: ..
     deps:
-      - run-model.py
-      - data/${item.data}
+      - run-pipeline.py
+      - data/${item.data}/
     outs:
-      - runs/${item.data}-${item.model}
+      - runs/${item.data}/${item.pipeline}/
 
-  run-implicit-model:
+  implicit-recs:
     matrix:
       data:
         - ml-100k
@@ -41,17 +41,18 @@ stages:
         - ml-20m
         - ml-25m
         - ml-32m
-      model:
-        - Pop
-        - III
-        - IALS
-        - FlexLMF
-        - FlexBPR
-        - FlexWARP
-    cmd: python run-model.py -d data/${item.data} -o runs/${item.data}-${item.model} --no-predict ${item.model}
+      pipeline:
+        - popular
+        - iknn-implicit
+        - uknn-implicit
+        - als-implicit
+        - flex-logistic
+        - flex-bpr
+        - flex-warp
+    cmd: python run-pipeline.py -d data/${item.data} -o runs/${item.data}/${item.pipeline} --no-predict pipelines/${item.pipeline}.toml
     wdir: ..
     deps:
-      - run-model.py
-      - data/${item.data}
+      - run-pipeline.py
+      - data/${item.data}/
     outs:
-      - runs/${item.data}-${item.model}
+      - runs/${item.data}/${item.pipeline}/

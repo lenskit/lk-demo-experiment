@@ -1,0 +1,11 @@
+[meta]
+name = "bias"
+
+[options]
+base = "std:topn-predict"
+
+[components.scorer]
+class = "lenskit.basic.BiasScorer"
+
+[components.scorer.config]
+damping = 5

@@ -1,0 +1,13 @@
+[meta]
+name = "uknn-explicit"
+
+[options]
+base = "std:topn-predict"
+
+[components.scorer]
+class = "lenskit.knn.userKNNScorer"
+
+[components.scorer.config]
+max_nbrs = 30
+min_nbrs = 2
+feedback = "explicit"

@@ -1,0 +1,11 @@
+[meta]
+name = "als-explicit"
+
+[options]
+base = "std:topn-predict"
+
+[components.scorer]
+class = "lenskit.als.BiasedMFScorer"
+
+[components.scorer.config]
+embedding_size = 64

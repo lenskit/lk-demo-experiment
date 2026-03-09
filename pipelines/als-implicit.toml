@@ -1,0 +1,11 @@
+[meta]
+name = "als-implicit"
+
+[options]
+base = "std:topn"
+
+[components.scorer]
+class = "lenskit.als.ImplicitMFScorer"
+
+[components.scorer.config]
+embedding_size = 64

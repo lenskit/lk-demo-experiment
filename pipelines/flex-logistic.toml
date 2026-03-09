@@ -1,0 +1,13 @@
+[meta]
+name = "flex-logistic"
+
+[options]
+base = "std:topn"
+
+[components.scorer]
+class = "lenskit.flexmf.FlexMFImplicitScorer"
+
+[components.scorer.config]
+embedding_size = 64
+epochs = 20
+loss = "logistic"

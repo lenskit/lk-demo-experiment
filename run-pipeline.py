@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Use a model to produce recommendations (and predictions).  It uses a global
+Use a pipeline to produce recommendations (and predictions).  It uses a global
 temporal split determined by fraction of the test data.
 
 Usage:
-    run-model.py [options] MODEL
+    run-pipeline.py [options] PIPE
 
 Options:
     -v, --verbose   verbose logging output
@@ -13,21 +13,20 @@ Options:
     --test-size=F   the test set size (as a fraction) [default: 0.2]
     -o output       destination directory [default: output]
     -n N            number of recommendations for a unique user [default: 100]
-    -m MODULE       import models from MODULE [default: lkdemo.models]
     --no-predict    turn off rating prediction
     --log-file FILE write logs to FILE
-    MODEL            name of model to load
+    PIPE            pipeline configuration file to load
 """
 
-import importlib
 import logging
 from pathlib import Path
 
 from docopt import docopt
+from lenskit import Pipeline
 from lenskit.batch import BatchPipelineRunner
+from lenskit.config import configure
 from lenskit.data import Dataset
 from lenskit.logging.config import LoggingConfig
-from lenskit.pipeline import topn_pipeline
 
 from lkdemo.datasets import split_fraction
 
@@ -35,28 +34,25 @@ _log = logging.getLogger("run-model")
 
 
 def main(args):
-    mod_name = args.get("-m")
+    configure()
     output = args.get("-o")
     n_recs = int(args.get("-n"))
-    model = args.get("MODEL")
 
     data_path = args.get("--data")
     data = Dataset.load(data_path)
     quant = float(args["--test-size"])
 
+    pipe_file = args["PIPE"]
+    _log.info("loading pipeline from %s", pipe_file)
+    pipeline = Pipeline.load_config(pipe_file)
+
     split = split_fraction(data, quant)
-
-    _log.info(f"importing from module {mod_name}")
-    algorithms = importlib.import_module(mod_name)
-
-    model = getattr(algorithms, model)
-    pipe = topn_pipeline(model, predicts_ratings=not args["--no-predict"])
 
     dest = Path(output)
     dest.mkdir(exist_ok=True, parents=True)
 
     _log.info("training the pipeline")
-    pipe.train(split.train)
+    pipeline.train(split.train)
 
     _log.info(
         "generating recommendations for %d unique users",
@@ -67,7 +63,7 @@ def main(args):
     if not args["--no-predict"]:
         runner.predict()
 
-    result = runner.run(pipe, split.test)
+    result = runner.run(pipeline, split.test)
     recs = result.output("recommendations")
     _log.info("writing recommendations to %s", dest)
     recs.save_parquet(dest / "recs-eval.parquet", compression="zstd")
