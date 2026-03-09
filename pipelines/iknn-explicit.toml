@@ -9,6 +9,6 @@ class = "lenskit.knn.ItemKNNScorer"
 
 [components.scorer.config]
 max_nbrs = 20
-save_nbrs = 2500
+save_nbrs = 5000
 min_nbrs = 2
 feedback = "explicit"

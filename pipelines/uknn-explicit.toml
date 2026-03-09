@@ -5,7 +5,7 @@ name = "uknn-explicit"
 base = "std:topn-predict"
 
 [components.scorer]
-class = "lenskit.knn.userKNNScorer"
+class = "lenskit.knn.UserKNNScorer"
 
 [components.scorer.config]
 max_nbrs = 30

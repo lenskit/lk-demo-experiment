@@ -5,9 +5,10 @@ name = "uknn-implicit"
 base = "std:topn"
 
 [components.scorer]
-class = "lenskit.knn.UserKNNScorer"
+class = "lenskit.knn.ItemKNNScorer"
 
 [components.scorer.config]
 max_nbrs = 30
+save_nbrs = 5000
 min_nbrs = 2
 feedback = "implicit"
