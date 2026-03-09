@@ -169,7 +169,8 @@ stages:
       size: 274606
       nfiles: 5
   mlsmall@Bias:
-    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-Bias Bias
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-Bias 
+      Bias
     deps:
     - path: data-split/mlsmall
       md5: dea9d6d987b27fa1350468028487bf5e.dir
@@ -217,7 +218,8 @@ stages:
       size: 862629
       nfiles: 10
   mlsmall@IALS:
-    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-IALS IALS
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-IALS 
+      IALS
     deps:
     - path: data-split/mlsmall
       md5: dea9d6d987b27fa1350468028487bf5e.dir
@@ -373,8 +375,8 @@ stages:
       size: 102035362
       nfiles: 10
   ml100k-implicit@Pop:
-    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-Pop --no-predict
-      Pop
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/ml100k
       md5: 9febdcbbc95cabbcafe286fc40779644.dir
@@ -434,8 +436,8 @@ stages:
       size: 1294378
       nfiles: 10
   ml100k-implicit@IALS:
-    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-IALS --no-predict
-      IALS
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/ml100k
       md5: 9febdcbbc95cabbcafe286fc40779644.dir
@@ -447,8 +449,8 @@ stages:
       size: 1255640
       nfiles: 5
   ml100k-implicit@III:
-    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-III --no-predict
-      III
+    cmd: python run-algo.py --splits data-split/ml100k -o runs/ml100k-III 
+      --no-predict III
     deps:
     - path: data-split/ml100k
       md5: 9febdcbbc95cabbcafe286fc40779644.dir
@@ -640,7 +642,8 @@ stages:
       size: 270443
       nfiles: 5
   mlsmall-explicit@Bias:
-    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Bias Bias
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Bias 
+      Bias
     deps:
     - path: data-split/mlsmall
       hash: md5
@@ -690,7 +693,8 @@ stages:
       size: 855162
       nfiles: 10
   mlsmall-implicit@IALS:
-    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-IALS IALS
+    cmd: python run-algo.py --splits data-split/mlsmall -o runs/mlsmall-IALS 
+      IALS
     deps:
     - path: data-split/mlsmall
       md5: dea9d6d987b27fa1350468028487bf5e.dir
@@ -798,7 +802,8 @@ stages:
       size: 101225639
       nfiles: 10
   run-explicit-model@mlsmall-Bias:
-    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Bias Bias
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Bias 
+      Bias
     deps:
     - path: data-split/mlsmall
       hash: md5
@@ -834,8 +839,8 @@ stages:
       size: 4397815
       nfiles: 10
   run-implicit-model@ml10m-IALS:
-    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-IALS --no-predict
-      IALS
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/ml10m
       hash: md5
@@ -925,8 +930,8 @@ stages:
       size: 681678
       nfiles: 10
   run-implicit-model@ml100k-Pop:
-    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-Pop --no-predict
-      Pop
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/ml100k
       hash: md5
@@ -944,8 +949,8 @@ stages:
       size: 143426
       nfiles: 5
   run-implicit-model@ml100k-III:
-    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-III --no-predict
-      III
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-III 
+      --no-predict III
     deps:
     - path: data-split/ml100k
       hash: md5
@@ -963,8 +968,8 @@ stages:
       size: 628636
       nfiles: 5
   run-implicit-model@ml100k-IALS:
-    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-IALS --no-predict
-      IALS
+    cmd: python run-model.py --splits data-split/ml100k -o runs/ml100k-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/ml100k
       hash: md5
@@ -1036,8 +1041,8 @@ stages:
       size: 460749
       nfiles: 10
   run-implicit-model@mlsmall-Pop:
-    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Pop --no-predict
-      Pop
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/mlsmall
       hash: md5
@@ -1055,8 +1060,8 @@ stages:
       size: 93502
       nfiles: 5
   run-implicit-model@mlsmall-III:
-    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-III --no-predict
-      III
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-III 
+      --no-predict III
     deps:
     - path: data-split/mlsmall
       hash: md5
@@ -1074,8 +1079,8 @@ stages:
       size: 405850
       nfiles: 5
   run-implicit-model@mlsmall-IALS:
-    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-IALS --no-predict
-      IALS
+    cmd: python run-model.py --splits data-split/mlsmall -o runs/mlsmall-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/mlsmall
       hash: md5
@@ -1147,8 +1152,8 @@ stages:
       size: 4410024
       nfiles: 10
   run-implicit-model@ml1m-Pop:
-    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-Pop --no-predict
-      Pop
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/ml1m
       hash: md5
@@ -1166,8 +1171,8 @@ stages:
       size: 680673
       nfiles: 5
   run-implicit-model@ml1m-III:
-    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-III --no-predict
-      III
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-III 
+      --no-predict III
     deps:
     - path: data-split/ml1m
       hash: md5
@@ -1185,8 +1190,8 @@ stages:
       size: 4069842
       nfiles: 5
   run-implicit-model@ml1m-IALS:
-    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-IALS --no-predict
-      IALS
+    cmd: python run-model.py --splits data-split/ml1m -o runs/ml1m-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/ml1m
       hash: md5
@@ -1276,8 +1281,8 @@ stages:
       size: 45948270
       nfiles: 10
   run-implicit-model@ml10m-Pop:
-    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-Pop --no-predict
-      Pop
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/ml10m
       hash: md5
@@ -1295,8 +1300,8 @@ stages:
       size: 6540994
       nfiles: 5
   run-implicit-model@ml10m-III:
-    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-III --no-predict
-      III
+    cmd: python run-model.py --splits data-split/ml10m -o runs/ml10m-III 
+      --no-predict III
     deps:
     - path: data-split/ml10m
       hash: md5
@@ -1386,8 +1391,8 @@ stages:
       size: 91671216
       nfiles: 10
   run-implicit-model@ml20m-Pop:
-    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-Pop --no-predict
-      Pop
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/ml20m
       hash: md5
@@ -1405,8 +1410,8 @@ stages:
       size: 12502085
       nfiles: 5
   run-implicit-model@ml20m-III:
-    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-III --no-predict
-      III
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-III 
+      --no-predict III
     deps:
     - path: data-split/ml20m
       hash: md5
@@ -1424,8 +1429,8 @@ stages:
       size: 84784300
       nfiles: 5
   run-implicit-model@ml20m-IALS:
-    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-IALS --no-predict
-      IALS
+    cmd: python run-model.py --splits data-split/ml20m -o runs/ml20m-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/ml20m
       hash: md5
@@ -1497,8 +1502,8 @@ stages:
       size: 110040680
       nfiles: 10
   run-implicit-model@ml25m-Pop:
-    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-Pop --no-predict
-      Pop
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/ml25m
       hash: md5
@@ -1516,8 +1521,8 @@ stages:
       size: 14650129
       nfiles: 5
   run-implicit-model@ml25m-III:
-    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-III --no-predict
-      III
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-III 
+      --no-predict III
     deps:
     - path: data-split/ml25m
       hash: md5
@@ -1535,8 +1540,8 @@ stages:
       size: 99091785
       nfiles: 5
   run-implicit-model@ml25m-IALS:
-    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-IALS --no-predict
-      IALS
+    cmd: python run-model.py --splits data-split/ml25m -o runs/ml25m-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/ml25m
       hash: md5
@@ -1608,8 +1613,8 @@ stages:
       size: 134322359
       nfiles: 10
   run-implicit-model@ml32m-Pop:
-    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-Pop --no-predict
-      Pop
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-Pop 
+      --no-predict Pop
     deps:
     - path: data-split/ml32m
       hash: md5
@@ -1627,8 +1632,8 @@ stages:
       size: 18079546
       nfiles: 5
   run-implicit-model@ml32m-III:
-    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-III --no-predict
-      III
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-III 
+      --no-predict III
     deps:
     - path: data-split/ml32m
       hash: md5
@@ -1646,8 +1651,8 @@ stages:
       size: 121233385
       nfiles: 5
   run-implicit-model@ml32m-IALS:
-    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-IALS --no-predict
-      IALS
+    cmd: python run-model.py --splits data-split/ml32m -o runs/ml32m-IALS 
+      --no-predict IALS
     deps:
     - path: data-split/ml32m
       hash: md5
@@ -1773,7 +1778,8 @@ stages:
       size: 441870
       nfiles: 2
   run-implicit-model@ml-100k-Pop:
-    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-Pop --no-predict Pop
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-Pop --no-predict 
+      Pop
     deps:
     - path: data/ml-100k
       hash: md5
@@ -1791,7 +1797,8 @@ stages:
       size: 26197
       nfiles: 1
   run-implicit-model@ml-100k-III:
-    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-III --no-predict III
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-III --no-predict 
+      III
     deps:
     - path: data/ml-100k
       hash: md5
@@ -1809,7 +1816,8 @@ stages:
       size: 73485
       nfiles: 1
   run-implicit-model@ml-100k-IALS:
-    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-IALS --no-predict IALS
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-IALS --no-predict 
+      IALS
     deps:
     - path: data/ml-100k
       hash: md5
@@ -1827,7 +1835,8 @@ stages:
       size: 211653
       nfiles: 1
   run-explicit-model@ml-latest-small-UUE:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-UUE UUE
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-UUE
+      UUE
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -1845,8 +1854,8 @@ stages:
       size: 279176
       nfiles: 2
   run-implicit-model@ml-latest-small-IALS:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-IALS
-      --no-predict IALS
+    cmd: python run-model.py -d data/ml-latest-small -o 
+      runs/ml-latest-small-IALS --no-predict IALS
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -1864,8 +1873,8 @@ stages:
       size: 86628
       nfiles: 1
   run-explicit-model@ml-latest-small-Bias:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-Bias
-      Bias
+    cmd: python run-model.py -d data/ml-latest-small -o 
+      runs/ml-latest-small-Bias Bias
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -1883,8 +1892,8 @@ stages:
       size: 283699
       nfiles: 2
   run-implicit-model@ml-latest-small-Pop:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-Pop --no-predict
-      Pop
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-Pop
+      --no-predict Pop
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -1902,8 +1911,8 @@ stages:
       size: 10565
       nfiles: 1
   run-implicit-model@ml-latest-small-III:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-III --no-predict
-      III
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-III
+      --no-predict III
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -1921,7 +1930,8 @@ stages:
       size: 19361
       nfiles: 1
   run-explicit-model@ml-latest-small-IIE:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-IIE IIE
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-IIE
+      IIE
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -1939,7 +1949,8 @@ stages:
       size: 283074
       nfiles: 2
   run-explicit-model@ml-latest-small-ALS:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-ALS ALS
+    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-ALS
+      ALS
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -2191,7 +2202,8 @@ stages:
       size: 2261153
       nfiles: 1
   run-implicit-model@ml-10m-IALS:
-    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-IALS --no-predict IALS
+    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-IALS --no-predict 
+      IALS
     deps:
     - path: data/ml-10m
       hash: md5
@@ -2317,7 +2329,8 @@ stages:
       size: 3924693
       nfiles: 1
   run-implicit-model@ml-20m-IALS:
-    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-IALS --no-predict IALS
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-IALS --no-predict 
+      IALS
     deps:
     - path: data/ml-20m
       hash: md5
@@ -2443,7 +2456,8 @@ stages:
       size: 4461638
       nfiles: 1
   run-implicit-model@ml-25m-IALS:
-    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-IALS --no-predict IALS
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-IALS --no-predict 
+      IALS
     deps:
     - path: data/ml-25m
       hash: md5
@@ -2569,7 +2583,8 @@ stages:
       size: 5427520
       nfiles: 1
   run-implicit-model@ml-32m-IALS:
-    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-IALS --no-predict IALS
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-IALS --no-predict 
+      IALS
     deps:
     - path: data/ml-32m
       hash: md5
@@ -2605,8 +2620,8 @@ stages:
       size: 235274
       nfiles: 2
   run-implicit-model@ml-100k-FlexLMF:
-    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexLMF --no-predict
-      FlexLMF
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexLMF 
+      --no-predict FlexLMF
     deps:
     - path: data/ml-100k
       hash: md5
@@ -2624,8 +2639,8 @@ stages:
       size: 79271
       nfiles: 1
   run-implicit-model@ml-100k-FlexBPR:
-    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexBPR --no-predict
-      FlexBPR
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexBPR 
+      --no-predict FlexBPR
     deps:
     - path: data/ml-100k
       hash: md5
@@ -2661,7 +2676,8 @@ stages:
       size: 2956721
       nfiles: 2
   run-implicit-model@ml-1m-FlexBPR:
-    cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexBPR --no-predict FlexBPR
+    cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexBPR --no-predict 
+      FlexBPR
     deps:
     - path: data/ml-1m
       hash: md5
@@ -2679,7 +2695,8 @@ stages:
       size: 804166
       nfiles: 1
   run-implicit-model@ml-1m-FlexLMF:
-    cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexLMF --no-predict FlexLMF
+    cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexLMF --no-predict 
+      FlexLMF
     deps:
     - path: data/ml-1m
       hash: md5
@@ -2715,7 +2732,8 @@ stages:
       size: 22676783
       nfiles: 2
   run-implicit-model@ml-10m-FlexLMF:
-    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexLMF --no-predict FlexLMF
+    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexLMF --no-predict 
+      FlexLMF
     deps:
     - path: data/ml-10m
       hash: md5
@@ -2733,7 +2751,8 @@ stages:
       size: 2274055
       nfiles: 1
   run-implicit-model@ml-10m-FlexBPR:
-    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexBPR --no-predict FlexBPR
+    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexBPR --no-predict 
+      FlexBPR
     deps:
     - path: data/ml-10m
       hash: md5
@@ -2751,8 +2770,8 @@ stages:
       size: 2309648
       nfiles: 1
   run-implicit-model@ml-100k-FlexWARP:
-    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexWARP --no-predict
-      FlexWARP
+    cmd: python run-model.py -d data/ml-100k -o runs/ml-100k-FlexWARP 
+      --no-predict FlexWARP
     deps:
     - path: data/ml-100k
       hash: md5
@@ -2770,7 +2789,8 @@ stages:
       size: 79301
       nfiles: 1
   run-implicit-model@ml-1m-FlexWARP:
-    cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexWARP --no-predict FlexWARP
+    cmd: python run-model.py -d data/ml-1m -o runs/ml-1m-FlexWARP --no-predict 
+      FlexWARP
     deps:
     - path: data/ml-1m
       hash: md5
@@ -2788,7 +2808,8 @@ stages:
       size: 812716
       nfiles: 1
   run-implicit-model@ml-10m-FlexWARP:
-    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexWARP --no-predict FlexWARP
+    cmd: python run-model.py -d data/ml-10m -o runs/ml-10m-FlexWARP --no-predict
+      FlexWARP
     deps:
     - path: data/ml-10m
       hash: md5
@@ -2806,8 +2827,8 @@ stages:
       size: 2385464
       nfiles: 1
   run-explicit-model@ml-latest-small-FlexMF:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexMF
-      FlexMF
+    cmd: python run-model.py -d data/ml-latest-small -o 
+      runs/ml-latest-small-FlexMF FlexMF
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -2825,8 +2846,8 @@ stages:
       size: 260158
       nfiles: 2
   run-implicit-model@ml-latest-small-FlexLMF:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexLMF
-      --no-predict FlexLMF
+    cmd: python run-model.py -d data/ml-latest-small -o 
+      runs/ml-latest-small-FlexLMF --no-predict FlexLMF
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -2844,8 +2865,8 @@ stages:
       size: 26037
       nfiles: 1
   run-implicit-model@ml-latest-small-FlexBPR:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexBPR
-      --no-predict FlexBPR
+    cmd: python run-model.py -d data/ml-latest-small -o 
+      runs/ml-latest-small-FlexBPR --no-predict FlexBPR
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -2863,8 +2884,8 @@ stages:
       size: 26311
       nfiles: 1
   run-implicit-model@ml-latest-small-FlexWARP:
-    cmd: python run-model.py -d data/ml-latest-small -o runs/ml-latest-small-FlexWARP
-      --no-predict FlexWARP
+    cmd: python run-model.py -d data/ml-latest-small -o 
+      runs/ml-latest-small-FlexWARP --no-predict FlexWARP
     deps:
     - path: data/ml-latest-small
       hash: md5
@@ -2900,7 +2921,8 @@ stages:
       size: 46548306
       nfiles: 2
   run-implicit-model@ml-20m-FlexLMF:
-    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexLMF --no-predict FlexLMF
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexLMF --no-predict 
+      FlexLMF
     deps:
     - path: data/ml-20m
       hash: md5
@@ -2918,7 +2940,8 @@ stages:
       size: 3926608
       nfiles: 1
   run-implicit-model@ml-20m-FlexBPR:
-    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexBPR --no-predict FlexBPR
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexBPR --no-predict 
+      FlexBPR
     deps:
     - path: data/ml-20m
       hash: md5
@@ -2936,7 +2959,8 @@ stages:
       size: 3898591
       nfiles: 1
   run-implicit-model@ml-20m-FlexWARP:
-    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexWARP --no-predict FlexWARP
+    cmd: python run-model.py -d data/ml-20m -o runs/ml-20m-FlexWARP --no-predict
+      FlexWARP
     deps:
     - path: data/ml-20m
       hash: md5
@@ -2972,7 +2996,8 @@ stages:
       size: 54281070
       nfiles: 2
   run-implicit-model@ml-25m-FlexLMF:
-    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexLMF --no-predict FlexLMF
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexLMF --no-predict 
+      FlexLMF
     deps:
     - path: data/ml-25m
       hash: md5
@@ -2990,7 +3015,8 @@ stages:
       size: 4311473
       nfiles: 1
   run-implicit-model@ml-25m-FlexBPR:
-    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexBPR --no-predict FlexBPR
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexBPR --no-predict 
+      FlexBPR
     deps:
     - path: data/ml-25m
       hash: md5
@@ -3008,7 +3034,8 @@ stages:
       size: 4310541
       nfiles: 1
   run-implicit-model@ml-25m-FlexWARP:
-    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexWARP --no-predict FlexWARP
+    cmd: python run-model.py -d data/ml-25m -o runs/ml-25m-FlexWARP --no-predict
+      FlexWARP
     deps:
     - path: data/ml-25m
       hash: md5
@@ -3044,7 +3071,8 @@ stages:
       size: 68505179
       nfiles: 2
   run-implicit-model@ml-32m-FlexLMF:
-    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexLMF --no-predict FlexLMF
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexLMF --no-predict 
+      FlexLMF
     deps:
     - path: data/ml-32m
       hash: md5
@@ -3062,7 +3090,8 @@ stages:
       size: 5335444
       nfiles: 1
   run-implicit-model@ml-32m-FlexBPR:
-    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexBPR --no-predict FlexBPR
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexBPR --no-predict 
+      FlexBPR
     deps:
     - path: data/ml-32m
       hash: md5
@@ -3080,7 +3109,8 @@ stages:
       size: 5273627
       nfiles: 1
   run-implicit-model@ml-32m-FlexWARP:
-    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexWARP --no-predict FlexWARP
+    cmd: python run-model.py -d data/ml-32m -o runs/ml-32m-FlexWARP --no-predict
+      FlexWARP
     deps:
     - path: data/ml-32m
       hash: md5
@@ -3097,3 +3127,155 @@ stages:
       md5: a1c87b8e16ec4d605494c30f63d4abef.dir
       size: 5893565
       nfiles: 1
+  implicit-recs@ml-100k-flex-bpr:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/flex-bpr 
+      --no-predict pipelines/flex-bpr.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/flex-bpr/
+      hash: md5
+      md5: a2d20f1607b3fe5b01401fbe0a28022a.dir
+      size: 79536
+      nfiles: 1
+  implicit-recs@ml-100k-flex-logistic:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/flex-logistic 
+      --no-predict pipelines/flex-logistic.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/flex-logistic/
+      hash: md5
+      md5: 7e36c9046eea16f02ff0b74463fb1854.dir
+      size: 79214
+      nfiles: 1
+  explicit-recs@ml-100k-als-explicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/als-explicit 
+      pipelines/als-explicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/als-explicit/
+      hash: md5
+      md5: b22b0155215de4e28d8f8028fd1ffb8a.dir
+      size: 258985
+      nfiles: 2
+  implicit-recs@ml-100k-iknn-implicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/iknn-implicit 
+      --no-predict pipelines/iknn-implicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/iknn-implicit/
+      hash: md5
+      md5: 7712dd1661c3f4b6bb0c2b3a178c44be.dir
+      size: 75974
+      nfiles: 1
+  implicit-recs@ml-100k-als-implicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/als-implicit 
+      --no-predict pipelines/als-implicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/als-implicit/
+      hash: md5
+      md5: 6f6b3fcc33ba3194ff77ff6151e96d1b.dir
+      size: 77708
+      nfiles: 1
+  implicit-recs@ml-100k-uknn-implicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/uknn-implicit 
+      --no-predict pipelines/uknn-implicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/uknn-implicit/
+      hash: md5
+      md5: 4baa183c79fc530af5ead0e1c353777a.dir
+      size: 73012
+      nfiles: 1
+  implicit-recs@ml-100k-flex-warp:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/flex-warp 
+      --no-predict pipelines/flex-warp.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/flex-warp/
+      hash: md5
+      md5: 6a4373d59fe34606f9ba2f0224098e90.dir
+      size: 79801
+      nfiles: 1
+  explicit-recs@ml-100k-iknn-explicit:
+    cmd: python run-pipeline.py -d data/ml-100k -o runs/ml-100k/iknn-explicit 
+      pipelines/iknn-explicit.toml
+    deps:
+    - path: data/ml-100k/
+      hash: md5
+      md5: 05ad95f2e4982f8aa082b939a28f6b5a.dir
+      size: 748188
+      nfiles: 5
+    - path: run-pipeline.py
+      hash: md5
+      md5: 24b5a3da5d417a31f72ae3fc93ae68b9
+      size: 2464
+    outs:
+    - path: runs/ml-100k/iknn-explicit/
+      hash: md5
+      md5: 1f43151eb08039430f3e25e9fbd0cee7.dir
+      size: 259587
+      nfiles: 2
