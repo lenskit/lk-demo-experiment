@@ -49,7 +49,7 @@ from lenskit.metrics import RunAnalysis, RMSE, NDCG, RecipRank, RBP
 ```
 
 ```python
-from lkdemo.datasets import split_fraction
+from lenskit.splitting import split_temporal_fraction
 ```
 
 ## Load Data
@@ -94,7 +94,7 @@ We need to load the test data so that we have the ground truths for computing ac
 
 ```python
 data = Dataset.load(f"data/{dataset}")
-split = split_fraction(data, 0.2)
+split = split_temporal_fraction(data, 0.2, filter_test_users=True)
 test = split.test
 ```
 
