@@ -23,6 +23,7 @@ dev = [
     "ruff >=0.8",
     "parquet-tools >=0.2",
     "line-profiler>=4.2.0",
+    "py-spy>=0.4.1",
 ]
 
 # [tool.uv.sources]
