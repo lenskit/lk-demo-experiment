@@ -863,8 +863,8 @@ stages:
       md5: 19c12c8bcb597b26f856e858e5677c8e
       size: 556074
   generate-recs@ml-100k-flex-warp:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o runs/ml-100k/flex-warp 
-      pipelines/flex-warp.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/flex-warp pipelines/flex-warp.toml
     deps:
     - path: data-split/ml-100k/
       hash: md5
@@ -875,10 +875,11 @@ stages:
       hash: md5
       md5: 168a6e18618c4b38de351ea012fd24f2
       size: 214
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/flex-warp/
       hash: md5
@@ -886,7 +887,7 @@ stages:
       size: 77464
       nfiles: 1
   generate-recs@ml-100k-iknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/iknn-implicit pipelines/iknn-implicit.toml
     deps:
     - path: data-split/ml-100k/
@@ -898,10 +899,11 @@ stages:
       hash: md5
       md5: c4c3a2bf99f16305eb4c96e02632bba8
       size: 210
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/iknn-implicit/
       hash: md5
@@ -909,7 +911,7 @@ stages:
       size: 71750
       nfiles: 1
   generate-recs@ml-100k-als-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/als-implicit pipelines/als-implicit.toml
     deps:
     - path: data-split/ml-100k/
@@ -921,10 +923,11 @@ stages:
       hash: md5
       md5: d745876aa50f1dace3f71257ab4425a2
       size: 166
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/als-implicit/
       hash: md5
@@ -932,8 +935,8 @@ stages:
       size: 76034
       nfiles: 1
   generate-recs@ml-100k-bias:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o runs/ml-100k/bias 
-      pipelines/bias.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/bias pipelines/bias.toml
     deps:
     - path: data-split/ml-100k/
       hash: md5
@@ -944,10 +947,11 @@ stages:
       hash: md5
       md5: 6bdb955271198f3bdc26f27fa3ba1869
       size: 154
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/bias/
       hash: md5
@@ -955,8 +959,8 @@ stages:
       size: 103659
       nfiles: 2
   generate-recs@ml-100k-popular:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o runs/ml-100k/popular 
-      pipelines/popular.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/popular pipelines/popular.toml
     deps:
     - path: data-split/ml-100k/
       hash: md5
@@ -967,10 +971,11 @@ stages:
       hash: md5
       md5: ed104618e25c8749e84674e64a05a706
       size: 108
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/popular/
       hash: md5
@@ -978,7 +983,7 @@ stages:
       size: 23586
       nfiles: 1
   generate-recs@ml-100k-iknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/iknn-explicit pipelines/iknn-explicit.toml
     deps:
     - path: data-split/ml-100k/
@@ -990,10 +995,11 @@ stages:
       hash: md5
       md5: e213003d60a9bcb6d10ae37c2d8f1565
       size: 218
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/iknn-explicit/
       hash: md5
@@ -1001,7 +1007,7 @@ stages:
       size: 112612
       nfiles: 2
   generate-recs@ml-100k-uknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/uknn-explicit pipelines/uknn-explicit.toml
     deps:
     - path: data-split/ml-100k/
@@ -1013,10 +1019,11 @@ stages:
       hash: md5
       md5: 31896a613b62c761240175b6a1a0ba7e
       size: 201
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/uknn-explicit/
       hash: md5
@@ -1024,7 +1031,7 @@ stages:
       size: 110247
       nfiles: 2
   generate-recs@ml-100k-uknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/uknn-implicit pipelines/uknn-implicit.toml
     deps:
     - path: data-split/ml-100k/
@@ -1036,10 +1043,11 @@ stages:
       hash: md5
       md5: 194860c7359585e6141bf686b3c8d3f6
       size: 193
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/uknn-implicit/
       hash: md5
@@ -1047,7 +1055,7 @@ stages:
       size: 74813
       nfiles: 1
   generate-recs@ml-100k-als-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/als-explicit pipelines/als-explicit.toml
     deps:
     - path: data-split/ml-100k/
@@ -1059,10 +1067,11 @@ stages:
       hash: md5
       md5: 99265954ae6680a6d0761a9b0a2862d4
       size: 172
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/als-explicit/
       hash: md5
@@ -1070,7 +1079,7 @@ stages:
       size: 110854
       nfiles: 2
   generate-recs@ml-100k-flex-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/flex-explicit pipelines/flex-explicit.toml
     deps:
     - path: data-split/ml-100k/
@@ -1082,10 +1091,11 @@ stages:
       hash: md5
       md5: 3d5ec38b202a299ca44c39eaa4ffdc94
       size: 194
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/flex-explicit/
       hash: md5
@@ -1093,7 +1103,7 @@ stages:
       size: 113883
       nfiles: 2
   generate-recs@ml-100k-flex-logistic:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
       runs/ml-100k/flex-logistic pipelines/flex-logistic.toml
     deps:
     - path: data-split/ml-100k/
@@ -1105,10 +1115,11 @@ stages:
       hash: md5
       md5: e406e5aa8ab2fd7645cf3b6416d8549c
       size: 204
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/flex-logistic/
       hash: md5
@@ -1116,8 +1127,8 @@ stages:
       size: 77580
       nfiles: 1
   generate-recs@ml-100k-flex-bpr:
-    cmd: python run-pipeline.py -d data-split/ml-100k -o runs/ml-100k/flex-bpr 
-      pipelines/flex-bpr.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/flex-bpr pipelines/flex-bpr.toml
     deps:
     - path: data-split/ml-100k/
       hash: md5
@@ -1128,10 +1139,11 @@ stages:
       hash: md5
       md5: d5e115219972f27d4f682dd5a136fd55
       size: 217
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-100k/flex-bpr/
       hash: md5
@@ -1139,7 +1151,7 @@ stages:
       size: 77898
       nfiles: 1
   generate-recs@ml-10m-uknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
       runs/ml-10m/uknn-implicit pipelines/uknn-implicit.toml
     deps:
     - path: data-split/ml-10m/
@@ -1151,10 +1163,11 @@ stages:
       hash: md5
       md5: 194860c7359585e6141bf686b3c8d3f6
       size: 193
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/uknn-implicit/
       hash: md5
@@ -1162,7 +1175,7 @@ stages:
       size: 2242366
       nfiles: 1
   generate-recs@ml-10m-uknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
       runs/ml-10m/uknn-explicit pipelines/uknn-explicit.toml
     deps:
     - path: data-split/ml-10m/
@@ -1174,10 +1187,11 @@ stages:
       hash: md5
       md5: 31896a613b62c761240175b6a1a0ba7e
       size: 201
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/uknn-explicit/
       hash: md5
@@ -1185,7 +1199,7 @@ stages:
       size: 7039983
       nfiles: 2
   generate-recs@ml-10m-iknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
       runs/ml-10m/iknn-explicit pipelines/iknn-explicit.toml
     deps:
     - path: data-split/ml-10m/
@@ -1197,10 +1211,11 @@ stages:
       hash: md5
       md5: e213003d60a9bcb6d10ae37c2d8f1565
       size: 218
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/iknn-explicit/
       hash: md5
@@ -1208,7 +1223,7 @@ stages:
       size: 7126203
       nfiles: 2
   generate-recs@ml-10m-flex-logistic:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
       runs/ml-10m/flex-logistic pipelines/flex-logistic.toml
     deps:
     - path: data-split/ml-10m/
@@ -1220,10 +1235,11 @@ stages:
       hash: md5
       md5: e406e5aa8ab2fd7645cf3b6416d8549c
       size: 204
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/flex-logistic/
       hash: md5
@@ -1231,8 +1247,8 @@ stages:
       size: 2256843
       nfiles: 1
   generate-recs@ml-10m-als-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/als-implicit
-      pipelines/als-implicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/als-implicit pipelines/als-implicit.toml
     deps:
     - path: data-split/ml-10m/
       hash: md5
@@ -1243,10 +1259,11 @@ stages:
       hash: md5
       md5: d745876aa50f1dace3f71257ab4425a2
       size: 166
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/als-implicit/
       hash: md5
@@ -1254,7 +1271,7 @@ stages:
       size: 2234165
       nfiles: 1
   generate-recs@ml-10m-flex-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
       runs/ml-10m/flex-explicit pipelines/flex-explicit.toml
     deps:
     - path: data-split/ml-10m/
@@ -1266,10 +1283,11 @@ stages:
       hash: md5
       md5: 3d5ec38b202a299ca44c39eaa4ffdc94
       size: 194
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/flex-explicit/
       hash: md5
@@ -1277,8 +1295,8 @@ stages:
       size: 7108799
       nfiles: 2
   generate-recs@ml-10m-als-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/als-explicit
-      pipelines/als-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/als-explicit pipelines/als-explicit.toml
     deps:
     - path: data-split/ml-10m/
       hash: md5
@@ -1289,10 +1307,11 @@ stages:
       hash: md5
       md5: 99265954ae6680a6d0761a9b0a2862d4
       size: 172
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/als-explicit/
       hash: md5
@@ -1300,8 +1319,8 @@ stages:
       size: 7013646
       nfiles: 2
   generate-recs@ml-10m-flex-warp:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/flex-warp 
-      pipelines/flex-warp.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/flex-warp pipelines/flex-warp.toml
     deps:
     - path: data-split/ml-10m/
       hash: md5
@@ -1312,10 +1331,11 @@ stages:
       hash: md5
       md5: 168a6e18618c4b38de351ea012fd24f2
       size: 214
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/flex-warp/
       hash: md5
@@ -1323,8 +1343,8 @@ stages:
       size: 2289673
       nfiles: 1
   generate-recs@ml-10m-flex-bpr:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/flex-bpr 
-      pipelines/flex-bpr.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/flex-bpr pipelines/flex-bpr.toml
     deps:
     - path: data-split/ml-10m/
       hash: md5
@@ -1335,10 +1355,11 @@ stages:
       hash: md5
       md5: d5e115219972f27d4f682dd5a136fd55
       size: 217
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/flex-bpr/
       hash: md5
@@ -1346,7 +1367,7 @@ stages:
       size: 2289189
       nfiles: 1
   generate-recs@ml-10m-iknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
       runs/ml-10m/iknn-implicit pipelines/iknn-implicit.toml
     deps:
     - path: data-split/ml-10m/
@@ -1358,10 +1379,11 @@ stages:
       hash: md5
       md5: c4c3a2bf99f16305eb4c96e02632bba8
       size: 210
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/iknn-implicit/
       hash: md5
@@ -1369,7 +1391,7 @@ stages:
       size: 2120706
       nfiles: 1
   generate-recs@ml-10m-bias:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/bias 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/bias
       pipelines/bias.toml
     deps:
     - path: data-split/ml-10m/
@@ -1381,10 +1403,11 @@ stages:
       hash: md5
       md5: 6bdb955271198f3bdc26f27fa3ba1869
       size: 154
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/bias/
       hash: md5
@@ -1392,8 +1415,8 @@ stages:
       size: 6711598
       nfiles: 2
   generate-recs@ml-10m-popular:
-    cmd: python run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/popular 
-      pipelines/popular.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/popular pipelines/popular.toml
     deps:
     - path: data-split/ml-10m/
       hash: md5
@@ -1404,10 +1427,11 @@ stages:
       hash: md5
       md5: ed104618e25c8749e84674e64a05a706
       size: 108
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-10m/popular/
       hash: md5
@@ -1520,7 +1544,7 @@ stages:
       size: 234856322
       nfiles: 6
   generate-recs@ml-latest-small-bias:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/bias pipelines/bias.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1532,10 +1556,11 @@ stages:
       hash: md5
       md5: 6bdb955271198f3bdc26f27fa3ba1869
       size: 154
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/bias/
       hash: md5
@@ -1543,7 +1568,7 @@ stages:
       size: 48412
       nfiles: 2
   generate-recs@ml-latest-small-popular:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/popular pipelines/popular.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1555,10 +1580,11 @@ stages:
       hash: md5
       md5: ed104618e25c8749e84674e64a05a706
       size: 108
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/popular/
       hash: md5
@@ -1566,7 +1592,7 @@ stages:
       size: 9672
       nfiles: 1
   generate-recs@ml-latest-small-iknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/iknn-explicit pipelines/iknn-explicit.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1578,10 +1604,11 @@ stages:
       hash: md5
       md5: e213003d60a9bcb6d10ae37c2d8f1565
       size: 218
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/iknn-explicit/
       hash: md5
@@ -1589,7 +1616,7 @@ stages:
       size: 54103
       nfiles: 2
   generate-recs@ml-latest-small-iknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/iknn-implicit pipelines/iknn-implicit.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1601,10 +1628,11 @@ stages:
       hash: md5
       md5: c4c3a2bf99f16305eb4c96e02632bba8
       size: 210
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/iknn-implicit/
       hash: md5
@@ -1612,7 +1640,7 @@ stages:
       size: 19605
       nfiles: 1
   generate-recs@ml-latest-small-uknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/uknn-explicit pipelines/uknn-explicit.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1624,10 +1652,11 @@ stages:
       hash: md5
       md5: 31896a613b62c761240175b6a1a0ba7e
       size: 201
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/uknn-explicit/
       hash: md5
@@ -1635,7 +1664,7 @@ stages:
       size: 52744
       nfiles: 2
   generate-recs@ml-latest-small-uknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/uknn-implicit pipelines/uknn-implicit.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1647,10 +1676,11 @@ stages:
       hash: md5
       md5: 194860c7359585e6141bf686b3c8d3f6
       size: 193
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/uknn-implicit/
       hash: md5
@@ -1658,7 +1688,7 @@ stages:
       size: 21416
       nfiles: 1
   generate-recs@ml-latest-small-als-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/als-explicit pipelines/als-explicit.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1670,10 +1700,11 @@ stages:
       hash: md5
       md5: 99265954ae6680a6d0761a9b0a2862d4
       size: 172
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/als-explicit/
       hash: md5
@@ -1681,7 +1712,7 @@ stages:
       size: 52767
       nfiles: 2
   generate-recs@ml-latest-small-als-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/als-implicit pipelines/als-implicit.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1693,10 +1724,11 @@ stages:
       hash: md5
       md5: d745876aa50f1dace3f71257ab4425a2
       size: 166
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/als-implicit/
       hash: md5
@@ -1704,7 +1736,7 @@ stages:
       size: 22812
       nfiles: 1
   generate-recs@ml-latest-small-flex-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/flex-explicit pipelines/flex-explicit.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1716,10 +1748,11 @@ stages:
       hash: md5
       md5: 3d5ec38b202a299ca44c39eaa4ffdc94
       size: 194
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/flex-explicit/
       hash: md5
@@ -1727,7 +1760,7 @@ stages:
       size: 54579
       nfiles: 2
   generate-recs@ml-latest-small-flex-logistic:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/flex-logistic pipelines/flex-logistic.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1739,10 +1772,11 @@ stages:
       hash: md5
       md5: e406e5aa8ab2fd7645cf3b6416d8549c
       size: 204
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/flex-logistic/
       hash: md5
@@ -1750,7 +1784,7 @@ stages:
       size: 24975
       nfiles: 1
   generate-recs@ml-latest-small-flex-bpr:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/flex-bpr pipelines/flex-bpr.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1762,10 +1796,11 @@ stages:
       hash: md5
       md5: d5e115219972f27d4f682dd5a136fd55
       size: 217
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/flex-bpr/
       hash: md5
@@ -1773,7 +1808,7 @@ stages:
       size: 24934
       nfiles: 1
   generate-recs@ml-latest-small-flex-warp:
-    cmd: python run-pipeline.py -d data-split/ml-latest-small -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-latest-small -o 
       runs/ml-latest-small/flex-warp pipelines/flex-warp.toml
     deps:
     - path: data-split/ml-latest-small/
@@ -1785,10 +1820,11 @@ stages:
       hash: md5
       md5: 168a6e18618c4b38de351ea012fd24f2
       size: 214
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-latest-small/flex-warp/
       hash: md5
@@ -1796,7 +1832,7 @@ stages:
       size: 24985
       nfiles: 1
   generate-recs@ml-1m-bias:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/bias 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/bias 
       pipelines/bias.toml
     deps:
     - path: data-split/ml-1m/
@@ -1808,10 +1844,11 @@ stages:
       hash: md5
       md5: 6bdb955271198f3bdc26f27fa3ba1869
       size: 154
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/bias/
       hash: md5
@@ -1819,8 +1856,8 @@ stages:
       size: 2115214
       nfiles: 2
   generate-recs@ml-1m-popular:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/popular 
-      pipelines/popular.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/popular pipelines/popular.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1831,10 +1868,11 @@ stages:
       hash: md5
       md5: ed104618e25c8749e84674e64a05a706
       size: 108
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/popular/
       hash: md5
@@ -1842,8 +1880,8 @@ stages:
       size: 149257
       nfiles: 1
   generate-recs@ml-1m-iknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/iknn-explicit 
-      pipelines/iknn-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/iknn-explicit pipelines/iknn-explicit.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1854,10 +1892,11 @@ stages:
       hash: md5
       md5: e213003d60a9bcb6d10ae37c2d8f1565
       size: 218
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/iknn-explicit/
       hash: md5
@@ -1865,8 +1904,8 @@ stages:
       size: 2257688
       nfiles: 2
   generate-recs@ml-1m-iknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/iknn-implicit 
-      pipelines/iknn-implicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/iknn-implicit pipelines/iknn-implicit.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1877,10 +1916,11 @@ stages:
       hash: md5
       md5: c4c3a2bf99f16305eb4c96e02632bba8
       size: 210
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/iknn-implicit/
       hash: md5
@@ -1888,8 +1928,8 @@ stages:
       size: 774943
       nfiles: 1
   generate-recs@ml-1m-uknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/uknn-explicit 
-      pipelines/uknn-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/uknn-explicit pipelines/uknn-explicit.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1900,10 +1940,11 @@ stages:
       hash: md5
       md5: 31896a613b62c761240175b6a1a0ba7e
       size: 201
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/uknn-explicit/
       hash: md5
@@ -1911,8 +1952,8 @@ stages:
       size: 2228153
       nfiles: 2
   generate-recs@ml-1m-uknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/uknn-implicit 
-      pipelines/uknn-implicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/uknn-implicit pipelines/uknn-implicit.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1923,10 +1964,11 @@ stages:
       hash: md5
       md5: 194860c7359585e6141bf686b3c8d3f6
       size: 193
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/uknn-implicit/
       hash: md5
@@ -1934,8 +1976,8 @@ stages:
       size: 812655
       nfiles: 1
   generate-recs@ml-1m-als-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/als-explicit 
-      pipelines/als-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/als-explicit pipelines/als-explicit.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1946,10 +1988,11 @@ stages:
       hash: md5
       md5: 99265954ae6680a6d0761a9b0a2862d4
       size: 172
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/als-explicit/
       hash: md5
@@ -1957,8 +2000,8 @@ stages:
       size: 2217170
       nfiles: 2
   generate-recs@ml-1m-als-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/als-implicit 
-      pipelines/als-implicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/als-implicit pipelines/als-implicit.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1969,10 +2012,11 @@ stages:
       hash: md5
       md5: d745876aa50f1dace3f71257ab4425a2
       size: 166
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/als-implicit/
       hash: md5
@@ -1980,8 +2024,8 @@ stages:
       size: 802996
       nfiles: 1
   generate-recs@ml-1m-flex-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/flex-explicit 
-      pipelines/flex-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/flex-explicit pipelines/flex-explicit.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -1992,10 +2036,11 @@ stages:
       hash: md5
       md5: 3d5ec38b202a299ca44c39eaa4ffdc94
       size: 194
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/flex-explicit/
       hash: md5
@@ -2003,8 +2048,8 @@ stages:
       size: 2251439
       nfiles: 2
   generate-recs@ml-1m-flex-logistic:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/flex-logistic 
-      pipelines/flex-logistic.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/flex-logistic pipelines/flex-logistic.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -2015,10 +2060,11 @@ stages:
       hash: md5
       md5: e406e5aa8ab2fd7645cf3b6416d8549c
       size: 204
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/flex-logistic/
       hash: md5
@@ -2026,8 +2072,8 @@ stages:
       size: 805674
       nfiles: 1
   generate-recs@ml-1m-flex-bpr:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/flex-bpr 
-      pipelines/flex-bpr.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/flex-bpr pipelines/flex-bpr.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -2038,10 +2084,11 @@ stages:
       hash: md5
       md5: d5e115219972f27d4f682dd5a136fd55
       size: 217
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/flex-bpr/
       hash: md5
@@ -2049,8 +2096,8 @@ stages:
       size: 811236
       nfiles: 1
   generate-recs@ml-1m-flex-warp:
-    cmd: python run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/flex-warp 
-      pipelines/flex-warp.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/flex-warp pipelines/flex-warp.toml
     deps:
     - path: data-split/ml-1m/
       hash: md5
@@ -2061,10 +2108,11 @@ stages:
       hash: md5
       md5: 168a6e18618c4b38de351ea012fd24f2
       size: 214
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-1m/flex-warp/
       hash: md5
@@ -2072,7 +2120,7 @@ stages:
       size: 811200
       nfiles: 1
   generate-recs@ml-20m-bias:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/bias 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/bias
       pipelines/bias.toml
     deps:
     - path: data-split/ml-20m/
@@ -2084,10 +2132,11 @@ stages:
       hash: md5
       md5: 6bdb955271198f3bdc26f27fa3ba1869
       size: 154
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/bias/
       hash: md5
@@ -2095,8 +2144,8 @@ stages:
       size: 12792824
       nfiles: 2
   generate-recs@ml-20m-popular:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/popular 
-      pipelines/popular.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/popular pipelines/popular.toml
     deps:
     - path: data-split/ml-20m/
       hash: md5
@@ -2107,10 +2156,11 @@ stages:
       hash: md5
       md5: ed104618e25c8749e84674e64a05a706
       size: 108
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/popular/
       hash: md5
@@ -2118,7 +2168,7 @@ stages:
       size: 960201
       nfiles: 1
   generate-recs@ml-20m-iknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
       runs/ml-20m/iknn-explicit pipelines/iknn-explicit.toml
     deps:
     - path: data-split/ml-20m/
@@ -2130,10 +2180,11 @@ stages:
       hash: md5
       md5: e213003d60a9bcb6d10ae37c2d8f1565
       size: 218
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/iknn-explicit/
       hash: md5
@@ -2141,7 +2192,7 @@ stages:
       size: 13697325
       nfiles: 2
   generate-recs@ml-20m-iknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
       runs/ml-20m/iknn-implicit pipelines/iknn-implicit.toml
     deps:
     - path: data-split/ml-20m/
@@ -2153,10 +2204,11 @@ stages:
       hash: md5
       md5: c4c3a2bf99f16305eb4c96e02632bba8
       size: 210
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/iknn-implicit/
       hash: md5
@@ -2164,7 +2216,7 @@ stages:
       size: 3393825
       nfiles: 1
   generate-recs@ml-20m-uknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
       runs/ml-20m/uknn-explicit pipelines/uknn-explicit.toml
     deps:
     - path: data-split/ml-20m/
@@ -2176,10 +2228,11 @@ stages:
       hash: md5
       md5: 31896a613b62c761240175b6a1a0ba7e
       size: 201
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/uknn-explicit/
       hash: md5
@@ -2187,7 +2240,7 @@ stages:
       size: 13357894
       nfiles: 2
   generate-recs@ml-20m-uknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
       runs/ml-20m/uknn-implicit pipelines/uknn-implicit.toml
     deps:
     - path: data-split/ml-20m/
@@ -2199,10 +2252,11 @@ stages:
       hash: md5
       md5: 194860c7359585e6141bf686b3c8d3f6
       size: 193
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/uknn-implicit/
       hash: md5
@@ -2210,8 +2264,8 @@ stages:
       size: 3514764
       nfiles: 1
   generate-recs@ml-20m-als-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/als-explicit
-      pipelines/als-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/als-explicit pipelines/als-explicit.toml
     deps:
     - path: data-split/ml-20m/
       hash: md5
@@ -2222,10 +2276,11 @@ stages:
       hash: md5
       md5: 99265954ae6680a6d0761a9b0a2862d4
       size: 172
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/als-explicit/
       hash: md5
@@ -2233,8 +2288,8 @@ stages:
       size: 13329581
       nfiles: 2
   generate-recs@ml-20m-als-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/als-implicit
-      pipelines/als-implicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/als-implicit pipelines/als-implicit.toml
     deps:
     - path: data-split/ml-20m/
       hash: md5
@@ -2245,10 +2300,11 @@ stages:
       hash: md5
       md5: d745876aa50f1dace3f71257ab4425a2
       size: 166
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/als-implicit/
       hash: md5
@@ -2256,7 +2312,7 @@ stages:
       size: 3552147
       nfiles: 1
   generate-recs@ml-20m-flex-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
       runs/ml-20m/flex-explicit pipelines/flex-explicit.toml
     deps:
     - path: data-split/ml-20m/
@@ -2268,10 +2324,11 @@ stages:
       hash: md5
       md5: 3d5ec38b202a299ca44c39eaa4ffdc94
       size: 194
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/flex-explicit/
       hash: md5
@@ -2279,7 +2336,7 @@ stages:
       size: 13566267
       nfiles: 2
   generate-recs@ml-20m-flex-logistic:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
       runs/ml-20m/flex-logistic pipelines/flex-logistic.toml
     deps:
     - path: data-split/ml-20m/
@@ -2291,10 +2348,11 @@ stages:
       hash: md5
       md5: e406e5aa8ab2fd7645cf3b6416d8549c
       size: 204
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/flex-logistic/
       hash: md5
@@ -2302,8 +2360,8 @@ stages:
       size: 3598761
       nfiles: 1
   generate-recs@ml-20m-flex-bpr:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/flex-bpr 
-      pipelines/flex-bpr.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/flex-bpr pipelines/flex-bpr.toml
     deps:
     - path: data-split/ml-20m/
       hash: md5
@@ -2314,10 +2372,11 @@ stages:
       hash: md5
       md5: d5e115219972f27d4f682dd5a136fd55
       size: 217
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/flex-bpr/
       hash: md5
@@ -2325,8 +2384,8 @@ stages:
       size: 3627356
       nfiles: 1
   generate-recs@ml-20m-flex-warp:
-    cmd: python run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/flex-warp 
-      pipelines/flex-warp.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/flex-warp pipelines/flex-warp.toml
     deps:
     - path: data-split/ml-20m/
       hash: md5
@@ -2337,10 +2396,11 @@ stages:
       hash: md5
       md5: 168a6e18618c4b38de351ea012fd24f2
       size: 214
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-20m/flex-warp/
       hash: md5
@@ -2348,7 +2408,7 @@ stages:
       size: 3621595
       nfiles: 1
   generate-recs@ml-25m-bias:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o runs/ml-25m/bias 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o runs/ml-25m/bias
       pipelines/bias.toml
     deps:
     - path: data-split/ml-25m/
@@ -2360,10 +2420,11 @@ stages:
       hash: md5
       md5: 6bdb955271198f3bdc26f27fa3ba1869
       size: 154
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/bias/
       hash: md5
@@ -2371,8 +2432,8 @@ stages:
       size: 13807971
       nfiles: 2
   generate-recs@ml-25m-popular:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o runs/ml-25m/popular 
-      pipelines/popular.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
+      runs/ml-25m/popular pipelines/popular.toml
     deps:
     - path: data-split/ml-25m/
       hash: md5
@@ -2383,10 +2444,11 @@ stages:
       hash: md5
       md5: ed104618e25c8749e84674e64a05a706
       size: 108
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/popular/
       hash: md5
@@ -2394,7 +2456,7 @@ stages:
       size: 925700
       nfiles: 1
   generate-recs@ml-25m-iknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
       runs/ml-25m/iknn-explicit pipelines/iknn-explicit.toml
     deps:
     - path: data-split/ml-25m/
@@ -2406,10 +2468,11 @@ stages:
       hash: md5
       md5: e213003d60a9bcb6d10ae37c2d8f1565
       size: 218
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/iknn-explicit/
       hash: md5
@@ -2417,7 +2480,7 @@ stages:
       size: 14932947
       nfiles: 2
   generate-recs@ml-25m-iknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
       runs/ml-25m/iknn-implicit pipelines/iknn-implicit.toml
     deps:
     - path: data-split/ml-25m/
@@ -2429,10 +2492,11 @@ stages:
       hash: md5
       md5: c4c3a2bf99f16305eb4c96e02632bba8
       size: 210
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/iknn-implicit/
       hash: md5
@@ -2440,7 +2504,7 @@ stages:
       size: 3937792
       nfiles: 1
   generate-recs@ml-25m-uknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
       runs/ml-25m/uknn-explicit pipelines/uknn-explicit.toml
     deps:
     - path: data-split/ml-25m/
@@ -2452,10 +2516,11 @@ stages:
       hash: md5
       md5: 31896a613b62c761240175b6a1a0ba7e
       size: 201
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/uknn-explicit/
       hash: md5
@@ -2463,7 +2528,7 @@ stages:
       size: 14464145
       nfiles: 2
   generate-recs@ml-25m-uknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
       runs/ml-25m/uknn-implicit pipelines/uknn-implicit.toml
     deps:
     - path: data-split/ml-25m/
@@ -2475,10 +2540,11 @@ stages:
       hash: md5
       md5: 194860c7359585e6141bf686b3c8d3f6
       size: 193
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/uknn-implicit/
       hash: md5
@@ -2486,8 +2552,8 @@ stages:
       size: 4079080
       nfiles: 1
   generate-recs@ml-25m-als-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o runs/ml-25m/als-explicit
-      pipelines/als-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
+      runs/ml-25m/als-explicit pipelines/als-explicit.toml
     deps:
     - path: data-split/ml-25m/
       hash: md5
@@ -2498,10 +2564,11 @@ stages:
       hash: md5
       md5: 99265954ae6680a6d0761a9b0a2862d4
       size: 172
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/als-explicit/
       hash: md5
@@ -2509,8 +2576,8 @@ stages:
       size: 14415203
       nfiles: 2
   generate-recs@ml-25m-als-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o runs/ml-25m/als-implicit
-      pipelines/als-implicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
+      runs/ml-25m/als-implicit pipelines/als-implicit.toml
     deps:
     - path: data-split/ml-25m/
       hash: md5
@@ -2521,10 +2588,11 @@ stages:
       hash: md5
       md5: d745876aa50f1dace3f71257ab4425a2
       size: 166
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/als-implicit/
       hash: md5
@@ -2532,7 +2600,7 @@ stages:
       size: 4124640
       nfiles: 1
   generate-recs@ml-25m-flex-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
       runs/ml-25m/flex-explicit pipelines/flex-explicit.toml
     deps:
     - path: data-split/ml-25m/
@@ -2544,10 +2612,11 @@ stages:
       hash: md5
       md5: 3d5ec38b202a299ca44c39eaa4ffdc94
       size: 194
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/flex-explicit/
       hash: md5
@@ -2555,7 +2624,7 @@ stages:
       size: 14770266
       nfiles: 2
   generate-recs@ml-25m-flex-logistic:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
       runs/ml-25m/flex-logistic pipelines/flex-logistic.toml
     deps:
     - path: data-split/ml-25m/
@@ -2567,10 +2636,11 @@ stages:
       hash: md5
       md5: e406e5aa8ab2fd7645cf3b6416d8549c
       size: 204
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/flex-logistic/
       hash: md5
@@ -2578,8 +2648,8 @@ stages:
       size: 4240616
       nfiles: 1
   generate-recs@ml-25m-flex-bpr:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o runs/ml-25m/flex-bpr 
-      pipelines/flex-bpr.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
+      runs/ml-25m/flex-bpr pipelines/flex-bpr.toml
     deps:
     - path: data-split/ml-25m/
       hash: md5
@@ -2590,10 +2660,11 @@ stages:
       hash: md5
       md5: d5e115219972f27d4f682dd5a136fd55
       size: 217
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/flex-bpr/
       hash: md5
@@ -2601,8 +2672,8 @@ stages:
       size: 4195481
       nfiles: 1
   generate-recs@ml-25m-flex-warp:
-    cmd: python run-pipeline.py -d data-split/ml-25m -o runs/ml-25m/flex-warp 
-      pipelines/flex-warp.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-25m -o 
+      runs/ml-25m/flex-warp pipelines/flex-warp.toml
     deps:
     - path: data-split/ml-25m/
       hash: md5
@@ -2613,10 +2684,11 @@ stages:
       hash: md5
       md5: 168a6e18618c4b38de351ea012fd24f2
       size: 214
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-25m/flex-warp/
       hash: md5
@@ -2624,7 +2696,7 @@ stages:
       size: 4203113
       nfiles: 1
   generate-recs@ml-32m-bias:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o runs/ml-32m/bias 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o runs/ml-32m/bias
       pipelines/bias.toml
     deps:
     - path: data-split/ml-32m/
@@ -2636,10 +2708,11 @@ stages:
       hash: md5
       md5: 6bdb955271198f3bdc26f27fa3ba1869
       size: 154
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/bias/
       hash: md5
@@ -2647,8 +2720,8 @@ stages:
       size: 18130810
       nfiles: 2
   generate-recs@ml-32m-popular:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o runs/ml-32m/popular 
-      pipelines/popular.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
+      runs/ml-32m/popular pipelines/popular.toml
     deps:
     - path: data-split/ml-32m/
       hash: md5
@@ -2659,10 +2732,11 @@ stages:
       hash: md5
       md5: ed104618e25c8749e84674e64a05a706
       size: 108
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/popular/
       hash: md5
@@ -2670,7 +2744,7 @@ stages:
       size: 1173232
       nfiles: 1
   generate-recs@ml-32m-iknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
       runs/ml-32m/iknn-explicit pipelines/iknn-explicit.toml
     deps:
     - path: data-split/ml-32m/
@@ -2682,10 +2756,11 @@ stages:
       hash: md5
       md5: e213003d60a9bcb6d10ae37c2d8f1565
       size: 218
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/iknn-explicit/
       hash: md5
@@ -2693,7 +2768,7 @@ stages:
       size: 19550911
       nfiles: 2
   generate-recs@ml-32m-iknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
       runs/ml-32m/iknn-implicit pipelines/iknn-implicit.toml
     deps:
     - path: data-split/ml-32m/
@@ -2705,10 +2780,11 @@ stages:
       hash: md5
       md5: c4c3a2bf99f16305eb4c96e02632bba8
       size: 210
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/iknn-implicit/
       hash: md5
@@ -2716,7 +2792,7 @@ stages:
       size: 4953409
       nfiles: 1
   generate-recs@ml-32m-uknn-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
       runs/ml-32m/uknn-explicit pipelines/uknn-explicit.toml
     deps:
     - path: data-split/ml-32m/
@@ -2728,10 +2804,11 @@ stages:
       hash: md5
       md5: 31896a613b62c761240175b6a1a0ba7e
       size: 201
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/uknn-explicit/
       hash: md5
@@ -2739,7 +2816,7 @@ stages:
       size: 19028886
       nfiles: 2
   generate-recs@ml-32m-uknn-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
       runs/ml-32m/uknn-implicit pipelines/uknn-implicit.toml
     deps:
     - path: data-split/ml-32m/
@@ -2751,10 +2828,11 @@ stages:
       hash: md5
       md5: 194860c7359585e6141bf686b3c8d3f6
       size: 193
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/uknn-implicit/
       hash: md5
@@ -2762,8 +2840,8 @@ stages:
       size: 5063915
       nfiles: 1
   generate-recs@ml-32m-als-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o runs/ml-32m/als-explicit
-      pipelines/als-explicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
+      runs/ml-32m/als-explicit pipelines/als-explicit.toml
     deps:
     - path: data-split/ml-32m/
       hash: md5
@@ -2774,10 +2852,11 @@ stages:
       hash: md5
       md5: 99265954ae6680a6d0761a9b0a2862d4
       size: 172
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/als-explicit/
       hash: md5
@@ -2785,8 +2864,8 @@ stages:
       size: 19009692
       nfiles: 2
   generate-recs@ml-32m-als-implicit:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o runs/ml-32m/als-implicit
-      pipelines/als-implicit.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
+      runs/ml-32m/als-implicit pipelines/als-implicit.toml
     deps:
     - path: data-split/ml-32m/
       hash: md5
@@ -2797,10 +2876,11 @@ stages:
       hash: md5
       md5: d745876aa50f1dace3f71257ab4425a2
       size: 166
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/als-implicit/
       hash: md5
@@ -2808,7 +2888,7 @@ stages:
       size: 5134066
       nfiles: 1
   generate-recs@ml-32m-flex-explicit:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
       runs/ml-32m/flex-explicit pipelines/flex-explicit.toml
     deps:
     - path: data-split/ml-32m/
@@ -2820,10 +2900,11 @@ stages:
       hash: md5
       md5: 3d5ec38b202a299ca44c39eaa4ffdc94
       size: 194
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/flex-explicit/
       hash: md5
@@ -2831,7 +2912,7 @@ stages:
       size: 19371954
       nfiles: 2
   generate-recs@ml-32m-flex-logistic:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o 
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
       runs/ml-32m/flex-logistic pipelines/flex-logistic.toml
     deps:
     - path: data-split/ml-32m/
@@ -2843,10 +2924,11 @@ stages:
       hash: md5
       md5: e406e5aa8ab2fd7645cf3b6416d8549c
       size: 204
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/flex-logistic/
       hash: md5
@@ -2854,8 +2936,8 @@ stages:
       size: 5298952
       nfiles: 1
   generate-recs@ml-32m-flex-bpr:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o runs/ml-32m/flex-bpr 
-      pipelines/flex-bpr.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
+      runs/ml-32m/flex-bpr pipelines/flex-bpr.toml
     deps:
     - path: data-split/ml-32m/
       hash: md5
@@ -2866,10 +2948,11 @@ stages:
       hash: md5
       md5: d5e115219972f27d4f682dd5a136fd55
       size: 217
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/flex-bpr/
       hash: md5
@@ -2877,8 +2960,8 @@ stages:
       size: 5237170
       nfiles: 1
   generate-recs@ml-32m-flex-warp:
-    cmd: python run-pipeline.py -d data-split/ml-32m -o runs/ml-32m/flex-warp 
-      pipelines/flex-warp.toml
+    cmd: python scripts/run-pipeline.py -d data-split/ml-32m -o 
+      runs/ml-32m/flex-warp pipelines/flex-warp.toml
     deps:
     - path: data-split/ml-32m/
       hash: md5
@@ -2889,10 +2972,11 @@ stages:
       hash: md5
       md5: 168a6e18618c4b38de351ea012fd24f2
       size: 214
-    - path: run-pipeline.py
+    - path: scripts/run-pipeline.py
       hash: md5
-      md5: 80984bac22ecdb3254e9e3943cb0a613
-      size: 2485
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
     outs:
     - path: runs/ml-32m/flex-warp/
       hash: md5

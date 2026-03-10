@@ -38,9 +38,9 @@ stages:
     matrix:
       data: ${datasets}
       pipeline: ${pipelines}
-    cmd: python run-pipeline.py -d data-split/${item.data} -o runs/${item.data}/${item.pipeline} pipelines/${item.pipeline}.toml
+    cmd: python scripts/run-pipeline.py -d data-split/${item.data} -o runs/${item.data}/${item.pipeline} pipelines/${item.pipeline}.toml
     deps:
-      - run-pipeline.py
+      - scripts/run-pipeline.py
       - pipelines/${item.pipeline}.toml
       - data-split/${item.data}/
     outs:
