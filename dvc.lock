@@ -609,18 +609,18 @@ stages:
       size: 7179
     - path: runs/ml-100k/
       hash: md5
-      md5: a24f76f46c2b561ebe58913e6a46a0b9.dir
-      size: 1030523
-      nfiles: 18
+      md5: 3b7e2ac7207af8ba723ca1fe71f91c16.dir
+      size: 1105355
+      nfiles: 19
     outs:
     - path: eval-metrics.ml-100k.json
       hash: md5
-      md5: 38b5e0272d4fa44731895302ac74a410
-      size: 957
+      md5: 552301678b092781de862f72f9d2b519
+      size: 1030
     - path: eval-report.ml-100k.ipynb
       hash: md5
-      md5: 56d312626372b680d071a612aed000b1
-      size: 99993
+      md5: cb31d56607cd824aad4e7446389b4970
+      size: 102370
   eval-report@ml-latest-small:
     cmd: papermill -r dataset ml-latest-small eval-report.ipynb 
       eval-report.ml-latest-small.ipynb
@@ -688,18 +688,18 @@ stages:
       size: 7179
     - path: runs/ml-10m/
       hash: md5
-      md5: 0e34ce89569865fdc1fac224b3fb742d.dir
-      size: 48955089
-      nfiles: 18
+      md5: aa31b8138a779135ca04ade9b94d4ec9.dir
+      size: 51215580
+      nfiles: 19
     outs:
     - path: eval-metrics.ml-10m.json
       hash: md5
-      md5: 155136273b6de1e376c16953d800ccb7
-      size: 958
+      md5: 67b674f24ab631f21a995dfafdfca1a7
+      size: 1030
     - path: eval-report.ml-10m.ipynb
       hash: md5
-      md5: c1e2cf12c8f23a149a022641743c523a
-      size: 101791
+      md5: e3852640e36586ae2770d48611af5f48
+      size: 103137
   eval-report@ml-20m:
     cmd: papermill -r dataset ml-20m eval-report.ipynb eval-report.ml-20m.ipynb
     deps:
@@ -3067,3 +3067,51 @@ stages:
       hash: md5
       md5: 0d4cc67be867c2fe98d7d5c113df8174
       size: 376136
+  generate-recs@ml-100k-ease:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/ease pipelines/ease.toml
+    deps:
+    - path: data-split/ml-100k/
+      hash: md5
+      md5: c2c7a7f3cb3485f170b62bc6d8d8ae63.dir
+      size: 630260
+      nfiles: 6
+    - path: pipelines/ease.toml
+      hash: md5
+      md5: 08b3b2735a2e038b8e743e7967479810
+      size: 153
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-100k/ease/
+      hash: md5
+      md5: e7e7329aa143507002cd7867988ec69e.dir
+      size: 74815
+      nfiles: 1
+  generate-recs@ml-10m-ease:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/ease
+      pipelines/ease.toml
+    deps:
+    - path: data-split/ml-10m/
+      hash: md5
+      md5: faeca257b9a946a83aaa06cec43383bc.dir
+      size: 62642873
+      nfiles: 6
+    - path: pipelines/ease.toml
+      hash: md5
+      md5: 08b3b2735a2e038b8e743e7967479810
+      size: 153
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-10m/ease/
+      hash: md5
+      md5: deb9f2e3a71c21ab0db890ac7074affc.dir
+      size: 2260485
+      nfiles: 1
