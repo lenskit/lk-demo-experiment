@@ -609,18 +609,18 @@ stages:
       size: 7179
     - path: runs/ml-100k/
       hash: md5
-      md5: a24f76f46c2b561ebe58913e6a46a0b9.dir
-      size: 1030523
-      nfiles: 18
+      md5: 587174b3dad3b8d8adf683faa81919b9.dir
+      size: 1176387
+      nfiles: 20
     outs:
     - path: eval-metrics.ml-100k.json
       hash: md5
-      md5: 38b5e0272d4fa44731895302ac74a410
-      size: 957
+      md5: cc23d84d19980456938de2d1e37f413d
+      size: 1114
     - path: eval-report.ml-100k.ipynb
       hash: md5
-      md5: 56d312626372b680d071a612aed000b1
-      size: 99993
+      md5: b1e3942350a1ec3cd89efeb63f753ff5
+      size: 106276
   eval-report@ml-latest-small:
     cmd: papermill -r dataset ml-latest-small eval-report.ipynb 
       eval-report.ml-latest-small.ipynb
@@ -688,18 +688,18 @@ stages:
       size: 7179
     - path: runs/ml-10m/
       hash: md5
-      md5: 0e34ce89569865fdc1fac224b3fb742d.dir
-      size: 48955089
-      nfiles: 18
+      md5: 141a848984815c958a060074d082ef7b.dir
+      size: 53405230
+      nfiles: 20
     outs:
     - path: eval-metrics.ml-10m.json
       hash: md5
-      md5: 155136273b6de1e376c16953d800ccb7
-      size: 958
+      md5: 1b44cf1682a580d4337c9c70bf0f6aee
+      size: 1114
     - path: eval-report.ml-10m.ipynb
       hash: md5
-      md5: c1e2cf12c8f23a149a022641743c523a
-      size: 101791
+      md5: 508f77f0925c256fa08991fbd5a52e9a
+      size: 107077
   eval-report@ml-20m:
     cmd: papermill -r dataset ml-20m eval-report.ipynb eval-report.ml-20m.ipynb
     deps:
@@ -3067,3 +3067,99 @@ stages:
       hash: md5
       md5: 0d4cc67be867c2fe98d7d5c113df8174
       size: 376136
+  generate-recs@ml-100k-lightgcn:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/lightgcn pipelines/lightgcn.toml
+    deps:
+    - path: data-split/ml-100k/
+      hash: md5
+      md5: c2c7a7f3cb3485f170b62bc6d8d8ae63.dir
+      size: 630260
+      nfiles: 6
+    - path: pipelines/lightgcn.toml
+      hash: md5
+      md5: fdf6daa33d580316407500192773f473
+      size: 240
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-100k/lightgcn/
+      hash: md5
+      md5: 594c1e419726b57504d464425eee25da.dir
+      size: 72901
+      nfiles: 1
+  generate-recs@ml-10m-lightgcn:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/lightgcn pipelines/lightgcn.toml
+    deps:
+    - path: data-split/ml-10m/
+      hash: md5
+      md5: faeca257b9a946a83aaa06cec43383bc.dir
+      size: 62642873
+      nfiles: 6
+    - path: pipelines/lightgcn.toml
+      hash: md5
+      md5: fdf6daa33d580316407500192773f473
+      size: 240
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-10m/lightgcn/
+      hash: md5
+      md5: abc0ecfaede13b0e313d8198edffed8f.dir
+      size: 2224612
+      nfiles: 1
+  generate-recs@ml-100k-lightgcn-warp:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/lightgcn-warp pipelines/lightgcn-warp.toml
+    deps:
+    - path: data-split/ml-100k/
+      hash: md5
+      md5: c2c7a7f3cb3485f170b62bc6d8d8ae63.dir
+      size: 630260
+      nfiles: 6
+    - path: pipelines/lightgcn-warp.toml
+      hash: md5
+      md5: c1879b9a35dce1d981fee817b17a7dda
+      size: 236
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-100k/lightgcn-warp/
+      hash: md5
+      md5: 694cceb6595b53d40fca61e82f6f336b.dir
+      size: 72927
+      nfiles: 1
+  generate-recs@ml-10m-lightgcn-warp:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/lightgcn-warp pipelines/lightgcn-warp.toml
+    deps:
+    - path: data-split/ml-10m/
+      hash: md5
+      md5: faeca257b9a946a83aaa06cec43383bc.dir
+      size: 62642873
+      nfiles: 6
+    - path: pipelines/lightgcn-warp.toml
+      hash: md5
+      md5: c1879b9a35dce1d981fee817b17a7dda
+      size: 236
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-10m/lightgcn-warp/
+      hash: md5
+      md5: 735eb8737ea9dd9738f56490008eda65.dir
+      size: 2225504
+      nfiles: 1
