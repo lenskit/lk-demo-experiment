@@ -1,5 +1,5 @@
 [meta]
-name = "uknn-implicit"
+name = "iknn-implicit"
 
 [options]
 base = "std:topn"
