@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 """
 Use a pipeline to produce recommendations (and predictions).  It uses a global
 temporal split determined by fraction of the test data.
