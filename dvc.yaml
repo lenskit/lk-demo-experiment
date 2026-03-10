@@ -15,6 +15,7 @@ vars:
       - iknn-implicit
       - uknn-explicit
       - uknn-implicit
+      - ease
       - als-explicit
       - als-implicit
       - flex-explicit

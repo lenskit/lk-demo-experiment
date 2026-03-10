@@ -1,0 +1,11 @@
+[meta]
+name = "ease"
+
+[options]
+base = "std:topn"
+
+[components.scorer]
+class = "lenskit.knn.EASEScorer"
+
+[components.scorer.config]
+regularization = 250
