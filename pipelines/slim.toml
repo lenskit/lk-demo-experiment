@@ -1,0 +1,8 @@
+[meta]
+name = "slim-fs"
+
+[options]
+base = "std:topn"
+
+[components.scorer]
+class = "lenskit.knn.SLIMScorer"
