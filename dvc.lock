@@ -3163,3 +3163,27 @@ stages:
       md5: 735eb8737ea9dd9738f56490008eda65.dir
       size: 2225504
       nfiles: 1
+  generate-recs@ml-20m-lightgcn:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/lightgcn pipelines/lightgcn.toml
+    deps:
+    - path: data-split/ml-20m/
+      hash: md5
+      md5: a629420f3708402eebafece534c52fa3.dir
+      size: 152485897
+      nfiles: 6
+    - path: pipelines/lightgcn.toml
+      hash: md5
+      md5: fdf6daa33d580316407500192773f473
+      size: 240
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-20m/lightgcn/
+      hash: md5
+      md5: 4deaaf92ce331892799e09618fd410a2.dir
+      size: 3582914
+      nfiles: 1
