@@ -21,6 +21,8 @@ vars:
       - flex-logistic
       - flex-bpr
       - flex-warp
+      - lightgcn
+      - lightgcn-warp
 
 # This pipeline defines top-level output stages.
 stages:

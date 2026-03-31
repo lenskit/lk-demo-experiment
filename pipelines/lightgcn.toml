@@ -1,0 +1,15 @@
+[meta]
+name = "flex-bpr"
+
+[options]
+base = "std:topn"
+
+[components.scorer]
+class = "lenskit.flexmf.FlexMFImplicitScorer"
+
+[components.scorer.config]
+embedding_size = 32
+epochs = 15
+loss = "pairwise"
+convolution_layers = 2
+item_bias = false

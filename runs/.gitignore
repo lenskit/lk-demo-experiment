@@ -140,3 +140,6 @@
 /ml-32m-FlexLMF
 /ml-32m-FlexBPR
 /ml-32m-FlexWARP
+/ml-1m-LightGCN
+/ml-10m-LightGCN
+/ml-100k-LightGCN
