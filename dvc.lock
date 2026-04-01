@@ -609,18 +609,18 @@ stages:
       size: 7179
     - path: runs/ml-100k/
       hash: md5
-      md5: 587174b3dad3b8d8adf683faa81919b9.dir
-      size: 1176387
-      nfiles: 20
+      md5: a797e5157d2de68e0fa3ac2280f03025.dir
+      size: 1326897
+      nfiles: 22
     outs:
     - path: eval-metrics.ml-100k.json
       hash: md5
-      md5: cc23d84d19980456938de2d1e37f413d
-      size: 1114
+      md5: fa53d9ec7097b8232a7db5f659834507
+      size: 1262
     - path: eval-report.ml-100k.ipynb
       hash: md5
-      md5: b1e3942350a1ec3cd89efeb63f753ff5
-      size: 106276
+      md5: 86be649875bdb813bcb37002d6d8168b
+      size: 111275
   eval-report@ml-latest-small:
     cmd: papermill -r dataset ml-latest-small eval-report.ipynb 
       eval-report.ml-latest-small.ipynb
@@ -662,18 +662,18 @@ stages:
       size: 7179
     - path: runs/ml-1m/
       hash: md5
-      md5: 82f97946a95b922ac4511cb386c0c8c2.dir
-      size: 16037779
-      nfiles: 18
+      md5: 7d3f313ec10e952de94670a8ad51915a.dir
+      size: 19265619
+      nfiles: 22
     outs:
     - path: eval-metrics.ml-1m.json
       hash: md5
-      md5: 405f1eec16d146891a479d2b481b7a24
-      size: 955
+      md5: a20f2682bd6d8dcb787d1524791a177a
+      size: 1261
     - path: eval-report.ml-1m.ipynb
       hash: md5
-      md5: 49c7dabd38cb41c7087aecacc7da5714
-      size: 98589
+      md5: 98f5de6e4e17c3060f8bdcd7aad11129
+      size: 110275
   eval-report@ml-10m:
     cmd: papermill -r dataset ml-10m eval-report.ipynb eval-report.ml-10m.ipynb
     deps:
@@ -688,18 +688,18 @@ stages:
       size: 7179
     - path: runs/ml-10m/
       hash: md5
-      md5: 141a848984815c958a060074d082ef7b.dir
-      size: 53405230
-      nfiles: 20
+      md5: 54b9fe2cec1d4e9d5d9463614e8bb612.dir
+      size: 57940963
+      nfiles: 22
     outs:
     - path: eval-metrics.ml-10m.json
       hash: md5
-      md5: 1b44cf1682a580d4337c9c70bf0f6aee
-      size: 1114
+      md5: 910fd29148afc613836dc2d3789c7f23
+      size: 1262
     - path: eval-report.ml-10m.ipynb
       hash: md5
-      md5: 508f77f0925c256fa08991fbd5a52e9a
-      size: 107077
+      md5: 814952be8517ac63a31ef3dbe1fd8df5
+      size: 111781
   eval-report@ml-20m:
     cmd: papermill -r dataset ml-20m eval-report.ipynb eval-report.ml-20m.ipynb
     deps:
@@ -714,18 +714,18 @@ stages:
       size: 7179
     - path: runs/ml-20m/
       hash: md5
-      md5: f1caaa95f2bd1a46be88e05c158fec96.dir
-      size: 89012694
-      nfiles: 18
+      md5: f7cabc5c159dc15665ae96d7a0b3ac10.dir
+      size: 103488570
+      nfiles: 22
     outs:
     - path: eval-metrics.ml-20m.json
       hash: md5
-      md5: a7aae1313838f58f695fbf9e81ab92a4
-      size: 953
+      md5: 6057f4ce2d060bc5e196ebf0dbdccf97
+      size: 1257
     - path: eval-report.ml-20m.ipynb
       hash: md5
-      md5: 140f0690732e4f7f9cbc47d39229635b
-      size: 101741
+      md5: 78c859e2ba0610d6edb32a83c5a48d5b
+      size: 111737
   eval-report@ml-25m:
     cmd: papermill -r dataset ml-25m eval-report.ipynb eval-report.ml-25m.ipynb
     deps:
@@ -3186,4 +3186,268 @@ stages:
       hash: md5
       md5: 4deaaf92ce331892799e09618fd410a2.dir
       size: 3582914
+      nfiles: 1
+  generate-recs@ml-100k-slim:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/slim pipelines/slim.toml
+    deps:
+    - path: data-split/ml-100k/
+      hash: md5
+      md5: c2c7a7f3cb3485f170b62bc6d8d8ae63.dir
+      size: 630260
+      nfiles: 6
+    - path: pipelines/slim.toml
+      hash: md5
+      md5: 4119f81ebb38dd1beca254d34cdb2ecb
+      size: 107
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-100k/slim/
+      hash: md5
+      md5: 742f5301604d6160cf13dbc018477846.dir
+      size: 75357
+      nfiles: 1
+  generate-recs@ml-100k-slim-fs:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-100k -o 
+      runs/ml-100k/slim-fs pipelines/slim-fs.toml
+    deps:
+    - path: data-split/ml-100k/
+      hash: md5
+      md5: c2c7a7f3cb3485f170b62bc6d8d8ae63.dir
+      size: 630260
+      nfiles: 6
+    - path: pipelines/slim-fs.toml
+      hash: md5
+      md5: 9d5bea50463ce645f83dd8f4522c6d95
+      size: 150
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-100k/slim-fs/
+      hash: md5
+      md5: 029e58c4b37d401c1635572f1ed46fc8.dir
+      size: 75138
+      nfiles: 1
+  generate-recs@ml-1m-slim:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o runs/ml-1m/slim 
+      pipelines/slim.toml
+    deps:
+    - path: data-split/ml-1m/
+      hash: md5
+      md5: 5c017bfa97785a2f1d9632d8b43f66e0.dir
+      size: 5716034
+      nfiles: 6
+    - path: pipelines/slim.toml
+      hash: md5
+      md5: 4119f81ebb38dd1beca254d34cdb2ecb
+      size: 107
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-1m/slim/
+      hash: md5
+      md5: 5a3bc2385cb5492292305fb6509ee596.dir
+      size: 818010
+      nfiles: 1
+  generate-recs@ml-1m-slim-fs:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/slim-fs pipelines/slim-fs.toml
+    deps:
+    - path: data-split/ml-1m/
+      hash: md5
+      md5: 5c017bfa97785a2f1d9632d8b43f66e0.dir
+      size: 5716034
+      nfiles: 6
+    - path: pipelines/slim-fs.toml
+      hash: md5
+      md5: 9d5bea50463ce645f83dd8f4522c6d95
+      size: 150
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-1m/slim-fs/
+      hash: md5
+      md5: c6c90de03d9574273f0ac40593ac6aef.dir
+      size: 815628
+      nfiles: 1
+  generate-recs@ml-1m-lightgcn:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/lightgcn pipelines/lightgcn.toml
+    deps:
+    - path: data-split/ml-1m/
+      hash: md5
+      md5: 5c017bfa97785a2f1d9632d8b43f66e0.dir
+      size: 5716034
+      nfiles: 6
+    - path: pipelines/lightgcn.toml
+      hash: md5
+      md5: fdf6daa33d580316407500192773f473
+      size: 240
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-1m/lightgcn/
+      hash: md5
+      md5: 16254d4610bc7b365827fe62e1273aed.dir
+      size: 796833
+      nfiles: 1
+  generate-recs@ml-1m-lightgcn-warp:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-1m -o 
+      runs/ml-1m/lightgcn-warp pipelines/lightgcn-warp.toml
+    deps:
+    - path: data-split/ml-1m/
+      hash: md5
+      md5: 5c017bfa97785a2f1d9632d8b43f66e0.dir
+      size: 5716034
+      nfiles: 6
+    - path: pipelines/lightgcn-warp.toml
+      hash: md5
+      md5: c1879b9a35dce1d981fee817b17a7dda
+      size: 236
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-1m/lightgcn-warp/
+      hash: md5
+      md5: e81c66c1a458656a75fc30a6f712a82f.dir
+      size: 797329
+      nfiles: 1
+  generate-recs@ml-10m-slim:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o runs/ml-10m/slim
+      pipelines/slim.toml
+    deps:
+    - path: data-split/ml-10m/
+      hash: md5
+      md5: faeca257b9a946a83aaa06cec43383bc.dir
+      size: 62642873
+      nfiles: 6
+    - path: pipelines/slim.toml
+      hash: md5
+      md5: 4119f81ebb38dd1beca254d34cdb2ecb
+      size: 107
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-10m/slim/
+      hash: md5
+      md5: 42a507a07da09257d611d38378233e32.dir
+      size: 2268333
+      nfiles: 1
+  generate-recs@ml-10m-slim-fs:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-10m -o 
+      runs/ml-10m/slim-fs pipelines/slim-fs.toml
+    deps:
+    - path: data-split/ml-10m/
+      hash: md5
+      md5: faeca257b9a946a83aaa06cec43383bc.dir
+      size: 62642873
+      nfiles: 6
+    - path: pipelines/slim-fs.toml
+      hash: md5
+      md5: 9d5bea50463ce645f83dd8f4522c6d95
+      size: 150
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-10m/slim-fs/
+      hash: md5
+      md5: f40e0884a9384583297bf2989681bf7a.dir
+      size: 2267385
+      nfiles: 1
+  generate-recs@ml-20m-slim:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o runs/ml-20m/slim
+      pipelines/slim.toml
+    deps:
+    - path: data-split/ml-20m/
+      hash: md5
+      md5: a629420f3708402eebafece534c52fa3.dir
+      size: 152485897
+      nfiles: 6
+    - path: pipelines/slim.toml
+      hash: md5
+      md5: 4119f81ebb38dd1beca254d34cdb2ecb
+      size: 107
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-20m/slim/
+      hash: md5
+      md5: eec48be24a5b095e9185f9d61eb52cf6.dir
+      size: 3656500
+      nfiles: 1
+  generate-recs@ml-20m-slim-fs:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/slim-fs pipelines/slim-fs.toml
+    deps:
+    - path: data-split/ml-20m/
+      hash: md5
+      md5: a629420f3708402eebafece534c52fa3.dir
+      size: 152485897
+      nfiles: 6
+    - path: pipelines/slim-fs.toml
+      hash: md5
+      md5: 9d5bea50463ce645f83dd8f4522c6d95
+      size: 150
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-20m/slim-fs/
+      hash: md5
+      md5: 604e0c1482c13a3798a2015d8b944d69.dir
+      size: 3655390
+      nfiles: 1
+  generate-recs@ml-20m-lightgcn-warp:
+    cmd: python scripts/run-pipeline.py -d data-split/ml-20m -o 
+      runs/ml-20m/lightgcn-warp pipelines/lightgcn-warp.toml
+    deps:
+    - path: data-split/ml-20m/
+      hash: md5
+      md5: a629420f3708402eebafece534c52fa3.dir
+      size: 152485897
+      nfiles: 6
+    - path: pipelines/lightgcn-warp.toml
+      hash: md5
+      md5: c1879b9a35dce1d981fee817b17a7dda
+      size: 236
+    - path: scripts/run-pipeline.py
+      hash: md5
+      md5: 5dcab14577ed293373c11511a0cfa969
+      size: 2484
+      isexec: true
+    outs:
+    - path: runs/ml-20m/lightgcn-warp/
+      hash: md5
+      md5: 1ed5b7d55124f402fc7d03c4401ef60c.dir
+      size: 3581032
       nfiles: 1
