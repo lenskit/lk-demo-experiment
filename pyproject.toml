@@ -3,7 +3,7 @@ name = "lk-demo-experiment"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12.5"
 dependencies = [
     "pandas ~=2.0",
     "torch ~=2.2",
@@ -15,7 +15,7 @@ dependencies = [
     "seaborn ~=0.13.0",
     "humanize ~=4.0",
     "statsmodels ~=0.14.0",
-    "lenskit ~=2025.6",
+    "lenskit ~=2026.1.0b1",
 ]
 
 [dependency-groups]
