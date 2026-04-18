@@ -15,7 +15,7 @@ vars:
       - iknn-implicit
       - uknn-explicit
       - uknn-implicit
-      - slim
+      # - slim
       - slim-fs
       - als-explicit
       - als-implicit
