@@ -24,7 +24,7 @@ from lenskit import Pipeline
 from lenskit.batch import BatchPipelineRunner
 from lenskit.config import configure
 from lenskit.data import Dataset, ItemListCollection
-from lenskit.logging.config import LoggingConfig
+from lenskit.logging import LoggingConfig
 
 _log = logging.getLogger("run-model")
 
