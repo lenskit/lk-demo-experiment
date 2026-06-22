@@ -10,6 +10,7 @@ vars:
 
     pipelines:
       - bias
+      - ease
       - popular
       - iknn-explicit
       - iknn-implicit
